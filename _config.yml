@@ -4,3 +4,5 @@ repository: SciLifeLab-Training/scilifelab-training-template
 theme: jekyll-theme-cayman
 github:
   is_project_page: false
+long_description:
+  "A longer description of the course. Be aware, not much formatting can be done on this text"
