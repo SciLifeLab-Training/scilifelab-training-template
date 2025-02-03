@@ -4,6 +4,7 @@ The SciLifeLab template for setting up SciLifeLab branded courses using github p
 
 - Pre-configured GitHub Actions for continuous deployment to GitHub Pages (works out-of-the-box within the SciLifeLab github organization).
 - A github workflow for rendering the website and deploying it automatically.
+- All pages are rendered using Quarto. For customizations see the official Quarto documentation. While developing the materials you can use quarto to render the pages locally.
 
 ## DISCLAIMER
 This is the first version of this template, and can thus contain errors. Let us know if there are things that are broken.
