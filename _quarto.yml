@@ -1,6 +1,8 @@
 project:
   type: website
 
+
+# several branches can be specified here
 branches:
   - branch: "release-0000"     # change this to the release branch
     output-dir: "0000"         # change this to year and month of the course instance
