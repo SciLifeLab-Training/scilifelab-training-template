@@ -4,7 +4,3 @@ repository: SciLifeLab-Training/scilifelab-training-template
 theme: jekyll-theme-cayman
 github:
   is_project_page: false
-sass:
-  style: compressed
-  load_paths:
-    - assets/css
