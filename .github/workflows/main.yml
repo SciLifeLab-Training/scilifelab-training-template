@@ -96,7 +96,7 @@ jobs:
 
             # Create or update index file
             echo "Updating index file..."
-            printf "${long_description}<hr>\n"
+            printf "Longer description of the course<hr>\n"
             printf "The current and all previous instances of this workshop are listed below.\n" > index.md
             printf "<hr>\n" >> index.md
             printf "<div class='workshop-list'>\n" >> index.md
