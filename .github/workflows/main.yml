@@ -60,9 +60,9 @@ jobs:
       - name: Render and deploy for each branch
         run: |
           # Add git info
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+          git config --global user.email "do_not_email@example.com"
+          git config --global user.name "gh_action"
+          git config --global url."https://${{ secrets.ORG_PAT }}@github.com/".insteadOf "https://github.com/"
 
           for ((i=0; i<${{ env.BRANCHES_COUNT }}; i++))
           do
@@ -81,7 +81,7 @@ jobs:
 
             # Clone gh-pages branch and deploy
             echo "Cloning gh-pages branch into tmprepo..."
-            git clone --depth 1 --single-branch --branch gh-pages "https://${{ secrets.TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" tmprepo
+            git clone --depth 1 --single-branch --branch gh-pages "https://${{ secrets.ORG_PAT }}@github.com/${GITHUB_REPOSITORY}.git" tmprepo
 
             cd tmprepo
             if [ -d $OUTPUT_DIR ]; then
