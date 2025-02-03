@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: "YYMM"   # change this to year and month of the course instance
+  output-dir: "0000"   # change this to year and month of the course instance
 
 website:
   title: "Course Title"
