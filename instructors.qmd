@@ -13,7 +13,7 @@ date: today
 ![](img/john-doe.png){width=80}
 :::
 ::: {.g-col-10}
-Ineke develops and delivers cross-disciplinary training modules on Open Science and FAIR principles. She is a member of the Open Science community and a strong advocate for Open Science and FAIR.
+John Doe is a Staff scientist at SciLifeLab and works with...
 :::
 :::
 
