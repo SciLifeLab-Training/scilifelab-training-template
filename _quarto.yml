@@ -17,6 +17,7 @@ website:
     contents: 
       - index.qmd 
       - schedule.qmd
+      - instructors.qmd
       - module1.qmd
       - module2.qmd
   navbar:
