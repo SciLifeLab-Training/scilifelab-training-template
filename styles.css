@@ -53,3 +53,15 @@ a:hover {
   .callout-warning {
     border-left: 5px solid #a6a6a6  !important;
   }
+
+.hp5-button {
+    background-color: #A7C947;
+    border-radius: 10px;
+    border-color: green;
+    color: white;
+    padding: 10px;
+}
+
+.quiz-box {
+    padding-top:30px;
+}

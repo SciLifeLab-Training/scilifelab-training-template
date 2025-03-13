@@ -17,6 +17,13 @@ By the end of this session, learners will be able to:
 
 Links to video recordings and session material
 
+## Quiz
+
+Test your knowledge of the content of this module.
+
+<button class="hp5-button" onclick="initH5P('quiz_2')"> Start the quiz</button>
+
+<div class="quiz-box quiz_2"></div>
 
 ## Contributors
 

@@ -1,6 +1,7 @@
 project:
   type: website
-
+  resources:
+    - h5p
 
 # several branches can be specified here
 branches:
@@ -25,12 +26,16 @@ website:
     logo: "img/SciLifeLab_Logotype_NEG.png"
   favicon: "img/SciLifeLab_Logotype_NEG.png"
 
-
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+    include-in-header:
+      - text: |
+          <script type="text/javascript" src="assets/h5p-standalone/dist/main.bundle.js"></script>
+      - text: |
+          <script type="text/javascript" src="static/js/h5p_code.js"></script>
 
 execute:
   freeze: auto
