@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - h5p
+    - assets
 
 # several branches can be specified here
 branches:
