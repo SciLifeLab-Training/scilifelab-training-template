@@ -13,17 +13,18 @@ This is the first version of this template, and can thus contain errors. Let us 
 
 ## Getting Started
 
-1. Click the **Use this template** button to create your own repository.
-2. The template does not copy all branches from the template, these you have to copy over from the template yourself:
-   - Create an empty branch called gh-pages. Copy the file called `_config.yml` from the template repo into it, and change the content accordingly.
-3. (If outside the SciLifeLab organization) Set up your repository secrets so github actions can run. If you name it ORG_PAT it will work without changing the workflow file.
-4. Github actions will run when you push, but before everything is setup it will fail in running correctly. Once everything is set up correctly this should be solved automatically.
+1. When in the template repository, click the button **Use this template**. When creating the template, don't forget to click the checkbox **Include all branches**.
+2. Github actions will run directly as you create the repository, and if you have created the repository within the SciLifeLab-Training organization it should finish successfully and create the course page. If you have created the repository outside the organization, you will need to set up the repository secrets, see below.
+3. (Outside the organization): create a Personal access token (classic) with access rights to the repository and workflows. Name it ORG_PAT. This will ensure it works directly, otherwise you will need to change the workflow file.
+3. Verify that the github actions have finished successfully, and that you can find your course page at https://scilifelab-training.github.io/your-repo-name.
 
 ## Configuration
 
-- Modify the `_quarto.yml` file to configure branches to use. In this setup it's one branch per course instance, allowing you to keep older instances alive on the same website. Name your branch release-* (YYMM). Here is also where the menu items are listed. Push your changes.
-- Create and push the new branch from the main branch.
+1. This template uses one branch per course instance, allowing you to keep older instances alive on the same website. The branch name should be `release-YYMM` where YYMM is the year and month of the course instance. The branch name is used to generate the URL for the instance. You can either rename the release-0000 branch or create a new branch from it and remove the old one.
+2. Switch to the release branch and modify the `_quarto.yml` file to configure branches to use. Push changes.
+3. Switch to the gh-pages branch and update the `_config.yml` to change title, description, and repository, and push the changes
+5. Now you can go back to your release branch and start modifying the course content. If you have Quarto installed you can use the `quarto render` command to render the pages locally. There is however no need to push the rendered pages, as github actions will do this for you when you push changes to the repository.
 
 ## GitHub Actions
 
-Your site will automatically build and deploy when you push changes. If you wish to customize the workflow, see `.github/workflows/main.yml`. See Actions in github to see where your page is deployed.
+Your site will automatically build and deploy when you push changes. If you wish to customize the workflow, see `.github/workflows/main.yml`.
