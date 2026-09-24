@@ -1,10 +1,12 @@
-import re
 from pathlib import Path
 
 from renderers.navbar import (
     render_navbar_meta,
     render_navbar_links,
 )
+
+from renderers.footer import render_footer
+
 
 ROOT = Path(__file__).resolve().parents[2]
 CONTENT_DIR = ROOT / "content"
@@ -33,17 +35,13 @@ def render_content_overview(sections):
         html.append(
             f"""
 <div class="course-content-section">
-
 <div class="course-content-section-label">
 {section["label"]}
 </div>
-
 <h2>{section["title"]}</h2>
-
 <ul class="course-content-pages">
 {"".join(pages)}
 </ul>
-
 </div>
 """.strip()
         )
@@ -55,43 +53,27 @@ def render_content_navbar(course, website, available_pages):
     meta = render_navbar_meta(course)
     links = render_navbar_links(website, available_pages)
 
-    # Quarto tries to resolve HTML hrefs during rendering.
-    # The actual URLs are assigned by JavaScript after the page loads.
-    links = re.sub(r'href="[^"]+"', 'href="#"', links)
-
     return """
 <div class="course-navbar">
-
 <div class="course-navbar-layout">
-
 <div class="course-navbar-content">
-
 <div class="course-navbar-title">
 """ + meta + """
 </div>
-
 <div class="course-navbar-menu">
-
 <div class="course-navbar-links">
 """ + links + """
 </div>
-
 </div>
-
 </div>
-
 <div class="course-navbar-brand">
-
 <img
     src=""
     data-course-asset="img/scilifelab-logo-full-neg.png"
     class="course-navbar-logo"
->
-
+    alt="SciLifeLab Training">
 </div>
-
 </div>
-
 </div>
 
 <script>
@@ -120,29 +102,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const siteRoot = pathname.includes(contentMarker)
         ? pathname.split(contentMarker)[0] + "/"
-        : "./";
-
-    const currentPage =
-        pathname.split("/").pop() || "index.html";
+        : "/";
 
     const isContentPage =
         pathname.includes("/content/");
 
-    document.querySelectorAll(".course-navbar-link").forEach(function (link) {
+    const currentPage =
+        pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll(
+        ".course-navbar-link, .course-navbar-dropdown-link"
+    ).forEach(function (link) {
 
         const page = link.dataset.page;
 
-        const expectedPage =
-            page === "index.qmd"
-                ? "index.html"
-                : page.replace(".qmd", ".html");
+        if (!page) {
+            return;
+        }
 
-        link.href = siteRoot + expectedPage;
+        let href;
+
+        if (page === "content/index.qmd") {
+            href = siteRoot + "content/index.html";
+        } else {
+            href = siteRoot + page.replace(".qmd", ".html");
+        }
+
+        link.href = href;
 
         if (
             isContentPage
                 ? page === "content/index.qmd"
-                : expectedPage === currentPage
+                : href.endsWith(currentPage)
         ) {
             link.classList.add("course-navbar-link-active");
         }
@@ -158,40 +149,12 @@ document.addEventListener("DOMContentLoaded", function () {
 """.strip()
 
 
-def render_content_footer():
-    return """
-<footer class="landing-footer">
+def render_content_footer(website):
+    footer = render_footer(website)
 
-<div class="landing-footer__meta">
+    footer = footer.replace(
+        'src="img/github-neg.png"',
+        'src="" data-course-asset="img/github-neg.png"'
+    )
 
-By SciLifeLab Training Hub. Licensed under
-<a href="https://creativecommons.org/licenses/by/4.0/">
-CC BY 4.0
-</a>.
-
-<br>
-
-Built with Quarto and hosted on GitHub Pages.
-
-</div>
-
-<div class="landing-footer__actions">
-
-<a
-    href="https://github.com/SciLifeLab-Training/scilifelab-training-template-staging/tree/main"
-    class="landing-footer__image-link"
->
-
-<img
-    src=""
-    data-course-asset="img/github-neg.png"
-    alt="GitHub"
-    class="landing-footer__image"
->
-
-</a>
-
-</div>
-
-</footer>
-""".strip()
+    return footer

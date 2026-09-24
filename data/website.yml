@@ -140,10 +140,6 @@ website:
   # Use this section to control the registration information
   # shown on the training overview page.
   #
-  # Set "enabled" to true to show the registration banner.
-  # Set it to false if the training does not have registration
-  # information or if you do not want to show it.
-  #
   # The registration banner changes automatically based
   # on the opening and closing dates:
 
@@ -165,11 +161,15 @@ website:
 
   registration:
 
+    # Set "enabled" to true to show the registration banner.
+    # Set it to false if the training does not have registration
+    # information or if you do not want to show it.
     enabled: true
 
-    opening_date: "2026-09-20"
-    closing_date: "2026-09-25"
+    opening_date: "2026-01-01"
+    closing_date: "2026-12-31"
     # Choose whether the banner remains visible after registration closes or disappears.
+    # Values can be "closed" or "hide"
     after_closing: "closed"
     # add the link to the registration page or form.
     url: "https://registration.example.com"
@@ -178,11 +178,10 @@ website:
         # it is displayed in the registration banner.
         # The note can be used to explain different fees or
         # direct participants to the registration form for details.
-      amount: 1500
+      amount: amount
       currency: "SEK"
       note: >
-        The cost may differ depending on the participant's
-        institution. See the registration form for more information.
+        Provide information on whether the training cost differs depending on the participant's institution.
 
 
   # ==================================================

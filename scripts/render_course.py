@@ -165,12 +165,7 @@ def main():
         "content-navbar.html",
         render_content_navbar(course, website, available_pages),
     )
-
-    write_partial(
-        "content-footer.html",
-        render_content_footer(),
-    )
-
+    
     write_partial(
         "syllabus.qmd",
         render_syllabus(course, team),
@@ -192,9 +187,14 @@ def main():
     )
 
     write_partial(
-    "footer.qmd",
-    render_footer(website),
-    )   
+        "footer.qmd",
+        render_footer(website),
+    )
+
+    write_partial(
+        "content-footer.html",
+        render_content_footer(website),
+    )
 
     write_partial(
     "resources.qmd",

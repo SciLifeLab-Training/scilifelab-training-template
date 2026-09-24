@@ -26,7 +26,7 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    favicon: img/scilifelab.logo-green.png
+    favicon: img/scilifelab-logo-green.png
     toc: false
     page-layout: full
 
