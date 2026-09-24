@@ -1673,17 +1673,15 @@ html.course-content-page #quarto-content {
 html.course-content-page #title-block-header {
     display: block;
     width: 100%;
-    max-width: 900px;
+    max-width: 1135px;
     margin: 0 auto;
     padding: 2rem var(--course-content-padding) 1rem;
     box-sizing: border-box;
 }
 
-/* Reading width for the actual course content */
-
 html.course-content-page #quarto-document-content {
     width: 100%;
-    max-width: 900px;
+    max-width: 1135px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 var(--course-content-padding) 3rem;
@@ -1715,6 +1713,69 @@ html.course-content-page .landing-footer {
 html.course-content-page .landing-footer__image {
     top: 0;
     height: 2rem;
+}
+
+/* ==========================================================================
+   COURSE CONTENT NAVIGATION
+   ========================================================================== */
+
+.course-content-navigation {
+    width: 100%;
+    max-width: 210px;
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    box-sizing: border-box;
+    padding-right: 1.5rem;
+}
+
+.course-content-navigation-title {
+    margin-bottom: 1.25rem;
+    color: #045c64;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+.course-content-navigation-section {
+    margin-bottom: 1.25rem;
+}
+
+.course-content-navigation-section-title {
+    margin-bottom: 0.4rem;
+    color: #3f474d;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.course-content-navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.course-content-navigation li {
+    margin: 0;
+}
+
+.course-content-navigation a {
+    display: block;
+    padding: 0.2rem 0;
+    color: #666;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    text-decoration: none;
+}
+
+.course-content-navigation a:hover {
+    color: #087584;
+}
+
+.course-content-navigation a.course-content-navigation-link-active {
+    color: #045c64;
+    font-weight: 600;
 }
 
 /* ==================================================

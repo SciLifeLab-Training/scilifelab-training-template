@@ -44,6 +44,7 @@ from renderers.team_page import render_team_page
 from renderers.content import (
     render_content_overview,
     render_content_navbar,
+    render_content_navigation,
     render_content_footer,
 )
 from renderers.schedule import render_schedule
@@ -112,9 +113,9 @@ def main():
     )
 
     write_partial(
-    "navbar_links.qmd",
-    render_navbar_links(website, available_pages),
-)
+        "navbar_links.qmd",
+        render_navbar_links(website, available_pages),
+    )
 
     write_partial(
         "registration.qmd",
@@ -137,8 +138,8 @@ def main():
     )
 
     write_partial(
-    "announcements_page.qmd",
-    render_announcements_page(announcements),
+        "announcements_page.qmd",
+        render_announcements_page(announcements),
     )
 
     write_partial(
@@ -167,13 +168,18 @@ def main():
     )
     
     write_partial(
+        "content-navigation.html",
+        render_content_navigation(sections),
+    )
+    
+    write_partial(
         "syllabus.qmd",
         render_syllabus(course, team),
     )
 
     write_partial(
-    "practicalities.qmd",
-    render_practicalities(practicalities, course),
+        "practicalities.qmd",
+        render_practicalities(practicalities, course),
     )
 
     write_partial(

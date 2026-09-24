@@ -5,7 +5,8 @@ format:
     toc-title: "On this page"
 
     include-before-body:
-      - ../_generated/content-navbar.html
+    - ../_generated/content-navbar.html
+    - ../_generated/content-navigation.html
 
     include-after-body:
       - ../_generated/content-footer.html

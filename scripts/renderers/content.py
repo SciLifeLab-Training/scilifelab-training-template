@@ -49,6 +49,58 @@ def render_content_overview(sections):
     return "\n".join(html)
 
 
+def render_content_navigation(sections):
+    if not sections:
+        return ""
+
+    html = []
+
+    html.append("""
+<nav class="course-content-navigation">
+<div class="course-content-navigation-title">
+Course content
+</div>
+""".strip())
+
+    for section in sections:
+        html.append(
+            f"""
+<div class="course-content-navigation-section">
+<div class="course-content-navigation-section-title">
+{section["title"]}
+</div>
+<ul>
+""".strip()
+        )
+
+        for page in section["pages"]:
+            href = page["path"].relative_to(CONTENT_DIR).with_suffix(".html")
+
+            html.append(
+                f"""
+<li>
+<a
+    href=""
+    data-content-page="{href}">
+    {page["title"]}
+</a>
+</li>
+""".strip()
+            )
+
+        html.append("""
+</ul>
+</div>
+""".strip())
+
+    html.append("""
+</nav>
+""".strip())
+
+    return "\n".join(html)
+
+
+
 def render_content_navbar(course, website, available_pages):
     meta = render_navbar_meta(course)
     links = render_navbar_links(website, available_pages)
@@ -103,6 +155,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const siteRoot = pathname.includes(contentMarker)
         ? pathname.split(contentMarker)[0] + "/"
         : "/";
+
+    document.querySelectorAll(
+        ".course-content-navigation a[data-content-page]"
+    ).forEach(function (link) {
+
+        const page = link.dataset.contentPage;
+        const href = siteRoot + "content/" + page;
+
+        link.href = href;
+
+        if (pathname.endsWith("/" + page)) {
+            link.classList.add("course-content-navigation-link-active");
+        }
+
+    });
 
     const isContentPage =
         pathname.includes("/content/");
