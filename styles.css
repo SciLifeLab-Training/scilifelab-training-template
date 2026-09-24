@@ -1650,6 +1650,7 @@ body {
 .course-schedule-event:has(.course-type-seminar)::after {
     background: #555;
 }
+
 /* ==========================================================================
    COURSE CONTENT PAGES
    ========================================================================== */
@@ -1660,60 +1661,79 @@ html.course-content-page body {
     flex-direction: column;
 }
 
-/* Do not stretch the content area to fill the viewport.
-   The footer should follow the actual course content. */
+
+/* --------------------------------------------------------------------------
+   Quarto page container
+   -------------------------------------------------------------------------- */
 
 html.course-content-page #quarto-content {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
     flex: 0 0 auto;
 }
 
-/* Show the Quarto title on content pages.
-   The global stylesheet hides it for the landing/schedule pages. */
+
+html.course-content-page #quarto-content > main.content {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   Content page title
+   -------------------------------------------------------------------------- */
 
 html.course-content-page #title-block-header {
     display: block;
-    width: 100%;
-    max-width: 1135px;
-    margin: 0 auto;
-    padding: 2rem var(--course-content-padding) 1rem;
-    box-sizing: border-box;
 }
 
-html.course-content-page #quarto-document-content {
-    width: 100%;
-    max-width: 1135px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 var(--course-content-padding) 3rem;
-    box-sizing: border-box;
-}
 
-/* Keep the content-page navbar and footer aligned
-   with the course shell */
+/* --------------------------------------------------------------------------
+   Content page navbar and footer
+   -------------------------------------------------------------------------- */
 
 html.course-content-page .course-navbar,
 html.course-content-page .landing-footer {
     width: 100%;
     max-width: 1135px;
+
     margin-left: auto;
     margin-right: auto;
+
     box-sizing: border-box;
 }
+
 
 /* Content-page footer */
 
 html.course-content-page .landing-footer {
     flex-shrink: 0;
+
     height: 70px;
+
     margin-top: 0.1rem;
     padding: 0.45rem 1rem;
+
     box-sizing: border-box;
 }
+
 
 html.course-content-page .landing-footer__image {
     top: 0;
     height: 2rem;
 }
+
 
 /* ==========================================================================
    COURSE CONTENT NAVIGATION
@@ -1722,61 +1742,147 @@ html.course-content-page .landing-footer__image {
 .course-content-navigation {
     width: 100%;
     max-width: 210px;
+
     position: sticky;
     top: 2rem;
+
     align-self: flex-start;
+
     box-sizing: border-box;
+
     padding-right: 1.5rem;
 }
 
+
 .course-content-navigation-title {
     margin-bottom: 1.25rem;
+
     color: #045c64;
+
     font-size: 0.78rem;
     font-weight: 700;
+
     letter-spacing: 0.10em;
     text-transform: uppercase;
 }
+
 
 .course-content-navigation-section {
     margin-bottom: 1.25rem;
 }
 
+
 .course-content-navigation-section-title {
     margin-bottom: 0.4rem;
+
     color: #3f474d;
+
     font-size: 0.82rem;
     font-weight: 600;
+
     line-height: 1.35;
 }
+
 
 .course-content-navigation ul {
     margin: 0;
     padding: 0;
+
     list-style: none;
 }
+
 
 .course-content-navigation li {
     margin: 0;
 }
 
+
 .course-content-navigation a {
     display: block;
+
     padding: 0.2rem 0;
+
     color: #666;
+
     font-size: 0.78rem;
     line-height: 1.4;
+
     text-decoration: none;
 }
+
 
 .course-content-navigation a:hover {
     color: #087584;
 }
 
+
 .course-content-navigation a.course-content-navigation-link-active {
     color: #045c64;
     font-weight: 600;
 }
+
+
+/* ==========================================================================
+   COURSE CONTENT LAYOUT
+   ========================================================================== */
+
+html.course-content-page .course-content-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start;
+
+    width: 100% !important;
+    max-width: 1135px;
+
+    margin: 1.35rem auto 0 !important;
+    padding: 0 var(--course-content-padding);
+
+    box-sizing: border-box;
+}
+
+
+/* --------------------------------------------------------------------------
+   Left course navigation
+   -------------------------------------------------------------------------- */
+
+html.course-content-page .course-content-layout
+.course-content-navigation {
+    flex: 0 0 210px;
+
+    width: 210px;
+    max-width: 210px;
+
+    margin: 0;
+
+    padding: 0 1.5rem 0 0;
+
+    position: sticky;
+    top: 2rem;
+
+    box-sizing: border-box;
+}
+
+
+/* --------------------------------------------------------------------------
+   Main course document
+   -------------------------------------------------------------------------- */
+
+html.course-content-page .course-content-layout
+#quarto-document-content {
+    flex: 1 1 auto;
+
+    width: auto;
+    max-width: none !important;
+
+    min-width: 0;
+
+    margin: 0;
+
+    padding: 0 0 3rem;
+
+    box-sizing: border-box;
+}
+
 
 /* ==================================================
    SYLLABUS

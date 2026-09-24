@@ -11,44 +11,6 @@ from renderers.footer import render_footer
 ROOT = Path(__file__).resolve().parents[2]
 CONTENT_DIR = ROOT / "content"
 
-
-def render_content_overview(sections):
-    if not sections:
-        return ""
-
-    html = []
-
-    for section in sections:
-        pages = []
-
-        for page in section["pages"]:
-            href = page["path"].relative_to(CONTENT_DIR).with_suffix(".html")
-
-            pages.append(
-                f"""
-<li>
-<a href="{href}">{page["title"]}</a>
-</li>
-""".strip()
-            )
-
-        html.append(
-            f"""
-<div class="course-content-section">
-<div class="course-content-section-label">
-{section["label"]}
-</div>
-<h2>{section["title"]}</h2>
-<ul class="course-content-pages">
-{"".join(pages)}
-</ul>
-</div>
-""".strip()
-        )
-
-    return "\n".join(html)
-
-
 def render_content_navigation(sections):
     if not sections:
         return ""
@@ -56,7 +18,7 @@ def render_content_navigation(sections):
     html = []
 
     html.append("""
-<nav class="course-content-navigation">
+<aside class="course-content-navigation">
 <div class="course-content-navigation-title">
 Course content
 </div>
@@ -94,12 +56,10 @@ Course content
 """.strip())
 
     html.append("""
-</nav>
+</aside>
 """.strip())
 
     return "\n".join(html)
-
-
 
 def render_content_navbar(course, website, available_pages):
     meta = render_navbar_meta(course)
@@ -210,6 +170,27 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[data-course-asset]").forEach(function (image) {
         image.src = siteRoot + image.dataset.courseAsset;
     });
+
+    const contentNavigation =
+        document.querySelector(".course-content-navigation");
+
+    const documentContent =
+        document.querySelector("#quarto-document-content");
+
+    if (contentNavigation && documentContent) {
+
+        const layout = document.createElement("div");
+
+        layout.className = "course-content-layout";
+
+        documentContent.parentNode.insertBefore(
+            layout,
+            documentContent
+        );
+
+        layout.appendChild(contentNavigation);
+        layout.appendChild(documentContent);
+    }
 
 });
 </script>

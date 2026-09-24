@@ -42,7 +42,6 @@ from renderers.announcements import (
 from renderers.team import render_team
 from renderers.team_page import render_team_page
 from renderers.content import (
-    render_content_overview,
     render_content_navbar,
     render_content_navigation,
     render_content_footer,
@@ -155,11 +154,6 @@ def main():
     write_partial(
         "schedule.qmd",
         render_schedule(events, course),
-    )
-
-    write_partial(
-        "content.qmd",
-        render_content_overview(sections),
     )
 
     write_partial(
