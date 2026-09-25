@@ -1821,7 +1821,6 @@ html.course-content-page .landing-footer__image {
     font-weight: 600;
 }
 
-
 /* ==========================================================================
    COURSE CONTENT LAYOUT
    ========================================================================== */
@@ -1834,7 +1833,7 @@ html.course-content-page .course-content-layout {
     width: 100% !important;
     max-width: 1135px;
 
-    margin: 1.35rem auto 0 !important;
+    margin: 1.25rem auto 0 !important;
     padding: 0 var(--course-content-padding);
 
     box-sizing: border-box;
@@ -1853,7 +1852,6 @@ html.course-content-page .course-content-layout
     max-width: 210px;
 
     margin: 0;
-
     padding: 0 1.5rem 0 0;
 
     position: sticky;
@@ -1884,6 +1882,201 @@ html.course-content-page .course-content-layout
 }
 
 
+/* --------------------------------------------------------------------------
+   Quarto table of contents
+   -------------------------------------------------------------------------- */
+
+html.course-content-page .course-content-layout
+#quarto-margin-sidebar {
+    flex: 0 0 180px;
+
+    width: 180px;
+    max-width: 180px;
+
+    margin: 0;
+    padding: 0 0 0 2rem;
+
+    position: sticky;
+    top: 2rem;
+
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   COURSE CONTENT TOC
+   ========================================================================== */
+
+html.course-content-page .course-content-layout
+.course-content-toc {
+    flex: 0 0 180px;
+
+    width: 180px;
+    max-width: 180px;
+
+    margin: 0;
+    padding: 0 0 0 2rem;
+
+    box-sizing: border-box;
+
+    position: sticky;
+    top: 2rem;
+
+    align-self: flex-start;
+}
+
+
+html.course-content-page .course-content-toc #TOC {
+    display: block !important;
+
+    position: static !important;
+
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+html.course-content-page .course-content-toc #toc-title {
+    margin: 0 0 1rem;
+
+    color: #045c64;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+
+html.course-content-page .course-content-toc #TOC ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+html.course-content-page .course-content-toc #TOC li {
+    margin: 0;
+}
+
+
+html.course-content-page .course-content-toc #TOC a {
+    display: block;
+
+    padding: 0.2rem 0;
+
+    color: #666;
+
+    font-size: 0.78rem;
+    line-height: 1.4;
+
+    text-decoration: none;
+}
+
+
+html.course-content-page .course-content-toc #TOC a:hover {
+    color: #087584;
+}
+
+
+html.course-content-page .course-content-toc #TOC a.active {
+    color: #045c64;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   COURSE CONTENT TOC
+   ========================================================================== */
+
+html.course-content-page .course-content-layout
+.course-content-toc {
+    flex: 0 0 180px;
+
+    width: 180px;
+    max-width: 180px;
+
+    margin: 0;
+    padding: 0 0 0 2rem;
+
+    box-sizing: border-box;
+
+    position: sticky;
+    top: 2rem;
+
+    align-self: flex-start;
+}
+
+
+html.course-content-page .course-content-toc #TOC {
+    display: block !important;
+
+    position: static !important;
+
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+html.course-content-page .course-content-toc #toc-title {
+    margin: 0 0 1rem;
+
+    color: #045c64;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+
+html.course-content-page .course-content-toc #TOC ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+html.course-content-page .course-content-toc #TOC li {
+    margin: 0;
+}
+
+
+html.course-content-page .course-content-toc #TOC a {
+    display: block;
+
+    padding: 0.2rem 0;
+
+    color: #666;
+
+    font-size: 0.78rem;
+    line-height: 1.4;
+
+    text-decoration: none;
+}
+
+
+html.course-content-page .course-content-toc #TOC a:hover {
+    color: #087584;
+}
+
+
+html.course-content-page .course-content-toc #TOC a.active {
+    color: #045c64;
+    font-weight: 600;
+}
 /* ==================================================
    SYLLABUS
    ================================================== */

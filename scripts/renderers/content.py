@@ -177,6 +177,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const documentContent =
         document.querySelector("#quarto-document-content");
 
+    const toc =
+        document.querySelector("#TOC");
+
+    const marginSidebar =
+        document.querySelector("#quarto-margin-sidebar");
+
     if (contentNavigation && documentContent) {
 
         const layout = document.createElement("div");
@@ -190,6 +196,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         layout.appendChild(contentNavigation);
         layout.appendChild(documentContent);
+
+        if (toc) {
+
+            const tocColumn = document.createElement("aside");
+
+            tocColumn.className = "course-content-toc";
+
+            tocColumn.appendChild(toc);
+
+            layout.appendChild(tocColumn);
+        }
+
+        if (marginSidebar) {
+            marginSidebar.remove();
+        }
     }
 
 });
