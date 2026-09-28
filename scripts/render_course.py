@@ -44,6 +44,7 @@ from renderers.team_page import render_team_page
 from renderers.content import (
     render_content_navbar,
     render_content_navigation,
+    render_content_next_navigation,
     render_content_footer,
 )
 from renderers.schedule import render_schedule
@@ -165,6 +166,11 @@ def main():
         "content-navigation.html",
         render_content_navigation(sections),
     )
+
+    write_partial(
+    "content-next-navigation.html",
+    render_content_next_navigation(sections),
+    )   
     
     write_partial(
         "syllabus.qmd",

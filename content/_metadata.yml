@@ -9,4 +9,5 @@ format:
     - ../_generated/content-navigation.html
 
     include-after-body:
+      - ../_generated/content-next-navigation.html
       - ../_generated/content-footer.html

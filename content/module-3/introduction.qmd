@@ -1,3 +1,27 @@
 ---
 title: "Introduction"
 ---
+
+Images, videos, and links can make course content more engaging and help participants explore a topic in more depth. This module shows how to include these elements in your course pages.
+
+The examples demonstrate how to add media and links using Quarto and Markdown. You can copy the snippets and replace the example URLs, image paths, or descriptions with your own.
+
+## Learning objectives
+
+By the end of this module, you will know how to:
+
+- Add links to external websites and other course pages.
+- Insert an image and provide alternative text.
+- Embed a video in a content page.
+- Use media to support the learning material.
+
+::: {.callout-important}
+## Remember accessibility
+
+Provide meaningful alternative text for images, and use descriptive link text so that readers understand where a link leads. For example, use “Read the course guidelines” rather than “Click here”.
+:::
+
+## In this module
+
+- **Topic 1 – Links and images:** Examples of linking to resources and adding images to a page.
+- **Topic 2 – Embedded videos and media:** How to include video and other media in your course content.

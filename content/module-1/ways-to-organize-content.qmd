@@ -1,0 +1,83 @@
+---
+title: "Ways to organise content"
+order: 3
+---
+
+A well-organised page helps participants find information and understand how ideas relate to one another. In addition to headings and lists, Quarto supports elements such as block quotes, tables, and horizontal rules.
+
+This page demonstrates a few ways to structure information. Copy the examples and adapt them to your own course.
+
+## Block quotes
+
+Use a block quote to set apart a quotation or a statement from another source.
+
+> Clear structure helps readers navigate information and focus on the main message.
+
+**Markdown syntax:**
+
+```markdown
+> Clear structure helps readers navigate information and focus on the main message.
+```
+
+## Tables
+
+Tables are useful for presenting information that is easier to compare in rows and columns. Keep them concise and use clear column headings.
+
+| Element | Purpose | Example |
+|---|---|---|
+| Heading | Introduces a section | Learning objectives |
+| Paragraph | Explains an idea | A short description |
+| List | Groups related items | Steps or key points |
+
+**Markdown syntax:**
+
+```markdown
+| Element | Purpose | Example |
+|---|---|---|
+| Heading | Introduces a section | Learning objectives |
+| Paragraph | Explains an idea | A short description |
+| List | Groups related items | Steps or key points |
+```
+
+## Horizontal rules
+
+A horizontal rule can separate distinct parts of a page. Use it sparingly, when a visual break helps clarify the structure.
+
+---
+
+**Markdown syntax:**
+
+```markdown
+---
+```
+
+## Combining organisational elements
+
+You can combine headings, paragraphs, lists, tables, and other elements on the same page. Choose the format that makes the information easiest to follow.
+
+For example, a section describing a course activity could include a short introduction followed by a table of practical details.
+
+**Example Markdown:**
+
+```markdown
+## Course activity
+
+In this activity, participants will work in small groups to discuss the topic.
+
+| Detail | Description |
+|---|---|
+| Format | Group discussion |
+| Duration | 20 minutes |
+| Materials | Discussion questions |
+
+### Instructions
+
+1. Form a small group.
+2. Read the discussion questions.
+3. Share your ideas with the group.
+4. Summarise the main points.
+``` 
+
+
+
+  

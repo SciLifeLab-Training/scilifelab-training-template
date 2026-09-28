@@ -3,18 +3,27 @@ title: "Introduction"
 order: 1
 ---
 
-This is placeholder content for testing the course content layout.
+This module introduces the basic building blocks of a course content page. You can combine headings, paragraphs, lists, and text formatting to organise information and make it easier for participants to follow.
+
+The examples in this module show how to structure a topic page and present information clearly. Browse the topics to see how each element looks when rendered, and copy the examples you would like to use in your own course.
 
 ## Learning objectives
 
-By the end of this section, you will understand the main concepts covered in this module.
+By the end of this module, you will know how to:
 
-::: {.callout-note}
-## Key idea
+- Organise a page using headings and paragraphs.
+- Format text using bold and italic styles.
+- Create bulleted and numbered lists.
+- Structure a topic page so that it is easy to read and navigate.
 
-This is placeholder callout content for testing the Quarto layout.
+::: {.callout-tip}
+## Getting started
+
+You do not need to write Markdown from scratch. Find an example that suits your needs, copy the code snippet, and replace the demonstration text with your own.
 :::
 
-## Overview
+## In this module
 
-More placeholder Markdown content goes here.
+- **Topic 1 – Structuring a page:** Headings, paragraphs, text formatting, and lists.
+- **Topic 2 – More ways to organise content:** Examples of additional page elements and formatting.
+- **Topic 3 – Putting it together:** A practical example of combining content elements on a page.

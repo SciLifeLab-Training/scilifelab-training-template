@@ -1,7 +1,44 @@
 ---
-title: Course Content
+title: "Course Content"
 ---
 
-Welcome to the course content.
+Welcome to the course content area of the SciLifeLab Training Webpage Template.
 
-Here you will find the training modules, lessons, and practical exercises. Use the navigation on the left to move between the different parts of the course.
+This section contains example pages that demonstrate how you can structure and format the learning materials for your own course. Use them as a starting point when creating your content.  
+     
+     
+## Explore the examples
+
+The modules in the navigation demonstrate different content elements and ways of presenting information.
+
+- **Module 1 – Structuring a page:** Learn how to use headings, paragraphs, lists, and other basic text formatting.
+- **Module 2 – Highlighting information:** Explore callout boxes that can be used for tips, notes, warnings, and important information.
+- **Module 3 – Adding media and interactive elements:** See examples of links, images, embedded videos, and other content elements.
+
+Some pages also include example exercises, tables, code blocks, and reflection questions.
+
+## How to use these examples
+
+Each page contains rendered examples and the corresponding Markdown or Quarto syntax.
+
+1. Browse the examples using the module navigation above.
+2. Find an element you would like to use in your course.
+3. Copy the corresponding code snippet from the example page.
+4. Paste it into your own `.qmd` file and replace the placeholder text with your content.
+5. Render your website to check how the content looks.
+
+You do not need to use every example. Choose the elements that suit your course and remove the ones you do not need.
+
+::: {.callout-tip}
+## Tip
+
+You can combine different elements on the same page. For example, a topic might start with learning objectives, introduce a concept using headings and paragraphs, highlight a key idea in a callout box, and finish with a reflection question.
+:::
+
+## Creating your own course content
+
+The examples in this section are intended to be adapted. Replace the demonstration text with your own material, and add or remove pages to match the structure of your course.
+
+For instructions on organising your content files and configuring the course modules, see the template user guide.
+
+Happy authoring!

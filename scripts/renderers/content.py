@@ -54,7 +54,11 @@ def render_content_navigation(sections):
         )
 
         for page in section["pages"]:
-            href = page["path"].relative_to(CONTENT_DIR).with_suffix(".html")
+            href = (
+                page["path"]
+                .relative_to(CONTENT_DIR)
+                .with_suffix(".html")
+            )
 
             html.append(
                 f"""
@@ -77,6 +81,81 @@ def render_content_navigation(sections):
     </div>
 </nav>
 """.strip())
+
+    return "\n".join(html)
+
+
+def render_content_next_navigation(sections):
+    # Introduction is the first page in the navigation sequence.
+    pages = [{
+        "path": Path("index.qmd"),
+        "title": "Introduction",
+    }]
+
+    # Add topic pages in their existing section/page order.
+    for section in sections:
+        for page in section["pages"]:
+            if page["path"].name != "index.qmd":
+                pages.append(page)
+
+    def page_href(page):
+        path = page["path"]
+
+        if path.is_absolute():
+            return path.relative_to(CONTENT_DIR).with_suffix(".html")
+
+        return path.with_suffix(".html")
+
+    html = []
+
+    for index, page in enumerate(pages):
+        current_page = page_href(page)
+        links = []
+
+        # Previous page
+        if index > 0:
+            previous_page = pages[index - 1]
+            previous_href = page_href(previous_page)
+
+            links.append(
+                f"""
+<a class="course-content-prev-link"
+   href=""
+   data-content-navigation-page="{previous_href}">
+    <span class="course-content-next-label">Previous</span>
+    <span class="course-content-next-title">
+        ← {previous_page["title"]}
+    </span>
+</a>
+""".strip()
+            )
+
+        # Next page
+        if index < len(pages) - 1:
+            next_page = pages[index + 1]
+            next_href = page_href(next_page)
+
+            links.append(
+                f"""
+<a class="course-content-next-link"
+   href=""
+   data-content-navigation-page="{next_href}">
+    <span class="course-content-next-label">Next</span>
+    <span class="course-content-next-title">
+        {next_page["title"]} →
+    </span>
+</a>
+""".strip()
+            )
+
+        html.append(
+            f"""
+<div class="course-content-next-navigation" hidden
+     data-content-next-from="{current_page}">
+    {"".join(links)}
+</div>
+""".strip()
+        )
 
     return "\n".join(html)
 
@@ -107,12 +186,10 @@ def render_content_navbar(course, website, available_pages):
         </div>
     </div>
 </div>
-
 <script>
 document.documentElement.classList.add("course-content-page");
 
 document.addEventListener("DOMContentLoaded", function () {
-
     const navbar = document.querySelector(".course-navbar");
     const footer = document.querySelector(".landing-footer");
 
@@ -120,7 +197,6 @@ document.addEventListener("DOMContentLoaded", function () {
      * Move the shared site chrome outside Quarto's
      * main-content / TOC grid.
      */
-
     if (navbar) {
         document.body.insertBefore(navbar, document.body.firstChild);
     }
@@ -136,25 +212,29 @@ document.addEventListener("DOMContentLoaded", function () {
         ? pathname.split(contentMarker)[0] + "/"
         : "/";
 
+    const contentPath = pathname.includes(contentMarker)
+        ? pathname.split(contentMarker)[1].replace(/^\/+|\/+$/g, "")
+        : "";
 
-    /* --------------------------------------------------------------------------
-       Course content navigation links
-       -------------------------------------------------------------------------- */
+    const currentContentPage =
+        !contentPath || contentPath === "index"
+            ? "index.html"
+            : contentPath;
 
+    /*
+     * --------------------------------------------------------------------------
+     * Course content navigation links
+     * --------------------------------------------------------------------------
+     */
     document.querySelectorAll(
         ".course-content-navigation a[data-content-page]"
     ).forEach(function (link) {
-
         const page = link.dataset.contentPage;
         const href = siteRoot + "content/" + page;
 
         link.href = href;
 
-        const currentContentPage =
-            pathname.replace(/^.*\/content\//, "").replace(/\/$/, "") || "index.html";
-
         if (currentContentPage === page) {
-
             if (link.classList.contains(
                 "course-content-navigation-introduction"
             )) {
@@ -185,21 +265,60 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    /*
+     * --------------------------------------------------------------------------
+     * Previous / next page navigation
+     * Show only the navigation for the current content page.
+     * --------------------------------------------------------------------------
+     */
+    document.querySelectorAll(
+        ".course-content-next-navigation[data-content-next-from]"
+    ).forEach(function (navigation) {
+        const isCurrentPage =
+            navigation.dataset.contentNextFrom === currentContentPage;
 
-    /* --------------------------------------------------------------------------
-       Main course navbar links
-       -------------------------------------------------------------------------- */
+        navigation.hidden = !isCurrentPage;
 
-    const isContentPage =
-        pathname.includes("/content/");
+        if (isCurrentPage) {
+            navigation.querySelectorAll(
+                "a[data-content-navigation-page]"
+            ).forEach(function (link) {
+                link.href =
+                    siteRoot + "content/" +
+                    link.dataset.contentNavigationPage;
+            });
+        }
+    });
 
-    const currentPage =
-        pathname.split("/").pop() || "index.html";
+    /*
+     * Move the active navigation outside Quarto's content grid,
+     * directly before the footer.
+     */
+    const activePageNavigation = document.querySelector(
+        ".course-content-next-navigation:not([hidden])"
+    );
+
+    if (activePageNavigation) {
+        const pageFooter = document.querySelector(".landing-footer");
+
+        if (pageFooter && pageFooter.parentNode === document.body) {
+            document.body.insertBefore(activePageNavigation, pageFooter);
+        } else {
+            document.body.appendChild(activePageNavigation);
+        }
+    }
+
+    /*
+     * --------------------------------------------------------------------------
+     * Main course navbar links
+     * --------------------------------------------------------------------------
+     */
+    const isContentPage = pathname.includes("/content/");
+    const currentPage = pathname.split("/").pop() || "index.html";
 
     document.querySelectorAll(
         ".course-navbar-link, .course-navbar-dropdown-link"
     ).forEach(function (link) {
-
         const page = link.dataset.page;
 
         if (!page) {
@@ -225,25 +344,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
-    /* --------------------------------------------------------------------------
-       Course assets
-       -------------------------------------------------------------------------- */
-
+    /*
+     * --------------------------------------------------------------------------
+     * Course assets
+     * --------------------------------------------------------------------------
+     */
     document.querySelectorAll("[data-course-asset]").forEach(function (image) {
         image.src = siteRoot + image.dataset.courseAsset;
     });
 
-
-    /* --------------------------------------------------------------------------
-       Move horizontal course content navigation below navbar
-       -------------------------------------------------------------------------- */
-
+    /*
+     * --------------------------------------------------------------------------
+     * Move horizontal course content navigation below navbar
+     * --------------------------------------------------------------------------
+     */
     const contentNavigation =
         document.querySelector(".course-content-navigation");
 
     if (contentNavigation) {
-
         if (navbar) {
             navbar.parentNode.insertBefore(
                 contentNavigation,
@@ -257,15 +375,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
-    /* --------------------------------------------------------------------------
-       Course content dropdowns
-       -------------------------------------------------------------------------- */
-
+    /*
+     * --------------------------------------------------------------------------
+     * Course content dropdowns
+     * --------------------------------------------------------------------------
+     */
     document.querySelectorAll(
         ".course-content-navigation-dropdown"
     ).forEach(function (dropdown) {
-
         const toggle = dropdown.querySelector(
             ".course-content-navigation-toggle"
         );
@@ -295,7 +412,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll(
                 ".course-content-navigation-dropdown.is-open"
             ).forEach(function (openDropdown) {
-
                 openDropdown.classList.remove("is-open");
 
                 const openToggle = openDropdown.querySelector(
@@ -314,13 +430,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-
     document.addEventListener("click", function () {
-
         document.querySelectorAll(
             ".course-content-navigation-dropdown.is-open"
         ).forEach(function (dropdown) {
-
             dropdown.classList.remove("is-open");
 
             const toggle = dropdown.querySelector(
@@ -333,10 +446,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    /* --------------------------------------------------------------------------
-       TOC link navigation and active state
-       -------------------------------------------------------------------------- */
-
+    /*
+     * --------------------------------------------------------------------------
+     * TOC link navigation and active state
+     * --------------------------------------------------------------------------
+     */
     function setActiveTocLink(selectedLink) {
         document.querySelectorAll("#TOC .nav-link").forEach(function (link) {
             link.classList.remove("active");

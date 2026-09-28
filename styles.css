@@ -1985,11 +1985,103 @@ html.course-content-page #quarto-margin-sidebar #TOC .nav-link.active {
 }
 
 
-/* Link hover */
-html.course-content-page #quarto-margin-sidebar #TOC .nav-link:hover {
-    color: #045c64;
+/* TOC link hover */
+html.course-content-page
+#quarto-margin-sidebar #TOC .nav-link:hover,
+html.course-content-page
+#quarto-margin-sidebar #TOC .nav-link:focus-visible {
+    color: #045c64 !important;
+    text-decoration: none;
 }
 
+/* Hide Quarto's heading anchor-link icons */
+html.course-content-page a.anchorjs-link {
+    display: none !important;
+}
+
+/* ==========================================================================
+   CONTENT PAGE NEXT NAVIGATION
+   ========================================================================== */
+/* Previous / next navigation — minimal text-link style */
+
+html.course-content-page .course-content-next-navigation {
+    width: 100%;
+    max-width: 1135px;
+    margin: 2.5rem auto 1.5rem;
+    padding: 1.5rem var(--course-content-padding) 0;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    border-top: 1px solid #d7e2e3;
+}
+
+html.course-content-page .course-content-next-navigation[hidden] {
+    display: none !important;
+}
+
+html.course-content-page .course-content-prev-link,
+html.course-content-page .course-content-next-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    max-width: 48%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+
+    color: #045c64;
+    text-decoration: none;
+}
+
+html.course-content-page .course-content-prev-link {
+    align-items: flex-start;
+    text-align: left;
+    margin-right: auto;
+}
+
+html.course-content-page .course-content-next-link {
+    align-items: flex-end;
+    text-align: right;
+    margin-left: auto;
+}
+
+html.course-content-page .course-content-next-label {
+    color: #52666a;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+html.course-content-page .course-content-next-title {
+    color: #045c64;
+    font-weight: 600;
+}
+
+html.course-content-page .course-content-prev-link:hover .course-content-next-title,
+html.course-content-page .course-content-next-link:hover .course-content-next-title,
+html.course-content-page .course-content-prev-link:focus-visible .course-content-next-title,
+html.course-content-page .course-content-next-link:focus-visible .course-content-next-title {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+@media (max-width: 600px) {
+    html.course-content-page .course-content-next-navigation {
+        gap: 1rem;
+    }
+
+    html.course-content-page .course-content-prev-link,
+    html.course-content-page .course-content-next-link {
+        max-width: 48%;
+    }
+}
 
 /* ==========================================================================
    CONTENT PAGE FOOTER
