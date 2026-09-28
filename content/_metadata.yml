@@ -1,7 +1,7 @@
 format:
   html:
     toc: true
-    toc-location: body
+    toc-location: right
     toc-title: "On this page"
 
     include-before-body:

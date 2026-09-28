@@ -11,6 +11,7 @@ from renderers.footer import render_footer
 ROOT = Path(__file__).resolve().parents[2]
 CONTENT_DIR = ROOT / "content"
 
+
 def render_content_navigation(sections):
     if not sections:
         return ""
@@ -18,20 +19,37 @@ def render_content_navigation(sections):
     html = []
 
     html.append("""
-<aside class="course-content-navigation">
-<div class="course-content-navigation-title">
-Course content
-</div>
+<nav class="course-content-navigation" aria-label="Course content">
+    <div class="course-content-navigation-inner">
+        <div class="course-content-navigation-scroll">
+""".strip())
+
+    html.append("""
+<a
+    class="course-content-navigation-toggle course-content-navigation-introduction"
+    href=""
+    data-content-page="index.html">
+    Introduction
+</a>
 """.strip())
 
     for section in sections:
+        label = section["label"]
+        title = section["title"]
+
         html.append(
             f"""
-<div class="course-content-navigation-section">
-<div class="course-content-navigation-section-title">
-{section["title"]}
-</div>
-<ul>
+<div class="course-content-navigation-dropdown">
+    <button
+        class="course-content-navigation-toggle"
+        type="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+        title="{title}">
+        {label}
+        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
+    </button>
+    <div class="course-content-navigation-menu">
 """.strip()
         )
 
@@ -40,26 +58,28 @@ Course content
 
             html.append(
                 f"""
-<li>
 <a
+    class="course-content-navigation-link"
     href=""
     data-content-page="{href}">
     {page["title"]}
 </a>
-</li>
 """.strip()
             )
 
         html.append("""
-</ul>
+    </div>
 </div>
 """.strip())
 
     html.append("""
-</aside>
+        </div>
+    </div>
+</nav>
 """.strip())
 
     return "\n".join(html)
+
 
 def render_content_navbar(course, website, available_pages):
     meta = render_navbar_meta(course)
@@ -67,25 +87,25 @@ def render_content_navbar(course, website, available_pages):
 
     return """
 <div class="course-navbar">
-<div class="course-navbar-layout">
-<div class="course-navbar-content">
-<div class="course-navbar-title">
+    <div class="course-navbar-layout">
+        <div class="course-navbar-content">
+            <div class="course-navbar-title">
 """ + meta + """
-</div>
-<div class="course-navbar-menu">
-<div class="course-navbar-links">
+            </div>
+            <div class="course-navbar-menu">
+                <div class="course-navbar-links">
 """ + links + """
-</div>
-</div>
-</div>
-<div class="course-navbar-brand">
-<img
-    src=""
-    data-course-asset="img/scilifelab-logo-full-neg.png"
-    class="course-navbar-logo"
-    alt="SciLifeLab Training">
-</div>
-</div>
+                </div>
+            </div>
+        </div>
+        <div class="course-navbar-brand">
+            <img
+                src=""
+                data-course-asset="img/scilifelab-logo-full-neg.png"
+                class="course-navbar-logo"
+                alt="SciLifeLab Training">
+        </div>
+    </div>
 </div>
 
 <script>
@@ -116,6 +136,11 @@ document.addEventListener("DOMContentLoaded", function () {
         ? pathname.split(contentMarker)[0] + "/"
         : "/";
 
+
+    /* --------------------------------------------------------------------------
+       Course content navigation links
+       -------------------------------------------------------------------------- */
+
     document.querySelectorAll(
         ".course-content-navigation a[data-content-page]"
     ).forEach(function (link) {
@@ -125,11 +150,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
         link.href = href;
 
-        if (pathname.endsWith("/" + page)) {
-            link.classList.add("course-content-navigation-link-active");
-        }
+        const currentContentPage =
+            pathname.replace(/^.*\/content\//, "").replace(/\/$/, "") || "index.html";
 
+        if (currentContentPage === page) {
+
+            if (link.classList.contains(
+                "course-content-navigation-introduction"
+            )) {
+                link.classList.add(
+                    "course-content-navigation-toggle-active"
+                );
+            } else {
+                link.classList.add(
+                    "course-content-navigation-link-active"
+                );
+
+                const dropdown = link.closest(
+                    ".course-content-navigation-dropdown"
+                );
+
+                if (dropdown) {
+                    const toggle = dropdown.querySelector(
+                        ".course-content-navigation-toggle"
+                    );
+
+                    if (toggle) {
+                        toggle.classList.add(
+                            "course-content-navigation-toggle-active"
+                        );
+                    }
+                }
+            }
+        }
     });
+
+
+    /* --------------------------------------------------------------------------
+       Main course navbar links
+       -------------------------------------------------------------------------- */
 
     const isContentPage =
         pathname.includes("/content/");
@@ -164,55 +223,171 @@ document.addEventListener("DOMContentLoaded", function () {
         ) {
             link.classList.add("course-navbar-link-active");
         }
-
     });
+
+
+    /* --------------------------------------------------------------------------
+       Course assets
+       -------------------------------------------------------------------------- */
 
     document.querySelectorAll("[data-course-asset]").forEach(function (image) {
         image.src = siteRoot + image.dataset.courseAsset;
     });
 
+
+    /* --------------------------------------------------------------------------
+       Move horizontal course content navigation below navbar
+       -------------------------------------------------------------------------- */
+
     const contentNavigation =
         document.querySelector(".course-content-navigation");
 
-    const documentContent =
-        document.querySelector("#quarto-document-content");
+    if (contentNavigation) {
 
-    const toc =
-        document.querySelector("#TOC");
-
-    const marginSidebar =
-        document.querySelector("#quarto-margin-sidebar");
-
-    if (contentNavigation && documentContent) {
-
-        const layout = document.createElement("div");
-
-        layout.className = "course-content-layout";
-
-        documentContent.parentNode.insertBefore(
-            layout,
-            documentContent
-        );
-
-        layout.appendChild(contentNavigation);
-        layout.appendChild(documentContent);
-
-        if (toc) {
-
-            const tocColumn = document.createElement("aside");
-
-            tocColumn.className = "course-content-toc";
-
-            tocColumn.appendChild(toc);
-
-            layout.appendChild(tocColumn);
-        }
-
-        if (marginSidebar) {
-            marginSidebar.remove();
+        if (navbar) {
+            navbar.parentNode.insertBefore(
+                contentNavigation,
+                navbar.nextSibling
+            );
+        } else {
+            document.body.insertBefore(
+                contentNavigation,
+                document.body.firstChild
+            );
         }
     }
 
+
+    /* --------------------------------------------------------------------------
+       Course content dropdowns
+       -------------------------------------------------------------------------- */
+
+    document.querySelectorAll(
+        ".course-content-navigation-dropdown"
+    ).forEach(function (dropdown) {
+
+        const toggle = dropdown.querySelector(
+            ".course-content-navigation-toggle"
+        );
+
+        if (!toggle) {
+            return;
+        }
+
+        // Open on hover (desktop)
+        dropdown.addEventListener("mouseenter", function () {
+            dropdown.classList.add("is-open");
+            toggle.setAttribute("aria-expanded", "true");
+        });
+
+        // Close when the pointer leaves
+        dropdown.addEventListener("mouseleave", function () {
+            dropdown.classList.remove("is-open");
+            toggle.setAttribute("aria-expanded", "false");
+        });
+
+        // Preserve click-to-toggle behavior (touchscreens and keyboard)
+        toggle.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            const isOpen = dropdown.classList.contains("is-open");
+
+            document.querySelectorAll(
+                ".course-content-navigation-dropdown.is-open"
+            ).forEach(function (openDropdown) {
+
+                openDropdown.classList.remove("is-open");
+
+                const openToggle = openDropdown.querySelector(
+                    ".course-content-navigation-toggle"
+                );
+
+                if (openToggle) {
+                    openToggle.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            if (!isOpen) {
+                dropdown.classList.add("is-open");
+                toggle.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
+
+
+    document.addEventListener("click", function () {
+
+        document.querySelectorAll(
+            ".course-content-navigation-dropdown.is-open"
+        ).forEach(function (dropdown) {
+
+            dropdown.classList.remove("is-open");
+
+            const toggle = dropdown.querySelector(
+                ".course-content-navigation-toggle"
+            );
+
+            if (toggle) {
+                toggle.setAttribute("aria-expanded", "false");
+            }
+        });
+    });
+
+    /* --------------------------------------------------------------------------
+       TOC link navigation and active state
+       -------------------------------------------------------------------------- */
+
+    function setActiveTocLink(selectedLink) {
+        document.querySelectorAll("#TOC .nav-link").forEach(function (link) {
+            link.classList.remove("active");
+            link.removeAttribute("aria-current");
+        });
+
+        selectedLink.classList.add("active");
+        selectedLink.setAttribute("aria-current", "location");
+    }
+
+    // Start with the first TOC item active when the page opens at the top.
+    window.addEventListener("load", function () {
+        const firstTocLink = document.querySelector("#TOC .nav-link");
+
+        if (firstTocLink && window.scrollY < 10) {
+            setActiveTocLink(firstTocLink);
+        }
+    });
+
+    // Navigate to and activate the selected section when a TOC item is clicked.
+    document.addEventListener("click", function (event) {
+        const link = event.target.closest(
+            '#TOC a[data-scroll-target]'
+        );
+
+        if (!link) {
+            return;
+        }
+
+        const target = document.querySelector(link.dataset.scrollTarget);
+
+        if (!target) {
+            return;
+        }
+
+        event.preventDefault();
+
+        history.pushState(null, "", link.href);
+
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+        // Set it again after Quarto has processed the click.
+        setActiveTocLink(link);
+
+        window.setTimeout(function () {
+            setActiveTocLink(link);
+        }, 150);
+    }, true);
 });
 </script>
 """.strip()
