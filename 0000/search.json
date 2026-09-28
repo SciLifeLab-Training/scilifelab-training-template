@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "Overview Content Schedule\n\n\nInformation\n\n\nPreparation Practicalities Announcements Resources Team Syllabus FAQ\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  01 Jan 2026 – 02 Jan 2026 \n  Venue name or online \n\n\n\nUse this section to introduce the training. Briefly describe what participants will learn, what they can expect, and what they will find on this website.\n\n\n\n\n\n\n\n\n\n\nRegistration is open\n\n\nRegister by 25 September 2026.\n\n\nCost: 1500 SEK\n\n\nThe cost may differ depending on the participant’s institution. See the registration form for more information.\n\n\n Register for this training → \n\n\n\nNEXT UP\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n Full schedule → \n\n\n\n\n\n\nQUICK LINKS\n\n\n\n\n\n\n\nModules, slides and exercises\n\n View content → \n\n\n\n\n\n\n\nCourse description, learning outcomes and prerequisites\n\n View syllabus → \n\n\n\n\n\n\n\nProgramme, sessions and timings\n\n View schedule → \n\n\n\n\n\n\n\nVenue, travel, accommodation and other practical information\n\n View practicalities → \n\n\n\n\n\n\n\n\nANNOUNCEMENTS\n\n\n\n3 January\n\n\n\nProvide a short update or important information for participants.\n\n\n\n\n2 January\n\n\n\nProvide a short update or important information for participants.\n\n\n\nView all announcements →\n\n\n\n\n\n\nTEAM\n\n\n\n\n\nTraining Lead Name\n\n\nTraining lead\n\n\nInstitution or organisation\n\n\n\n\n\n\n\nTraining Lead Name\n\n\nTraining lead\n\n\nInstitution or organisation\n\n\n\n\nView full team →\n\n\n\n\n\n\n\nBy Organisation or Training Programme name . Licensed under CC BY 4.0 .\n\n\nThis website was built using the SciLifeLab Training Webpage Template and is hosted on GitHub Pages."
+    "text": "Overview Content Schedule\n\n\nInformation\n\n\nPreparation Practicalities Announcements Resources Team Syllabus FAQ\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  01 Jan 2026 – 02 Jan 2026 \n  Venue name or online \n\n\n\nUse this section to introduce the training. Briefly describe what participants will learn, what they can expect, and what they will find on this website.\n\n\n\n\n\n\n\n\n\n\nRegistration is open\n\n\nRegister by 31 December 2026.\n\n\nCost: amount SEK\n\n\nProvide information on whether the training cost differs depending on the participant’s institution.\n\n\n Register for this training → \n\n\n\nNEXT UP\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n Full schedule → \n\n\n\n\n\n\nQUICK LINKS\n\n\n\n\n\n\n\nModules, slides and exercises\n\n View content → \n\n\n\n\n\n\n\nCourse description, learning outcomes and prerequisites\n\n View syllabus → \n\n\n\n\n\n\n\nProgramme, sessions and timings\n\n View schedule → \n\n\n\n\n\n\n\nVenue, travel, accommodation and other practical information\n\n View practicalities → \n\n\n\n\n\n\n\n\nANNOUNCEMENTS\n\n\n\n3 January\n\n\n\nProvide a short update or important information for participants.\n\n\n\n\n2 January\n\n\n\nProvide a short update or important information for participants.\n\n\n\nView all announcements →\n\n\n\n\n\n\nTEAM\n\n\n\n\n\nTraining Lead Name\n\n\nTraining lead\n\n\nInstitution or organisation\n\n\n\n\n\n\n\nTraining Lead Name\n\n\nTraining lead\n\n\nInstitution or organisation\n\n\n\n\nView full team →\n\n\n\n\n\n\n\nBy Organisation or Training Programme name . Licensed under CC BY 4.0 .\n\n\nThis website was built using the SciLifeLab Training Webpage Template and is hosted on GitHub Pages."
   },
   {
     "objectID": "index.html#welcome-to-the-training",
@@ -25,154 +25,231 @@
     "href": "content/module-3/introduction.html",
     "title": "Introduction",
     "section": "",
-    "text": "Training title\n\n\n\n\n\nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ"
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nImages, videos, and links can make course content more engaging and help participants explore a topic in more depth. This module shows how to include these elements in your course pages.\nThe examples demonstrate how to add media and links using Quarto and Markdown. You can copy the snippets and replace the example URLs, image paths, or descriptions with your own."
+  },
+  {
+    "objectID": "content/module-3/introduction.html#learning-objectives",
+    "href": "content/module-3/introduction.html#learning-objectives",
+    "title": "Introduction",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you will know how to:\n\nAdd links to external websites and other course pages.\nInsert an image and provide alternative text.\nEmbed a video in a content page.\nUse media to support the learning material.\n\n\n\n\n\n\n\nRemember accessibility\n\n\n\nProvide meaningful alternative text for images, and use descriptive link text so that readers understand where a link leads. For example, use “Read the course guidelines” rather than “Click here”."
+  },
+  {
+    "objectID": "content/module-3/introduction.html#in-this-module",
+    "href": "content/module-3/introduction.html#in-this-module",
+    "title": "Introduction",
+    "section": "In this module",
+    "text": "In this module\n\nTopic 1 – Links and images: Examples of linking to resources and adding images to a page.\nTopic 2 – Embedded videos and media: How to include video and other media in your course content."
   },
   {
     "objectID": "content/module-3/topic-1.html",
     "href": "content/module-3/topic-1.html",
     "title": "Topic 1",
     "section": "",
-    "text": "Training title\n\n\n\n\n\nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ"
+    "text": "Training title\n            \n            \n                \nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n            \n        \n        \n            \n        \n    \n\n\n\n    \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    Introduction\n\n\n    Structuring a page\n\n\n    Ways to organise content\n\n\n    Putting it together\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2"
   },
   {
     "objectID": "content/module-3/topic-2.html",
     "href": "content/module-3/topic-2.html",
     "title": "Topic 2",
     "section": "",
-    "text": "Training title\n\n\n\n\n\nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ"
+    "text": "Training title\n            \n            \n                \nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n            \n        \n        \n            \n        \n    \n\n\n\n    \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    Introduction\n\n\n    Structuring a page\n\n\n    Ways to organise content\n\n\n    Putting it together\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2"
   },
   {
     "objectID": "content/index.html",
     "href": "content/index.html",
     "title": "Course Content",
     "section": "",
-    "text": "Training title\n\n\n\n\n\nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nModule 1\n\n\nModule 1 Title\n\n\n\nIntroduction\n\n\nTopic 1\n\n\nTopic 2\n\n\nTopic 3\n\n\n\n\n\nModule 2\n\n\nModule 2 Title\n\n\n\nIntroduction\n\n\nTopic 1\n\n\nTopic 2\n\n\n\n\n\nModule 3\n\n\nModule 3 Title\n\n\n\nIntroduction\n\n\nTopic 1\n\n\nTopic 2"
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nWelcome to the course content area of the SciLifeLab Training Webpage Template.\nThis section contains example pages that demonstrate how you can structure and format the learning materials for your own course. Use them as a starting point when creating your content."
+  },
+  {
+    "objectID": "content/index.html#explore-the-examples",
+    "href": "content/index.html#explore-the-examples",
+    "title": "Course Content",
+    "section": "Explore the examples",
+    "text": "Explore the examples\nThe modules in the navigation demonstrate different content elements and ways of presenting information.\n\nModule 1 – Structuring a page: Learn how to use headings, paragraphs, lists, and other basic text formatting.\nModule 2 – Highlighting information: Explore callout boxes that can be used for tips, notes, warnings, and important information.\nModule 3 – Adding media and interactive elements: See examples of links, images, embedded videos, and other content elements.\n\nSome pages also include example exercises, tables, code blocks, and reflection questions."
+  },
+  {
+    "objectID": "content/index.html#how-to-use-these-examples",
+    "href": "content/index.html#how-to-use-these-examples",
+    "title": "Course Content",
+    "section": "How to use these examples",
+    "text": "How to use these examples\nEach page contains rendered examples and the corresponding Markdown or Quarto syntax.\n\nBrowse the examples using the module navigation above.\nFind an element you would like to use in your course.\nCopy the corresponding code snippet from the example page.\nPaste it into your own .qmd file and replace the placeholder text with your content.\nRender your website to check how the content looks.\n\nYou do not need to use every example. Choose the elements that suit your course and remove the ones you do not need.\n\n\n\n\n\n\nTip\n\n\n\nYou can combine different elements on the same page. For example, a topic might start with learning objectives, introduce a concept using headings and paragraphs, highlight a key idea in a callout box, and finish with a reflection question."
+  },
+  {
+    "objectID": "content/index.html#creating-your-own-course-content",
+    "href": "content/index.html#creating-your-own-course-content",
+    "title": "Course Content",
+    "section": "Creating your own course content",
+    "text": "Creating your own course content\nThe examples in this section are intended to be adapted. Replace the demonstration text with your own material, and add or remove pages to match the structure of your course.\nFor instructions on organising your content files and configuring the course modules, see the template user guide.\nHappy authoring!"
   },
   {
     "objectID": "content/module-2/introduction.html",
     "href": "content/module-2/introduction.html",
     "title": "Introduction",
     "section": "",
-    "text": "Training title\n\n\n\n\n\nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ"
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nCallout boxes help draw attention to information that participants should notice. They can be used for practical tips, important messages, warnings, or additional context.\nThis module demonstrates the different callout styles available in Quarto and how to add them to your course pages. Each example includes the code you can copy and adapt."
+  },
+  {
+    "objectID": "content/module-2/introduction.html#learning-objectives",
+    "href": "content/module-2/introduction.html#learning-objectives",
+    "title": "Introduction",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you will know how to:\n\nAdd callout boxes to a content page.\nChoose a callout type that suits the message.\nAdd headings and text inside a callout.\nCreate a collapsible callout for supplementary information.\n\n\n\n\n\n\n\nAbout callouts\n\n\n\nCallouts are optional. Use them when highlighting information improves the learning experience. Avoid adding too many to a page, as this can make it harder for readers to identify what is important."
+  },
+  {
+    "objectID": "content/module-2/introduction.html#in-this-module",
+    "href": "content/module-2/introduction.html#in-this-module",
+    "title": "Introduction",
+    "section": "In this module",
+    "text": "In this module\n\nTopic 1 – Callout boxes: Examples of notes, tips, important messages, cautions, and warnings.\nTopic 2 – Collapsible content: How to place supplementary information in a section that readers can expand when needed."
   },
   {
     "objectID": "content/module-2/topic-1.html",
     "href": "content/module-2/topic-1.html",
     "title": "Topic 1",
     "section": "",
-    "text": "Training title\n\n\n\n\n\nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ"
+    "text": "Training title\n            \n            \n                \nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n            \n        \n        \n            \n        \n    \n\n\n\n    \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    Introduction\n\n\n    Structuring a page\n\n\n    Ways to organise content\n\n\n    Putting it together\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2"
   },
   {
     "objectID": "content/module-2/topic-2.html",
     "href": "content/module-2/topic-2.html",
     "title": "Topic 2",
     "section": "",
-    "text": "Training title\n\n\n\n\n\nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ"
+    "text": "Training title\n            \n            \n                \nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n            \n        \n        \n            \n        \n    \n\n\n\n    \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    Introduction\n\n\n    Structuring a page\n\n\n    Ways to organise content\n\n\n    Putting it together\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2"
+  },
+  {
+    "objectID": "content/module-1/ways-to-organize-content.html",
+    "href": "content/module-1/ways-to-organize-content.html",
+    "title": "Ways to organise content",
+    "section": "",
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nA well-organised page helps participants find information and understand how ideas relate to one another. In addition to headings and lists, Quarto supports elements such as block quotes, tables, and horizontal rules.\nThis page demonstrates a few ways to structure information. Copy the examples and adapt them to your own course."
+  },
+  {
+    "objectID": "content/module-1/ways-to-organize-content.html#block-quotes",
+    "href": "content/module-1/ways-to-organize-content.html#block-quotes",
+    "title": "Ways to organise content",
+    "section": "Block quotes",
+    "text": "Block quotes\nUse a block quote to set apart a quotation or a statement from another source.\n\nClear structure helps readers navigate information and focus on the main message.\n\nMarkdown syntax:\n&gt; Clear structure helps readers navigate information and focus on the main message."
+  },
+  {
+    "objectID": "content/module-1/ways-to-organize-content.html#tables",
+    "href": "content/module-1/ways-to-organize-content.html#tables",
+    "title": "Ways to organise content",
+    "section": "Tables",
+    "text": "Tables\nTables are useful for presenting information that is easier to compare in rows and columns. Keep them concise and use clear column headings.\n\n\n\nElement\nPurpose\nExample\n\n\n\n\nHeading\nIntroduces a section\nLearning objectives\n\n\nParagraph\nExplains an idea\nA short description\n\n\nList\nGroups related items\nSteps or key points\n\n\n\nMarkdown syntax:\n| Element | Purpose | Example |\n|---|---|---|\n| Heading | Introduces a section | Learning objectives |\n| Paragraph | Explains an idea | A short description |\n| List | Groups related items | Steps or key points |"
+  },
+  {
+    "objectID": "content/module-1/ways-to-organize-content.html#horizontal-rules",
+    "href": "content/module-1/ways-to-organize-content.html#horizontal-rules",
+    "title": "Ways to organise content",
+    "section": "Horizontal rules",
+    "text": "Horizontal rules\nA horizontal rule can separate distinct parts of a page. Use it sparingly, when a visual break helps clarify the structure.\n\nMarkdown syntax:\n---"
+  },
+  {
+    "objectID": "content/module-1/ways-to-organize-content.html#combining-organisational-elements",
+    "href": "content/module-1/ways-to-organize-content.html#combining-organisational-elements",
+    "title": "Ways to organise content",
+    "section": "Combining organisational elements",
+    "text": "Combining organisational elements\nYou can combine headings, paragraphs, lists, tables, and other elements on the same page. Choose the format that makes the information easiest to follow.\nFor example, a section describing a course activity could include a short introduction followed by a table of practical details.\nExample Markdown:\n## Course activity\n\nIn this activity, participants will work in small groups to discuss the topic.\n\n| Detail | Description |\n|---|---|\n| Format | Group discussion |\n| Duration | 20 minutes |\n| Materials | Discussion questions |\n\n### Instructions\n\n1. Form a small group.\n2. Read the discussion questions.\n3. Share your ideas with the group.\n4. Summarise the main points."
   },
   {
     "objectID": "content/module-1/introduction.html",
     "href": "content/module-1/introduction.html",
     "title": "Introduction",
     "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nThis is placeholder content for testing the course content layout."
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nThis module introduces the basic building blocks of a course content page. You can combine headings, paragraphs, lists, and text formatting to organise information and make it easier for participants to follow.\nThe examples in this module show how to structure a topic page and present information clearly. Browse the topics to see how each element looks when rendered, and copy the examples you would like to use in your own course."
   },
   {
     "objectID": "content/module-1/introduction.html#learning-objectives",
     "href": "content/module-1/introduction.html#learning-objectives",
     "title": "Introduction",
     "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this section, you will understand the main concepts covered in this module.\n\n\n\n\n\n\nKey idea\n\n\n\nThis is placeholder callout content for testing the Quarto layout."
+    "text": "Learning objectives\nBy the end of this module, you will know how to:\n\nOrganise a page using headings and paragraphs.\nFormat text using bold and italic styles.\nCreate bulleted and numbered lists.\nStructure a topic page so that it is easy to read and navigate.\n\n\n\n\n\n\n\nGetting started\n\n\n\nYou do not need to write Markdown from scratch. Find an example that suits your needs, copy the code snippet, and replace the demonstration text with your own."
   },
   {
-    "objectID": "content/module-1/introduction.html#overview",
-    "href": "content/module-1/introduction.html#overview",
+    "objectID": "content/module-1/introduction.html#in-this-module",
+    "href": "content/module-1/introduction.html#in-this-module",
     "title": "Introduction",
-    "section": "Overview",
-    "text": "Overview\nMore placeholder Markdown content goes here."
+    "section": "In this module",
+    "text": "In this module\n\nTopic 1 – Structuring a page: Headings, paragraphs, text formatting, and lists.\nTopic 2 – More ways to organise content: Examples of additional page elements and formatting.\nTopic 3 – Putting it together: A practical example of combining content elements on a page."
   },
   {
-    "objectID": "content/module-1/topic-3.html",
-    "href": "content/module-1/topic-3.html",
-    "title": "Topic 3",
+    "objectID": "content/module-1/structuring-a-page.html",
+    "href": "content/module-1/structuring-a-page.html",
+    "title": "Structuring a page",
     "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nThis is placeholder content for Topic 1."
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nA well-structured page helps participants follow the learning material and find information easily. You can use headings, paragraphs, lists, and text formatting to organise your content.\nThis page demonstrates some of the most common elements you may want to use when creating course materials. Each example includes a code snippet that you can copy and adapt."
   },
   {
-    "objectID": "content/module-1/topic-3.html#introduction",
-    "href": "content/module-1/topic-3.html#introduction",
-    "title": "Topic 3",
-    "section": "Introduction",
-    "text": "Introduction\nPlaceholder instructional content."
+    "objectID": "content/module-1/structuring-a-page.html#add-headings",
+    "href": "content/module-1/structuring-a-page.html#add-headings",
+    "title": "Structuring a page",
+    "section": "Add headings",
+    "text": "Add headings\nHeadings divide a page into sections and make the content easier to navigate. They also appear in the table of contents on the right-hand side of the page.\nUse two hash symbols (##) for a main section heading and three (###) for a subsection.\nFor example, this code:\n## Main section\n\nText introducing the section.\n\n### Subsection\n\nMore detailed information.\nproduces a main section heading followed by a smaller subsection heading.\nUse headings in a logical order. Avoid choosing a heading level only because you prefer its appearance."
   },
   {
-    "objectID": "content/module-1/topic-3.html#main-concept",
-    "href": "content/module-1/topic-3.html#main-concept",
-    "title": "Topic 3",
-    "section": "Main concept",
-    "text": "Main concept\nMore placeholder content.\n\n\n\n\n\n\nThink about it\n\n\n\nThis is an example of a standard Quarto callout."
+    "objectID": "content/module-1/structuring-a-page.html#add-paragraphs",
+    "href": "content/module-1/structuring-a-page.html#add-paragraphs",
+    "title": "Structuring a page",
+    "section": "Add paragraphs",
+    "text": "Add paragraphs\nWrite ordinary text as paragraphs. Leave a blank line between paragraphs to make them separate.\nFor example:\nThis is the first paragraph. Use it to introduce a topic\nor explain an idea.\n\nThis is the second paragraph. It appears separately from\nthe first paragraph.\nYou can write paragraphs directly in your .qmd file without adding any special formatting."
   },
   {
-    "objectID": "content/module-1/topic-3.html#exercise",
-    "href": "content/module-1/topic-3.html#exercise",
-    "title": "Topic 3",
-    "section": "Exercise",
-    "text": "Exercise\nDescribe how you would apply this concept in your own work."
+    "objectID": "content/module-1/structuring-a-page.html#format-text",
+    "href": "content/module-1/structuring-a-page.html#format-text",
+    "title": "Structuring a page",
+    "section": "Format text",
+    "text": "Format text\nYou can use bold or italic text to emphasise important words or phrases.\nBold text is useful for key terms or important information.\nItalic text can be used for emphasis or to introduce a term.\nCopy these examples:\nThis is **bold text**.\n\nThis is *italic text*.\n\nYou can also combine them: ***bold and italic text***.\nUse text formatting sparingly so that it remains meaningful to readers."
   },
   {
-    "objectID": "content/module-1/topic-1.html",
-    "href": "content/module-1/topic-1.html",
-    "title": "Topic 1",
+    "objectID": "content/module-1/structuring-a-page.html#create-a-bulleted-list",
+    "href": "content/module-1/structuring-a-page.html#create-a-bulleted-list",
+    "title": "Structuring a page",
+    "section": "Create a bulleted list",
+    "text": "Create a bulleted list\nUse a hyphen (-) at the beginning of each line to create a bulleted list.\nFor example:\n- First item\n- Second item\n- Third item\nThis is useful when presenting related points that do not need to be followed in a particular order.\n\nCreate a nested list\nYou can indent items to create a list within a list:\n- Main item\n  - Supporting point\n  - Another supporting point\n- Another main item"
+  },
+  {
+    "objectID": "content/module-1/structuring-a-page.html#numbered-steps",
+    "href": "content/module-1/structuring-a-page.html#numbered-steps",
+    "title": "Structuring a page",
+    "section": "Numbered steps",
+    "text": "Numbered steps\nUse a numbered list when the order of the items matters, such as for instructions or a process.\n\nOpen the course page.\nFind the section you want to update.\nReplace the example text with your own content.\nRender the website and review the result.\n\nMarkdown syntax\n1. Open the course page.\n2. Find the section you want to update.\n3. Replace the example text with your own content.\n4. Render the website and review the result."
+  },
+  {
+    "objectID": "content/module-1/structuring-a-page.html#add-learning-objectives",
+    "href": "content/module-1/structuring-a-page.html#add-learning-objectives",
+    "title": "Structuring a page",
+    "section": "Add learning objectives",
+    "text": "Add learning objectives\nLearning objectives can help participants understand what they should be able to do after completing a topic.\nYou can introduce them with a short paragraph followed by a bulleted list.\nFor example:\nAfter completing this module/topic/etc, you will be able to:\n\nDescribe the main concept.\nExplain why it is relevant.\nApply the concept in a practical situation.\n\nCopy and replace the example objectives with your own:\n**After completing this module/topic/etc, you will be able to:**\n\n- [Add learning objective 1]\n- [Add learning objective 2]\n- [Add learning objective 3]"
+  },
+  {
+    "objectID": "content/module-1/structuring-a-page.html#combine-different-elements",
+    "href": "content/module-1/structuring-a-page.html#combine-different-elements",
+    "title": "Structuring a page",
+    "section": "Combine different elements",
+    "text": "Combine different elements\nYou can combine headings, paragraphs, and lists to build a complete topic page.\nHere is a simple structure you can use as a starting point:\n## Introduction\n\nIntroduce the topic and explain why it is relevant.\n\n## Learning objectives\n\nBy the end of this topic, you should be able to:\n\n- [Add learning objective 1]\n- [Add learning objective 2]\n- [Add learning objective 3]\n\n## Main content\n\nExplain the main ideas.\n\n### First concept\n\nAdd information about the first concept.\n\n### Second concept\n\nAdd information about the second concept.\n\n## Summary\n\nSummarise the key points from the topic.\nYou do not need to use every section. Adapt the structure to suit your learning material.\n\n\n\n\n\n\nTip\n\n\n\nStart with a clear page structure before adding detailed content. A few meaningful headings and short paragraphs can make a long topic much easier to read."
+  },
+  {
+    "objectID": "content/module-1/putting-it-together.html",
+    "href": "content/module-1/putting-it-together.html",
+    "title": "Putting it together",
     "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nThis is placeholder content for Topic 1."
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nA course page often combines several content elements to guide participants through a topic. This example brings together headings, paragraphs, lists, tables, and callouts in one structured page.\nUse it as a starting point for your own course material. Replace the demonstration text with information relevant to your course, and remove any elements you do not need."
   },
   {
-    "objectID": "content/module-1/topic-1.html#introduction",
-    "href": "content/module-1/topic-1.html#introduction",
-    "title": "Topic 1",
-    "section": "Introduction",
-    "text": "Introduction\nPlaceholder instructional content."
+    "objectID": "content/module-1/putting-it-together.html#example-introducing-a-course-topic",
+    "href": "content/module-1/putting-it-together.html#example-introducing-a-course-topic",
+    "title": "Putting it together",
+    "section": "Example: Introducing a course topic",
+    "text": "Example: Introducing a course topic\n\nOverview\nIn this section, introduce the topic and explain why it is relevant to participants.\nClear introductory text helps participants understand what they will learn and how the topic connects to the course.\n\n\nLearning objectives\nBy the end of this section, participants will be able to:\n\nDescribe the main concept introduced in the section.\nIdentify key information related to the topic.\nApply the concept in a practical context.\n\n\n\nKey information\nUse a table when participants need to compare or quickly find specific information.\n\n\n\nTopic element\nExample content\n\n\n\n\nMain concept\nIntroduce the central idea\n\n\nKey information\nExplain the most important points\n\n\nPractical application\nShow how the concept can be used\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nUse callouts to highlight information that participants should notice. Keep the message focused, and avoid using callouts for information that belongs in the main text.\n\n\n\n\nActivity\nGive participants an opportunity to apply what they have learned.\nInstructions\n\nRead the example or scenario.\nDiscuss the questions with a partner or group.\nIdentify the main points from the discussion.\nShare your conclusions.\n\n\n\nReflection\nAsk participants to consider how the topic relates to their own work or experience.\n\nWhat is one important idea you learned?\nHow could you apply it in your own context?\nWhat would you like to explore further?"
   },
   {
-    "objectID": "content/module-1/topic-1.html#main-concept",
-    "href": "content/module-1/topic-1.html#main-concept",
-    "title": "Topic 1",
-    "section": "Main concept",
-    "text": "Main concept\nMore placeholder content.\n\n\n\n\n\n\nThink about it\n\n\n\nThis is an example of a standard Quarto callout."
-  },
-  {
-    "objectID": "content/module-1/topic-1.html#exercise",
-    "href": "content/module-1/topic-1.html#exercise",
-    "title": "Topic 1",
-    "section": "Exercise",
-    "text": "Exercise\nDescribe how you would apply this concept in your own work."
-  },
-  {
-    "objectID": "content/module-1/topic-2.html",
-    "href": "content/module-1/topic-2.html",
-    "title": "Topic 2",
-    "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nThis is placeholder content for Topic 1."
-  },
-  {
-    "objectID": "content/module-1/topic-2.html#introduction",
-    "href": "content/module-1/topic-2.html#introduction",
-    "title": "Topic 2",
-    "section": "Introduction",
-    "text": "Introduction\nPlaceholder instructional content."
-  },
-  {
-    "objectID": "content/module-1/topic-2.html#main-concept",
-    "href": "content/module-1/topic-2.html#main-concept",
-    "title": "Topic 2",
-    "section": "Main concept",
-    "text": "Main concept\nMore placeholder content.\n\n\n\n\n\n\nThink about it\n\n\n\nThis is an example of a standard Quarto callout."
-  },
-  {
-    "objectID": "content/module-1/topic-2.html#exercise",
-    "href": "content/module-1/topic-2.html#exercise",
-    "title": "Topic 2",
-    "section": "Exercise",
-    "text": "Exercise\nDescribe how you would apply this concept in your own work."
+    "objectID": "content/module-1/putting-it-together.html#the-source-markdown",
+    "href": "content/module-1/putting-it-together.html#the-source-markdown",
+    "title": "Putting it together",
+    "section": "The source Markdown",
+    "text": "The source Markdown\nThe example above can be created using the following Quarto Markdown structure. Copy it into a .qmd file and adapt the content.\n## Example: Introducing a course topic\n\n### Overview\n\nIn this section, introduce the topic and explain why it is relevant to participants.\n\nClear introductory text helps participants understand what they will learn and how the topic connects to the course.\n\n### Learning objectives\n\nBy the end of this section, participants will be able to:\n\n- Describe the main concept introduced in the section.\n- Identify key information related to the topic.\n- Apply the concept in a practical context.\n\n### Key information\n\n| Topic element | Example content |\n|---|---|\n| Main concept | Introduce the central idea |\n| Key information | Explain the most important points |\n| Practical application | Show how the concept can be used |\n\n::: {.callout-tip}\n## Tip\n\nUse callouts to highlight information that participants should notice. Keep the message focused, and avoid using callouts for information that belongs in the main text.\n:::\n\n### Activity\n\nGive participants an opportunity to apply what they have learned.\n\n**Instructions**\n\n1. Read the example or scenario.\n2. Discuss the questions with a partner or group.\n3. Identify the main points from the discussion.\n4. Share your conclusions.\n\n### Reflection\n\nAsk participants to consider how the topic relates to their own work or experience.\n\n- What is one important idea you learned?\n- How could you apply it in your own context?\n- What would you like to explore further?"
   },
   {
     "objectID": "syllabus.html",

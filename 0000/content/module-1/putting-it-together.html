@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction</title>
+<title>Putting it together</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -74,8 +108,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#in-this-module" id="toc-in-this-module" class="nav-link" data-scroll-target="#in-this-module">In this module</a></li>
+  <li><a href="#example-introducing-a-course-topic" id="toc-example-introducing-a-course-topic" class="nav-link active" data-scroll-target="#example-introducing-a-course-topic">Example: Introducing a course topic</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#key-information" id="toc-key-information" class="nav-link" data-scroll-target="#key-information">Key information</a></li>
+  <li><a href="#activity" id="toc-activity" class="nav-link" data-scroll-target="#activity">Activity</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  </ul></li>
+  <li><a href="#the-source-markdown" id="toc-the-source-markdown" class="nav-link" data-scroll-target="#the-source-markdown">The source Markdown</a></li>
   </ul>
 </nav>
     </div>
@@ -496,7 +537,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<h1 class="title">Putting it together</h1>
 </div>
 
 
@@ -511,37 +552,135 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </header>
 
-<p>Images, videos, and links can make course content more engaging and help participants explore a topic in more depth. This module shows how to include these elements in your course pages.</p>
-<p>The examples demonstrate how to add media and links using Quarto and Markdown. You can copy the snippets and replace the example URLs, image paths, or descriptions with your own.</p>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>By the end of this module, you will know how to:</p>
+<p>A course page often combines several content elements to guide participants through a topic. This example brings together headings, paragraphs, lists, tables, and callouts in one structured page.</p>
+<p>Use it as a starting point for your own course material. Replace the demonstration text with information relevant to your course, and remove any elements you do not need.</p>
+<section id="example-introducing-a-course-topic" class="level2">
+<h2 class="anchored" data-anchor-id="example-introducing-a-course-topic">Example: Introducing a course topic</h2>
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview">Overview</h3>
+<p>In this section, introduce the topic and explain why it is relevant to participants.</p>
+<p>Clear introductory text helps participants understand what they will learn and how the topic connects to the course.</p>
+</section>
+<section id="learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h3>
+<p>By the end of this section, participants will be able to:</p>
 <ul>
-<li>Add links to external websites and other course pages.</li>
-<li>Insert an image and provide alternative text.</li>
-<li>Embed a video in a content page.</li>
-<li>Use media to support the learning material.</li>
+<li>Describe the main concept introduced in the section.</li>
+<li>Identify key information related to the topic.</li>
+<li>Apply the concept in a practical context.</li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled">
+</section>
+<section id="key-information" class="level3">
+<h3 class="anchored" data-anchor-id="key-information">Key information</h3>
+<p>Use a table when participants need to compare or quickly find specific information.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Topic element</th>
+<th>Example content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Main concept</td>
+<td>Introduce the central idea</td>
+</tr>
+<tr class="even">
+<td>Key information</td>
+<td>Explain the most important points</td>
+</tr>
+<tr class="odd">
+<td>Practical application</td>
+<td>Show how the concept can be used</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Remember accessibility
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Provide meaningful alternative text for images, and use descriptive link text so that readers understand where a link leads. For example, use “Read the course guidelines” rather than “Click here”.</p>
+<p>Use callouts to highlight information that participants should notice. Keep the message focused, and avoid using callouts for information that belongs in the main text.</p>
 </div>
 </div>
 </section>
-<section id="in-this-module" class="level2">
-<h2 class="anchored" data-anchor-id="in-this-module">In this module</h2>
+<section id="activity" class="level3">
+<h3 class="anchored" data-anchor-id="activity">Activity</h3>
+<p>Give participants an opportunity to apply what they have learned.</p>
+<p><strong>Instructions</strong></p>
+<ol type="1">
+<li>Read the example or scenario.</li>
+<li>Discuss the questions with a partner or group.</li>
+<li>Identify the main points from the discussion.</li>
+<li>Share your conclusions.</li>
+</ol>
+</section>
+<section id="reflection" class="level3">
+<h3 class="anchored" data-anchor-id="reflection">Reflection</h3>
+<p>Ask participants to consider how the topic relates to their own work or experience.</p>
 <ul>
-<li><strong>Topic 1 – Links and images:</strong> Examples of linking to resources and adding images to a page.</li>
-<li><strong>Topic 2 – Embedded videos and media:</strong> How to include video and other media in your course content.</li>
+<li>What is one important idea you learned?</li>
+<li>How could you apply it in your own context?</li>
+<li>What would you like to explore further?</li>
 </ul>
+</section>
+</section>
+<section id="the-source-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="the-source-markdown">The source Markdown</h2>
+<p>The example above can be created using the following Quarto Markdown structure. Copy it into a <code>.qmd</code> file and adapt the content.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example: Introducing a course topic</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Overview</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>In this section, introduce the topic and explain why it is relevant to participants.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Clear introductory text helps participants understand what they will learn and how the topic connects to the course.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">### Learning objectives</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>By the end of this section, participants will be able to:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Describe the main concept introduced in the section.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Identify key information related to the topic.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apply the concept in a practical context.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Key information</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>| Topic element | Example content |</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>|---|---|</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>| Main concept | Introduce the central idea |</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>| Key information | Explain the most important points |</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>| Practical application | Show how the concept can be used |</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tip</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Use callouts to highlight information that participants should notice. Keep the message focused, and avoid using callouts for information that belongs in the main text.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### Activity</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Give participants an opportunity to apply what they have learned.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>**Instructions**</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Read the example or scenario.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Discuss the questions with a partner or group.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Identify the main points from the discussion.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Share your conclusions.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reflection</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Ask participants to consider how the topic relates to their own work or experience.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What is one important idea you learned?</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How could you apply it in your own context?</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>What would you like to explore further?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
