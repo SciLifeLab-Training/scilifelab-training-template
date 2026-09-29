@@ -9,11 +9,9 @@ events:
     group: "Day 1"
     start: 2026-09-30T09:00:00
     end: 2026-09-30T09:45:00
-    all_day: false
     location: "SciLifeLab Solna"
     people:
       - Jane Doe
-    description: "An introduction to the content pages and how to use them."
     content: content/module-1/introduction.qmd
 
   - title: "Headings and text"
@@ -21,11 +19,9 @@ events:
     group: "Day 1"
     start: 2026-09-30T10:00:00
     end: 2026-09-30T11:00:00
-    all_day: false
     location: "Lecture Hall A"
     people:
       - John Smith
-    description: ""
     content: content/module-1/headings-and-text.qmd
 
   - title: "Coffee Break"
@@ -33,10 +29,8 @@ events:
     group: "Day 1"
     start: 2026-09-30T11:00:00
     end: 2026-09-30T11:30:00
-    all_day: false
     location: ""
     people: []
-    description: ""
     content: ""
 
   - title: "Lists and tables"
@@ -44,12 +38,10 @@ events:
     group: "Day 1"
     start: 2026-09-30T11:30:00
     end: 2026-09-30T13:00:00
-    all_day: false
     location: "Computer Lab"
     people:
       - Jane Doe
       - Alex Johnson
-    description: "Explore lists and tables in the training content."
     content: content/module-1/lists-and-tables.qmd
 
   - title: "Lunch"
@@ -57,10 +49,8 @@ events:
     group: "Day 1"
     start: 2026-09-30T13:00:00
     end: 2026-09-30T14:00:00
-    all_day: false
     location: "SciLifeLab Café"
     people: []
-    description: ""
     content: ""
 
   - title: "Other content elements"
@@ -68,11 +58,9 @@ events:
     group: "Day 1"
     start: 2026-09-30T14:00:00
     end: 2026-09-30T15:00:00
-    all_day: false
     location: "Seminar Room 2"
     people:
       - John Smith
-    description: ""
     content: content/module-1/other-content-elements.qmd
 
 
@@ -85,11 +73,9 @@ events:
     group: "Day 2"
     start: 2026-10-01T09:00:00
     end: 2026-10-01T10:30:00
-    all_day: false
     location: "Lecture Hall A"
     people:
       - Maria Andersson
-    description: ""
     content: content/module-2/introduction.qmd
 
   - title: "Callout boxes"
@@ -97,12 +83,10 @@ events:
     group: "Day 2"
     start: 2026-10-01T10:45:00
     end: 2026-10-01T12:30:00
-    all_day: false
     location: "Computer Lab"
     people:
       - Maria Andersson
       - Alex Johnson
-    description: ""
     content: content/module-2/callout-boxes.qmd
 
   - title: "Collapsible callout boxes"
@@ -110,11 +94,9 @@ events:
     group: "Day 2"
     start: 2026-10-01T14:00:00
     end: 2026-10-01T15:00:00
-    all_day: false
     location: "Auditorium"
     people:
       - Sarah Wilson
-    description: ""
     content: content/module-2/collapsible-boxes.qmd
 
 
@@ -127,10 +109,8 @@ events:
     group: "Day 3"
     start: 2026-10-02T09:00:00
     end: 2026-10-02T12:00:00
-    all_day: false
     location: ""
     people: []
-    description: "Time for independent work on the course project."
     content: content/module-3/introduction.qmd
 
   - title: "Links"
@@ -138,11 +118,9 @@ events:
     group: "Day 3"
     start: 2026-10-02T13:00:00
     end: 2026-10-02T15:30:00
-    all_day: false
     location: "Auditorium"
     people:
       - Jane Doe
-    description: ""
     content: content/module-3/links.qmd
 
 
@@ -155,11 +133,9 @@ events:
     group: "Follow-up"
     start: 2026-11-01T10:00:00
     end: 2026-11-01T12:00:00
-    all_day: false
     location: "Online"
     people:
       - John Smith
-    description: "Follow-up workshop several weeks after the main course."
     content: content/module-3/images-presentations-videos.qmd
 
   - title: "Course Assessment"
@@ -167,10 +143,8 @@ events:
     group: "Follow-up"
     start: 2026-11-01T13:00:00
     end: 2026-11-01T15:00:00
-    all_day: false
     location: "Online"
     people: []
-    description: "Final assessment."
     content: ""
 
   - title: "Final Course Meeting"
@@ -178,10 +152,8 @@ events:
     group: "Final Course Meeting"
     start: 2026-12-03T14:00:00
     end: 2026-12-03T15:00:00
-    all_day: false
     location: "SciLifeLab Solna"
     people:
       - Jane Doe
       - Maria Andersson
-    description: ""
     content: ""
