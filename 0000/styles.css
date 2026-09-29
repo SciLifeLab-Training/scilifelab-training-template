@@ -1696,7 +1696,7 @@ html.course-content-page #quarto-content > main.content {
     max-width: none !important;
 
     margin: 0 !important;
-    padding: 2.5rem var(--course-content-padding) 0 !important;
+    padding: 3.5rem var(--course-content-padding) 0 !important;
 }
 
 
@@ -2989,7 +2989,7 @@ html.course-content-page #quarto-content {
     width: 28px;
     min-width: 28px;
 
-    color: #0b7180;
+    color: #A7C947;
     font-size: 1.45rem;
     font-weight: normal;
     line-height: 1;
@@ -4285,7 +4285,7 @@ html.course-content-page #quarto-content {
 
     margin-top: 0.15rem;
 
-    color: #045c64;
+    color: #A7C947;
     font-size: 1.35rem;
     line-height: 1;
 }
