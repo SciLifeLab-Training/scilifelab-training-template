@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Topic 1</title>
+<title>Headings and text</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -69,11 +103,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#headings" id="toc-headings" class="nav-link active" data-scroll-target="#headings">Headings</a></li>
+  <li><a href="#paragraphs" id="toc-paragraphs" class="nav-link" data-scroll-target="#paragraphs">Paragraphs</a></li>
+  <li><a href="#text-formatting" id="toc-text-formatting" class="nav-link" data-scroll-target="#text-formatting">Text formatting</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <div class="course-navbar">
     <div class="course-navbar-layout">
@@ -423,6 +465,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, true);
 });
 </script>
+
 <nav class="course-content-navigation" aria-label="Course content">
     <div class="course-content-navigation-inner">
         <div class="course-content-navigation-scroll">
@@ -436,16 +479,16 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     <div class="course-content-navigation-menu">
 <a class="course-content-navigation-link" href="" data-content-page="module-1/introduction.html">
-    Introduction
+    How to structure a page
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/structuring-a-page.html">
-    Structuring a page
+<a class="course-content-navigation-link" href="" data-content-page="module-1/headings-and-text.html">
+    Headings and text
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/ways-to-organize-content.html">
-    Ways to organise content
+<a class="course-content-navigation-link" href="" data-content-page="module-1/lists-and-tables.html">
+    Lists and tables
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/putting-it-together.html">
-    Putting it together
+<a class="course-content-navigation-link" href="" data-content-page="module-1/other-content-elements.html">
+    Other content elements
 </a>
 </div>
 </div>
@@ -456,13 +499,13 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     <div class="course-content-navigation-menu">
 <a class="course-content-navigation-link" href="" data-content-page="module-2/introduction.html">
-    Introduction
+    How to highlight information
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-2/topic-1.html">
-    Topic 1
+<a class="course-content-navigation-link" href="" data-content-page="module-2/callout-boxes.html">
+    Callout boxes
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-2/topic-2.html">
-    Topic 2
+<a class="course-content-navigation-link" href="" data-content-page="module-2/collapsible-boxes.html">
+    Collapsible callout boxes
 </a>
 </div>
 </div>
@@ -473,13 +516,13 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     <div class="course-content-navigation-menu">
 <a class="course-content-navigation-link" href="" data-content-page="module-3/introduction.html">
-    Introduction
+    How to add media and interactive elements
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-3/topic-1.html">
-    Topic 1
+<a class="course-content-navigation-link" href="" data-content-page="module-3/links.html">
+    Links
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-3/topic-2.html">
-    Topic 2
+<a class="course-content-navigation-link" href="" data-content-page="module-3/images-presentations-videos.html">
+    Images, presentations and videos
 </a>
 </div>
 </div>
@@ -489,7 +532,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Topic 1</h1>
+<h1 class="title">Headings and text</h1>
 </div>
 
 
@@ -504,15 +547,80 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </header>
 
+<p>Use headings, paragraphs, and text formatting to organise your training content and make it easier for participants to read.</p>
+<p>Each example below shows the Markdown syntax and how it appears when rendered.</p>
+<p><br></p>
+<section id="headings" class="level2">
+<h2 class="anchored" data-anchor-id="headings">Headings</h2>
+<p>Use headings to divide your page into sections and subsections. Quarto supports several heading levels:</p>
+<ul>
+<li><code>##</code> Main section — appears in the table of contents.</li>
+<li><code>###</code> Subsection — does not appear in the table of contents.</li>
+<li><code>####</code> Sub-subsection — does not appear in the table of contents.</li>
+</ul>
+<p>In this template, <code>##</code> headings are displayed with a line underneath.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Main section</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Text introducing the section.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">### Subsection</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>More detailed information.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Sub-subsection</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Additional details.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<div style="font-size: 1.8em; font-weight: 600; margin-top: 1em;">
+<p>Main section</p>
+</div>
+<p>Text introducing the section.</p>
+<div style="font-size: 1.5em; font-weight: 600; margin-top: 1em;">
+<p>Subsection</p>
+</div>
+<p>More detailed information.</p>
+<div style="font-size: 1.25em; font-weight: 600; margin-top: 1em;">
+<p>Sub-subsection</p>
+</div>
+<p>Additional details.</p>
+<p>Use heading levels in order. For example, use <code>###</code> for a subsection within a <code>##</code> section, and <code>####</code> for a subsection within a <code>###</code> section.</p>
+</section>
+<section id="paragraphs" class="level2">
+<h2 class="anchored" data-anchor-id="paragraphs">Paragraphs</h2>
+<p>Write ordinary text as paragraphs. Leave a blank line between paragraphs.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>This is the first paragraph. It introduces a topic or explains an idea.</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>This is the second paragraph. It appears separately from the first.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<p>This is the first paragraph. It introduces a topic or explains an idea.</p>
+<p>This is the second paragraph. It appears separately from the first.</p>
+</section>
+<section id="text-formatting" class="level2">
+<h2 class="anchored" data-anchor-id="text-formatting">Text formatting</h2>
+<p>Use bold and italic text to emphasise words or phrases.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>This is **bold text**.</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>This is *italic text*.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>This is ***bold and italic text***.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<p>This is <strong>bold text</strong>.<br>
+This is <em>italic text</em>.<br>
+This is <strong><em>bold and italic text</em></strong>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
+
 <div class="course-content-next-navigation" hidden="" data-content-next-from="index.html">
     <a class="course-content-next-link" href="" data-content-navigation-page="module-1/introduction.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Introduction →
+        How to structure a page →
     </span>
 </a>
 </div>
@@ -522,122 +630,122 @@ document.addEventListener("DOMContentLoaded", function () {
     <span class="course-content-next-title">
         ← Introduction
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/structuring-a-page.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/headings-and-text.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Structuring a page →
+        Headings and text →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/structuring-a-page.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/headings-and-text.html">
     <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/introduction.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Introduction
+        ← How to structure a page
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/ways-to-organize-content.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/lists-and-tables.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Ways to organise content →
+        Lists and tables →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/ways-to-organize-content.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/structuring-a-page.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/lists-and-tables.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/headings-and-text.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Structuring a page
+        ← Headings and text
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/putting-it-together.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/other-content-elements.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Putting it together →
+        Other content elements →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/putting-it-together.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/ways-to-organize-content.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/other-content-elements.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/lists-and-tables.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Ways to organise content
+        ← Lists and tables
     </span>
 </a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/introduction.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Introduction →
+        How to highlight information →
     </span>
 </a>
 </div>
 <div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/introduction.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/putting-it-together.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/other-content-elements.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Putting it together
+        ← Other content elements
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/topic-1.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/callout-boxes.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 1 →
+        Callout boxes →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/callout-boxes.html">
     <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/introduction.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Introduction
+        ← How to highlight information
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/topic-2.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/collapsible-boxes.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 2 →
+        Collapsible callout boxes →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/topic-2.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/collapsible-boxes.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/callout-boxes.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Topic 1
+        ← Callout boxes
     </span>
 </a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/introduction.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Introduction →
+        How to add media and interactive elements →
     </span>
 </a>
 </div>
 <div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/introduction.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/topic-2.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/collapsible-boxes.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Topic 2
+        ← Collapsible callout boxes
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/topic-1.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/links.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 1 →
+        Links →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/links.html">
     <a class="course-content-prev-link" href="" data-content-navigation-page="module-3/introduction.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Introduction
+        ← How to add media and interactive elements
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/topic-2.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/images-presentations-videos.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 2 →
+        Images, presentations and videos →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/topic-2.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-3/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/images-presentations-videos.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-3/links.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Topic 1
+        ← Links
     </span>
 </a>
 </div>

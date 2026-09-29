@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Structuring a page</title>
+<title>Collapsible callout boxes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,16 +108,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#add-headings" id="toc-add-headings" class="nav-link active" data-scroll-target="#add-headings">Add headings</a></li>
-  <li><a href="#add-paragraphs" id="toc-add-paragraphs" class="nav-link" data-scroll-target="#add-paragraphs">Add paragraphs</a></li>
-  <li><a href="#format-text" id="toc-format-text" class="nav-link" data-scroll-target="#format-text">Format text</a></li>
-  <li><a href="#create-a-bulleted-list" id="toc-create-a-bulleted-list" class="nav-link" data-scroll-target="#create-a-bulleted-list">Create a bulleted list</a>
-  <ul class="collapse">
-  <li><a href="#create-a-nested-list" id="toc-create-a-nested-list" class="nav-link" data-scroll-target="#create-a-nested-list">Create a nested list</a></li>
-  </ul></li>
-  <li><a href="#numbered-steps" id="toc-numbered-steps" class="nav-link" data-scroll-target="#numbered-steps">Numbered steps</a></li>
-  <li><a href="#add-learning-objectives" id="toc-add-learning-objectives" class="nav-link" data-scroll-target="#add-learning-objectives">Add learning objectives</a></li>
-  <li><a href="#combine-different-elements" id="toc-combine-different-elements" class="nav-link" data-scroll-target="#combine-different-elements">Combine different elements</a></li>
+  <li><a href="#collapsible-note" id="toc-collapsible-note" class="nav-link active" data-scroll-target="#collapsible-note">Collapsible note</a></li>
+  <li><a href="#nested-callouts" id="toc-nested-callouts" class="nav-link" data-scroll-target="#nested-callouts">Nested callouts</a></li>
   </ul>
 </nav>
     </div>
@@ -472,6 +464,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, true);
 });
 </script>
+
 <nav class="course-content-navigation" aria-label="Course content">
     <div class="course-content-navigation-inner">
         <div class="course-content-navigation-scroll">
@@ -485,16 +478,16 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     <div class="course-content-navigation-menu">
 <a class="course-content-navigation-link" href="" data-content-page="module-1/introduction.html">
-    Introduction
+    How to structure a page
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/structuring-a-page.html">
-    Structuring a page
+<a class="course-content-navigation-link" href="" data-content-page="module-1/headings-and-text.html">
+    Headings and text
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/ways-to-organize-content.html">
-    Ways to organise content
+<a class="course-content-navigation-link" href="" data-content-page="module-1/lists-and-tables.html">
+    Lists and tables
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/putting-it-together.html">
-    Putting it together
+<a class="course-content-navigation-link" href="" data-content-page="module-1/other-content-elements.html">
+    Other content elements
 </a>
 </div>
 </div>
@@ -505,13 +498,13 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     <div class="course-content-navigation-menu">
 <a class="course-content-navigation-link" href="" data-content-page="module-2/introduction.html">
-    Introduction
+    How to highlight information
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-2/topic-1.html">
-    Topic 1
+<a class="course-content-navigation-link" href="" data-content-page="module-2/callout-boxes.html">
+    Callout boxes
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-2/topic-2.html">
-    Topic 2
+<a class="course-content-navigation-link" href="" data-content-page="module-2/collapsible-boxes.html">
+    Collapsible callout boxes
 </a>
 </div>
 </div>
@@ -522,13 +515,13 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     <div class="course-content-navigation-menu">
 <a class="course-content-navigation-link" href="" data-content-page="module-3/introduction.html">
-    Introduction
+    How to add media and interactive elements
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-3/topic-1.html">
-    Topic 1
+<a class="course-content-navigation-link" href="" data-content-page="module-3/links.html">
+    Links
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-3/topic-2.html">
-    Topic 2
+<a class="course-content-navigation-link" href="" data-content-page="module-3/images-presentations-videos.html">
+    Images, presentations and videos
 </a>
 </div>
 </div>
@@ -538,7 +531,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Structuring a page</h1>
+<h1 class="title">Collapsible callout boxes</h1>
 </div>
 
 
@@ -553,140 +546,80 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </header>
 
-<p>A well-structured page helps participants follow the learning material and find information easily. You can use headings, paragraphs, lists, and text formatting to organise your content.</p>
-<p>This page demonstrates some of the most common elements you may want to use when creating course materials. Each example includes a code snippet that you can copy and adapt.</p>
-<section id="add-headings" class="level2">
-<h2 class="anchored" data-anchor-id="add-headings">Add headings</h2>
-<p>Headings divide a page into sections and make the content easier to navigate. They also appear in the table of contents on the right-hand side of the page.</p>
-<p>Use two hash symbols (<code>##</code>) for a main section heading and three (<code>###</code>) for a subsection.</p>
-<p>For example, this code:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Main section</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Text introducing the section.</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">### Subsection</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>More detailed information.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>produces a main section heading followed by a smaller subsection heading.</p>
-<p>Use headings in a logical order. Avoid choosing a heading level only because you prefer its appearance.</p>
-</section>
-<section id="add-paragraphs" class="level2">
-<h2 class="anchored" data-anchor-id="add-paragraphs">Add paragraphs</h2>
-<p>Write ordinary text as paragraphs. Leave a blank line between paragraphs to make them separate.</p>
-<p>For example:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>This is the first paragraph. Use it to introduce a topic</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>or explain an idea.</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>This is the second paragraph. It appears separately from</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>the first paragraph.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You can write paragraphs directly in your <code>.qmd</code> file without adding any special formatting.</p>
-</section>
-<section id="format-text" class="level2">
-<h2 class="anchored" data-anchor-id="format-text">Format text</h2>
-<p>You can use bold or italic text to emphasise important words or phrases.</p>
-<p><strong>Bold text</strong> is useful for key terms or important information.</p>
-<p><em>Italic text</em> can be used for emphasis or to introduce a term.</p>
-<p>Copy these examples:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>This is **bold text**.</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>This is *italic text*.</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>You can also combine them: ***bold and italic text***.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Use text formatting sparingly so that it remains meaningful to readers.</p>
-</section>
-<section id="create-a-bulleted-list" class="level2">
-<h2 class="anchored" data-anchor-id="create-a-bulleted-list">Create a bulleted list</h2>
-<p>Use a hyphen (<code>-</code>) at the beginning of each line to create a bulleted list.</p>
-<p>For example:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First item</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Second item</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Third item</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This is useful when presenting related points that do not need to be followed in a particular order.</p>
-<section id="create-a-nested-list" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-nested-list">Create a nested list</h3>
-<p>You can indent items to create a list within a list:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Main item</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Supporting point</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Another supporting point</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Another main item</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="numbered-steps" class="level2">
-<h2 class="anchored" data-anchor-id="numbered-steps">Numbered steps</h2>
-<p>Use a numbered list when the order of the items matters, such as for instructions or a process.</p>
-<ol type="1">
-<li>Open the course page.</li>
-<li>Find the section you want to update.</li>
-<li>Replace the example text with your own content.</li>
-<li>Render the website and review the result.</li>
-</ol>
+<p>Use a collapsible callout to place supplementary information that readers can expand when they want to see more. This is useful for optional details, explanations, or answers to questions.</p>
+<p>Each example below shows the Quarto syntax and how the callout appears when rendered.</p>
+<p><br></p>
+<section id="collapsible-note" class="level2">
+<h2 class="anchored" data-anchor-id="collapsible-note">Collapsible note</h2>
+<p>Add <code>collapse="true"</code> to a callout to make it collapsible. The callout is initially collapsed, and readers can expand it to view the content.</p>
 <p><strong>Markdown syntax</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Open the course page.</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Find the section you want to update.</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Replace the example text with your own content.</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Render the website and review the result.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-note collapse="true"}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## More information</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>This content is hidden until the reader expands the section.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+More information
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This content is hidden until the reader expands the section.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="add-learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="add-learning-objectives">Add learning objectives</h2>
-<p>Learning objectives can help participants understand what they should be able to do after completing a topic.</p>
-<p>You can introduce them with a short paragraph followed by a bulleted list.</p>
-<p>For example:</p>
-<p><strong>After completing this module/topic/etc, you will be able to:</strong></p>
-<ul>
-<li>Describe the main concept.</li>
-<li>Explain why it is relevant.</li>
-<li>Apply the concept in a practical situation.</li>
-</ul>
-<p>Copy and replace the example objectives with your own:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>**After completing this module/topic/etc, you will be able to:**</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Add learning objective 1</span><span class="co">]</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Add learning objective 2</span><span class="co">]</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Add learning objective 3</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="combine-different-elements" class="level2">
-<h2 class="anchored" data-anchor-id="combine-different-elements">Combine different elements</h2>
-<p>You can combine headings, paragraphs, and lists to build a complete topic page.</p>
-<p>Here is a simple structure you can use as a starting point:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>Introduce the topic and explain why it is relevant.</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>By the end of this topic, you should be able to:</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Add learning objective 1</span><span class="co">]</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Add learning objective 2</span><span class="co">]</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Add learning objective 3</span><span class="co">]</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Main content</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>Explain the main ideas.</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### First concept</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>Add information about the first concept.</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Second concept</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>Add information about the second concept.</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>Summarise the key points from the topic.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You do not need to use every section. Adapt the structure to suit your learning material.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<section id="nested-callouts" class="level2">
+<h2 class="anchored" data-anchor-id="nested-callouts">Nested callouts</h2>
+<p>You can place one callout inside another to group related information. For example, use a regular callout to introduce a topic, then place a collapsible callout inside it for supplementary details.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Working with supplementary information</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>The expandable tip below provides an additional suggestion.</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## More information</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>Save your work regularly so you do not lose your changes.</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+Working with supplementary information
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Start with a clear page structure before adding detailed content. A few meaningful headings and short paragraphs can make a long topic much easier to read.</p>
+<p>The expandable tip below provides an additional suggestion.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+More information
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Save your work regularly so you do not lose your changes.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -694,11 +627,12 @@ Tip
 </section>
 
 </main> <!-- /main -->
+
 <div class="course-content-next-navigation" hidden="" data-content-next-from="index.html">
     <a class="course-content-next-link" href="" data-content-navigation-page="module-1/introduction.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Introduction →
+        How to structure a page →
     </span>
 </a>
 </div>
@@ -708,122 +642,122 @@ Tip
     <span class="course-content-next-title">
         ← Introduction
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/structuring-a-page.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/headings-and-text.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Structuring a page →
+        Headings and text →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/structuring-a-page.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/headings-and-text.html">
     <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/introduction.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Introduction
+        ← How to structure a page
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/ways-to-organize-content.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/lists-and-tables.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Ways to organise content →
+        Lists and tables →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/ways-to-organize-content.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/structuring-a-page.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/lists-and-tables.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/headings-and-text.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Structuring a page
+        ← Headings and text
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/putting-it-together.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/other-content-elements.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Putting it together →
+        Other content elements →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/putting-it-together.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/ways-to-organize-content.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/other-content-elements.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/lists-and-tables.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Ways to organise content
+        ← Lists and tables
     </span>
 </a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/introduction.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Introduction →
+        How to highlight information →
     </span>
 </a>
 </div>
 <div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/introduction.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/putting-it-together.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/other-content-elements.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Putting it together
+        ← Other content elements
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/topic-1.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/callout-boxes.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 1 →
+        Callout boxes →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/callout-boxes.html">
     <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/introduction.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Introduction
+        ← How to highlight information
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/topic-2.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/collapsible-boxes.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 2 →
+        Collapsible callout boxes →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/topic-2.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/collapsible-boxes.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/callout-boxes.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Topic 1
+        ← Callout boxes
     </span>
 </a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/introduction.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Introduction →
+        How to add media and interactive elements →
     </span>
 </a>
 </div>
 <div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/introduction.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/topic-2.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/collapsible-boxes.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Topic 2
+        ← Collapsible callout boxes
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/topic-1.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/links.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 1 →
+        Links →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/links.html">
     <a class="course-content-prev-link" href="" data-content-navigation-page="module-3/introduction.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Introduction
+        ← How to add media and interactive elements
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/topic-2.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/images-presentations-videos.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 2 →
+        Images, presentations and videos →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/topic-2.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-3/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/images-presentations-videos.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-3/links.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Topic 1
+        ← Links
     </span>
 </a>
 </div>

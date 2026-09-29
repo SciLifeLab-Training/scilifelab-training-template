@@ -18,217 +18,280 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Training title\n\n\n\n\nOverview Content Schedule\n\n\nInformation\n\n\nPreparation Practicalities Announcements Resources Team Syllabus FAQ\n\n\n\n\n\n\n\n\n\n\n\n\n\nSchedule\n\n\n  01 Jan 2026 – 02 Jan 2026 \n  Venue name or online \n\n\n\n\n\n\nDay 1\n\n\nFriday, Sep 25\n\n\n\n\nDay 2\n\n\nMonday, Sep 28\n\n\n\n\nDay 3\n\n\nThursday, Oct 1\n\n\n\n\nFollow-up\n\n\nSunday, Nov 1\n\n\n\n\nFinal Course Meeting\n\n\nThursday, Dec 3\n\n\n\n\n\n\nDay 1 – Friday, Sep 25\n\n\n\n09:00–09:45\n\n\n Lecture \n\nWelcome and Introduction\n\n\nJane Doe\n\n\n\n\n SciLifeLab Solna\n\n\n\n\n\n\n\n\n10:00–11:00\n\n\n Lecture \n\nIntroduction to the Research Environment\n\n\nJohn Smith\n\n\n\n\n Lecture Hall A\n\n\n\n\n\n\n\n\n11:00–11:30\n\n\n Break \n\nCoffee Break\n\n\n\n\n\n\n\n\n\n\n\n11:30–13:00\n\n\n Practical \n\nHands-on Data Analysis\n\n\nJane Doe, Alex Johnson\n\n\n\n\n Computer Lab\n\n\n\n\n\n\n\n\n13:00–14:00\n\n\n Break \n\nLunch\n\n\n\n\n SciLifeLab Café\n\n\n\n\n\n\n\n\n14:00–15:00\n\n\n Discussion \n\nDiscussion and Reflection\n\n\nJohn Smith\n\n\n\n\n Seminar Room 2\n\n\n\n\n\n\nDay 2 – Monday, Sep 28\n\n\n\n09:00–10:30\n\n\n Lecture \n\nAdvanced Methods\n\n\nMaria Andersson\n\n\n\n\n Lecture Hall A\n\n\n\n\n\n\n\n\n10:45–12:30\n\n\n Practical \n\nWorkshop: Building a Workflow\n\n\nMaria Andersson, Alex Johnson\n\n\n\n\n Computer Lab\n\n\n\n\n\n\n\n\n14:00–15:00\n\n\n Discussion \n\nGuest Lecture: From Data to Discovery\n\n\nSarah Wilson\n\n\n\n\n Auditorium\n\n\n\n\n\n\nDay 3 – Thursday, Oct 1\n\n\n\n09:00–12:00\n\n\n Group-Work \n\nIndependent Project Work\n\n\n\n\n\n\n\n\n\n\n\n13:00–15:30\n\n\n Presentation \n\nProject Presentations\n\n\nJane Doe\n\n\n\n\n Auditorium\n\n\n\n\n\n\nFollow-up – Sunday, Nov 1\n\n\n\n10:00–12:00\n\n\n Workshop \n\nFollow-up Workshop\n\n\nJohn Smith\n\n\n\n\n Online\n\n\n\n\n\n\n\n\n13:00–15:00\n\n\n Assessment \n\nCourse Assessment\n\n\n\n\n Online\n\n\n\n\n\n\nFinal Course Meeting – Thursday, Dec 3\n\n\n\n14:00–15:00\n\n\n Consultation \n\nFinal Course Meeting\n\n\nJane Doe, Maria Andersson\n\n\n\n\n SciLifeLab Solna\n\n\n\n\n\n\n\n\n\nBy Organisation or Training Programme name . Licensed under CC BY 4.0 .\n\n\nThis website was built using the SciLifeLab Training Webpage Template and is hosted on GitHub Pages."
+    "text": "Training title\n\n\n\n\nOverview Content Schedule\n\n\nInformation\n\n\nPreparation Practicalities Announcements Resources Team Syllabus FAQ\n\n\n\n\n\n\n\n\n\n\n\n\n\nSchedule\n\n\n  01 Jan 2026 – 02 Jan 2026 \n  Venue name or online \n\n\n\n\n\n\nDay 1\n\n\nWednesday, Sep 30\n\n\n\n\nDay 2\n\n\nThursday, Oct 1\n\n\n\n\nDay 3\n\n\nFriday, Oct 2\n\n\n\n\nFollow-up\n\n\nSunday, Nov 1\n\n\n\n\nFinal Course Meeting\n\n\nThursday, Dec 3\n\n\n\n\n\n\nDay 1 – Wednesday, Sep 30\n\n\n\n09:00–09:45\n\n\n Lecture \n\nHow to structure a page\n\n\nJane Doe\n\n\n\n\n SciLifeLab Solna\n\n\n\n\n\n\n\n\n10:00–11:00\n\n\n Lecture \n\nHeadings and text\n\n\nJohn Smith\n\n\n\n\n Lecture Hall A\n\n\n\n\n\n\n\n\n11:00–11:30\n\n\n Break \n\nCoffee Break\n\n\n\n\n\n\n\n\n\n\n\n11:30–13:00\n\n\n Practical \n\nLists and tables\n\n\nJane Doe, Alex Johnson\n\n\n\n\n Computer Lab\n\n\n\n\n\n\n\n\n13:00–14:00\n\n\n Break \n\nLunch\n\n\n\n\n SciLifeLab Café\n\n\n\n\n\n\n\n\n14:00–15:00\n\n\n Discussion \n\nOther content elements\n\n\nJohn Smith\n\n\n\n\n Seminar Room 2\n\n\n\n\n\n\nDay 2 – Thursday, Oct 1\n\n\n\n09:00–10:30\n\n\n Lecture \n\nHow to highlight information\n\n\nMaria Andersson\n\n\n\n\n Lecture Hall A\n\n\n\n\n\n\n\n\n10:45–12:30\n\n\n Practical \n\nCallout boxes\n\n\nMaria Andersson, Alex Johnson\n\n\n\n\n Computer Lab\n\n\n\n\n\n\n\n\n14:00–15:00\n\n\n Discussion \n\nCollapsible callout boxes\n\n\nSarah Wilson\n\n\n\n\n Auditorium\n\n\n\n\n\n\nDay 3 – Friday, Oct 2\n\n\n\n09:00–12:00\n\n\n Group-Work \n\nHow to add media and interactive elements\n\n\n\n\n\n\n\n\n\n\n\n13:00–15:30\n\n\n Presentation \n\nLinks\n\n\nJane Doe\n\n\n\n\n Auditorium\n\n\n\n\n\n\nFollow-up – Sunday, Nov 1\n\n\n\n10:00–12:00\n\n\n Workshop \n\nImages, presentations and videos\n\n\nJohn Smith\n\n\n\n\n Online\n\n\n\n\n\n\n\n\n13:00–15:00\n\n\n Assessment \n\nCourse Assessment\n\n\n\n\n Online\n\n\n\n\n\n\nFinal Course Meeting – Thursday, Dec 3\n\n\n\n14:00–15:00\n\n\n Consultation \n\nFinal Course Meeting\n\n\nJane Doe, Maria Andersson\n\n\n\n\n SciLifeLab Solna\n\n\n\n\n\n\n\n\n\nBy Organisation or Training Programme name . Licensed under CC BY 4.0 .\n\n\nThis website was built using the SciLifeLab Training Webpage Template and is hosted on GitHub Pages."
+  },
+  {
+    "objectID": "content/module-3/links.html",
+    "href": "content/module-3/links.html",
+    "title": "Links",
+    "section": "",
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nUse links to direct participants to websites, documents, other training pages, and additional resources.\nEach example below shows the Markdown syntax and how the link appears when rendered."
+  },
+  {
+    "objectID": "content/module-3/links.html#linking-to-a-website",
+    "href": "content/module-3/links.html#linking-to-a-website",
+    "title": "Links",
+    "section": "Linking to a website",
+    "text": "Linking to a website\nUse links to direct participants to external websites or online resources.\nMarkdown syntax\n[Visit the SciLifeLab website](https://www.scilifelab.se/)\nRendered result\nVisit the SciLifeLab website"
+  },
+  {
+    "objectID": "content/module-3/links.html#using-descriptive-link-text",
+    "href": "content/module-3/links.html#using-descriptive-link-text",
+    "title": "Links",
+    "section": "Using descriptive link text",
+    "text": "Using descriptive link text\nUse descriptive link text that tells participants where the link will take them or what information they will find.\nMarkdown syntax\nFor more information, read the [SciLifeLab training resources](https://training.scilifelab.se/resources).\nRendered result\nFor more information, read the SciLifeLab training resources."
+  },
+  {
+    "objectID": "content/module-3/links.html#linking-to-a-file-or-resource",
+    "href": "content/module-3/links.html#linking-to-a-file-or-resource",
+    "title": "Links",
+    "section": "Linking to a file or resource",
+    "text": "Linking to a file or resource\nYou can link to files, such as PDF documents or other downloadable resources. Place the file in the docs folder at the root of your training repository. When linking to it from a page inside a content/module folder, use ../../docs/ followed by the filename. Adjust the path if your file is stored elsewhere.\nReplace the example filename and path with those of your own file.\nMarkdown syntax\n([Download the participant guide](../../docs/example-pdf.pdf))\nRendered result\nDownload the participant guide"
+  },
+  {
+    "objectID": "content/module-3/links.html#linking-to-another-training-page",
+    "href": "content/module-3/links.html#linking-to-another-training-page",
+    "title": "Links",
+    "section": "Linking to another training page",
+    "text": "Linking to another training page\nYou can link directly to another page in your training website. Use the relative path to the page, including its .qmd filename. Quarto will resolve the link to the corresponding rendered page when the website is built.\nMarkdown syntax\n[Go to the introduction of Module 3](/content/module-3/introduction.qmd)\nRendered result\nGo to the introduction of Module 3"
   },
   {
     "objectID": "content/module-3/introduction.html",
     "href": "content/module-3/introduction.html",
-    "title": "Introduction",
+    "title": "How to add media and interactive elements",
     "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nImages, videos, and links can make course content more engaging and help participants explore a topic in more depth. This module shows how to include these elements in your course pages.\nThe examples demonstrate how to add media and links using Quarto and Markdown. You can copy the snippets and replace the example URLs, image paths, or descriptions with your own."
-  },
-  {
-    "objectID": "content/module-3/introduction.html#learning-objectives",
-    "href": "content/module-3/introduction.html#learning-objectives",
-    "title": "Introduction",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this module, you will know how to:\n\nAdd links to external websites and other course pages.\nInsert an image and provide alternative text.\nEmbed a video in a content page.\nUse media to support the learning material.\n\n\n\n\n\n\n\nRemember accessibility\n\n\n\nProvide meaningful alternative text for images, and use descriptive link text so that readers understand where a link leads. For example, use “Read the course guidelines” rather than “Click here”."
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nThis module demonstrates how to add links, images, videos, and exercises to your training content. Each topic presents the Markdown and Quarto syntax alongside the rendered result, so you can see how different elements appear to participants.\nExplore the examples, copy the snippets you need, and adapt them for your own training pages."
   },
   {
     "objectID": "content/module-3/introduction.html#in-this-module",
     "href": "content/module-3/introduction.html#in-this-module",
-    "title": "Introduction",
+    "title": "How to add media and interactive elements",
     "section": "In this module",
-    "text": "In this module\n\nTopic 1 – Links and images: Examples of linking to resources and adding images to a page.\nTopic 2 – Embedded videos and media: How to include video and other media in your course content."
+    "text": "In this module\n\nTopic 1 – Links: Link to websites, documents, and other resources to guide participants to further information.\nTopic 2 – Images, presentations and videos: Add visual media and embed presentations or videos directly in a page."
   },
   {
-    "objectID": "content/module-3/topic-1.html",
-    "href": "content/module-3/topic-1.html",
-    "title": "Topic 1",
+    "objectID": "content/module-3/images-presentations-videos.html",
+    "href": "content/module-3/images-presentations-videos.html",
+    "title": "Images, presentations and videos",
     "section": "",
-    "text": "Training title\n            \n            \n                \nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n            \n        \n        \n            \n        \n    \n\n\n\n    \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    Introduction\n\n\n    Structuring a page\n\n\n    Ways to organise content\n\n\n    Putting it together\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2"
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nImages, presentations, and videos can support explanations, illustrate concepts, and provide participants with additional ways to engage with your training content.\nEach example below shows the syntax and how the element appears when rendered."
   },
   {
-    "objectID": "content/module-3/topic-2.html",
-    "href": "content/module-3/topic-2.html",
-    "title": "Topic 2",
-    "section": "",
-    "text": "Training title\n            \n            \n                \nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n            \n        \n        \n            \n        \n    \n\n\n\n    \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    Introduction\n\n\n    Structuring a page\n\n\n    Ways to organise content\n\n\n    Putting it together\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2"
+    "objectID": "content/module-3/images-presentations-videos.html#adding-images",
+    "href": "content/module-3/images-presentations-videos.html#adding-images",
+    "title": "Images, presentations and videos",
+    "section": "Adding images",
+    "text": "Adding images\nUse images to illustrate concepts, show examples, or provide visual guidance. Add descriptive alternative text (alt) to make images accessible to participants using screen readers.\nMarkdown syntax\n![A descriptive text explaining what the image shows](../../docs/example-image.svg)\nRendered result\n\n\n\nA descriptive text explaining what the image shows\n\n\nPlace the image in the docs folder at the root of your training repository. From a page inside a module folder, use ../../docs/ followed by the image filename. Replace the example filename and alternative text with your own."
+  },
+  {
+    "objectID": "content/module-3/images-presentations-videos.html#embedding-a-presentation",
+    "href": "content/module-3/images-presentations-videos.html#embedding-a-presentation",
+    "title": "Images, presentations and videos",
+    "section": "Embedding a presentation",
+    "text": "Embedding a presentation\nYou can embed a presentation so participants can view it directly on the training page, rather than following a link to another website. Presentation platforms such as PowerPoint or Google Slides provide embed code that you can add to your page.\nHTML syntax\n&lt;iframe\n  src=\"PASTE-YOUR-PRESENTATION-EMBED-URL-HERE\"\n  width=\"100%\"\n  height=\"500\"\n  frameborder=\"0\"\n  allowfullscreen&gt;\n&lt;/iframe&gt;\nRendered result"
+  },
+  {
+    "objectID": "content/module-3/images-presentations-videos.html#adding-videos",
+    "href": "content/module-3/images-presentations-videos.html#adding-videos",
+    "title": "Images, presentations and videos",
+    "section": "Adding videos",
+    "text": "Adding videos\nYou can add a video file to your training repository and display it with a video player. The controls attribute allows participants to play, pause, and adjust the volume.\nHTML syntax\n&lt;video controls width=\"100%\"&gt;\n  &lt;source src=\"../../docs/example-video.mp4\" type=\"video/mp4\"&gt;\n  Your browser does not support the video element.\n&lt;/video&gt;\nRendered result\n\n  \n  Your browser does not support the video element.\n\n\nPlace the video file in the docs folder at the root of your training repository. Replace the example filename with the name of your video file.\nYou can also embed videos hosted on platforms such as YouTube or Vimeo. Use the embed code provided by the platform, in the same way as for presentations."
   },
   {
     "objectID": "content/index.html",
     "href": "content/index.html",
     "title": "Training Content Pages",
     "section": "",
-    "text": "Training title\n            \n            \n                \nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n            \n        \n        \n            \n        \n    \n\n\n\n    \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    Introduction\n\n\n    Structuring a page\n\n\n    Ways to organise content\n\n\n    Putting it together\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2\n\n\n\n\n    \n\n\n\n\n\nUse the training content pages to provide learning materials and activities for your participants.\nYou can organise the pages to suit the structure of your training (for example: by day, module, topic, or section) or structure them around what participants need to learn and do.\nIn this template, the pages demonstrate how to use Markdown and Quarto to organise and format content. They are examples to adapt when building your own training pages. Replace the example material with your own, and remove any examples or sections you do not need.\nThe template pages cover:\n\nModule 1 – How to structure a page: Headings, paragraphs, lists, tables, code blocks, and text formatting.\nModule 2 – How to highlight information: Callouts for tips, notes, important information, and warnings, as well as reflection questions.\nModule 3 – How to add media and interactive elements: Links, images, videos, and exercises."
+    "text": "Training title\n            \n            \n                \nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n            \n        \n        \n            \n        \n    \n\n\n\n\n    \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\n\n\n\n\n    \n\n\n\n\n\nUse the training content pages to provide learning materials and activities for your training participants.\nYou can organise the pages to suit the structure of your training (for example: by day, module, topic, or section) or structure them around what participants need to learn and do.\nIn this template, the pages demonstrate how to use Markdown and Quarto to organise and format content. Use them as examples when creating your own training pages: find an example that suits your needs, copy the code snippet, and replace the demonstration text with your own. This way, you can build your pages without having to write Markdown from scratch.\nThe template pages cover:\n\nModule 1 – How to structure a page: Headings, paragraphs, text formatting, lists, tables, code blocks and other content elements.\nModule 2 – How to highlight information: Callouts for tips, notes, important information, and warnings.\nModule 3 – How to add media and interactive elements: Links, images, videos, and exercises.\n\n\nIf you want to learn more about Markdown, these resources provide guides, reference sheets, tutorials, and an online editor:\n\nMarkdown Guide – A practical guide to writing Markdown.\nMarkdown Cheatsheet – A quick reference to common Markdown syntax.\nMarkdown Tutorial – An interactive introduction to Markdown.\nStackEdit – An in-browser Markdown editor."
+  },
+  {
+    "objectID": "content/module-2/collapsible-boxes.html",
+    "href": "content/module-2/collapsible-boxes.html",
+    "title": "Collapsible callout boxes",
+    "section": "",
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nUse a collapsible callout to place supplementary information that readers can expand when they want to see more. This is useful for optional details, explanations, or answers to questions.\nEach example below shows the Quarto syntax and how the callout appears when rendered."
+  },
+  {
+    "objectID": "content/module-2/collapsible-boxes.html#collapsible-note",
+    "href": "content/module-2/collapsible-boxes.html#collapsible-note",
+    "title": "Collapsible callout boxes",
+    "section": "Collapsible note",
+    "text": "Collapsible note\nAdd collapse=\"true\" to a callout to make it collapsible. The callout is initially collapsed, and readers can expand it to view the content.\nMarkdown syntax\n::: {.callout-note collapse=\"true\"}\n## More information\n\nThis content is hidden until the reader expands the section.\n:::\nRendered result\n\n\n\n\n\n\nMore information\n\n\n\n\n\nThis content is hidden until the reader expands the section."
+  },
+  {
+    "objectID": "content/module-2/collapsible-boxes.html#nested-callouts",
+    "href": "content/module-2/collapsible-boxes.html#nested-callouts",
+    "title": "Collapsible callout boxes",
+    "section": "Nested callouts",
+    "text": "Nested callouts\nYou can place one callout inside another to group related information. For example, use a regular callout to introduce a topic, then place a collapsible callout inside it for supplementary details.\nMarkdown syntax\n::: {.callout-note}\n## Working with supplementary information\n\nThe expandable tip below provides an additional suggestion.\n\n::: {.callout-tip collapse=\"true\"}\n## More information\n\nSave your work regularly so you do not lose your changes.\n:::\n\n:::\nRendered result\n\n\n\n\n\n\nWorking with supplementary information\n\n\n\nThe expandable tip below provides an additional suggestion.\n\n\n\n\n\n\nMore information\n\n\n\n\n\nSave your work regularly so you do not lose your changes."
   },
   {
     "objectID": "content/module-2/introduction.html",
     "href": "content/module-2/introduction.html",
-    "title": "Introduction",
+    "title": "How to highlight information",
     "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nCallout boxes help draw attention to information that participants should notice. They can be used for practical tips, important messages, warnings, or additional context.\nThis module demonstrates the different callout styles available in Quarto and how to add them to your course pages. Each example includes the code you can copy and adapt."
-  },
-  {
-    "objectID": "content/module-2/introduction.html#learning-objectives",
-    "href": "content/module-2/introduction.html#learning-objectives",
-    "title": "Introduction",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this module, you will know how to:\n\nAdd callout boxes to a content page.\nChoose a callout type that suits the message.\nAdd headings and text inside a callout.\nCreate a collapsible callout for supplementary information.\n\n\n\n\n\n\n\nAbout callouts\n\n\n\nCallouts are optional. Use them when highlighting information improves the learning experience. Avoid adding too many to a page, as this can make it harder for readers to identify what is important."
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nThis module demonstrates how to use callout boxes to highlight information in your training content, and how to make callouts collapsible so participants can choose when to view additional details. Each topic presents the Markdown and Quarto syntax alongside the rendered result, so you can see how different callouts appear to participants.\nExplore the examples, copy the snippets you need, and adapt them for your own training pages."
   },
   {
     "objectID": "content/module-2/introduction.html#in-this-module",
     "href": "content/module-2/introduction.html#in-this-module",
-    "title": "Introduction",
+    "title": "How to highlight information",
     "section": "In this module",
-    "text": "In this module\n\nTopic 1 – Callout boxes: Examples of notes, tips, important messages, cautions, and warnings.\nTopic 2 – Collapsible content: How to place supplementary information in a section that readers can expand when needed."
+    "text": "In this module\n\nTopic 1 – Callout boxes: Use notes, tips, important messages, cautions, and warnings to draw attention to different types of information.\nTopic 2 – Collapsible callout boxes: Make callouts expandable so supplementary information is available when participants need it."
   },
   {
-    "objectID": "content/module-2/topic-1.html",
-    "href": "content/module-2/topic-1.html",
-    "title": "Topic 1",
+    "objectID": "content/module-2/callout-boxes.html",
+    "href": "content/module-2/callout-boxes.html",
+    "title": "Callout boxes",
     "section": "",
-    "text": "Training title\n            \n            \n                \nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n            \n        \n        \n            \n        \n    \n\n\n\n    \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    Introduction\n\n\n    Structuring a page\n\n\n    Ways to organise content\n\n\n    Putting it together\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2"
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nCallout boxes draw attention to information that participants should notice. Use them to highlight useful details, practical advice, important messages, cautions, or warnings.\nEach example below shows the Quarto syntax and how the callout appears when rendered."
   },
   {
-    "objectID": "content/module-2/topic-2.html",
-    "href": "content/module-2/topic-2.html",
-    "title": "Topic 2",
+    "objectID": "content/module-2/callout-boxes.html#note",
+    "href": "content/module-2/callout-boxes.html#note",
+    "title": "Callout boxes",
+    "section": "Note",
+    "text": "Note\nUse a note to provide additional information that supports the main text without interrupting its flow.\nMarkdown syntax\n::: {.callout-note}\nThis is additional information that may help participants understand the topic.\n:::\nRendered result\n\n\n\n\n\n\nNote\n\n\n\nThis is additional information that may help participants understand the topic."
+  },
+  {
+    "objectID": "content/module-2/callout-boxes.html#tip",
+    "href": "content/module-2/callout-boxes.html#tip",
+    "title": "Callout boxes",
+    "section": "Tip",
+    "text": "Tip\nUse a tip to share practical advice or a helpful suggestion.\nMarkdown syntax\n::: {.callout-tip}\nSave your work regularly so you do not lose your changes.\n:::\nRendered result\n\n\n\n\n\n\nTip\n\n\n\nSave your work regularly so you do not lose your changes."
+  },
+  {
+    "objectID": "content/module-2/callout-boxes.html#important",
+    "href": "content/module-2/callout-boxes.html#important",
+    "title": "Callout boxes",
+    "section": "Important",
+    "text": "Important\nUse an important callout to emphasise information that participants should pay particular attention to.\nMarkdown syntax\n::: {.callout-important}\nComplete the required steps before moving on to the next activity.\n:::\nRendered result\n\n\n\n\n\n\nImportant\n\n\n\nComplete the required steps before moving on to the next activity."
+  },
+  {
+    "objectID": "content/module-2/callout-boxes.html#caution",
+    "href": "content/module-2/callout-boxes.html#caution",
+    "title": "Callout boxes",
+    "section": "Caution",
+    "text": "Caution\nUse a caution callout to draw attention to something that could cause a problem if overlooked.\nMarkdown syntax\n::: {.callout-caution}\nChanging this setting may affect how the page is displayed.\n:::\nRendered result\n\n\n\n\n\n\nCaution\n\n\n\nChanging this setting may affect how the page is displayed."
+  },
+  {
+    "objectID": "content/module-2/callout-boxes.html#warning",
+    "href": "content/module-2/callout-boxes.html#warning",
+    "title": "Callout boxes",
+    "section": "Warning",
+    "text": "Warning\nUse a warning callout for information about a significant risk or a potentially harmful action.\nMarkdown syntax\n::: {.callout-warning}\nDo not share personal or confidential information in publicly accessible materials.\n:::\nRendered result\n\n\n\n\n\n\nWarning\n\n\n\nDo not share personal or confidential information in publicly accessible materials."
+  },
+  {
+    "objectID": "content/module-2/callout-boxes.html#using-callouts-effectively",
+    "href": "content/module-2/callout-boxes.html#using-callouts-effectively",
+    "title": "Callout boxes",
+    "section": "Using callouts effectively",
+    "text": "Using callouts effectively\nCallouts are optional. Use them when highlighting information improves the learning experience. Avoid adding too many to a page, as this can make it harder for readers to identify what is important. You can also include Markdown formatting, such as bold text, lists, or links, inside a callout.\nMarkdown syntax\n::: {.callout-tip}\n**Before submitting your work:**\n\n- Check that all required sections are complete.\n- Review your text for clarity.\n- Save your changes.\n:::\nRendered result\n\n\n\n\n\n\nTip\n\n\n\nBefore submitting your work:\n\nCheck that all required sections are complete.\nReview your text for clarity.\nSave your changes."
+  },
+  {
+    "objectID": "content/module-1/headings-and-text.html",
+    "href": "content/module-1/headings-and-text.html",
+    "title": "Headings and text",
     "section": "",
-    "text": "Training title\n            \n            \n                \nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n            \n        \n        \n            \n        \n    \n\n\n\n    \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    Introduction\n\n\n    Structuring a page\n\n\n    Ways to organise content\n\n\n    Putting it together\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    Introduction\n\n\n    Topic 1\n\n\n    Topic 2"
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nUse headings, paragraphs, and text formatting to organise your training content and make it easier for participants to read.\nEach example below shows the Markdown syntax and how it appears when rendered."
   },
   {
-    "objectID": "content/module-1/ways-to-organize-content.html",
-    "href": "content/module-1/ways-to-organize-content.html",
-    "title": "Ways to organise content",
+    "objectID": "content/module-1/headings-and-text.html#headings",
+    "href": "content/module-1/headings-and-text.html#headings",
+    "title": "Headings and text",
+    "section": "Headings",
+    "text": "Headings\nUse headings to divide your page into sections and subsections. Quarto supports several heading levels:\n\n## Main section — appears in the table of contents.\n### Subsection — does not appear in the table of contents.\n#### Sub-subsection — does not appear in the table of contents.\n\nIn this template, ## headings are displayed with a line underneath.\nMarkdown syntax\n## Main section\n\nText introducing the section.\n\n### Subsection\n\nMore detailed information.\n\n#### Sub-subsection\n\nAdditional details.\nRendered result\n\nMain section\n\nText introducing the section.\n\nSubsection\n\nMore detailed information.\n\nSub-subsection\n\nAdditional details.\nUse heading levels in order. For example, use ### for a subsection within a ## section, and #### for a subsection within a ### section."
+  },
+  {
+    "objectID": "content/module-1/headings-and-text.html#paragraphs",
+    "href": "content/module-1/headings-and-text.html#paragraphs",
+    "title": "Headings and text",
+    "section": "Paragraphs",
+    "text": "Paragraphs\nWrite ordinary text as paragraphs. Leave a blank line between paragraphs.\nMarkdown syntax\nThis is the first paragraph. It introduces a topic or explains an idea.\n\nThis is the second paragraph. It appears separately from the first.\nRendered result\nThis is the first paragraph. It introduces a topic or explains an idea.\nThis is the second paragraph. It appears separately from the first."
+  },
+  {
+    "objectID": "content/module-1/headings-and-text.html#text-formatting",
+    "href": "content/module-1/headings-and-text.html#text-formatting",
+    "title": "Headings and text",
+    "section": "Text formatting",
+    "text": "Text formatting\nUse bold and italic text to emphasise words or phrases.\nMarkdown syntax\nThis is **bold text**.\n\nThis is *italic text*.\n\nThis is ***bold and italic text***.\nRendered result\nThis is bold text.\nThis is italic text.\nThis is bold and italic text."
+  },
+  {
+    "objectID": "content/module-1/other-content-elements.html",
+    "href": "content/module-1/other-content-elements.html",
+    "title": "Other content elements",
     "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nA well-organised page helps participants find information and understand how ideas relate to one another. In addition to headings and lists, Quarto supports elements such as block quotes, tables, and horizontal rules.\nThis page demonstrates a few ways to structure information. Copy the examples and adapt them to your own course."
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nUse code blocks, block quotes, horizontal rules, and collapsible content to structure content and make it easier for participants to engage.\nEach example below shows the Markdown syntax and how it appears when rendered."
   },
   {
-    "objectID": "content/module-1/ways-to-organize-content.html#block-quotes",
-    "href": "content/module-1/ways-to-organize-content.html#block-quotes",
-    "title": "Ways to organise content",
+    "objectID": "content/module-1/other-content-elements.html#code-blocks",
+    "href": "content/module-1/other-content-elements.html#code-blocks",
+    "title": "Other content elements",
+    "section": "Code blocks",
+    "text": "Code blocks\nUse code blocks to display code or other text that should keep its formatting. Add the language after the opening backticks to enable syntax highlighting where supported.\nMarkdown syntax\n```python\nprint(\"Hello, participants!\")\nRendered result\nprint(\"Hello, participants!\")"
+  },
+  {
+    "objectID": "content/module-1/other-content-elements.html#block-quotes",
+    "href": "content/module-1/other-content-elements.html#block-quotes",
+    "title": "Other content elements",
     "section": "Block quotes",
-    "text": "Block quotes\nUse a block quote to set apart a quotation or a statement from another source.\n\nClear structure helps readers navigate information and focus on the main message.\n\nMarkdown syntax:\n&gt; Clear structure helps readers navigate information and focus on the main message."
+    "text": "Block quotes\nUse a block quote to set apart a quotation or a statement from another source.\nMarkdown syntax\n&gt; Clear structure helps readers navigate information and focus on the main message.\nRendered result\n\nClear structure helps readers navigate information and focus on the main message."
   },
   {
-    "objectID": "content/module-1/ways-to-organize-content.html#tables",
-    "href": "content/module-1/ways-to-organize-content.html#tables",
-    "title": "Ways to organise content",
-    "section": "Tables",
-    "text": "Tables\nTables are useful for presenting information that is easier to compare in rows and columns. Keep them concise and use clear column headings.\n\n\n\nElement\nPurpose\nExample\n\n\n\n\nHeading\nIntroduces a section\nLearning objectives\n\n\nParagraph\nExplains an idea\nA short description\n\n\nList\nGroups related items\nSteps or key points\n\n\n\nMarkdown syntax:\n| Element | Purpose | Example |\n|---|---|---|\n| Heading | Introduces a section | Learning objectives |\n| Paragraph | Explains an idea | A short description |\n| List | Groups related items | Steps or key points |"
-  },
-  {
-    "objectID": "content/module-1/ways-to-organize-content.html#horizontal-rules",
-    "href": "content/module-1/ways-to-organize-content.html#horizontal-rules",
-    "title": "Ways to organise content",
+    "objectID": "content/module-1/other-content-elements.html#horizontal-rules",
+    "href": "content/module-1/other-content-elements.html#horizontal-rules",
+    "title": "Other content elements",
     "section": "Horizontal rules",
-    "text": "Horizontal rules\nA horizontal rule can separate distinct parts of a page. Use it sparingly, when a visual break helps clarify the structure.\n\nMarkdown syntax:\n---"
+    "text": "Horizontal rules\nA horizontal rule can separate distinct parts of a page. Use it sparingly, when a visual break helps clarify the structure.\nMarkdown syntax\n---\nRendered result\nBefore the horizontal rule.\n\nAfter the horizontal rule."
   },
   {
-    "objectID": "content/module-1/ways-to-organize-content.html#combining-organisational-elements",
-    "href": "content/module-1/ways-to-organize-content.html#combining-organisational-elements",
-    "title": "Ways to organise content",
-    "section": "Combining organisational elements",
-    "text": "Combining organisational elements\nYou can combine headings, paragraphs, lists, tables, and other elements on the same page. Choose the format that makes the information easiest to follow.\nFor example, a section describing a course activity could include a short introduction followed by a table of practical details.\nExample Markdown:\n## Course activity\n\nIn this activity, participants will work in small groups to discuss the topic.\n\n| Detail | Description |\n|---|---|\n| Format | Group discussion |\n| Duration | 20 minutes |\n| Materials | Discussion questions |\n\n### Instructions\n\n1. Form a small group.\n2. Read the discussion questions.\n3. Share your ideas with the group.\n4. Summarise the main points."
+    "objectID": "content/module-1/other-content-elements.html#collapsible-content",
+    "href": "content/module-1/other-content-elements.html#collapsible-content",
+    "title": "Other content elements",
+    "section": "Collapsible content",
+    "text": "Collapsible content\nUse a collapsible section to place supplementary information that readers can expand when they want to see more. This is useful for optional details, explanations, or answers to questions.\nMarkdown syntax\n&lt;details&gt;\n&lt;summary&gt;More information&lt;/summary&gt;\n\nThis content is hidden until the reader expands the section.\n\n&lt;/details&gt;\nRendered result\n\n\nMore information\n\nThis content is hidden until the reader expands the section.\n\n\n\n\n\n\n\nNote\n\n\n\nThe &lt;details&gt; example uses HTML rather than Markdown, which is appropriate here: it demonstrates a Quarto-supported way to create expandable content without using a callout box."
+  },
+  {
+    "objectID": "content/module-1/lists-and-tables.html",
+    "href": "content/module-1/lists-and-tables.html",
+    "title": "Lists and tables",
+    "section": "",
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nUse lists and tables to organise information and make it easier for participants to scan and understand.\nEach example below shows the Markdown syntax and how it appears when rendered."
+  },
+  {
+    "objectID": "content/module-1/lists-and-tables.html#bulleted-lists",
+    "href": "content/module-1/lists-and-tables.html#bulleted-lists",
+    "title": "Lists and tables",
+    "section": "Bulleted lists",
+    "text": "Bulleted lists\nUse a hyphen (-) at the beginning of each line to create a bulleted list. Bulleted lists are useful for presenting related points that do not need to be followed in a particular order.\nMarkdown syntax\n- First item\n- Second item\n- Third item\nRendered result\n\nFirst item\nSecond item\nThird item\n\n\nNested lists\nIndent items to create a list within a list. Use nested lists to show how information is grouped.\nMarkdown syntax\n- Main item\n  - Supporting point\n  - Another supporting point\n- Another main item\nRendered result\n\nMain item\n\nSupporting point\nAnother supporting point\n\nAnother main item"
+  },
+  {
+    "objectID": "content/module-1/lists-and-tables.html#numbered-lists",
+    "href": "content/module-1/lists-and-tables.html#numbered-lists",
+    "title": "Lists and tables",
+    "section": "Numbered lists",
+    "text": "Numbered lists\nUse numbers followed by a period when the order of the items matters, such as for instructions or a process.\nMarkdown syntax\n1. Open the training page.\n2. Find the section you want to update.\n3. Replace the example text with your own content.\n4. Render the website and review the result.\nRendered result\n\nOpen the training page.\nFind the section you want to update.\nReplace the example text with your own content.\nRender the website and review the result."
+  },
+  {
+    "objectID": "content/module-1/lists-and-tables.html#tables",
+    "href": "content/module-1/lists-and-tables.html#tables",
+    "title": "Lists and tables",
+    "section": "Tables",
+    "text": "Tables\nUse tables to present information in rows and columns, especially when you want participants to compare related details. Use clear column headings and keep the content concise.\nMarkdown syntax\n| Element | Purpose | Example |\n|---|---|---|\n| Heading | Introduces a section | Learning objectives |\n| Paragraph | Explains an idea | A short description |\n| List | Groups related items | Steps or key points |\nRendered result\n\n\n\nElement\nPurpose\nExample\n\n\n\n\nHeading\nIntroduces a section\nLearning objectives\n\n\nParagraph\nExplains an idea\nA short description\n\n\nList\nGroups related items\nSteps or key points"
   },
   {
     "objectID": "content/module-1/introduction.html",
     "href": "content/module-1/introduction.html",
-    "title": "Introduction",
+    "title": "How to structure a page",
     "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nThis module introduces the basic building blocks of a course content page. You can combine headings, paragraphs, lists, and text formatting to organise information and make it easier for participants to follow.\nThe examples in this module show how to structure a topic page and present information clearly. Browse the topics to see how each element looks when rendered, and copy the examples you would like to use in your own course."
-  },
-  {
-    "objectID": "content/module-1/introduction.html#learning-objectives",
-    "href": "content/module-1/introduction.html#learning-objectives",
-    "title": "Introduction",
-    "section": "Learning objectives",
-    "text": "Learning objectives\nBy the end of this module, you will know how to:\n\nOrganise a page using headings and paragraphs.\nFormat text using bold and italic styles.\nCreate bulleted and numbered lists.\nStructure a topic page so that it is easy to read and navigate.\n\n\n\n\n\n\n\nGetting started\n\n\n\nYou do not need to write Markdown from scratch. Find an example that suits your needs, copy the code snippet, and replace the demonstration text with your own."
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nThis module demonstrates how to use Markdown and Quarto to structure and format training content. Each topic presents the Markdown syntax alongside the rendered result, so you can see how the code translates into the content participants will read.\nExplore the examples, copy the snippets you need, and adapt them for your own training pages."
   },
   {
     "objectID": "content/module-1/introduction.html#in-this-module",
     "href": "content/module-1/introduction.html#in-this-module",
-    "title": "Introduction",
+    "title": "How to structure a page",
     "section": "In this module",
-    "text": "In this module\n\nTopic 1 – Structuring a page: Headings, paragraphs, text formatting, and lists.\nTopic 2 – More ways to organise content: Examples of additional page elements and formatting.\nTopic 3 – Putting it together: A practical example of combining content elements on a page."
-  },
-  {
-    "objectID": "content/module-1/structuring-a-page.html",
-    "href": "content/module-1/structuring-a-page.html",
-    "title": "Structuring a page",
-    "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nA well-structured page helps participants follow the learning material and find information easily. You can use headings, paragraphs, lists, and text formatting to organise your content.\nThis page demonstrates some of the most common elements you may want to use when creating course materials. Each example includes a code snippet that you can copy and adapt."
-  },
-  {
-    "objectID": "content/module-1/structuring-a-page.html#add-headings",
-    "href": "content/module-1/structuring-a-page.html#add-headings",
-    "title": "Structuring a page",
-    "section": "Add headings",
-    "text": "Add headings\nHeadings divide a page into sections and make the content easier to navigate. They also appear in the table of contents on the right-hand side of the page.\nUse two hash symbols (##) for a main section heading and three (###) for a subsection.\nFor example, this code:\n## Main section\n\nText introducing the section.\n\n### Subsection\n\nMore detailed information.\nproduces a main section heading followed by a smaller subsection heading.\nUse headings in a logical order. Avoid choosing a heading level only because you prefer its appearance."
-  },
-  {
-    "objectID": "content/module-1/structuring-a-page.html#add-paragraphs",
-    "href": "content/module-1/structuring-a-page.html#add-paragraphs",
-    "title": "Structuring a page",
-    "section": "Add paragraphs",
-    "text": "Add paragraphs\nWrite ordinary text as paragraphs. Leave a blank line between paragraphs to make them separate.\nFor example:\nThis is the first paragraph. Use it to introduce a topic\nor explain an idea.\n\nThis is the second paragraph. It appears separately from\nthe first paragraph.\nYou can write paragraphs directly in your .qmd file without adding any special formatting."
-  },
-  {
-    "objectID": "content/module-1/structuring-a-page.html#format-text",
-    "href": "content/module-1/structuring-a-page.html#format-text",
-    "title": "Structuring a page",
-    "section": "Format text",
-    "text": "Format text\nYou can use bold or italic text to emphasise important words or phrases.\nBold text is useful for key terms or important information.\nItalic text can be used for emphasis or to introduce a term.\nCopy these examples:\nThis is **bold text**.\n\nThis is *italic text*.\n\nYou can also combine them: ***bold and italic text***.\nUse text formatting sparingly so that it remains meaningful to readers."
-  },
-  {
-    "objectID": "content/module-1/structuring-a-page.html#create-a-bulleted-list",
-    "href": "content/module-1/structuring-a-page.html#create-a-bulleted-list",
-    "title": "Structuring a page",
-    "section": "Create a bulleted list",
-    "text": "Create a bulleted list\nUse a hyphen (-) at the beginning of each line to create a bulleted list.\nFor example:\n- First item\n- Second item\n- Third item\nThis is useful when presenting related points that do not need to be followed in a particular order.\n\nCreate a nested list\nYou can indent items to create a list within a list:\n- Main item\n  - Supporting point\n  - Another supporting point\n- Another main item"
-  },
-  {
-    "objectID": "content/module-1/structuring-a-page.html#numbered-steps",
-    "href": "content/module-1/structuring-a-page.html#numbered-steps",
-    "title": "Structuring a page",
-    "section": "Numbered steps",
-    "text": "Numbered steps\nUse a numbered list when the order of the items matters, such as for instructions or a process.\n\nOpen the course page.\nFind the section you want to update.\nReplace the example text with your own content.\nRender the website and review the result.\n\nMarkdown syntax\n1. Open the course page.\n2. Find the section you want to update.\n3. Replace the example text with your own content.\n4. Render the website and review the result."
-  },
-  {
-    "objectID": "content/module-1/structuring-a-page.html#add-learning-objectives",
-    "href": "content/module-1/structuring-a-page.html#add-learning-objectives",
-    "title": "Structuring a page",
-    "section": "Add learning objectives",
-    "text": "Add learning objectives\nLearning objectives can help participants understand what they should be able to do after completing a topic.\nYou can introduce them with a short paragraph followed by a bulleted list.\nFor example:\nAfter completing this module/topic/etc, you will be able to:\n\nDescribe the main concept.\nExplain why it is relevant.\nApply the concept in a practical situation.\n\nCopy and replace the example objectives with your own:\n**After completing this module/topic/etc, you will be able to:**\n\n- [Add learning objective 1]\n- [Add learning objective 2]\n- [Add learning objective 3]"
-  },
-  {
-    "objectID": "content/module-1/structuring-a-page.html#combine-different-elements",
-    "href": "content/module-1/structuring-a-page.html#combine-different-elements",
-    "title": "Structuring a page",
-    "section": "Combine different elements",
-    "text": "Combine different elements\nYou can combine headings, paragraphs, and lists to build a complete topic page.\nHere is a simple structure you can use as a starting point:\n## Introduction\n\nIntroduce the topic and explain why it is relevant.\n\n## Learning objectives\n\nBy the end of this topic, you should be able to:\n\n- [Add learning objective 1]\n- [Add learning objective 2]\n- [Add learning objective 3]\n\n## Main content\n\nExplain the main ideas.\n\n### First concept\n\nAdd information about the first concept.\n\n### Second concept\n\nAdd information about the second concept.\n\n## Summary\n\nSummarise the key points from the topic.\nYou do not need to use every section. Adapt the structure to suit your learning material.\n\n\n\n\n\n\nTip\n\n\n\nStart with a clear page structure before adding detailed content. A few meaningful headings and short paragraphs can make a long topic much easier to read."
-  },
-  {
-    "objectID": "content/module-1/putting-it-together.html",
-    "href": "content/module-1/putting-it-together.html",
-    "title": "Putting it together",
-    "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\nA course page often combines several content elements to guide participants through a topic. This example brings together headings, paragraphs, lists, tables, and callouts in one structured page.\nUse it as a starting point for your own course material. Replace the demonstration text with information relevant to your course, and remove any elements you do not need."
-  },
-  {
-    "objectID": "content/module-1/putting-it-together.html#example-introducing-a-course-topic",
-    "href": "content/module-1/putting-it-together.html#example-introducing-a-course-topic",
-    "title": "Putting it together",
-    "section": "Example: Introducing a course topic",
-    "text": "Example: Introducing a course topic\n\nOverview\nIn this section, introduce the topic and explain why it is relevant to participants.\nClear introductory text helps participants understand what they will learn and how the topic connects to the course.\n\n\nLearning objectives\nBy the end of this section, participants will be able to:\n\nDescribe the main concept introduced in the section.\nIdentify key information related to the topic.\nApply the concept in a practical context.\n\n\n\nKey information\nUse a table when participants need to compare or quickly find specific information.\n\n\n\nTopic element\nExample content\n\n\n\n\nMain concept\nIntroduce the central idea\n\n\nKey information\nExplain the most important points\n\n\nPractical application\nShow how the concept can be used\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nUse callouts to highlight information that participants should notice. Keep the message focused, and avoid using callouts for information that belongs in the main text.\n\n\n\n\nActivity\nGive participants an opportunity to apply what they have learned.\nInstructions\n\nRead the example or scenario.\nDiscuss the questions with a partner or group.\nIdentify the main points from the discussion.\nShare your conclusions.\n\n\n\nReflection\nAsk participants to consider how the topic relates to their own work or experience.\n\nWhat is one important idea you learned?\nHow could you apply it in your own context?\nWhat would you like to explore further?"
-  },
-  {
-    "objectID": "content/module-1/putting-it-together.html#the-source-markdown",
-    "href": "content/module-1/putting-it-together.html#the-source-markdown",
-    "title": "Putting it together",
-    "section": "The source Markdown",
-    "text": "The source Markdown\nThe example above can be created using the following Quarto Markdown structure. Copy it into a .qmd file and adapt the content.\n## Example: Introducing a course topic\n\n### Overview\n\nIn this section, introduce the topic and explain why it is relevant to participants.\n\nClear introductory text helps participants understand what they will learn and how the topic connects to the course.\n\n### Learning objectives\n\nBy the end of this section, participants will be able to:\n\n- Describe the main concept introduced in the section.\n- Identify key information related to the topic.\n- Apply the concept in a practical context.\n\n### Key information\n\n| Topic element | Example content |\n|---|---|\n| Main concept | Introduce the central idea |\n| Key information | Explain the most important points |\n| Practical application | Show how the concept can be used |\n\n::: {.callout-tip}\n## Tip\n\nUse callouts to highlight information that participants should notice. Keep the message focused, and avoid using callouts for information that belongs in the main text.\n:::\n\n### Activity\n\nGive participants an opportunity to apply what they have learned.\n\n**Instructions**\n\n1. Read the example or scenario.\n2. Discuss the questions with a partner or group.\n3. Identify the main points from the discussion.\n4. Share your conclusions.\n\n### Reflection\n\nAsk participants to consider how the topic relates to their own work or experience.\n\n- What is one important idea you learned?\n- How could you apply it in your own context?\n- What would you like to explore further?"
+    "text": "In this module\n\nTopic 1 – Headings and text: Create headings and paragraphs, and apply basic text formatting.\nTopic 2 – Lists and tables: Organise information using bulleted and numbered lists, and present information in tables.\nTopic 3 – Other content elements: Use code blocks, block quotes, horizontal rules, and collapsible sections to structure content."
   },
   {
     "objectID": "syllabus.html",

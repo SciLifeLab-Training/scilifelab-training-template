@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Topic 1</title>
+<title>Callout boxes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -69,11 +103,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#note" id="toc-note" class="nav-link active" data-scroll-target="#note">Note</a></li>
+  <li><a href="#tip" id="toc-tip" class="nav-link" data-scroll-target="#tip">Tip</a></li>
+  <li><a href="#important" id="toc-important" class="nav-link" data-scroll-target="#important">Important</a></li>
+  <li><a href="#caution" id="toc-caution" class="nav-link" data-scroll-target="#caution">Caution</a></li>
+  <li><a href="#warning" id="toc-warning" class="nav-link" data-scroll-target="#warning">Warning</a></li>
+  <li><a href="#using-callouts-effectively" id="toc-using-callouts-effectively" class="nav-link" data-scroll-target="#using-callouts-effectively">Using callouts effectively</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <div class="course-navbar">
     <div class="course-navbar-layout">
@@ -423,6 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, true);
 });
 </script>
+
 <nav class="course-content-navigation" aria-label="Course content">
     <div class="course-content-navigation-inner">
         <div class="course-content-navigation-scroll">
@@ -436,16 +482,16 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     <div class="course-content-navigation-menu">
 <a class="course-content-navigation-link" href="" data-content-page="module-1/introduction.html">
-    Introduction
+    How to structure a page
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/structuring-a-page.html">
-    Structuring a page
+<a class="course-content-navigation-link" href="" data-content-page="module-1/headings-and-text.html">
+    Headings and text
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/ways-to-organize-content.html">
-    Ways to organise content
+<a class="course-content-navigation-link" href="" data-content-page="module-1/lists-and-tables.html">
+    Lists and tables
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/putting-it-together.html">
-    Putting it together
+<a class="course-content-navigation-link" href="" data-content-page="module-1/other-content-elements.html">
+    Other content elements
 </a>
 </div>
 </div>
@@ -456,13 +502,13 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     <div class="course-content-navigation-menu">
 <a class="course-content-navigation-link" href="" data-content-page="module-2/introduction.html">
-    Introduction
+    How to highlight information
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-2/topic-1.html">
-    Topic 1
+<a class="course-content-navigation-link" href="" data-content-page="module-2/callout-boxes.html">
+    Callout boxes
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-2/topic-2.html">
-    Topic 2
+<a class="course-content-navigation-link" href="" data-content-page="module-2/collapsible-boxes.html">
+    Collapsible callout boxes
 </a>
 </div>
 </div>
@@ -473,13 +519,13 @@ document.addEventListener("DOMContentLoaded", function () {
     </button>
     <div class="course-content-navigation-menu">
 <a class="course-content-navigation-link" href="" data-content-page="module-3/introduction.html">
-    Introduction
+    How to add media and interactive elements
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-3/topic-1.html">
-    Topic 1
+<a class="course-content-navigation-link" href="" data-content-page="module-3/links.html">
+    Links
 </a>
-<a class="course-content-navigation-link" href="" data-content-page="module-3/topic-2.html">
-    Topic 2
+<a class="course-content-navigation-link" href="" data-content-page="module-3/images-presentations-videos.html">
+    Images, presentations and videos
 </a>
 </div>
 </div>
@@ -489,7 +535,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Topic 1</h1>
+<h1 class="title">Callout boxes</h1>
 </div>
 
 
@@ -504,15 +550,160 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </header>
 
+<p>Callout boxes draw attention to information that participants should notice. Use them to highlight useful details, practical advice, important messages, cautions, or warnings.</p>
+<p>Each example below shows the Quarto syntax and how the callout appears when rendered.</p>
+<p><br></p>
+<section id="note" class="level2">
+<h2 class="anchored" data-anchor-id="note">Note</h2>
+<p>Use a note to provide additional information that supports the main text without interrupting its flow.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>This is additional information that may help participants understand the topic.</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is additional information that may help participants understand the topic.</p>
+</div>
+</div>
+</section>
+<section id="tip" class="level2">
+<h2 class="anchored" data-anchor-id="tip">Tip</h2>
+<p>Use a tip to share practical advice or a helpful suggestion.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Save your work regularly so you do not lose your changes.</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Save your work regularly so you do not lose your changes.</p>
+</div>
+</div>
+</section>
+<section id="important" class="level2">
+<h2 class="anchored" data-anchor-id="important">Important</h2>
+<p>Use an important callout to emphasise information that participants should pay particular attention to.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Complete the required steps before moving on to the next activity.</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Complete the required steps before moving on to the next activity.</p>
+</div>
+</div>
+</section>
+<section id="caution" class="level2">
+<h2 class="anchored" data-anchor-id="caution">Caution</h2>
+<p>Use a caution callout to draw attention to something that could cause a problem if overlooked.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Changing this setting may affect how the page is displayed.</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Changing this setting may affect how the page is displayed.</p>
+</div>
+</div>
+</section>
+<section id="warning" class="level2">
+<h2 class="anchored" data-anchor-id="warning">Warning</h2>
+<p>Use a warning callout for information about a significant risk or a potentially harmful action.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Do not share personal or confidential information in publicly accessible materials.</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not share personal or confidential information in publicly accessible materials.</p>
+</div>
+</div>
+</section>
+<section id="using-callouts-effectively" class="level2">
+<h2 class="anchored" data-anchor-id="using-callouts-effectively">Using callouts effectively</h2>
+<p>Callouts are optional. Use them when highlighting information improves the learning experience. Avoid adding too many to a page, as this can make it harder for readers to identify what is important. You can also include Markdown formatting, such as bold text, lists, or links, inside a callout.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>**Before submitting your work:**</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Check that all required sections are complete.</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Review your text for clarity.</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Save your changes.</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Before submitting your work:</strong></p>
+<ul>
+<li>Check that all required sections are complete.</li>
+<li>Review your text for clarity.</li>
+<li>Save your changes.</li>
+</ul>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
+
 <div class="course-content-next-navigation" hidden="" data-content-next-from="index.html">
     <a class="course-content-next-link" href="" data-content-navigation-page="module-1/introduction.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Introduction →
+        How to structure a page →
     </span>
 </a>
 </div>
@@ -522,122 +713,122 @@ document.addEventListener("DOMContentLoaded", function () {
     <span class="course-content-next-title">
         ← Introduction
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/structuring-a-page.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/headings-and-text.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Structuring a page →
+        Headings and text →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/structuring-a-page.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/headings-and-text.html">
     <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/introduction.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Introduction
+        ← How to structure a page
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/ways-to-organize-content.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/lists-and-tables.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Ways to organise content →
+        Lists and tables →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/ways-to-organize-content.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/structuring-a-page.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/lists-and-tables.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/headings-and-text.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Structuring a page
+        ← Headings and text
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/putting-it-together.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-1/other-content-elements.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Putting it together →
+        Other content elements →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/putting-it-together.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/ways-to-organize-content.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-1/other-content-elements.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/lists-and-tables.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Ways to organise content
+        ← Lists and tables
     </span>
 </a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/introduction.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Introduction →
+        How to highlight information →
     </span>
 </a>
 </div>
 <div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/introduction.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/putting-it-together.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-1/other-content-elements.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Putting it together
+        ← Other content elements
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/topic-1.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/callout-boxes.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 1 →
+        Callout boxes →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/callout-boxes.html">
     <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/introduction.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Introduction
+        ← How to highlight information
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/topic-2.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-2/collapsible-boxes.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 2 →
+        Collapsible callout boxes →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/topic-2.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-2/collapsible-boxes.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/callout-boxes.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Topic 1
+        ← Callout boxes
     </span>
 </a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/introduction.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Introduction →
+        How to add media and interactive elements →
     </span>
 </a>
 </div>
 <div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/introduction.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/topic-2.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-2/collapsible-boxes.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Topic 2
+        ← Collapsible callout boxes
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/topic-1.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/links.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 1 →
+        Links →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/links.html">
     <a class="course-content-prev-link" href="" data-content-navigation-page="module-3/introduction.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Introduction
+        ← How to add media and interactive elements
     </span>
-</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/topic-2.html">
+</a><a class="course-content-next-link" href="" data-content-navigation-page="module-3/images-presentations-videos.html">
     <span class="course-content-next-label">Next</span>
     <span class="course-content-next-title">
-        Topic 2 →
+        Images, presentations and videos →
     </span>
 </a>
 </div>
-<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/topic-2.html">
-    <a class="course-content-prev-link" href="" data-content-navigation-page="module-3/topic-1.html">
+<div class="course-content-next-navigation" hidden="" data-content-next-from="module-3/images-presentations-videos.html">
+    <a class="course-content-prev-link" href="" data-content-navigation-page="module-3/links.html">
     <span class="course-content-next-label">Previous</span>
     <span class="course-content-next-title">
-        ← Topic 1
+        ← Links
     </span>
 </a>
 </div>
