@@ -1696,7 +1696,7 @@ html.course-content-page #quarto-content > main.content {
     max-width: none !important;
 
     margin: 0 !important;
-    padding: 2.5rem var(--course-content-padding) 0 !important;
+    padding: 3.5rem var(--course-content-padding) 0 !important;
 }
 
 
