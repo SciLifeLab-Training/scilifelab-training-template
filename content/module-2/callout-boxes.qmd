@@ -1,0 +1,127 @@
+---
+title: "Callout boxes"
+order: 2
+---
+
+Callout boxes draw attention to information that participants should notice. Use them to highlight useful details, practical advice, important messages, cautions, or warnings.
+
+Each example below shows the Quarto syntax and how the callout appears when rendered.
+
+<br>
+
+## Note
+
+Use a note to provide additional information that supports the main text without interrupting its flow.
+
+**Markdown syntax**
+
+```markdown
+::: {.callout-note}
+This is additional information that may help participants understand the topic.
+:::
+```
+
+**Rendered result**
+
+::: {.callout-note}
+This is additional information that may help participants understand the topic.
+:::
+
+## Tip
+
+Use a tip to share practical advice or a helpful suggestion.
+
+**Markdown syntax**
+
+```markdown
+::: {.callout-tip}
+Save your work regularly so you do not lose your changes.
+:::
+```
+
+**Rendered result**
+
+::: {.callout-tip}
+Save your work regularly so you do not lose your changes.
+:::
+
+## Important
+
+Use an important callout to emphasise information that participants should pay particular attention to.
+
+**Markdown syntax**
+
+```markdown
+::: {.callout-important}
+Complete the required steps before moving on to the next activity.
+:::
+```
+
+**Rendered result**
+
+::: {.callout-important}
+Complete the required steps before moving on to the next activity.
+:::
+
+## Caution
+
+Use a caution callout to draw attention to something that could cause a problem if overlooked.
+
+**Markdown syntax**
+
+```markdown
+::: {.callout-caution}
+Changing this setting may affect how the page is displayed.
+:::
+```
+
+**Rendered result**
+
+::: {.callout-caution}
+Changing this setting may affect how the page is displayed.
+:::
+
+## Warning
+
+Use a warning callout for information about a significant risk or a potentially harmful action.
+
+**Markdown syntax**
+
+```markdown
+::: {.callout-warning}
+Do not share personal or confidential information in publicly accessible materials.
+:::
+```
+
+**Rendered result**
+
+::: {.callout-warning}
+Do not share personal or confidential information in publicly accessible materials.
+:::
+
+## Using callouts effectively
+Callouts are optional. Use them when highlighting information improves the learning experience. Avoid adding too many to a page, as this can make it harder for readers to identify what is important.
+You can also include Markdown formatting, such as bold text, lists, or links, inside a callout.
+
+**Markdown syntax**
+
+```markdown
+::: {.callout-tip}
+**Before submitting your work:**
+
+- Check that all required sections are complete.
+- Review your text for clarity.
+- Save your changes.
+:::
+```
+
+**Rendered result**
+
+::: {.callout-tip}
+**Before submitting your work:**
+
+- Check that all required sections are complete.
+- Review your text for clarity.
+- Save your changes.
+:::
+

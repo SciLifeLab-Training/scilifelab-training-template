@@ -1,0 +1,97 @@
+---
+title: "Headings and text"
+order: 2
+---
+
+Use headings, paragraphs, and text formatting to organise your training content and make it easier for participants to read.
+
+Each example below shows the Markdown syntax and how it appears when rendered.
+
+<br>
+
+## Headings
+
+Use headings to divide your page into sections and subsections. Quarto supports several heading levels:
+
+- `##` Main section — appears in the table of contents.
+- `###` Subsection — does not appear in the table of contents.
+- `####` Sub-subsection — does not appear in the table of contents.
+
+In this template, `##` headings are displayed with a line underneath.
+
+**Markdown syntax**
+
+```markdown
+## Main section
+
+Text introducing the section.
+
+### Subsection
+
+More detailed information.
+
+#### Sub-subsection
+
+Additional details.
+```
+
+**Rendered result**
+
+<div style="font-size: 1.8em; font-weight: 600; margin-top: 1em;">
+Main section
+</div>
+
+Text introducing the section.
+
+<div style="font-size: 1.5em; font-weight: 600; margin-top: 1em;">
+Subsection
+</div>
+
+More detailed information.
+
+<div style="font-size: 1.25em; font-weight: 600; margin-top: 1em;">
+Sub-subsection
+</div>
+
+Additional details.
+
+Use heading levels in order. For example, use `###` for a subsection within a `##` section, and `####` for a subsection within a `###` section.
+
+
+## Paragraphs
+
+Write ordinary text as paragraphs. Leave a blank line between paragraphs.
+
+**Markdown syntax**
+
+```markdown
+This is the first paragraph. It introduces a topic or explains an idea.
+
+This is the second paragraph. It appears separately from the first.
+```
+
+**Rendered result**
+
+This is the first paragraph. It introduces a topic or explains an idea.
+
+This is the second paragraph. It appears separately from the first.
+
+## Text formatting
+
+Use bold and italic text to emphasise words or phrases.
+
+**Markdown syntax**
+
+```markdown
+This is **bold text**.
+
+This is *italic text*.
+
+This is ***bold and italic text***.
+```
+
+**Rendered result**
+
+This is **bold text**.  
+This is *italic text*.  
+This is ***bold and italic text***.  

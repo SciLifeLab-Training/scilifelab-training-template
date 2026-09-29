@@ -1,0 +1,81 @@
+---
+title: "Images, presentations and videos"
+order: 3
+---
+
+Images, presentations, and videos can support explanations, illustrate concepts, and provide participants with additional ways to engage with your training content.
+
+Each example below shows the syntax and how the element appears when rendered.
+
+<br>
+
+## Adding images
+
+Use images to illustrate concepts, show examples, or provide visual guidance. Add descriptive alternative text (`alt`) to make images accessible to participants using screen readers.
+
+**Markdown syntax**
+
+```markdown
+![A descriptive text explaining what the image shows](../../docs/example-image.svg)
+```
+
+**Rendered result**
+
+![A descriptive text explaining what the image shows](../../docs/example-image.svg)
+
+Place the image in the `docs` folder at the root of your training repository. From a page inside a module folder, use `../../docs/` followed by the image filename. Replace the example filename and alternative text with your own.
+
+
+## Embedding a presentation
+
+You can embed a presentation so participants can view it directly on the training page, rather than following a link to another website. Presentation platforms such as PowerPoint or Google Slides provide embed code that you can add to your page.
+
+**HTML syntax**
+
+```html
+<iframe
+  src="PASTE-YOUR-PRESENTATION-EMBED-URL-HERE"
+  width="100%"
+  height="500"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
+```
+
+**Rendered result**
+
+<iframe
+  src="https://docs.google.com/presentation/d/e/2PACX-1vT8uFNhgTk4ZlujF6smZlRgHIyyg8qlpW-R7athsi0xXtQXuE2ylE-CpE7vQzrR56hgFsl6WEz5uPcT/pubembed?start=false&loop=false&delayms=3000"
+  width="100%"
+  height="500"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
+
+## Adding videos
+
+You can add a video file to your training repository and display it with a video player. The `controls` attribute allows participants to play, pause, and adjust the volume.
+
+**HTML syntax**
+
+```html
+<video controls width="100%">
+  <source src="../../docs/example-video.mp4" type="video/mp4">
+  Your browser does not support the video element.
+</video>
+```
+
+**Rendered result**
+
+```{=html}
+<video controls width="100%">
+  <source src="../../docs/example-video.mp4" type="video/mp4">
+  Your browser does not support the video element.
+</video>
+```
+
+<br> 
+
+Place the video file in the `docs` folder at the root of your training repository. Replace the example filename with the name of your video file.
+
+You can also embed videos hosted on platforms such as YouTube or Vimeo. Use the embed code provided by the platform, in the same way as for presentations.

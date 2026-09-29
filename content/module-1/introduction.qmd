@@ -1,29 +1,16 @@
 ---
-title: "Introduction"
+title: "How to structure a page"
 order: 1
 ---
 
-This module introduces the basic building blocks of a course content page. You can combine headings, paragraphs, lists, and text formatting to organise information and make it easier for participants to follow.
+This module demonstrates how to use Markdown and Quarto to structure and format training content. Each topic presents the Markdown syntax alongside the rendered result, so you can see how the code translates into the content participants will read.
 
-The examples in this module show how to structure a topic page and present information clearly. Browse the topics to see how each element looks when rendered, and copy the examples you would like to use in your own course.
+Explore the examples, copy the snippets you need, and adapt them for your own training pages.
 
-## Learning objectives
-
-By the end of this module, you will know how to:
-
-- Organise a page using headings and paragraphs.
-- Format text using bold and italic styles.
-- Create bulleted and numbered lists.
-- Structure a topic page so that it is easy to read and navigate.
-
-::: {.callout-tip}
-## Getting started
-
-You do not need to write Markdown from scratch. Find an example that suits your needs, copy the code snippet, and replace the demonstration text with your own.
-:::
+<br>
 
 ## In this module
 
-- **Topic 1 – Structuring a page:** Headings, paragraphs, text formatting, and lists.
-- **Topic 2 – More ways to organise content:** Examples of additional page elements and formatting.
-- **Topic 3 – Putting it together:** A practical example of combining content elements on a page.
+- [**Topic 1 – Headings and text:**](/content/module-1/headings-and-text.qmd) Create headings and paragraphs, and apply basic text formatting.
+- [**Topic 2 – Lists and tables:**](/content/module-1/lists-and-tables.qmd) Organise information using bulleted and numbered lists, and present information in tables.
+- [**Topic 3 – Other content elements:**](/content/module-1/other-content-elements.qmd) Use code blocks, block quotes, horizontal rules, and collapsible sections to structure content. 

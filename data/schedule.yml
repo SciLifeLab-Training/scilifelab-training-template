@@ -4,153 +4,153 @@ events:
   # DAY 1
   # ------------------------------------------------------------------
 
-  - title: "Welcome and Introduction"
+  - title: "How to structure a page"
     type: lecture
     group: "Day 1"
-    start: 2026-09-25T09:00:00
-    end: 2026-09-25T09:45:00
+    start: 2026-09-30T09:00:00
+    end: 2026-09-30T09:45:00
     all_day: false
     location: "SciLifeLab Solna"
     people:
       - Jane Doe
-    description: "Introduction to the training, objectives, and practical information."
+    description: "An introduction to the content pages and how to use them."
     content: content/module-1/introduction.qmd
 
-  - title: "Introduction to the Research Environment"
+  - title: "Headings and text"
     type: lecture
     group: "Day 1"
-    start: 2026-09-25T10:00:00
-    end: 2026-09-25T11:00:00
+    start: 2026-09-30T10:00:00
+    end: 2026-09-30T11:00:00
     all_day: false
     location: "Lecture Hall A"
     people:
       - John Smith
     description: ""
-    content: content/module-1/topic-1.qmd
+    content: content/module-1/headings-and-text.qmd
 
   - title: "Coffee Break"
     type: break
     group: "Day 1"
-    start: 2026-09-25T11:00:00
-    end: 2026-09-25T11:30:00
+    start: 2026-09-30T11:00:00
+    end: 2026-09-30T11:30:00
     all_day: false
     location: ""
     people: []
     description: ""
     content: ""
 
-  - title: "Hands-on Data Analysis"
+  - title: "Lists and tables"
     type: practical
     group: "Day 1"
-    start: 2026-09-25T11:30:00
-    end: 2026-09-25T13:00:00
+    start: 2026-09-30T11:30:00
+    end: 2026-09-30T13:00:00
     all_day: false
     location: "Computer Lab"
     people:
       - Jane Doe
       - Alex Johnson
-    description: "Practical session working with the course dataset."
-    content: content/chapter3.qmd
+    description: "Explore lists and tables in the training content."
+    content: content/module-1/lists-and-tables.qmd
 
   - title: "Lunch"
     type: break
     group: "Day 1"
-    start: 2026-09-25T13:00:00
-    end: 2026-09-25T14:00:00
+    start: 2026-09-30T13:00:00
+    end: 2026-09-30T14:00:00
     all_day: false
     location: "SciLifeLab Café"
     people: []
     description: ""
     content: ""
 
-  - title: "Discussion and Reflection"
+  - title: "Other content elements"
     type: discussion
     group: "Day 1"
-    start: 2026-09-25T14:00:00
-    end: 2026-09-25T15:00:00
+    start: 2026-09-30T14:00:00
+    end: 2026-09-30T15:00:00
     all_day: false
     location: "Seminar Room 2"
     people:
       - John Smith
     description: ""
-    content: ""
+    content: content/module-1/other-content-elements.qmd
 
 
   # ------------------------------------------------------------------
   # DAY 2
   # ------------------------------------------------------------------
 
-  - title: "Advanced Methods"
+  - title: "How to highlight information"
     type: lecture
     group: "Day 2"
-    start: 2026-09-28T09:00:00
-    end: 2026-09-28T10:30:00
+    start: 2026-10-01T09:00:00
+    end: 2026-10-01T10:30:00
     all_day: false
     location: "Lecture Hall A"
     people:
       - Maria Andersson
     description: ""
-    content: content/chapter4.qmd
+    content: content/module-2/introduction.qmd
 
-  - title: "Workshop: Building a Workflow"
+  - title: "Callout boxes"
     type: practical
     group: "Day 2"
-    start: 2026-09-28T10:45:00
-    end: 2026-09-28T12:30:00
+    start: 2026-10-01T10:45:00
+    end: 2026-10-01T12:30:00
     all_day: false
     location: "Computer Lab"
     people:
       - Maria Andersson
       - Alex Johnson
     description: ""
-    content: content/chapter5.qmd
+    content: content/module-2/callout-boxes.qmd
 
-  - title: "Guest Lecture: From Data to Discovery"
+  - title: "Collapsible callout boxes"
     type: discussion
     group: "Day 2"
-    start: 2026-09-28T14:00:00
-    end: 2026-09-28T15:00:00
+    start: 2026-10-01T14:00:00
+    end: 2026-10-01T15:00:00
     all_day: false
     location: "Auditorium"
     people:
       - Sarah Wilson
-    description: "Guest presentation followed by questions."
-    content: ""
+    description: ""
+    content: content/module-2/collapsible-boxes.qmd
 
 
   # ------------------------------------------------------------------
   # DAY 3
   # ------------------------------------------------------------------
 
-  - title: "Independent Project Work"
+  - title: "How to add media and interactive elements"
     type: group-work
     group: "Day 3"
-    start: 2026-10-01T09:00:00
-    end: 2026-10-01T12:00:00
+    start: 2026-10-02T09:00:00
+    end: 2026-10-02T12:00:00
     all_day: false
     location: ""
     people: []
     description: "Time for independent work on the course project."
-    content: content/chapter6.qmd
+    content: content/module-3/introduction.qmd
 
-  - title: "Project Presentations"
+  - title: "Links"
     type: presentation
     group: "Day 3"
-    start: 2026-10-01T13:00:00
-    end: 2026-10-01T15:30:00
+    start: 2026-10-02T13:00:00
+    end: 2026-10-02T15:30:00
     all_day: false
     location: "Auditorium"
     people:
       - Jane Doe
     description: ""
-    content: ""
+    content: content/module-3/links.qmd
 
 
   # ------------------------------------------------------------------
   # LATER IN THE FUTURE
   # ------------------------------------------------------------------
 
-  - title: "Follow-up Workshop"
+  - title: "Images, presentations and videos"
     type: workshop
     group: "Follow-up"
     start: 2026-11-01T10:00:00
@@ -160,7 +160,7 @@ events:
     people:
       - John Smith
     description: "Follow-up workshop several weeks after the main course."
-    content: content/chapter7.qmd
+    content: content/module-3/images-presentations-videos.qmd
 
   - title: "Course Assessment"
     type: assessment

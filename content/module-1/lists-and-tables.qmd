@@ -1,0 +1,93 @@
+---
+title: "Lists and tables"
+order: 3
+---
+
+Use lists and tables to organise information and make it easier for participants to scan and understand.
+
+Each example below shows the Markdown syntax and how it appears when rendered.
+
+<br>
+
+## Bulleted lists
+
+Use a hyphen (`-`) at the beginning of each line to create a bulleted list. Bulleted lists are useful for presenting related points that do not need to be followed in a particular order.
+
+**Markdown syntax**
+
+```markdown
+- First item
+- Second item
+- Third item
+```
+
+**Rendered result**
+
+- First item
+- Second item
+- Third item
+
+### Nested lists
+
+Indent items to create a list within a list. Use nested lists to show how information is grouped.
+
+**Markdown syntax**
+
+```markdown
+- Main item
+  - Supporting point
+  - Another supporting point
+- Another main item
+```
+
+**Rendered result**
+
+- Main item
+  - Supporting point
+  - Another supporting point
+- Another main item
+
+
+
+## Numbered lists
+
+Use numbers followed by a period when the order of the items matters, such as for instructions or a process.
+
+**Markdown syntax**
+
+```markdown
+1. Open the training page.
+2. Find the section you want to update.
+3. Replace the example text with your own content.
+4. Render the website and review the result.
+```
+
+**Rendered result**
+
+1. Open the training page.
+2. Find the section you want to update.
+3. Replace the example text with your own content.
+4. Render the website and review the result.
+
+
+## Tables
+
+Use tables to present information in rows and columns, especially when you want participants to compare related details. Use clear column headings and keep the content concise.
+
+**Markdown syntax**
+
+```markdown
+| Element | Purpose | Example |
+|---|---|---|
+| Heading | Introduces a section | Learning objectives |
+| Paragraph | Explains an idea | A short description |
+| List | Groups related items | Steps or key points |
+```
+
+**Rendered result**
+
+| Element | Purpose | Example |
+|---|---|---|
+| Heading | Introduces a section | Learning objectives |
+| Paragraph | Explains an idea | A short description |
+| List | Groups related items | Steps or key points |

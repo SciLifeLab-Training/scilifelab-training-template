@@ -1502,6 +1502,14 @@ body {
     color: #222;
 }
 
+.course-schedule-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.course-schedule-title a:hover {
+  text-decoration: underline;
+}
 
 /* Speaker */
 
@@ -1696,7 +1704,7 @@ html.course-content-page #quarto-content > main.content {
     max-width: none !important;
 
     margin: 0 !important;
-    padding: 3.5rem var(--course-content-padding) 0 !important;
+    padding: 3.0rem var(--course-content-padding) 0 !important;
 }
 
 
@@ -2017,6 +2025,10 @@ html.course-content-page .course-content-next-navigation {
     gap: 2rem;
 
     border-top: 1px solid #d7e2e3;
+}
+
+html.course-content-page #quarto-margin-sidebar #TOC {
+    margin-top: 2rem;
 }
 
 html.course-content-page .course-content-next-navigation[hidden] {

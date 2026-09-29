@@ -1,0 +1,68 @@
+---
+title: "Links"
+order: 2
+---
+
+Use links to direct participants to websites, documents, other training pages, and additional resources.
+
+Each example below shows the Markdown syntax and how the link appears when rendered.
+
+<br>
+
+## Linking to a website
+
+Use links to direct participants to external websites or online resources.
+
+**Markdown syntax**
+
+```markdown
+[Visit the SciLifeLab website](https://www.scilifelab.se/)
+```
+
+**Rendered result**
+
+[Visit the SciLifeLab website](https://www.scilifelab.se/)
+
+## Using descriptive link text
+
+Use descriptive link text that tells participants where the link will take them or what information they will find. 
+
+**Markdown syntax**
+
+```markdown
+For more information, read the [SciLifeLab training resources](https://training.scilifelab.se/resources).
+```
+
+**Rendered result**
+
+For more information, read the [SciLifeLab training resources](https://training.scilifelab.se/resources).
+
+## Linking to a file or resource
+
+You can link to files, such as PDF documents or other downloadable resources. Place the file in the docs folder at the root of your training repository. When linking to it from a page inside a content/module folder, use ../../docs/ followed by the filename. Adjust the path if your file is stored elsewhere.
+
+Replace the example filename and path with those of your own file.
+
+**Markdown syntax**
+
+```markdown
+([Download the participant guide](../../docs/example-pdf.pdf))
+```
+
+**Rendered result**
+
+[Download the participant guide](../../docs/example-pdf.pdf)
+
+## Linking to another training page
+
+You can link directly to another page in your training website. Use the relative path to the page, including its `.qmd` filename. Quarto will resolve the link to the corresponding rendered page when the website is built.
+
+**Markdown syntax**
+
+```markdown
+[Go to the introduction of Module 3](/content/module-3/introduction.qmd)
+```
+
+**Rendered result**
+
+[Go to the introduction of Module 3](/content/module-3/introduction.qmd)

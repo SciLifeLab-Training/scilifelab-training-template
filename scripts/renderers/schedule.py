@@ -67,7 +67,7 @@ def render_schedule(events, course):
 </div>
 """.strip()
 
-    
+
     # ------------------------------------------------------------------
     # Group events by course day
     # ------------------------------------------------------------------
@@ -158,13 +158,24 @@ def render_schedule(events, course):
 </div>
 """
 
+            # ----------------------------------------------------------
+            # Link event title to its content page, if provided
+            # ----------------------------------------------------------
+
+            content = event.get("content", "")
+
+            if content:
+                content = content.replace(".qmd", ".html")
+                title_html = f'<a href="{content}">{event["title"]}</a>'
+            else:
+                title_html = event["title"]
+
             separator_html = ""
 
             if index > 0:
                 separator_html = """
 <div class="course-schedule-separator"></div>
 """
-
 
             rows.append(
                 f"""
@@ -183,7 +194,7 @@ def render_schedule(events, course):
 </span>
 
 <h3 class="course-schedule-title">
-{event["title"]}
+{title_html}
 </h3>
 
 {speaker_html}

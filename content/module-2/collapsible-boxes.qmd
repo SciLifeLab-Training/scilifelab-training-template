@@ -1,0 +1,68 @@
+---
+title: "Collapsible callout boxes"
+order: 3
+---
+
+Use a collapsible callout to place supplementary information that readers can expand when they want to see more. This is useful for optional details, explanations, or answers to questions.
+
+Each example below shows the Quarto syntax and how the callout appears when rendered.
+
+<br>
+
+## Collapsible note
+
+Add `collapse="true"` to a callout to make it collapsible. The callout is initially collapsed, and readers can expand it to view the content.
+
+**Markdown syntax**
+
+```markdown
+::: {.callout-note collapse="true"}
+## More information
+
+This content is hidden until the reader expands the section.
+:::
+```
+
+**Rendered result**
+
+::: {.callout-note collapse="true"}
+## More information
+
+This content is hidden until the reader expands the section.
+:::
+
+
+## Nested callouts
+
+You can place one callout inside another to group related information. For example, use a regular callout to introduce a topic, then place a collapsible callout inside it for supplementary details.
+
+**Markdown syntax**
+
+```markdown
+::: {.callout-note}
+## Working with supplementary information
+
+The expandable tip below provides an additional suggestion.
+
+::: {.callout-tip collapse="true"}
+## More information
+
+Save your work regularly so you do not lose your changes.
+:::
+
+:::
+```
+**Rendered result**
+
+::: {.callout-note}
+## Working with supplementary information
+
+The expandable tip below provides an additional suggestion.
+
+::: {.callout-tip collapse="true"}
+## More information
+
+Save your work regularly so you do not lose your changes.
+:::
+
+:::

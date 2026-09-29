@@ -1,0 +1,89 @@
+---
+title: "Other content elements"
+order: 4
+---
+
+Use code blocks, block quotes, horizontal rules, and collapsible content to structure content and make it easier for participants to engage. 
+
+Each example below shows the Markdown syntax and how it appears when rendered.
+
+<br>
+
+## Code blocks
+
+Use code blocks to display code or other text that should keep its formatting. Add the language after the opening backticks to enable syntax highlighting where supported.
+
+**Markdown syntax**
+
+````markdown
+```python
+print("Hello, participants!")
+````
+
+
+**Rendered result**
+
+```python
+print("Hello, participants!")
+```
+
+## Block quotes
+
+Use a block quote to set apart a quotation or a statement from another source.
+
+**Markdown syntax**
+
+```markdown
+> Clear structure helps readers navigate information and focus on the main message.
+```
+
+**Rendered result**
+
+> Clear structure helps readers navigate information and focus on the main message.
+
+## Horizontal rules
+
+A horizontal rule can separate distinct parts of a page. Use it sparingly, when a visual break helps clarify the structure.
+
+**Markdown syntax**
+
+```markdown
+---
+```
+
+**Rendered result**
+
+Before the horizontal rule.
+
+---
+
+After the horizontal rule.
+
+
+## Collapsible content
+
+Use a collapsible section to place supplementary information that readers can expand when they want to see more. This is useful for optional details, explanations, or answers to questions.
+
+**Markdown syntax**
+
+```html
+<details>
+<summary>More information</summary>
+
+This content is hidden until the reader expands the section.
+
+</details>
+```
+
+**Rendered result**
+
+<details>
+<summary>More information</summary>
+
+This content is hidden until the reader expands the section.
+
+</details>
+
+::: {.callout-note}
+The `<details>` example uses HTML rather than Markdown, which is appropriate here: it demonstrates a Quarto-supported way to create expandable content without using a callout box.
+:::

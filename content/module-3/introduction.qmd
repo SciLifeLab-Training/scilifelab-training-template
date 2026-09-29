@@ -1,27 +1,15 @@
 ---
-title: "Introduction"
+title: "How to add media and interactive elements"
+order: 1
 ---
 
-Images, videos, and links can make course content more engaging and help participants explore a topic in more depth. This module shows how to include these elements in your course pages.
+This module demonstrates how to add links, images, videos, and exercises to your training content. Each topic presents the Markdown and Quarto syntax alongside the rendered result, so you can see how different elements appear to participants.
 
-The examples demonstrate how to add media and links using Quarto and Markdown. You can copy the snippets and replace the example URLs, image paths, or descriptions with your own.
+Explore the examples, copy the snippets you need, and adapt them for your own training pages.
 
-## Learning objectives
-
-By the end of this module, you will know how to:
-
-- Add links to external websites and other course pages.
-- Insert an image and provide alternative text.
-- Embed a video in a content page.
-- Use media to support the learning material.
-
-::: {.callout-important}
-## Remember accessibility
-
-Provide meaningful alternative text for images, and use descriptive link text so that readers understand where a link leads. For example, use “Read the course guidelines” rather than “Click here”.
-:::
+<br>
 
 ## In this module
 
-- **Topic 1 – Links and images:** Examples of linking to resources and adding images to a page.
-- **Topic 2 – Embedded videos and media:** How to include video and other media in your course content.
+- [**Topic 1 – Links:**](/content/module-3/links.qmd) Link to websites, documents, and other resources to guide participants to further information.
+- [**Topic 2 – Images, presentations and videos:**](/content/module-3/images-presentations-videos.qmd) Add visual media and embed presentations or videos directly in a page.

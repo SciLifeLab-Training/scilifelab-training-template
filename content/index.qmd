@@ -5,14 +5,23 @@ title: "Training Content Pages"
 ---
 
 
-Use the training content pages to provide learning materials and activities for your participants.
+Use the training content pages to provide learning materials and activities for your training participants.
 
 You can organise the pages to suit the structure of your training (for example: by day, module, topic, or section) or structure them around what participants need to learn and do.
 
-In this template, the pages demonstrate how to use Markdown and Quarto to organise and format content. They are examples to adapt when building your own training pages. Replace the example material with your own, and remove any examples or sections you do not need.
+In this template, the pages demonstrate how to use Markdown and Quarto to organise and format content. Use them as examples when creating your own training pages: find an example that suits your needs, copy the code snippet, and replace the demonstration text with your own. This way, you can build your pages without having to write Markdown from scratch.
 
 The template pages cover:
 
-- [**Module 1 – How to structure a page:**](/content/module-1/introduction.qmd) Headings, paragraphs, lists, tables, code blocks, and text formatting.
-- [**Module 2 – How to highlight information:**](/content/module-2/introduction.qmd) Callouts for tips, notes, important information, and warnings, as well as reflection questions.
+- [**Module 1 – How to structure a page:**](/content/module-1/introduction.qmd) Headings, paragraphs, text formatting, lists, tables, code blocks and other content elements.
+- [**Module 2 – How to highlight information:**](/content/module-2/introduction.qmd) Callouts for tips, notes, important information, and warnings.
 - [**Module 3 – How to add media and interactive elements:**](/content/module-3/introduction.qmd) Links, images, videos, and exercises.
+
+---
+
+If you want to learn more about Markdown, these resources provide guides, reference sheets, tutorials, and an online editor:
+
+- [Markdown Guide](https://www.markdownguide.org/) – A practical guide to writing Markdown.
+- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet) – A quick reference to common Markdown syntax.
+- [Markdown Tutorial](https://www.markdowntutorial.com/) – An interactive introduction to Markdown.
+- [StackEdit](https://stackedit.io/app#) – An in-browser Markdown editor.

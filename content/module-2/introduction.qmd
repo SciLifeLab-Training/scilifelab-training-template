@@ -1,28 +1,16 @@
 ---
-title: "Introduction"
+title: "How to highlight information"
 order: 1
 ---
 
-Callout boxes help draw attention to information that participants should notice. They can be used for practical tips, important messages, warnings, or additional context.
+This module demonstrates how to use callout boxes to highlight information in your training content, and how to make callouts collapsible so participants can choose when to view additional details. Each topic presents the Markdown and Quarto syntax alongside the rendered result, so you can see how different callouts appear to participants.
 
-This module demonstrates the different callout styles available in Quarto and how to add them to your course pages. Each example includes the code you can copy and adapt.
+Explore the examples, copy the snippets you need, and adapt them for your own training pages.
 
-## Learning objectives
-
-By the end of this module, you will know how to:
-
-- Add callout boxes to a content page.
-- Choose a callout type that suits the message.
-- Add headings and text inside a callout.
-- Create a collapsible callout for supplementary information.
-
-::: {.callout-note}
-## About callouts
-
-Callouts are optional. Use them when highlighting information improves the learning experience. Avoid adding too many to a page, as this can make it harder for readers to identify what is important.
-:::
+<br>
 
 ## In this module
 
-- **Topic 1 – Callout boxes:** Examples of notes, tips, important messages, cautions, and warnings.
-- **Topic 2 – Collapsible content:** How to place supplementary information in a section that readers can expand when needed.
+- [**Topic 1 – Callout boxes:**](/content/module-2/callout-boxes.qmd) Use notes, tips, important messages, cautions, and warnings to draw attention to different types of information.
+- [**Topic 2 – Collapsible callout boxes:**](/content/module-2/collapsible-boxes.qmd) Make callouts expandable so supplementary information is available when participants need it.
+
