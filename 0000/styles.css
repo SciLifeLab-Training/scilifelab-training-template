@@ -151,6 +151,33 @@ body {
 }
 
 /* ==========================================================================
+   TEMPLATE AND ARCHIVED BANNER
+   ========================================================================== */
+/*
+ * Banner displayed above the landing-page hero.
+ * Used to identify a template or direct visitors to a newer training instance.
+ */
+.template-banner {
+  padding: 0.8rem 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  background: #f3dfb3;
+  color: #292929;
+}
+
+.template-banner p {
+  margin: 0;
+}
+
+.template-banner a {
+  color: #292929;
+  font-weight: 700;
+  margin-left: 0.4rem;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* ==========================================================================
    COURSE NAVBAR
    ========================================================================== */
 
@@ -539,11 +566,10 @@ body {
     max-width: 55ch;
 }
 
-/* Aligns the welcome illustration alongside the introductory text */
-.course-welcome-image {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+.course-welcome-graphic {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ==========================================================================
