@@ -1509,7 +1509,9 @@ body {
 
 .course-schedule-title a:hover {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
 }
+
 
 /* Speaker */
 

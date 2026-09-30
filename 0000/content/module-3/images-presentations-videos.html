@@ -108,9 +108,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#adding-images" id="toc-adding-images" class="nav-link active" data-scroll-target="#adding-images">Adding images</a></li>
+  <li><a href="#adding-images" id="toc-adding-images" class="nav-link active" data-scroll-target="#adding-images">Adding images</a>
+  <ul class="collapse">
+  <li><a href="#basic-image" id="toc-basic-image" class="nav-link" data-scroll-target="#basic-image">Basic image</a></li>
+  <li><a href="#resizing-an-image" id="toc-resizing-an-image" class="nav-link" data-scroll-target="#resizing-an-image">Resizing an image</a></li>
+  <li><a href="#aligning-an-image" id="toc-aligning-an-image" class="nav-link" data-scroll-target="#aligning-an-image">Aligning an image</a></li>
+  </ul></li>
   <li><a href="#embedding-a-presentation" id="toc-embedding-a-presentation" class="nav-link" data-scroll-target="#embedding-a-presentation">Embedding a presentation</a></li>
-  <li><a href="#adding-videos" id="toc-adding-videos" class="nav-link" data-scroll-target="#adding-videos">Adding videos</a></li>
+  <li><a href="#embedding-videos" id="toc-embedding-videos" class="nav-link" data-scroll-target="#embedding-videos">Embedding videos</a></li>
   </ul>
 </nav>
     </div>
@@ -552,7 +557,10 @@ document.addEventListener("DOMContentLoaded", function () {
 <p><br></p>
 <section id="adding-images" class="level2">
 <h2 class="anchored" data-anchor-id="adding-images">Adding images</h2>
-<p>Use images to illustrate concepts, show examples, or provide visual guidance. Add descriptive alternative text (<code>alt</code>) to make images accessible to participants using screen readers.</p>
+<p>Use images to illustrate concepts, show examples, or provide visual guidance. Add descriptive text that will be displayed as a caption. You can also resize and align images.</p>
+<p>Place the image in the <code>docs</code> folder at the root of your training repository. From a page inside a module folder, use <code>../../docs/</code> followed by the image filename. Replace the example filename and text with your own.</p>
+<section id="basic-image" class="level3">
+<h3 class="anchored" data-anchor-id="basic-image">Basic image</h3>
 <p><strong>Markdown syntax</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="al">![A descriptive text explaining what the image shows](../../docs/example-image.svg)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Rendered result</strong></p>
@@ -562,31 +570,60 @@ document.addEventListener("DOMContentLoaded", function () {
 <figcaption class="figure-caption">A descriptive text explaining what the image shows</figcaption>
 </figure>
 </div>
-<p>Place the image in the <code>docs</code> folder at the root of your training repository. From a page inside a module folder, use <code>../../docs/</code> followed by the image filename. Replace the example filename and alternative text with your own.</p>
+<p>To remove the caption, simply remove the text between the brackets, for example:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](../../docs/example-image.svg)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="resizing-an-image" class="level3">
+<h3 class="anchored" data-anchor-id="resizing-an-image">Resizing an image</h3>
+<p>You can set the width of an image using Quarto’s <code>width</code> attribute. For example, use <code>width="10%"</code> to display the image at 10% of the available text width.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="al">![A descriptive text explaining what the image shows](../../docs/example-image.svg)</span>{width="10%"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../docs/example-image.svg" class="img-fluid figure-img" style="width:10.0%"></p>
+<figcaption class="figure-caption">A descriptive text explaining what the image shows</figcaption>
+</figure>
+</div>
+</section>
+<section id="aligning-an-image" class="level3">
+<h3 class="anchored" data-anchor-id="aligning-an-image">Aligning an image</h3>
+<p>You can align an image to the left, center, or right using Quarto’s <code>fig-align</code> attribute.</p>
+<p><strong>Markdown syntax</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="al">![A descriptive text explaining what the image shows](../../docs/example-image.svg)</span>{fig-align="left"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="../../docs/example-image.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">A descriptive text explaining what the image shows</figcaption>
+</figure>
+</div>
+</section>
 </section>
 <section id="embedding-a-presentation" class="level2">
 <h2 class="anchored" data-anchor-id="embedding-a-presentation">Embedding a presentation</h2>
 <p>You can embed a presentation so participants can view it directly on the training page, rather than following a link to another website. Presentation platforms such as PowerPoint or Google Slides provide embed code that you can add to your page.</p>
+<p>For example, see <a href="https://www.youtube.com/watch?v=1eE8qKv-98g&amp;t=179s">how to find the embed code in Google Slides</a> (from 1:41).</p>
 <p><strong>HTML syntax</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;iframe</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ot">  src=</span><span class="st">"PASTE-YOUR-PRESENTATION-EMBED-URL-HERE"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ot">  width=</span><span class="st">"100%"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ot">  height=</span><span class="st">"500"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ot">  frameborder=</span><span class="st">"0"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ot">  allowfullscreen</span><span class="kw">&gt;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/iframe&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;iframe</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ot">  src=</span><span class="st">"PASTE-YOUR-PRESENTATION-EMBED-URL-HERE"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ot">  width=</span><span class="st">"100%"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ot">  height=</span><span class="st">"500"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ot">  frameborder=</span><span class="st">"0"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ot">  allowfullscreen</span><span class="kw">&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/iframe&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Rendered result</strong></p>
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT8uFNhgTk4ZlujF6smZlRgHIyyg8qlpW-R7athsi0xXtQXuE2ylE-CpE7vQzrR56hgFsl6WEz5uPcT/pubembed?start=false&amp;loop=false&amp;delayms=3000" width="100%" height="500" frameborder="0" allowfullscreen="">
 </iframe>
 </section>
-<section id="adding-videos" class="level2">
-<h2 class="anchored" data-anchor-id="adding-videos">Adding videos</h2>
+<section id="embedding-videos" class="level2">
+<h2 class="anchored" data-anchor-id="embedding-videos">Embedding videos</h2>
 <p>You can add a video file to your training repository and display it with a video player. The <code>controls</code> attribute allows participants to play, pause, and adjust the volume.</p>
 <p><strong>HTML syntax</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;video</span> <span class="er">controls</span> <span class="er">width</span><span class="ot">=</span><span class="st">"100%"</span><span class="kw">&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;source</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../../docs/example-video.mp4"</span> <span class="er">type</span><span class="ot">=</span><span class="st">"video/mp4"</span><span class="kw">&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  Your browser does not support the video element.</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/video&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;video</span> <span class="er">controls</span> <span class="er">width</span><span class="ot">=</span><span class="st">"100%"</span><span class="kw">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;source</span> <span class="er">src</span><span class="ot">=</span><span class="st">"../../docs/example-video.mp4"</span> <span class="er">type</span><span class="ot">=</span><span class="st">"video/mp4"</span><span class="kw">&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  Your browser does not support the video element.</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/video&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Rendered result</strong></p>
 <video controls="" width="100%">
   <source src="../../docs/example-video.mp4" type="video/mp4">
@@ -594,7 +631,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </video>
 <p><br></p>
 <p>Place the video file in the <code>docs</code> folder at the root of your training repository. Replace the example filename with the name of your video file.</p>
-<p>You can also embed videos hosted on platforms such as YouTube or Vimeo. Use the embed code provided by the platform, in the same way as for presentations.</p>
+<p>You can also embed videos hosted on platforms such as YouTube or Vimeo. Use the embed code provided by the platform, in the same way as for presentations. For example, see see <a href="https://www.youtube.com/watch?v=P6pFdeZg8LI">how to find the embed code for YouTube videos</a> (from 0:18).</p>
 
 
 </section>

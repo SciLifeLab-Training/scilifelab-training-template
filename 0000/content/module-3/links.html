@@ -109,9 +109,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#linking-to-a-website" id="toc-linking-to-a-website" class="nav-link active" data-scroll-target="#linking-to-a-website">Linking to a website</a></li>
-  <li><a href="#using-descriptive-link-text" id="toc-using-descriptive-link-text" class="nav-link" data-scroll-target="#using-descriptive-link-text">Using descriptive link text</a></li>
-  <li><a href="#linking-to-a-file-or-resource" id="toc-linking-to-a-file-or-resource" class="nav-link" data-scroll-target="#linking-to-a-file-or-resource">Linking to a file or resource</a></li>
-  <li><a href="#linking-to-another-training-page" id="toc-linking-to-another-training-page" class="nav-link" data-scroll-target="#linking-to-another-training-page">Linking to another training page</a></li>
+  <li><a href="#linking-to-another-page-within-your-training-repository" id="toc-linking-to-another-page-within-your-training-repository" class="nav-link" data-scroll-target="#linking-to-another-page-within-your-training-repository">Linking to another page within your training repository</a></li>
+  <li><a href="#linking-to-a-file-or-resource-within-your-training-repository" id="toc-linking-to-a-file-or-resource-within-your-training-repository" class="nav-link" data-scroll-target="#linking-to-a-file-or-resource-within-your-training-repository">Linking to a file or resource within your training repository</a></li>
+  <li><a href="#linking-to-resources-hosted-elsewhere" id="toc-linking-to-resources-hosted-elsewhere" class="nav-link" data-scroll-target="#linking-to-resources-hosted-elsewhere">Linking to resources hosted elsewhere</a>
+  <ul class="collapse">
+  <li><a href="#providing-a-view-link" id="toc-providing-a-view-link" class="nav-link" data-scroll-target="#providing-a-view-link">Providing a view link</a></li>
+  <li><a href="#providing-a-copy-link" id="toc-providing-a-copy-link" class="nav-link" data-scroll-target="#providing-a-copy-link">Providing a copy link</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -553,38 +557,72 @@ document.addEventListener("DOMContentLoaded", function () {
 <p><br></p>
 <section id="linking-to-a-website" class="level2">
 <h2 class="anchored" data-anchor-id="linking-to-a-website">Linking to a website</h2>
-<p>Use links to direct participants to external websites or online resources.</p>
+<p>Use links to direct participants to external websites or online resources. Use descriptive link text that tells participants where the link will take them or what information they will find.</p>
 <p><strong>Markdown syntax</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Visit the SciLifeLab website</span><span class="co">](https://www.scilifelab.se/)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>For more information,<span class="co">[</span><span class="ot">visit the SciLifeLab website</span><span class="co">](https://www.scilifelab.se/)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Rendered result</strong></p>
-<p><a href="https://www.scilifelab.se/">Visit the SciLifeLab website</a></p>
+<p>For more information, <a href="https://www.scilifelab.se/">visit the SciLifeLab website</a></p>
 </section>
-<section id="using-descriptive-link-text" class="level2">
-<h2 class="anchored" data-anchor-id="using-descriptive-link-text">Using descriptive link text</h2>
-<p>Use descriptive link text that tells participants where the link will take them or what information they will find.</p>
+<section id="linking-to-another-page-within-your-training-repository" class="level2">
+<h2 class="anchored" data-anchor-id="linking-to-another-page-within-your-training-repository">Linking to another page within your training repository</h2>
+<p>You can link directly to another page in your training website. Use the relative path to the page, including its <code>.qmd</code> filename. Quarto will resolve the link to the corresponding rendered page when the website is built.</p>
 <p><strong>Markdown syntax</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>For more information, read the <span class="co">[</span><span class="ot">SciLifeLab training resources</span><span class="co">](https://training.scilifelab.se/resources)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Go to the introduction of Module 3</span><span class="co">](/content/module-3/introduction.qmd)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Rendered result</strong></p>
-<p>For more information, read the <a href="https://training.scilifelab.se/resources">SciLifeLab training resources</a>.</p>
+<p><a href="../../content/module-3/introduction.html">Go to the introduction of Module 3</a></p>
 </section>
-<section id="linking-to-a-file-or-resource" class="level2">
-<h2 class="anchored" data-anchor-id="linking-to-a-file-or-resource">Linking to a file or resource</h2>
-<p>You can link to files, such as PDF documents or other downloadable resources. Place the file in the docs folder at the root of your training repository. When linking to it from a page inside a content/module folder, use ../../docs/ followed by the filename. Adjust the path if your file is stored elsewhere.</p>
+<section id="linking-to-a-file-or-resource-within-your-training-repository" class="level2">
+<h2 class="anchored" data-anchor-id="linking-to-a-file-or-resource-within-your-training-repository">Linking to a file or resource within your training repository</h2>
+<p>You can link to files, such as PDF documents or other downloadable resources. Place the file in the <code>docs</code> folder at the root of your training repository. When linking to it from a page inside a <code>content/module folder</code>, use <code>../../docs/</code> followed by the filename. Adjust the path if your file is stored elsewhere.</p>
 <p>Replace the example filename and path with those of your own file.</p>
 <p><strong>Markdown syntax</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="co">[</span><span class="ot">Download the participant guide</span><span class="co">](../../docs/example-pdf.pdf)</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Rendered result</strong></p>
 <p><a href="../../docs/example-pdf.pdf">Download the participant guide</a></p>
 </section>
-<section id="linking-to-another-training-page" class="level2">
-<h2 class="anchored" data-anchor-id="linking-to-another-training-page">Linking to another training page</h2>
-<p>You can link directly to another page in your training website. Use the relative path to the page, including its <code>.qmd</code> filename. Quarto will resolve the link to the corresponding rendered page when the website is built.</p>
-<p><strong>Markdown syntax</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Go to the introduction of Module 3</span><span class="co">](/content/module-3/introduction.qmd)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="linking-to-resources-hosted-elsewhere" class="level2">
+<h2 class="anchored" data-anchor-id="linking-to-resources-hosted-elsewhere">Linking to resources hosted elsewhere</h2>
+<p>You can also link to resources hosted outside your training repository, such as presentations and documents in Google Slides or Google Docs. This allows participants to view or make a copy of a resource without you having to add the file to your repository.</p>
+<p>For Google Slides and Google Docs, you can use the document ID from its URL to create different links. The document ID is the long string of letters and numbers between <code>/d/</code> and the next <code>/</code> in the URL.</p>
+<p>For example, a Google Slides URL may look like this:</p>
+<pre class="text"><code>https://docs.google.com/presentation/d/DOCUMENT_ID/edit</code></pre>
+<p>Replace <code>DOCUMENT_ID</code> with the ID from your own presentation.</p>
+<section id="providing-a-view-link" class="level3">
+<h3 class="anchored" data-anchor-id="providing-a-view-link">Providing a view link</h3>
+<p>Use the <code>/view</code> ending to link directly to the presentation or document.</p>
+<p><strong>HTML syntax</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://docs.google.com/presentation/d/DOCUMENT_ID/view"</span> <span class="er">target</span><span class="ot">=</span><span class="st">"_blank"</span><span class="kw">&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  View in Google Slides</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/a&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Rendered result</strong></p>
-<p><a href="../../content/module-3/introduction.html">Go to the introduction of Module 3</a></p>
+<p><a href="https://docs.google.com/presentation/d/1mhc8IzBRyYvwjFHlACkeSIRyzXiC2HTnspF__PnhDHI/view" target="_blank">View in Google Slides</a></p>
+</section>
+<section id="providing-a-copy-link" class="level3">
+<h3 class="anchored" data-anchor-id="providing-a-copy-link">Providing a copy link</h3>
+<p>For Google Slides and Google Docs, you can use <code>/copy</code> to let participants create their own copy of a resource.</p>
+<p><strong>HTML syntax</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://docs.google.com/presentation/d/DOCUMENT_ID/copy"</span> <span class="er">target</span><span class="ot">=</span><span class="st">"_blank"</span><span class="kw">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  Make a copy</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/a&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Rendered result</strong></p>
+<p><a href="https://docs.google.com/presentation/d/1mhc8IzBRyYvwjFHlACkeSIRyzXiC2HTnspF__PnhDHI/copy" target="_blank">Make a copy</a></p>
+<p>You can use the same approach for Google Docs by replacing <code>presentation</code> in the URL with <code>document</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Participants may need to sign in to their Google account and have permission to access the original resource. Check the sharing settings before distributing the link.</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
