@@ -1,1125 +1,633 @@
-# TEMPLATE_SPEC.md
+# SciLifeLab Training Website Template Specification
 
-# SciLifeLab Course Website Template Specification
+**Status:** Working specification  
+**Purpose:** Describe the behaviour of the current repository, including its data files, renderers, authored Quarto pages, and generated output.
 
-**Version:** 1.0  
-**Status:** Architecture Frozen
+This document describes implemented behaviour, not planned functionality. Where behaviour is controlled by a renderer or page rather than a YAML flag, that distinction is stated explicitly.
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
-The SciLifeLab Course Website Template provides a reusable framework for creating FAIR, maintainable, and consistent course websites using **Quarto** and **GitHub Pages**.
+The SciLifeLab Training Website Template provides a reusable framework for creating FAIR, maintainable, and consistent training websites using **Quarto** and **GitHub Pages**.
 
 The template is designed to support a broad range of educational formats, including:
 
-- Self-paced online courses
+- Self-paced online training
 - Instructor-led workshops
-- Hybrid courses
+- Hybrid training
 - Multi-day events
 - Modular learning resources
 
 The template emphasizes:
 
-- Single source of truth
-- FAIR metadata
-- Minimal duplication
-- Consistent user experience
-- Flexible course content
+- **Single source of truth:** structured information is maintained in data files and reused by the site.
+- **FAIR metadata:** training information can be described in a structured, reusable way.
+- **Minimal duplication:** renderers derive repeated interface elements from the same data.
+- **Consistent user experience:** shared navigation, page patterns, and visual styling.
+- **Flexible learning content:** authors choose a content structure that fits the training.
 
+The specification describes the current repository behaviour. It is not a promise that every possible configuration or future feature is implemented.
 
-## 1.1 Glossary
+### 1.1 Glossary
 
-| Term      | Meaning                           |
-| --------- | --------------------------------- |
-| Course    | The educational offering          |
-| Event     | A scheduled item in the programme |
-| Content   | Learning material in `content/`   |
-| Page      | A top-level website page          |
-| Component | A reusable section of a page      |
+| Term | Meaning |
+|---|---|
+| Training | The educational offering represented by a website |
+| Event | A scheduled item in `schedule.yml` |
+| Content section | A configured group of learning pages, such as a module or day |
+| Page | A rendered website page, usually authored as a `.qmd` file |
+| Renderer | Python code that reads data and produces Quarto fragments or page content |
+| Generated fragment | A build-time file produced by a renderer; do not edit directly |
 
+### 1.2 Design principles
 
----
+The implementation follows these principles:
 
-# 2. Design Principles
+1. **One authoritative source for structured data.** Data files feed the renderers and reduce repeated manual edits.
+2. **Derive interface elements from data.** Navigation availability, quick links, schedule displays, and team previews are generated where supported by the renderers.
+3. **Separate data from presentation.** YAML describes structured information; Python processes it; Quarto composes pages; CSS and JavaScript provide presentation and interaction.
+4. **Keep learning content flexible.** Authors define their own content sections and pages rather than following a fixed pedagogical model.
+5. **Make optionality explicit.** Some pages depend on data availability, while others are always included. A page's presence in the repository is not always the same as its visibility in the site.
 
-The template follows five guiding principles.
+## 2. Repository structure
 
-## 2.1 Single Source of Truth
-
-Every piece of information exists in only one place.
-
-| Information | Source |
-|------------|--------|
-| Course metadata | `course.yml` |
-| Website configuration | `website.yml` |
-| People | `team.yml` |
-| Programme and timetable | `schedule.yml` |
-| Learning material | `content/` |
-
----
-
-## 2.2 Derive Whenever Possible
-
-Users should never manually maintain information that can be generated automatically.
-
-Examples include:
-
-- Navigation
-- Quick links
-- Registration button
-- Team preview
-- Citation
-- Schedule grouping (Day 1, Day 2, etc.)
-
----
-
-## 2.3 Separate Metadata from Content
-
-Metadata is stored in YAML files.
-
-Course material is written as Quarto documents.
-
-This allows instructors complete freedom when designing learning materials while maintaining a consistent website structure.
-
----
-
-## 2.4 Opinionated Core, Flexible Content
-
-Every course website shares the same backbone:
-
-- Home
-- Course content
-- Syllabus
-
-Additional pages are optional.
-
-Course content itself is intentionally unrestricted.
-
----
-
-## 2.5 Progressive Complexity
-
-A minimal course should require only the mandatory metadata.
-
-Additional functionality can be enabled through optional pages and metadata without increasing complexity for simple courses.
-
----
-
-# 3. Repository Structure
+The following reflects the repository provided for this review. The contents of collapsed folders are shown only where relevant.
 
 ```text
-.github/
-
-_sections/
-│
-├── components/
-│     navbar.qmd
-│     footer.qmd
-│
-│     welcome.qmd
-│     announcements.qmd
-│     upcoming.qmd
-│     quick-links.qmd
-│     team-preview.qmd
-│
-└── pages/
-      schedule.qmd
-      syllabus.qmd
-      practical.qmd
-      precourse.qmd
-      resources.qmd
-      faq.qmd
-      team.qmd
-
-_generated/
-
-content/
-    index.qmd
-
-data/
-    course.yml
-    website.yml
-    schedule.yml
-    team.yml
-
-img/
-scripts/
-js/
-includes/
-
-index.qmd
-_quarto.yml
-styles.css
-README.md
+scilifelab-training-template/
+├── _generated/                 # Generated Quarto/HTML fragments
+├── _sections/                  # Reusable homepage sections
+├── _site/                      # Rendered website
+├── .github/
+├── .quarto/
+├── content/
+│   ├── module-1/
+│   ├── module-2/
+│   ├── module-3/
+│   ├── _metadata.yml
+│   └── index.qmd
+├── data/
+│   ├── announcements.yml
+│   ├── course.yml
+│   ├── faq.yml
+│   ├── practicalities.yml
+│   ├── preparation.yml
+│   ├── resources.yml
+│   ├── schedule.yml
+│   ├── team.yml
+│   └── website.yml
+├── docs/                       # Example/downloadable files and specifications
+├── img/
+├── js/
+│   └── schedule.js
+├── scripts/
+│   ├── renderers/
+│   ├── content.py
+│   ├── loaders.py
+│   ├── render_course.py
+│   ├── utils.py
+│   ├── validators.py
+│   └── writer.py
+├── announcements.qmd
+├── faq.qmd
+├── index.qmd
+├── practicalities.qmd
+├── preparation.qmd
+├── resources.qmd
+├── schedule.qmd
+├── syllabus.qmd
+├── team.qmd
+├── _quarto.yml
+├── styles.css
+└── README.md
 ```
 
----
+`docs/template_spec.md` is this specification. `_generated/` and `_site/` are build outputs; edit their source data, renderer, or authored page instead of editing generated output. The repository may also contain additional assets and configuration files not shown above.
 
-# 4. Data Files
+## 3. Data files
 
-The template uses four YAML configuration files.
+| Data file | Purpose | Required? |
+|---|---|---|
+| `course.yml` | Core training identity and metadata used by the website | Yes |
+| `website.yml` | Website configuration, page metadata, content-section definitions, welcome and footer settings | Yes |
+| `schedule.yml` | Scheduled events | Optional in content; keep the file and use `events: []` when there are no events |
+| `team.yml` | People, roles, and contact information | Required by the current renderer |
+| `preparation.yml` | Preparation information and sections | Optional |
+| `practicalities.yml` | Practical and logistical information | Optional |
+| `faq.yml` | Frequently asked questions | Optional |
+| `resources.yml` | Additional resources | Optional |
+| `announcements.yml` | Homepage announcements | Keep the file; it may contain no announcements |
 
-| File | Purpose |
-|------|---------|
-| `course.yml` | Course metadata and educational metadata |
-| `website.yml` | Website configuration and behaviour |
-| `team.yml` | People and roles |
-| `schedule.yml` | Programme and timetable |
+The current loaders open the YAML files by filename; they do not generally treat a missing file as equivalent to an empty optional file. In this table, “Optional” means that the corresponding page/content can be empty or unavailable, not that the YAML file can necessarily be deleted. Keep the data files in the repository and use an empty list/mapping where appropriate. In particular, an empty `announcements.yml` is handled as empty data, but a missing file is not handled as an optional-file case.
 
----
+### 3.1 Single source of truth
 
-# 5. course.yml
+Use the relevant YAML file as the source for structured information. Do not duplicate values in page markup when a renderer already reads them from YAML.
 
-`course.yml` stores all metadata describing the course itself.
+Some page text is intentionally authored directly in `.qmd` files. For example, the welcome text is edited in the welcome section, while the welcome title, dates, location, and image settings are supplied through data/configuration.
 
-It is intended to support:
+## 4. Page availability and navigation
 
-- Website generation
-- FAIR metadata
-- README generation
-- Future citation generation
-- Future repository metadata
+The website uses `available_pages` calculated by `render_course.py` to decide which optional pages are available to the navbar. This is the central availability set for navbar generation; it is not controlled by boolean `website.pages.*` flags.
 
-## Schema
+### 4.1 Page availability
+
+| Page | Current availability rule |
+|---|---|
+| Overview | Always present |
+| Content | Always present |
+| Syllabus | Always present |
+| Team | Always present in the navbar |
+| Schedule | Available when the schedule contains events |
+| Practical information | Available when practicalities data is truthy |
+| Preparation | Available when `preparation.yml` has a `sections` value |
+| FAQ | Available when FAQ data is truthy |
+| Resources | Available when resources data is truthy |
+| Announcements | Available when `announcements.yml` contains items |
+
+The Team page is treated as always available by the navbar renderer. The team renderer also validates that team data contains members and at least one contact; therefore `team.yml` must be configured for a successful render.
+
+### 4.2 Main navbar
+
+The navbar has the following structure:
+
+- Overview — always
+- Content — always
+- Schedule — when available
+- Information dropdown (the label is hard-coded in the navbar renderer):
+  - Preparation — when available
+  - Practicalities — when available
+  - Announcements — when available
+  - Resources — when available
+  - Team — always
+  - Syllabus — always
+  - FAQ — when available
+
+The navbar and quick links do not use identical rules. Navbar availability is based on `available_pages`. Quick links additionally check whether the corresponding `.qmd` page exists and has non-empty content.
+
+### 4.3 Optional page files
+
+Do not assume that deleting an optional `.qmd` file alone removes its navbar item. Navbar availability is determined by data checks in `render_course.py`. The quick-links renderer separately checks page-file existence and content.
+
+Keep the page metadata entries in `website.yml` for the keys used by the quick-links renderer. It indexes those entries directly, so omitting expected keys can cause a rendering error.
+
+## 5. Homepage sections
+
+The homepage is assembled in `index.qmd` by including sections. Inclusion in the page and whether a section has visible content are separate concerns.
+
+### 5.1 Welcome
+
+The welcome section is generated by `render_welcome(course, website)`.
+
+- The training title, dates, and location come from `course.yml`.
+- Start and end dates are displayed when available; if only one is available, only that date is shown. If neither is available, date metadata is omitted.
+- Location is displayed when provided and omitted otherwise.
+- The welcome heading, welcome text, and image settings come from the `welcome` section of `website.yml`.
+- The image is displayed only when an image source is provided; its alt text is read from the same configuration.
+
+The YAML data is the source of truth for the entire welcome section.
+
+### 5.2 Registration banner
+
+The registration section is included on the homepage, but the renderer may return no visible banner.
+
+| Configuration/state | Result |
+|---|---|
+| `enabled: false` | No banner |
+| Enabled but no `opening_date` | No banner |
+| Before `opening_date` | “Registration opens soon” with the opening date |
+| On/after opening and before or on closing date | Registration is open, provided `url` is set |
+| Registration open but no `url` | No banner |
+| After closing date, `after_closing: "closed"` | Closed message |
+| After closing date, `after_closing: "hide"` or omitted | No banner |
+
+If no closing date is provided, registration remains open after the opening date. While registration is open, the URL is required for the banner to appear.
+
+Dates use `YYYY-MM-DD`.
+
+Cost information:
+- A fixed fee is displayed when both `cost.amount` and `cost.currency` are provided.
+- `cost.note` can be displayed independently, for example to explain variable fees or funding arrangements.
+- A note without an amount and currency does not create a fixed-fee display.
+
+The renderer defaults `after_closing` to `hide`. Values other than `hide` produce the closed state in the current implementation; use the documented values `closed` and `hide`.
+
+### 5.3 Upcoming
+
+#### Behaviour
+
+- If the schedule has no events, the Upcoming renderer returns an empty string and the section is omitted.
+- If events exist, the Upcoming section is generated and its event data is passed to the page JavaScript.
+- An event with a `content` reference can link to its corresponding content page.
+- Content references ending in `.qmd` are converted to `.html`.
+
+The section is data-driven: the current renderer does not read a `homepage.upcoming` setting. `schedule.js` selects the first event in the supplied event list whose end time is later than the current time. An event remains displayed while it is in progress; after it ends, the next qualifying event is shown. The countdown indicates time until the event starts, or time until it ends while it is in progress. The event list should therefore be kept in chronological order.
+
+### 5.4 Quick links
+
+The quick-links renderer selects cards in this priority order and displays no more than four:
+
+1. Content
+2. Syllabus
+3. Schedule
+4. Practical information
+5. Preparation
+6. Resources
+7. FAQ
+
+Content and Syllabus are always eligible. Schedule is eligible when events exist. Other optional cards are eligible when the corresponding page file exists and contains non-frontmatter content.
+
+Because the maximum is four cards, lower-priority cards may not appear even when their pages are available. Announcements and Team are not in the quick-links priority list.
+
+### 5.5 Announcements
+
+The announcements section is included on the homepage.
+
+- Announcements are read from `data/announcements.yml`.
+- When items exist, the renderer sorts them newest first and displays up to two.
+- When no items exist, the homepage section displays: **“No active announcements.”**
+- Announcements are sorted newest first; the homepage displays up to two.
+- The separate Announcements page displays all items and has its own empty state (“There are currently no announcements.”).
+- The `website.homepage.announcements` flag is not used by the current renderer.
+- The navbar includes Announcements only when `announcements.items` is non-empty.
+
+### 5.6 Team preview
+
+The homepage includes a team preview.
+
+- It displays up to two people.
+- Training leads are selected first; instructors fill any remaining preview places.
+- Contributors are not shown in the homepage preview.
+- The full Team page displays team members and their available profile information.
+
+The team validator requires a non-empty members list and at least one contact. Do not treat `team.yml` as optional for the current build.
+
+### 5.7 Footer
+
+The footer container is always rendered.
+
+- Organisation and licence information appear when provided.
+- Licence text links only when a licence URL is provided.
+- Template attribution is rendered from the `built_with` configuration.
+- The repository link/icon is rendered only when both repository URL and image are provided.
+
+## 6. Schedule
+
+`schedule.yml` contains an `events` list. Use:
 
 ```yaml
-course:
-
-  # Identity
-  title:
-  subtitle:
-  abstract:
-  description:
-
-  # Delivery
-  start_date:
-  end_date:
-  duration:
-  format:
-  location:
-  language:
-
-  # Educational
-  target_audience:
-  expertise_level:
-
-  prerequisites:
-    knowledge:
-    technical:
-
-  learning_outcomes:
-
-  topics:
-
-  # Contact
-  contact_email:
-
-reuse:
-
-  keywords:
-
-  content_provider:
-
-  licence:
-
-  doi:
-
-  version:
-
-  lifecycle:
-
-  created:
-
-  published:
-
-  revised:
+events: []
 ```
 
-## Mandatory Fields
+when there are no scheduled events.
 
-- `title`
-- `description`
-- `duration`
-- `format`
-- `language`
-- `target_audience`
-- `expertise_level`
-- `prerequisites.knowledge`
-- `prerequisites.technical`
-- `learning_outcomes`
-- `topics`
-- `contact_email`
-- `keywords`
-- `content_provider`
-- `licence`
+### 6.1 Event fields
 
----
-
-# 6. website.yml
-
-`website.yml` controls website behaviour and configuration.
-
-It does **not** describe the course.
-
-## Core Pages
-
-The following pages are always present:
-
-- Home
-- Course content
-- Syllabus
-
-## Optional Pages
-
-- Schedule
-- Practical information
-- Pre-course
-- Resources
-- FAQ
-- Team
-
-## Schema
-
-```yaml
-navigation:
-  content_label: Course content
-
-pages:
-  schedule: true
-  practical: true
-  precourse: false
-  resources: false
-  faq: false
-  team_page: false
-
-homepage:
-  announcements: true
-  upcoming: true
-
-registration:
-  enabled: false
-  label: Register now
-  url:
-```
-
----
-
-# 7. team.yml
-
-`team.yml` contains all people associated with the course.
-
-It serves as the single source of truth for:
-
-- Homepage team preview
-- Team page
-- README authors and contributors
-- Future citation generation
-- Future FAIR metadata
-
-## Schema
-
-```yaml
-team:
-
-  - name:
-
-    roles:
-      - Course lead
-      - Author
-      - Instructor
-      - Teaching assistant
-      - Contributor
-      - Reviewer
-      - Developer
-
-    job_title:
-
-    affiliation:
-
-    email:
-
-    orcid:
-
-    linkedin:
-
-    github:
-
-    image:
-```
-
-## Supported Roles
-
-- Course lead
-- Author
-- Instructor
-- Teaching assistant
-- Contributor
-- Reviewer
-- Developer
-
-A person may have multiple roles.
-
----
-
-# 8. schedule.yml
-
-`schedule.yml` contains all time-based events associated with the course.
-
-It does **not** describe the course content.
-
-Course structure belongs in the `content/` directory.
-
-## Schema
+The schedule renderer expects event records with `title`, `type`, `group`, `start`, `end`, `location`, and `people`. These fields are accessed directly, including `group`, `location`, and `people`; include them in each event. `description` is not displayed by the current schedule renderer.
 
 ```yaml
 events:
-
-  - title:
-
-    type:
-
-    group:
-
-    start:
-
-    end:
-
-    all_day: false
-
-    location:
-
+  - title: "Example session"
+    type: workshop
+    group: "Day 1"
+    start: "2026-10-12T09:00:00"
+    end: "2026-10-12T10:00:00"
+    location: "Room 1"
     people:
-
-    description:
-
-    content: 
+      - "Name"
+    content: "content/module-1/introduction.qmd"
 ```
 
-`content:` is an optional reference to the corresponding learning material in the content/ directory. It is used to link Schedule events to course content and does
+The top-level schedule validator checks only that the loaded value is a list; it does not validate event fields or event type. `content` is optional. When provided, it links the event title to the corresponding content page; `.qmd` is converted to `.html`.
 
-## Supported Event Types
+The current renderer displays event times and does not use an `all_day` field.
 
-- lecture
-- workshop
-- practical
-- discussion
-- webinar
-- assessment
-- deadline
-- social
-- break
-- lunch
-- other
+### 6.2 Event types
 
-## Grouping
+The renderer uses event type values for the event's type label and CSS class. The types currently styled by the repository are:
 
-The `group` field is optional.
+- `lecture`
+- `workshop`
+- `practical`
+- `discussion`
+- `break`
+- `welcome`
+- `lunch`
+- `presentation`
+- `assessment`
+- `group-work`
+- `exercise`
+- `consultation`
+- `quiz`
+- `feedback`
+- `seminar`
 
-### Default behaviour
+This is a list of types styled in the current repository, not a validation-enforced enum.
 
-If `group` is omitted:
+### 6.3 Grouping and ordering
 
-- Events are sorted by their start time.
-- Events are grouped automatically by date.
-- The Schedule page displays headings such as:
+The schedule renderer sorts events by `start`, then groups them using each event's `group` value. The `group` field is accessed directly by the renderer, so it is required by the current implementation; it is not an optional field with an automatic date-based fallback.
 
-```text
-Day 1
-Monday 12 October 2026
+Use a consistent group value for events that should appear together. Examples include:
 
-Day 2
-Tuesday 13 October 2026
+- `Day 1`
+- `Workshop Day 1`
+- `Week 1`
+- `Module 1`
+
+Each group is shown with its group label and the date of its first event. Groups appear in the order in which their first event occurs after sorting.
+
+For example:
+
+```yaml
+events:
+  - title: "Introduction"
+    type: lecture
+    group: "Day 1"
+    start: "2026-10-12T09:00:00"
+    end: "2026-10-12T10:00:00"
+    location: "Room 1"
+    people: []
+  - title: "Hands-on session"
+    type: practical
+    group: "Day 1"
+    start: "2026-10-12T10:15:00"
+    end: "2026-10-12T12:00:00"
+    location: "Room 1"
+    people: []
 ```
 
-### Custom grouping
+## 7. Content organization
 
-If `group` is provided, events are grouped using that value instead.
-
-Examples include:
-
-- Workshop Day 1
-- Week 1
-- Module 1
-
----
-
-# 9. Content Organization
-
-The `content/` directory contains the actual learning material.
-
-Unlike the YAML files, the content structure is intentionally flexible.
+The `content/` directory contains the learning material. Unlike the YAML configuration, the content structure is intentionally flexible: the template does not prescribe a pedagogical sequence or require authors to organize material into modules.
 
 Recommendations:
 
-- Keep `index.qmd` as the landing page for the course material.
-- Organize additional pages in whatever way best suits the course.
-- Use Quarto cross-references or links to guide learners.
-- Group related pages into folders if the course becomes large.
+- Keep `content/index.qmd` as the landing page for the learning material.
+- Organize additional pages in a way that makes sense for the training.
+- Use Quarto links or cross-references to guide learners between pages.
+- Group related pages into folders when the material benefits from it.
 
-The template does not prescribe a particular pedagogical structure.
+A training may be organized by modules, days, units, parts, lectures, practicals, assignments, topics, or another structure appropriate to its content.
 
-For example, a course may be organized by:
+The top-level `content` configuration in `website.yml` defines the content sections. Each section has:
 
-- Modules
-- Lectures
-- Practicals
-- Assignments
-- Topics
+- `id` — machine-readable identifier and folder name
+- `label` — short label shown in the content navigation/overview
+- `title` — human-readable title used as a tooltip/title attribute
 
-or any other structure appropriate for the course.
+Example:
 
----
+```yaml
+content:
+  sections:
+    - id: module-1
+      label: "Module 1"
+      title: "Introduction to Open Science"
+    - id: module-2
+      label: "Module 2"
+      title: "Research Data Management"
+```
 
-# 10. Component Responsibilities
+The section ID determines the folder under `content/`. The folder name must match the ID exactly. The course author chooses the section structure; sections may represent modules, days, units, parts, or another useful grouping.
 
-## Navbar - MANDATORY
+### 7.1 Section ID conventions
 
-**Purpose**
+- IDs must be unique within the content configuration.
+- Use lowercase.
+- Do not use spaces.
+- Hyphens are recommended for readability.
+- Keep IDs stable once the site is published, because links and references may depend on them.
 
-Provide site-wide branding, navigation, and access to course registration.
+The loader checks that the directory for each configured section exists and reads its `.qmd` pages. The current implementation does not validate the suggested lowercase/hyphen ID conventions; they are recommendations for maintainability.
 
-### Data dependencies
+### 7.2 Page ordering
 
-| Source | Fields |
-|--------|--------|
-| `course.yml` | `course.title` |
-| `website.yml` | `navigation.content_label` |
-| `website.yml` | `pages.*` |
-| `website.yml` | `registration.enabled` |
-| `website.yml` | `registration.label` |
-| `website.yml` | `registration.url` |
+Pages inside a section are `.qmd` files.
 
-### Behaviour
+- Every `.qmd` page in a configured section must have a `title` in its frontmatter; the content loader raises an error if it is missing.
+- `order` in page frontmatter can be used to control page ordering.
+- If any page in a section has `order`, every page in that section must have it; mixing ordered and unordered pages raises an error.
+- If no page has `order`, pages are sorted alphabetically by filename (case-insensitive).
+- Ordering is evaluated independently within each section.
 
-- Always display the SciLifeLab logo.
-- Always display the course title.
-- Always display links to:
-  - Home
-  - Course content
-  - Syllabus
-- Display optional navigation items according to `website.pages`.
-- Display the registration button only if `registration.enabled` is `true`.
-- Use `navigation.content_label` as the label for the Course content page.
-
-### Output
-
-The navbar contains:
-
-- SciLifeLab logo
-- Course title
-- Navigation menu
-- Optional registration button
-
-## Welcome - MANDATORY
-
-**Purpose**
-
-Introduce the course by presenting its title and key delivery information.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `course.yml` | `course.title` |
-| `course.yml` | `course.subtitle` *(optional)* |
-| `course.yml` | `course.start_date` |
-| `course.yml` | `course.end_date` |
-| `course.yml` | `course.location` |
-
-### Behaviour
-
-- Display the course title prominently.
-- Display the course subtitle if provided.
-- Display the course dates if available.
-- Display the course location if available.
-
-### Output
-
-The generated header of the Welcome section contains:
-
-- Course title
-- Optional subtitle
-- Course dates
-- Course location
-
-## Upcoming - OPTIONAL
-
-**Purpose**
-
-Highlight the next upcoming scheduled event for the course.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `website.yml` | `homepage.upcoming` |
-| `schedule.yml` | `events.title` |
-| `schedule.yml` | `events.start` |
-| `schedule.yml` | `events.end` |
-| `schedule.yml` | `events.location` |
-| `schedule.yml` | `events.people` |
-
-### Behaviour
-
-- Display the component only if `homepage.upcoming` is `true`.
-- Identify the next upcoming event based on the current date and time.
-- Ignore events that have already ended.
-- Display only a single event.
-- If no future events exist, hide the component.
-- Ignore events that have already ended.
-
-### Output
-
-The Upcoming component displays:
-
-- Event date
-- Event time
-- Event title
-- People
-- Location
-
-## Quick Links - MANDATORY
-
-**Purpose**
-
-Provide prominent navigation cards linking to the main sections of the course website.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `website.yml` | `pages.*` |
-| `website.yml` | `navigation.content_label` |
-
-### Behaviour
-
-- Display the component on the homepage.
-- Always display cards for:
-  - Course content
-  - Syllabus
-- Display optional cards only if the corresponding page is enabled in `website.yml`.
-- Each card links to its corresponding page.
-- The title of the Course content card uses `navigation.content_label`.
-
-### Author editable
-
-The following are edited directly in `quick-links.qmd`:
-
-- Card descriptions
-- Call-to-action text
-- Icons
-- Card layout and styling
-
-### Output
-
-The Quick Links component displays a responsive grid of navigation cards for all available course sections.
-
-
-## Announcements - OPTIONAL
-
-**Purpose**
-
-Communicate important information and updates to course participants.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `website.yml` | `homepage.announcements` |
-
-### Behaviour
-
-- Display the component only if `homepage.announcements` is `true`.
-- The component content is authored directly in `announcements.qmd`.
-- Support one or more announcements.
-- Announcements are displayed in the order they appear in the file.
-
-### Author editable
-
-The following are edited directly in `announcements.qmd`:
-
-- Announcement dates
-- Announcement text
-- Links
-- Formatting
-
-### Output
-
-A list of course announcements, each containing:
-
-- Date
-- Announcement text
-
-
-## Team Preview - MANDATORY
-
-**Purpose**
-
-Introduce the course team by highlighting a small selection of members and providing a link to the full team page.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `website.yml` | `pages.team_page` |
-| `team.yml` | `team.name` |
-| `team.yml` | `team.roles` |
-| `team.yml` | `team.affiliation` |
-| `team.yml` | `team.image` |
-
-### Behaviour
-
-- Display up to three team members.
-- Team members are displayed in the order they appear in `team.yml`.
-- Display the first role listed for each team member.
-- Display a "View full team" button if the Team page is enabled.
-- Hide the button if the Team page is disabled.
-
-### Output
-
-Each team member card displays:
-
-- Profile image
-- Name
-- Primary course role
-- Affiliation
-
-The component includes an optional **View full team** button linking to the Team page.
-
-## Footer - MANDATORY
-
-**Purpose**
-
-Provide attribution, licensing information, and links related to the course website.
-
-### Data dependencies
-
-None.
-
-### Behaviour
-
-- Display the standard SciLifeLab Training footer on every page.
-- Include licensing information.
-- Include attribution to the SciLifeLab Training Hub.
-- Include a link to the course GitHub repository.
-- The footer is identical for all course websites.
-
-### Author editable
-
-The footer content is maintained directly in `footer.qmd`.
-
-### Output
-
-The footer contains:
-
-- Attribution
-- License information
-- GitHub link
-
-## Schedule OPTIONAL
-
-**Purpose**
-
-Present the course programme as a chronological timetable of scheduled events and, where available, direct learners to the corresponding course content.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `schedule.yml` | `events.title` |
-| `schedule.yml` | `events.content` |
-| `schedule.yml` | `events.type` |
-| `schedule.yml` | `events.group` |
-| `schedule.yml` | `events.start` |
-| `schedule.yml` | `events.end` |
-| `schedule.yml` | `events.all_day` |
-| `schedule.yml` | `events.location` |
-| `schedule.yml` | `events.people` |
-| `schedule.yml` | `events.description` |
-
-### Behaviour
-
-- Display all events in chronological order.
-- Group events by `group` if one or more events define a group.
-- Otherwise, group events automatically by date.
-- Display event times unless `all_day` is `true`.
-- Display a visual badge indicating the event type.
-- Display the event location if provided.
-- Display associated people if provided.
-- Display the event description if provided.
-- Link the event title to the corresponding course content page if `content` is provided.
-
-### Author editable
-
-The Schedule page layout and styling are maintained in `schedule.qmd`.
-
-### Output
-
-The Schedule page displays a chronological timetable of course events.
-
-Each event includes:
-
-- Date
-- Start time
-- End time
-- Event type badge
-- Event title *(linked to the corresponding course content page when available)*
-- Location *(optional)*
-- People *(optional)*
-- Description *(optional)*
-
-## Syllabus - MANDATORY
-
-**Purpose**
-
-Provide a structured overview of the course, including its educational objectives, delivery, and key metadata.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `course.yml` | `course.title` |
-| `course.yml` | `course.subtitle` |
-| `course.yml` | `course.description` |
-| `course.yml` | `course.learning_outcomes` |
-| `course.yml` | `course.prerequisites.knowledge` |
-| `course.yml` | `course.prerequisites.technical` |
-| `course.yml` | `course.language` |
-| `course.yml` | `course.format` |
-| `course.yml` | `course.duration` |
-| `course.yml` | `course.target_audience` |
-| `course.yml` | `course.expertise_level` |
-| `course.yml` | `course.topics` |
-| `course.yml` | `course.contact_email` |
-| `course.yml` | `reuse.licence` |
-
-### Behaviour
-
-- Present course information in a structured layout.
-- Display optional fields only if they are provided.
-- Preserve the order of learning outcomes and topics as defined in `course.yml`.
-
-### Author editable
-
-None.
-
-The Syllabus page is generated entirely from `course.yml`.
-
-### Output
-
-The Syllabus page contains:
-
-- Course title
-- Subtitle *(optional)*
-- Course description
-- Learning outcomes
-- Prerequisites
-  - Knowledge prerequisites
-  - Technical prerequisites
-- Target audience
-- Expertise level
-- Language
-- Format
-- Duration
-- Topics
-- Contact information
-- License
-
-## Team - OPTIONAL
-
-**Purpose**
-
-Introduce the course team and provide information about the people involved in developing and delivering the course.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `team.yml` | All fields |
-
-### Behaviour
-
-- Display all team members in the order they appear in `team.yml`.
-- Display all roles associated with each team member.
-- Display only fields that are provided.
-
-### Output
-
-Each team member profile may include:
-
-- Profile image
-- Name
-- Course roles
-- Job title
-- Affiliation
-- Email
-- ORCID
-- GitHub
-- LinkedIn
-
-## Practical Information - OPTIONAL
-
-**Purpose**
-
-Provide logistical information to course participants.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `website.yml` | `pages.practical` |
-
-### Behaviour
-
-- Display the page only if enabled.
-
-### Author editable
-
-The page content is maintained directly in `practical.qmd`.
-
-## Pre-course - OPTIONAL
-
-**Purpose**
-
-Provide instructions and preparation material before the course begins.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `website.yml` | `pages.precourse` |
-
-### Behaviour
-
-- Display the page only if enabled.
-
-### Author editable
-
-The page content is maintained directly in `precourse.qmd`.
-
-## Resources - OPTIONAL
-
-**Purpose**
-
-Provide additional learning resources related to the course.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `website.yml` | `pages.resources` |
-
-### Behaviour
-
-- Display the page only if enabled.
-
-### Author editable
-
-The page content is maintained directly in `resources.qmd`.
-
-## FAQ - OPTIONAL
-
-**Purpose**
-
-Provide answers to frequently asked questions.
-
-### Data dependencies
-
-| Source | Fields |
-|--------|--------|
-| `website.yml` | `pages.faq` |
-
-### Behaviour
-
-- Display the page only if enabled.
-
-### Author editable
-
-The page content is maintained directly in `faq.qmd`.
-
-
----
-
-# 11. Rendering Architecture
-
-The course website is built using a three-layer architecture that separates data, rendering logic, and presentation.
-
-## 11.1 Authored Content
-
-Website structure, page composition, and editable course content are maintained as Quarto documents.
-
-These include:
+Example structure:
 
 ```text
-index.qmd
-
-_sections/
-    components/
-    pages/
-
 content/
+  index.qmd
+  module-1/
+    01-introduction.qmd
+    02-open-principles.qmd
+  module-2/
+    01-data-management.qmd
+    02-data-sharing.qmd
 ```
 
-Course authors edit these files to:
+## 8. Syllabus
 
-- write course material;
-- customize homepage text;
-- provide practical information;
-- add pre-course instructions;
-- create FAQs and resource lists; and
-- control the overall page layout.
+The Syllabus page is generated from `course.yml` and `team.yml` and is always included in the website navigation.
 
-Quarto files contain presentation and composition only.
+### 8.1 Required course fields
 
-They do not contain data processing, rendering logic, or Python code.
+`validate_course()` currently requires:
 
----
+- `course.title`
+- `course.description`
+- `course.mode`
+- `course.language`
+- `course.target_audience`
+- `course.learning_outcomes` — a non-empty list
+- `course.organizers` — a non-empty list
+- `course.contact` — a mapping containing `email`
 
-## 11.2 Data and Rendered Components
+The validator does not currently enforce all fields displayed or potentially used by the syllabus renderer.
 
-Structured course information is maintained in the YAML configuration files:
+### 8.2 Optional displayed information
 
-```text
-data/
-    course.yml
-    website.yml
-    team.yml
-    schedule.yml
-```
+The syllabus renderer conditionally displays available values such as:
 
-During the Quarto pre-render step, the Python renderer:
+- Subtitle
+- Start and end dates (either or both)
+- Duration, delivery mode, location, and language
+- Credits (`value`, optional `unit`, and optional `note`)
+- Learning outcomes
+- Target audience and expertise level
+- Prerequisites
+- Topics
+- Organisers/team information
+- Contact information
+- Reuse/licence information
 
-- validates the YAML files;
-- checks internal consistency;
-- transforms structured data into reusable Quarto fragments; and
-- writes those fragments to `_generated/`.
+The exact fields used are determined by `render_syllabus()` and the current `course.yml` structure. Keep this section synchronized with that renderer and `validate_course()` when the schema changes.
 
-For example:
+## 9. Team data and pages
 
-```text
-_generated/
-    navbar.qmd
-    quick-links.qmd
-    upcoming.qmd
-    team-preview.qmd
-    schedule.qmd
-    syllabus.qmd
-```
+`team.yml` contains people associated with the training.
 
-Generated files are implementation artifacts.
+Common profile fields include:
 
-They should never be edited manually, as they are recreated every time the renderer runs.
+| Field | Purpose |
+|---|---|
+| `name` | Person's name |
+| `roles` | Role or roles in the training |
+| `job_title` | Professional title |
+| `affiliation` | Workplace or institution |
+| `email` | Email contact |
+| `orcid` | ORCID profile |
+| `linkedin` | LinkedIn profile |
+| `github` | GitHub profile |
+| `website` | Personal or institutional webpage |
+| `image` | Profile image |
 
----
+The validator requires at least one member. Every member must have `name`, `roles` (a non-empty list), and `affiliation`. Allowed roles are exactly `Training lead`, `Instructor`, and `Contributor`. At least one member must have `course_contact: true` and a non-empty `email`; a contact flag without an email is an error.
 
-## 11.3 Presentation
+The homepage preview displays up to two people: training leads first, then instructors to fill any remaining places. Contributors are not included in the preview. The full Team page groups people by the three supported roles and displays available profile information. Optional fields include `job_title`, `email`, `course_contact`, `bio`, `orcid`, `linkedin`, `github`, `website`, and `image`.
 
-The authored Quarto pages assemble the website by including the generated components where required.
+## 10. Practical information
 
-For example:
+Practical information is available when the practicalities data passes the current availability check. The renderer/page displays the configured practical information; empty or absent data does not create a useful page.
 
-```text
-index.qmd
-    ├── welcome.qmd
-    ├── announcements.qmd
-    ├── quick-links.qmd
-    └── footer.qmd
-```
+The current `practicalities.yml` structure supports:
 
-Individual components include the generated fragments they require.
+- `intro`
+- `venue`: `name`, `address`, `room`, `instructions`, `map_url`
+- `transport`: `description`, `links`, `parking`
+- `accommodation`: `description`, `hotels` (including `name`, `distance`, `walking_time`, and `url`)
+- `food`: `description`, `dietary_information`
+- `additional`: a list of titled `content` entries
 
-This keeps the authored Quarto files simple, readable, and focused entirely on presentation.
+The renderer displays a section only when it has relevant content. It can convert an OpenStreetMap share URL into an embedded map. For a venue map link, open the venue in OpenStreetMap, choose **Share**, enable **Include marker** if available, and use the resulting URL as `venue.map_url`.
 
----
+## 11. Preparation information
 
-# 12. Render Flow
+Preparation is available when `preparation.yml` contains a `sections` value. The preparation page is built from the configured sections/blocks.
 
-The website is rendered as part of the Quarto build process.
+The preparation renderer supports these block types:
 
-The render sequence is:
+| Block type | Intended use |
+|---|---|
+| `text` | General explanatory content |
+| `checklist` | Tasks participants should complete |
+| `account` | Accounts participants need to create or access |
+| `hardware` | Computer or equipment requirements |
+| `software` | Software installation and setup |
+| `reading` | Required or recommended reading |
+| `callout` | Additional information; set `style` to `important`, `note`, or `warning` |
+
+A preparation page is available when `preparation.sections` is non-empty. Each section has a `title` and `blocks`. Empty blocks and sections with no rendered blocks are omitted. Consecutive `account` blocks and consecutive `software` blocks are rendered in grids. Unknown block types are ignored by the renderer.
+
+## 12. Other optional information pages
+
+### FAQ
+
+FAQ availability is based on whether FAQ data is truthy. The page content is generated from `faq.yml`.
+
+### Resources
+
+Resources availability is based on whether resources data is truthy. The page content is generated from `resources.yml`.
+
+### Announcements
+
+Announcements are generated from `announcements.yml`; the homepage section remains present even when the item list is empty.
+
+
+## 13. Rendering architecture
+
+The template separates **configuration**, **data processing**, **page composition**, and **presentation**. This lets training authors update structured information without manually editing every place where it appears.
+
+### 13.1 Responsibilities by layer
+
+| Layer | Responsibility |
+|---|---|
+| `data/*.yml` | Structured training, website, schedule, team, and optional-page data |
+| `scripts/loaders.py` | Loads YAML files from `data/` |
+| `scripts/validators.py` | Checks course, website, schedule-list, and team data |
+| `scripts/render_course.py` | Coordinates loading, validation, availability checks, and renderer calls |
+| `scripts/renderers/` | Converts structured data into reusable Quarto fragments or page content |
+| Authored `.qmd` files | Compose pages and contain content maintained as Quarto |
+| `styles.css` | Site-wide visual styling and responsive presentation |
+| `js/schedule.js` | Browser-side Upcoming behaviour and schedule interactions |
+
+Validation is not equally comprehensive for every data file. For example, the schedule validator checks only that the events value is a list; it does not validate individual event fields or event types.
+
+### 13.2 Render flow
+
+The website is rendered as part of the Quarto build process:
 
 1. `quarto render` starts.
-2. Quarto runs the course renderer as a pre-render step.
-3. The renderer reads and validates:
-   - `course.yml`
-   - `website.yml`
-   - `team.yml`
-   - `schedule.yml`
-4. The renderer generates reusable Quarto fragments in `_generated/`.
-5. The authored pages in `_sections/` include the generated fragments.
-6. `index.qmd` assembles the complete website.
-7. Quarto renders the final HTML site.
-8. The rendered website is written to `_site/`.
+2. Quarto runs the configured pre-render step.
+3. `scripts/render_course.py` deletes and recreates `_generated/`.
+4. The renderer loads course, website, content, schedule, team, announcements, practicalities, FAQ, preparation, and resources data.
+5. It validates course, website, schedule, and team data, then calculates `available_pages`.
+6. Individual renderers generate Quarto/HTML fragments in `_generated/`.
+7. Authored `.qmd` pages include or compose the generated fragments.
+8. Quarto renders the site into `_site/`.
 
-The relationship between the main components is therefore:
+The main data-to-output relationship is:
 
 ```text
-course.yml ────────┐
-website.yml ───────┤
-team.yml ──────────┤
-schedule.yml ──────┘
+data/*.yml + content/
+        │
+        ▼
+scripts/loaders.py + scripts/content.py
+        │
+        ▼
+scripts/validators.py
         │
         ▼
 scripts/render_course.py
         │
         ▼
-_generated/*.qmd
+scripts/renderers/
         │
         ▼
-_sections/*.qmd
+_generated/*
         │
         ▼
-index.qmd
+authored .qmd pages + _sections/
+        │
+        ▼
+Quarto
         │
         ▼
 _site/
-
-styles.css ───────────────────────────────────────────────►
 ```
 
----
+`styles.css` and JavaScript support the rendered site at the presentation and browser-interaction layers.
 
-# 13. Rendering Responsibilities
+### 13.3 Generated files
 
-The renderer is responsible for:
+Files in `_generated/` are build artifacts. `render_course.py` removes and recreates the directory at the start of each run. Do not edit generated files manually; update the source YAML, Python renderer, or authored page instead.
 
-- validating all YAML configuration files;
-- checking required fields and data types;
-- validating relationships between data files;
-- verifying references (for example, that `events.content` refers to existing course content);
-- transforming structured data into reusable Quarto fragments;
-- generating navigation;
-- generating homepage components;
-- generating timetable and team components;
-- generating the syllabus page;
-- generating future repository artifacts such as citations or metadata.
+`_site/` contains rendered website output and is not the source location for website content.
 
-The renderer does **not** generate complete pages.
+## 14. Behavioural summary
 
-Overall page composition remains the responsibility of the authored Quarto files.
+| Feature | Source of behaviour |
+|---|---|
+| Navbar optional links | `available_pages` in `render_course.py` and navbar renderer |
+| Quick-link cards | `render_quick_links.py`; page content and event availability |
+| Welcome metadata | `course.yml` and `website.yml`; welcome renderer |
+| Registration banner | Registration settings in `website.yml`; registration renderer |
+| Upcoming section | `schedule.yml`; upcoming renderer |
+| Announcements | `announcements.yml`; announcements renderer |
+| Team preview | `team.yml`; team renderer |
+| Schedule page | `schedule.yml`; schedule renderer and page composition |
+| Content section structure | Top-level `content.sections` in `website.yml` and `content/` folders |
+| Footer | Footer settings in `website.yml`; footer renderer |
 
-This architecture maintains a clear separation of responsibilities:
+## 15. Keeping this specification current
 
-| Layer | Responsibility |
-|--------|----------------|
-| YAML | Structured course data |
-| Python | Validation and rendering |
-| Quarto | Composition and presentation |
-| CSS | Styling and responsive behaviour |
+When changing the repository, update this document if the change affects:
 
----
+- YAML field names or requiredness
+- Page availability rules
+- Navbar or quick-link behaviour
+- Homepage section visibility
+- Renderer inputs or outputs
+- Supported schedule event types
+- Content-section or page-ordering rules
 
-# 12. Architecture Summary
-
-The template consists of five independent components:
-
-| Component | Responsibility |
-|-----------|----------------|
-| `course.yml` | What is this course? |
-| `website.yml` | How should the website behave? |
-| `team.yml` | Who created and delivers the course? |
-| `schedule.yml` | When do events happen? |
-| `content/` | What do learners study? |
-
-Each component has a single responsibility and acts as the authoritative source for its respective information.
+For exact behaviour, the implementation in `scripts/`, `scripts/renderers/`, and the authored `.qmd` files is authoritative.
