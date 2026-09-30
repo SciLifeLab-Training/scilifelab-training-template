@@ -1,4 +1,4 @@
-# SciLifeLab Course Webpage Template
+# SciLifeLab Training Webpage Template
 
 The SciLifeLab Course Webpage Template is a Quarto-based template for creating, publishing, and maintaining reusable training materials with GitHub Pages.
 
