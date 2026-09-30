@@ -9,6 +9,8 @@ include-in-header:
 
 ::: {.course-shell}
 
+{{< include _sections/template-banner.qmd >}}
+
 {{< include _sections/navbar.qmd >}}
 
 {{< include _sections/welcome.qmd >}}

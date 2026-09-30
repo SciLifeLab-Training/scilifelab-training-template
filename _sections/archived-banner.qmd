@@ -1,0 +1,3 @@
+::: {.template-banner}
+**This is an older instance of this training.** For the latest information, visit the [newest training instance →](https://example.com/new-training)
+:::
