@@ -106,7 +106,7 @@ def render_welcome(course, website):
         )
 
         html.append(
-            f'![]({image_src} "{image_alt}")'
+            f'<img src="{image_src}" alt="{image_alt}" class="course-welcome-graphic">'
         )
 
         html.append("</div>")

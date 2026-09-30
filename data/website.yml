@@ -215,7 +215,7 @@ website:
 
     image:
       # Replace with the path to the welcome image.
-      src: "img/welcome-graphic-placeholder.png"
+      src: "img/welcome-graphic-placeholder.svg"
 
       # Describe the image for accessibility.
       alt: "Welcome illustration"

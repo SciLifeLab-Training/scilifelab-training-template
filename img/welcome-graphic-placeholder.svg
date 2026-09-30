@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" fill="none">
+
+  <!-- Soft background circles -->
+  <g fill="#4C979F" opacity=".10">
+    <circle cx="105" cy="105" r="42"/>
+    <circle cx="285" cy="145" r="48"/>
+    <circle cx="475" cy="105" r="55"/>
+    <circle cx="175" cy="235" r="38"/>
+    <circle cx="390" cy="235" r="42"/>
+  </g>
+
+  <g fill="#A7C947" opacity=".12">
+    <circle cx="210" cy="65" r="25"/>
+    <circle cx="520" cy="225" r="30"/>
+    <circle cx="65" cy="230" r="22"/>
+  </g>
+
+  <!-- Flowing connecting lines -->
+  <g stroke-width="1.6" stroke-linecap="round">
+    <path d="M35 145 C95 65 145 75 205 125 S310 205 365 135 S475 55 565 105"
+          stroke="#4C979F" opacity=".75"/>
+
+    <path d="M45 145 C115 155 145 235 225 220 S335 145 395 105 S490 65 555 55"
+          stroke="#A7C947" opacity=".9"/>
+
+    <path d="M55 265 C125 220 175 175 250 185 S355 245 420 210 S510 170 570 190"
+          stroke="#4C979F" opacity=".75"/>
+
+    <path d="M90 55 C155 95 185 155 260 165 S365 145 425 190 S490 245 535 270"
+          stroke="#045C64" opacity=".85"/>
+
+    <path d="M65 205 C135 165 190 115 265 115 S385 175 455 140 S525 100 570 105"
+          stroke="#4C979F" opacity=".55"/>
+
+    <path d="M105 105 C190 55 260 45 335 75 S455 125 520 105"
+          stroke="#045C64" opacity=".45"/>
+  </g>
+
+  <!-- Main nodes -->
+  <g fill="#045C64">
+    <circle cx="35" cy="145" r="7"/>
+    <circle cx="105" cy="105" r="6"/>
+    <circle cx="205" cy="125" r="7"/>
+    <circle cx="285" cy="145" r="5"/>
+    <circle cx="365" cy="135" r="7"/>
+    <circle cx="565" cy="105" r="6"/>
+    <circle cx="55" cy="265" r="6"/>
+    <circle cx="250" cy="185" r="8"/>
+    <circle cx="420" cy="210" r="6"/>
+    <circle cx="535" cy="270" r="7"/>
+    <circle cx="570" cy="190" r="6"/>
+  </g>
+
+  <!-- Lime accent nodes -->
+  <g fill="#A7C947">
+    <circle cx="45" cy="145" r="10"/>
+    <circle cx="210" cy="65" r="10"/>
+    <circle cx="395" cy="105" r="9"/>
+    <circle cx="455" cy="140" r="9"/>
+    <circle cx="175" cy="235" r="10"/>
+    <circle cx="520" cy="225" r="11"/>
+  </g>
+
+  <!-- Aqua accent nodes -->
+  <g fill="#4C979F">
+    <circle cx="145" cy="75" r="9"/>
+    <circle cx="555" cy="55" r="7"/>
+    <circle cx="90" cy="55" r="7"/>
+    <circle cx="475" cy="105" r="8"/>
+    <circle cx="335" cy="75" r="6"/>
+  </g>
+
+</svg>

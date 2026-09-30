@@ -539,11 +539,10 @@ body {
     max-width: 55ch;
 }
 
-/* Aligns the welcome illustration alongside the introductory text */
-.course-welcome-image {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+.course-welcome-graphic {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ==========================================================================
