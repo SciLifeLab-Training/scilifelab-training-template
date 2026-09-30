@@ -1,208 +1,56 @@
 website:
+# This file contains the information displayed on the
+# overview page of a training website.
+#
+# The comments below describe which sections are included,
+# when they are displayed, and where their content is configured.
 
   # ==================================================
-  # Navigation
+  # Template banner
   # ==================================================
   #
-  # Controls labels used in the website navigation.
-  # The navigation structure itself is defined by the
-  # available pages below and by the website renderer.
-  #
-  # Edit this section only if you want to change the
-  # visible wording of navigation elements.
-  #
-
-  navigation:
-
-    content_label: "Course Content"
-
+  # Not always displayed.
+  # To remove the banner when adopting the template for your own training,
+  # either delete the file _sections/template-banner.qmd,
+  # or remove {{< include _sections/template-banner.qmd >}} from index.qmd 
 
   # ==================================================
-  # Website pages and quick links
+  # Navbar
   # ==================================================
   #
-  # Defines the title, description, icon, and source page
-  # for pages that can be displayed as homepage quick links
-  # and used in the website navigation.
+  # Always displayed.
+  # The training title is read from course.yml.
+  # Navigation links are generated from the available pages.
   #
-  # This is NOT a complete list of all pages on the website.
-  # For example, the Team page is a permanent website page
-  # but is not offered as a homepage quick link.
+  # Overview and Content are always included.
+  # Schedule is included only when schedule.yml contains events.
   #
-  # Optional pages are shown only when corresponding
-  # content is available. The homepage quick-links section
-  # also limits which available pages are displayed.
+  # The Information dropdown is displayed when at least one of
+  # its links is available. Team and Syllabus are always included.
+  # Preparation, Practicalities, Announcements, Resources and FAQ 
+  # are included if their corresponding data files (e.g. preparation.yml)
+  # contain data. 
   #
-  # Do not change the page keys (for example, "schedule"
-  # or "practicalities") unless the Python renderer is
-  # changed accordingly.
+  # IMPORTANT: deleting the corresponding quarto file (e.g. 
+  # preparation.qmd) does therefore not by itself remove preparation 
+  # from the navbar.
   #
-
-  pages:
-
-    # Course content page.
-    # This page contains the training modules, slides,
-    # exercises, and other course materials.
-    content:
-      title: "Content"
-      description: "Modules, slides and exercises"
-      icon: "folder"
-      href: "content/index.qmd"
-
-    # Course syllabus page.
-    # Provides the overall course structure, learning
-    # objectives, prerequisites, and other syllabus
-    # information.
-    syllabus:
-      title: "Syllabus"
-      description: "Course description, learning outcomes and prerequisites"
-      icon: "journal-text"
-      href: "syllabus.qmd"
-
-    # Course schedule page.
-    # Contains the detailed programme and timetable.
-    # This page is shown when schedule data is available.
-    schedule:
-      title: "Schedule"
-      description: "Programme, sessions and timings"
-      icon: "calendar2-event"
-      href: "schedule.qmd"
-
-    # Practical information page.
-    # Use this for venue, transport, accommodation,
-    # food, accessibility, and other practical details.
-    # This page is shown when practicalities data exists.
-    practicalities:
-      title: "Practicalities"
-      description: "Venue, travel, accommodation and other practical information"
-      icon: "geo-alt"
-      href: "practicalities.qmd"
-
-    # Additional resources page.
-    # Use this for useful links, further reading,
-    # references, datasets, tools, or other resources.
-    # This page is shown when resource data exists.
-    resources:
-      title: "Resources"
-      description: "Further reading, links and useful resources"
-      icon: "bookshelf"
-      href: "resources.qmd"
-
-    # Preparation page.
-    # Use this for anything participants should complete
-    # or arrange before the training, such as accounts,
-    # software, hardware, or required reading.
-    # This page is shown when preparation data exists.
-    preparation:
-      title: "Preparation"
-      description: "What to do and prepare before the training"
-      icon: "clipboard-check"
-      href: "preparation.qmd"
-
-    # Frequently asked questions page.
-    # Use this for common questions participants may have
-    # before or during the training.
-    # This page is shown when FAQ data exists.
-    faq:
-      title: "FAQ"
-      description: "Answers to frequently asked questions"
-      icon: "question-circle"
-      href: "faq.qmd"
-
-
-  # ==================================================
-  # Homepage
-  # ==================================================
-  #
-  # Controls optional sections displayed on the overview
-  # page.
-  #
-  # Set a value to false to hide the corresponding section.
-  # The section may also be omitted automatically when there
-  # is no corresponding data.
-  #
-
-  homepage:
-
-    # Show the announcements section on the overview page.
-    # Announcements are configured in data/announcements.yml.
-    announcements: true
-
-    # Show the upcoming-events section on the overview page.
-    # Events are configured in data/schedule.yml.
-    upcoming: true
-
-
-  # ==================================================
-  # Registration
-  # ==================================================
-  #
-  # Use this section to control the registration information
-  # shown on the training overview page.
-  #
-  # The registration banner changes automatically based
-  # on the opening and closing dates:
-
-  # - Before registration opens:
-  #   The banner displays: 'Registration opens on 'date''
-  #
-  # - While registration is open:
-  #   The banner displays the registration deadline, training fee,
-  #   and a link to the registration form.
-  #
-  # - After registration closes:
-  #   The banner can either display 'Registration is now closed', 
-  #   or be remove completely.
-  #       "after_closing" can be:
-  #       - closed  → keep showing a "Registration is now closed" message
-  #       - hide    → remove the registration information
-  #
-  # The opening and closing dates should use the format: YYYY-MM-DD
-
-  registration:
-
-    # Set "enabled" to true to show the registration banner.
-    # Set it to false if the training does not have registration
-    # information or if you do not want to show it.
-    enabled: true
-
-    opening_date: "2026-01-01"
-    closing_date: "2026-12-31"
-    # Choose whether the banner remains visible after registration closes or disappears.
-    # Values can be "closed" or "hide"
-    after_closing: "closed"
-    # add the link to the registration page or form.
-    url: "https://registration.example.com"
-    cost:
-        # The training fee is optional. If an amount is provided,
-        # it is displayed in the registration banner.
-        # The note can be used to explain different fees or
-        # direct participants to the registration form for details.
-      amount: amount
-      currency: "SEK"
-      note: >
-        Provide information on whether the training cost differs depending on the participant's institution.
-
+  # The current page is highlighted automatically.
 
   # ==================================================
   # Welcome section
   # ==================================================
   #
-  # Controls the main welcome section on the overview page.
+  # Always displayed. The training title is required.
+  # Dates and location are displayed only
+  # when provided in course.yml. 
   #
-  # "title" is the heading displayed above the introduction.
-  #
-  # "text" is the introductory text shown to participants.
-  # Keep this concise: briefly explain what the training is
+  # The welcome title and text are optional. 
+  # Keep the welcome text concise: briefly explain what the training is
   # about and what participants will find on the website.
   #
-  # "image" controls the illustration displayed alongside
-  # the welcome text.
-  #
-  # The image file itself should be stored in the img/
-  # directory. Only the path and alternative text are
-  # configured here.
-  #
+  # The image is optional. Store the image file in the img/
+  # directory, and configure its path and alternative text here.
 
   welcome:
 
@@ -222,18 +70,187 @@ website:
 
 
   # ==================================================
+  # Registration banner
+  # ==================================================
+  #
+  # Not always displayed. 
+  # The registration banner is included on the homepage,
+  # but is displayed only when registration is enabled
+  # and an opening date is provided.
+  #
+  # It is configured to behave in the following manner:
+  # - Before registration opens, it displays the opening date.
+  # - While registration is open, it displays the deadline,
+  #   fee information (if provided), and registration link.
+  # - After registration closes, it either displays a closed
+  #   message or is fully hidden, depending on the value in "after_closing".
+  #
+  # If no closing date is provided, registration remains open
+  # indefinitely after the opening date.
+  #
+  # While registration is open, a URL is required for the
+  # banner to be displayed.
+  #
+  # Dates should use the format YYYY-MM-DD.
+
+  registration:
+
+    # Set "enabled" to true to show the registration banner.
+    # Set it to false if the training does not have registration
+    # information or if you do not want to show it.
+    enabled: true
+
+    opening_date: "2026-01-01"
+    closing_date: "2026-12-31"
+    # Choose what happens after registration closes:
+    # - closed: display a "Registration is now closed" message.
+    # - hide: hide the registration information.
+    after_closing: "closed"
+    # add the link to the registration page or form.
+    url: "https://registration.example.com"
+    cost:
+        # The training fee is optional.
+        # The fee is displayed only when both amount and currency
+        # are provided. The note is optional and can explain
+        # different fees or direct participants to further details.
+      amount: amount
+      currency: "SEK"
+      note: >
+        Provide information on whether the training cost differs depending on the participant's institution.
+
+
+  # ==================================================
+  # 'Next up' section 
+  # ==================================================
+  #
+  # Not always displayed. 
+  # Generated from data/schedule.yml.
+  # Displayed only when the schedule contains events.
+  # If there are no events, the section is omitted.
+
+  # ==================================================
+  # Quick links section
+  # ==================================================
+  #
+  # Always displayed. 
+  # Defines the title, description, icon, and source page
+  # for pages that can be displayed as homepage quick links
+  # and used in the website navigation.
+  #
+  # Content and Syllabus are always included as quick links. 
+  # Other optional pages are included only when their corresponding .qmd
+  # file exists (e.g. practicalities.qmd) and contains content 
+  # after its YAML front matter (i.e. after 
+  # ---
+  # title: Practicalities
+  # title-block: false
+  # ---).
+  #
+  # You can leave an optional page's .qmd file empty,
+  # to prevent it from appearing as a quick link. 
+
+  # IMPORTANT: you must keep all optional page entries below (i.e. do not delete them),
+  # since the renderer expects the configured page keys!
+  #
+  # Quick links are considered in this order:
+  # Content, Syllabus, Schedule, Practicalities, Preparation,
+  # Resources, FAQ.
+  # A maximum of four quick links is displayed.
+
+  pages:
+
+    # Links to training content page.
+    content:
+      title: "Content"
+      description: "Modules, slides and exercises"
+      icon: "folder"
+      href: "content/index.qmd"
+
+    # Links to syllabus page.
+    syllabus:
+      title: "Syllabus"
+      description: "Description, learning outcomes and prerequisites"
+      icon: "journal-text"
+      href: "syllabus.qmd"
+
+    # Links to schedule page.
+    schedule:
+      title: "Schedule"
+      description: "Programme, sessions and timings"
+      icon: "calendar2-event"
+      href: "schedule.qmd"
+
+    # Links to practicalities
+    practicalities:
+      title: "Practicalities"
+      description: "Venue, travel, accommodation and other practical information"
+      icon: "geo-alt"
+      href: "practicalities.qmd"
+
+    # Links to preparation page.
+    preparation:
+      title: "Preparation"
+      description: "What to do and prepare before the training"
+      icon: "clipboard-check"
+      href: "preparation.qmd"
+
+    # Links to resources page.
+    resources:
+      title: "Resources"
+      description: "Further reading, links and useful resources"
+      icon: "bookshelf"
+      href: "resources.qmd"
+
+    # Links to FAQ page
+    faq:
+      title: "FAQ"
+      description: "Answers to frequently asked questions"
+      icon: "question-circle"
+      href: "faq.qmd"
+
+
+  # ==================================================
+  # Announcements section
+  # ==================================================
+  #
+  # Always displayed.
+  # Announcements are configured in data/announcements.yml.
+  # If there are no announcement items, the section displays
+  # "No active announcements."
+  #
+  # IMPORTANT: Keep data/announcements.yml in place, even when it is empty. 
+
+  # ==================================================
+  # Team section
+  # ==================================================
+  #
+  # Always displayed. 
+  # Team information is configured in data/team.yml.
+  #
+  # The homepage preview displays up to two team members:
+  # 1. Training leads are shown first.
+  # 2. Instructors fill any remaining places.
+  # 3. Contributors are not shown in the homepage preview.
+
+  # ==================================================
   # Footer
   # ==================================================
   #
+  # Always displayed
   # Controls the content displayed in the website footer.
-
+  #
+  # Organisation and licence information are displayed when
+  # provided. Template attribution is displayed when configured.
+  # The repository link and icon are displayed only when both
+  # a repository URL and image are provided.
+  
   footer:
 
     # Name of the organisation, programme, or group
     # responsible for the training.
     organisation: "Organisation or Training Programme name"
 
-    # Licence applied to the course website/content.
+    # Licence applied to the training website/content.
     licence:
       name: "CC BY 4.0"
       url: "https://creativecommons.org/licenses/by/4.0/"
@@ -262,38 +279,42 @@ website:
       alt: "GitHub repository"
 
 
-# ======================================================
-# Course content navigation
-# ======================================================
-#
-# Defines the sections displayed in the course content
-# navigation.
-#
-# Each section corresponds to a course module or major
-# content area.
-#
-# "id" should match the corresponding content directory
-# or identifier used by the content structure.
-#
-# "label" is the short name displayed in navigation.
-#
-# "title" is the descriptive title shown for the section.
-#
-# Add, remove, or rename sections here to match the
-# structure of the course.
-#
 
 content:
+# Use this section to define the structure and order of
+# the training content pages navigation.
+#
+# First, decide how to organise your training content.
+# Divide it into modules or other major sections, and
+# create one folder for each section inside the content/
+# directory.
+#
+# Then add one entry below for each folder, in the order
+# you want the sections to appear in the navigation.
+#
+# For each section:
+#
+# - "id" must match the folder name inside content/.
+# - "label" is the short name displayed in the navigation.
+# - "title" is used as the navigation button's tooltip text.
+#
+# For example, an id of "module-1" corresponds to the
+# folder content/module-1/.
+#
+# You can add, remove, rename, or reorder sections to
+# match your training structure. If you rename a section,
+# make sure to update both the folder name and its id here.
+
 
   sections:
 
     - id: module-1
       label: "Module 1"
-      title: "Module 1 Title"
+      title: "How to structure a page"
 
     - id: module-2
       label: "Module 2"
-      title: "Module 2 Title"
+      title: "How to highlight information"
 
     - id: module-3
       label: "Module 3"

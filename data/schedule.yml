@@ -1,4 +1,73 @@
+# This file contains the schedule for the training. Its data is used
+# to display the full schedule page and the upcoming section on the
+# overview page.
+#
+# Add one entry (= 1 event) for each session, break, or other scheduled part of the training.
+
+
 events:
+
+  # ==================================================
+  # Event fields
+  # ==================================================
+  #
+  # The schedule renderer expects the following fields for each event:
+  #
+  # - title: The event title displayed in the schedule.
+  # - type: The event type, used for its label and styling.
+  # - group: The day or group the event belongs to, e.g. "Day 1".
+  # - start: The event start date and time.
+  # - end: The event end date and time.
+  # - location: Where the event takes place. Use "" if not applicable.
+  # - people: Names of the people leading or contributing to the event.
+  #   Use [] if no names should be displayed.
+  #
+  # Optional field:
+  #
+  # - content: Path to a content page associated with the event.
+  #   Leave as "" if the event does not have an associated page.
+  #
+  # Note: The current validator checks that the file contains an
+  # "events" list. It does not validate the fields within each event.
+  #
+  # ==================================================
+  # Dates and times
+  # ==================================================
+  #
+  # Use the format YYYY-MM-DDTHH:MM, using the 24-hour clock.
+  # For example: 2026-09-30T09:00.
+  #
+  # ==================================================
+  # Event types
+  # ==================================================
+  #
+  # The event types below are supported by this template:
+  #
+  # lecture, workshop, practical, discussion, break, welcome, lunch,
+  # presentation, assessment, group-work, exercise, consultation,
+  # quiz, feedback, seminar
+  #
+  # Use the type exactly as written here, including hyphens where applicable.
+  #
+  # ==================================================
+  # Groups
+  # ==================================================
+  #
+  # Use the group field to organise events into days or other sections.
+  # Events with the same group are displayed together on the schedule page. 
+  #
+  # ==================================================
+  # Content links
+  # ==================================================
+  #
+  # To link an event title to a content page, provide the path to its
+  # .qmd file, relative to the root of the website.
+  # For example:
+  # "content/module-1/introduction.qmd"
+  #
+  # The website converts this path to a link to the rendered HTML page.
+  # Leave content as "" if the event does not have an associated page.
+
 
   # ------------------------------------------------------------------
   # DAY 1
@@ -146,6 +215,10 @@ events:
     location: "Online"
     people: []
     content: ""
+
+  # ------------------------------------------------------------------
+  # FINAL MEETING
+  # ------------------------------------------------------------------
 
   - title: "Final Course Meeting"
     type: consultation
