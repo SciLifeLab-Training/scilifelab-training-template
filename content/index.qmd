@@ -15,11 +15,11 @@ The template pages cover:
 
 - [**Module 1 – How to structure a page:**](/content/module-1/introduction.qmd) Headings, paragraphs, text formatting, lists, tables, code blocks and other content elements.
 - [**Module 2 – How to highlight information:**](/content/module-2/introduction.qmd) Callouts for tips, notes, important information, and warnings.
-- [**Module 3 – How to add media and interactive elements:**](/content/module-3/introduction.qmd) Links, images, videos, and exercises.
+- [**Module 3 – How to add media and interactive elements:**](/content/module-3/introduction.qmd) Links, images, documents, and videos.
 
 ---
 
-If you want to learn more about Markdown, these resources provide guides, reference sheets, tutorials, and an online editor:
+If you want to learn more about Markdown, check out these free resources:
 
 - [Markdown Guide](https://www.markdownguide.org/) – A practical guide to writing Markdown.
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet) – A quick reference to common Markdown syntax.

@@ -9,37 +9,40 @@ Each example below shows the Markdown syntax and how the link appears when rende
 
 <br>
 
+
 ## Linking to a website
 
-Use links to direct participants to external websites or online resources.
+Use links to direct participants to external websites or online resources. Use descriptive link text that tells participants where the link will take them or what information they will find. 
 
 **Markdown syntax**
 
 ```markdown
-[Visit the SciLifeLab website](https://www.scilifelab.se/)
+For more information,[visit the SciLifeLab website](https://www.scilifelab.se/)
 ```
 
 **Rendered result**
 
-[Visit the SciLifeLab website](https://www.scilifelab.se/)
+For more information, [visit the SciLifeLab website](https://www.scilifelab.se/)
 
-## Using descriptive link text
 
-Use descriptive link text that tells participants where the link will take them or what information they will find. 
+## Linking to another page within your training repository
+
+You can link directly to another page in your training website. Use the relative path to the page, including its `.qmd` filename. Quarto will resolve the link to the corresponding rendered page when the website is built.
 
 **Markdown syntax**
 
 ```markdown
-For more information, read the [SciLifeLab training resources](https://training.scilifelab.se/resources).
+[Go to the introduction of Module 3](/content/module-3/introduction.qmd)
 ```
 
 **Rendered result**
 
-For more information, read the [SciLifeLab training resources](https://training.scilifelab.se/resources).
+[Go to the introduction of Module 3](/content/module-3/introduction.qmd)
 
-## Linking to a file or resource
 
-You can link to files, such as PDF documents or other downloadable resources. Place the file in the docs folder at the root of your training repository. When linking to it from a page inside a content/module folder, use ../../docs/ followed by the filename. Adjust the path if your file is stored elsewhere.
+## Linking to a file or resource within your training repository
+
+You can link to files, such as PDF documents or other downloadable resources. Place the file in the `docs` folder at the root of your training repository. When linking to it from a page inside a `content/module folder`, use `../../docs/` followed by the filename. Adjust the path if your file is stored elsewhere.
 
 Replace the example filename and path with those of your own file.
 
@@ -53,16 +56,58 @@ Replace the example filename and path with those of your own file.
 
 [Download the participant guide](../../docs/example-pdf.pdf)
 
-## Linking to another training page
 
-You can link directly to another page in your training website. Use the relative path to the page, including its `.qmd` filename. Quarto will resolve the link to the corresponding rendered page when the website is built.
+## Linking to resources hosted elsewhere
 
-**Markdown syntax**
+You can also link to resources hosted outside your training repository, such as presentations and documents in Google Slides or Google Docs. This allows participants to view or make a copy of a resource without you having to add the file to your repository.
 
-```markdown
-[Go to the introduction of Module 3](/content/module-3/introduction.qmd)
+For Google Slides and Google Docs, you can use the document ID from its URL to create different links. The document ID is the long string of letters and numbers between `/d/` and the next `/` in the URL.
+
+For example, a Google Slides URL may look like this:
+
+```text
+https://docs.google.com/presentation/d/DOCUMENT_ID/edit
+```
+
+Replace `DOCUMENT_ID` with the ID from your own presentation.
+
+### Providing a view link
+
+Use the `/view` ending to link directly to the presentation or document.
+
+**HTML syntax**
+
+```html
+<a href="https://docs.google.com/presentation/d/DOCUMENT_ID/view" target="_blank">
+  View in Google Slides
+</a>
 ```
 
 **Rendered result**
 
-[Go to the introduction of Module 3](/content/module-3/introduction.qmd)
+<a href="https://docs.google.com/presentation/d/1mhc8IzBRyYvwjFHlACkeSIRyzXiC2HTnspF__PnhDHI/view" target="_blank">View in Google Slides</a>
+
+
+### Providing a copy link
+
+For Google Slides and Google Docs, you can use `/copy` to let participants create their own copy of a resource.
+
+**HTML syntax**
+
+```html
+<a href="https://docs.google.com/presentation/d/DOCUMENT_ID/copy" target="_blank">
+  Make a copy
+</a>
+```
+
+**Rendered result**
+
+<a href="https://docs.google.com/presentation/d/1mhc8IzBRyYvwjFHlACkeSIRyzXiC2HTnspF__PnhDHI/copy" target="_blank">Make a copy</a>
+
+You can use the same approach for Google Docs by replacing `presentation` in the URL with `document`.
+
+
+::: {.callout-note}
+ Participants may need to sign in to their Google account and have permission to access the original resource. Check the sharing settings before distributing the link.
+:::
+

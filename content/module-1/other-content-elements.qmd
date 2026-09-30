@@ -85,5 +85,5 @@ This content is hidden until the reader expands the section.
 </details>
 
 ::: {.callout-note}
-The `<details>` example uses HTML rather than Markdown, which is appropriate here: it demonstrates a Quarto-supported way to create expandable content without using a callout box.
+The `<details>` example uses HTML rather than Markdown, which demonstrates a Quarto-supported way to create expandable content without using a callout box.
 :::
