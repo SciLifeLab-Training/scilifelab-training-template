@@ -50,9 +50,9 @@ website:
         height: 46
         primary: true
 
-  #   - src: "img/partner-logo.svg"
-  #     alt: "Partner organisation"
-  #     height: 36
+      - src: "img/nbis-neg.png"
+        alt: "Partner organisation"
+        height: 26
 
 
   # Navigation links are generated from the available pages.
