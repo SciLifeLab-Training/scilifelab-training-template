@@ -1,75 +1,48 @@
 ::: {.course-navbar}
-
 ::: {.course-navbar-layout}
 
 ::: {.course-navbar-content}
-
 ::: {.course-navbar-title}
-
 {{< include _generated/navbar_meta.qmd >}}
-
 :::
 
 ::: {.course-navbar-menu}
-
 ::: {.course-navbar-links}
-
 {{< include _generated/navbar_links.qmd >}}
-
 :::
-
 :::
-
 :::
 
 ::: {.course-navbar-brand}
-
-<img src="img/scilifelab-logo-full-neg.png" class="course-navbar-logo">
-
+{{< include _generated/navbar_brand.qmd >}}
 :::
 
 :::
-
 :::
 
 <script>
-
 document.addEventListener("DOMContentLoaded", function () {
-
     const currentPage =
         window.location.pathname.split("/").pop() || "index.html";
 
     document.querySelectorAll("[data-page]").forEach(function (link) {
-
         const page = link.dataset.page;
 
         if (!page) {
             return;
         }
 
-        const expectedPage =
-            page.replace(".qmd", ".html");
+        const expectedPage = page.replace(".qmd", ".html");
 
         if (expectedPage !== currentPage) {
             return;
         }
 
         if (link.classList.contains("course-navbar-dropdown-link")) {
-
-            link.classList.add(
-                "course-navbar-dropdown-link-active"
-            );
-
+            link.classList.add("course-navbar-dropdown-link-active");
         } else {
-
-            link.classList.add(
-                "course-navbar-link-active"
-            );
-
+            link.classList.add("course-navbar-link-active");
         }
-
     });
-
 });
-
 </script>

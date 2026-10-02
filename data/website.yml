@@ -20,6 +20,41 @@ website:
   #
   # Always displayed.
   # The training title is read from course.yml.
+
+  # Logos
+  # -----
+  # Add one or more logos to the list below by adding a new 
+  # list item. Do not add empty placeholders for logos that are not used.
+  #
+  # SciLifeLab is always displayed on the right. Other logos are displayed to 
+  # its left, in the order in which they appear in this list.
+  #
+  # For best results, use logos that:
+  #   - Are white or designed for use on a dark background.
+  #   - Have a transparent background, where appropriate.
+  #   - Have minimal empty space around the visible artwork.
+  #   - Preserve their original aspect ratio when resized.
+  #
+  # SVG files are preferred because they remain sharp at any size.
+  # For raster images (such as PNG), use a sufficiently high-resolution
+  # image. For a displayed height of 46 px, a source height of at least
+  # 92 px is recommended for sharp rendering on high-density screens.
+  #
+  # Adjust the height of each logo independently to make their visible
+  # artwork appear approximately the same height.
+ 
+  navbar:
+    logos:
+      - src: "img/scilifelab-logo-full-neg.png"
+        alt: "SciLifeLab"
+        height: 46
+        primary: true
+
+  #   - src: "img/partner-logo.svg"
+  #     alt: "Partner organisation"
+  #     height: 36
+
+
   # Navigation links are generated from the available pages.
   #
   # Overview and Content are always included.
@@ -36,6 +71,7 @@ website:
   # from the navbar.
   #
   # The current page is highlighted automatically.
+
 
   # ==================================================
   # Welcome section

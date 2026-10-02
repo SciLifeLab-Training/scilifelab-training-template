@@ -1,13 +1,51 @@
-def render_navbar_meta(course):
+from html import escape
 
+
+def render_navbar_meta(course):
     title = course["title"]
 
     return f"""
 <h1>{title}</h1>
 """.strip()
 
-def render_navbar_links(website, available_pages):
 
+def render_navbar_brand(website, content_page=False):
+    logos = website["navbar"]["logos"]
+
+    # Keep the primary logo last so it appears on the right.
+    logos = sorted(
+        logos,
+        key=lambda logo: bool(logo.get("primary", False)),
+    )
+
+    html = []
+
+    for logo in logos:
+        src = escape(str(logo["src"]), quote=True)
+        alt = escape(str(logo["alt"]), quote=True)
+        height = int(logo.get("height", 46))
+
+        if height <= 0:
+            raise ValueError(
+                f"Logo height must be a positive number. Got: {height}"
+            )
+
+        if content_page:
+            image_source = f'src="" data-course-asset="{src}"'
+        else:
+            image_source = f'src="{src}"'
+
+        html.append(
+            f'<img {image_source} '
+            f'alt="{alt}" '
+            f'class="course-navbar-logo" '
+            f'style="height: {height}px; width: auto;">'
+        )
+
+    return "\n".join(html)
+
+
+def render_navbar_links(website, available_pages):
     links = [
         ("Overview", "index.qmd"),
         ("Content", "content/index.qmd"),
@@ -45,7 +83,6 @@ def render_navbar_links(website, available_pages):
     available_dropdown_links = []
 
     for title, page, availability in dropdown_links:
-
         if availability is True:
             available = True
         else:
@@ -55,10 +92,7 @@ def render_navbar_links(website, available_pages):
             available_dropdown_links.append((title, page))
 
     if available_dropdown_links:
-
-        html.append(
-            '<div class="course-navbar-dropdown">'
-        )
+        html.append('<div class="course-navbar-dropdown">')
 
         html.append(
             '<button class="course-navbar-link '
@@ -71,12 +105,9 @@ def render_navbar_links(website, available_pages):
             '</button>'
         )
 
-        html.append(
-            '<div class="course-navbar-dropdown-menu">'
-        )
+        html.append('<div class="course-navbar-dropdown-menu">')
 
         for title, page in available_dropdown_links:
-
             href = page.replace(".qmd", ".html")
 
             html.append(

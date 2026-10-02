@@ -30,6 +30,7 @@ from writer import write_partial
 from renderers.welcome import render_welcome
 from renderers.navbar import (
     render_navbar_meta,
+    render_navbar_brand,
     render_navbar_links,
 )
 from renderers.registration import render_registration
@@ -110,6 +111,11 @@ def main():
     write_partial(
         "navbar_meta.qmd",
         render_navbar_meta(course),
+    )
+
+    write_partial(
+        "navbar_brand.qmd",
+        render_navbar_brand(website),
     )
 
     write_partial(

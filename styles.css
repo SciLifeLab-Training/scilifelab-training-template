@@ -252,27 +252,26 @@ body {
    COURSE LOGO
    ========================================================================== */
 
-/* Places the logo in the upper-right area of the navbar. */
-.course-navbar-brand {
-    grid-column: 2;
-    grid-row: 1;
-
-    justify-self: end;
-    align-self: start;
+.course-navbar .course-navbar-brand {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
 }
 
-
-/* Removes default paragraph spacing that Quarto may add around the logo. */
-.course-navbar-brand p {
-    margin: 0;
+/* Quarto may wrap included logo images in paragraphs.
+   Make those paragraphs transparent to the flex layout. */
+.course-navbar .course-navbar-brand p {
+    display: contents;
 }
 
-
-/* Controls the displayed size of the SciLifeLab logo. */
-.course-navbar-logo {
+.course-navbar .course-navbar-logo {
     display: block;
-    height: 46px;
     width: auto;
+    object-fit: contain;
+    flex: 0 0 auto;
 }
 
 

@@ -2,6 +2,7 @@ from pathlib import Path
 
 from renderers.navbar import (
     render_navbar_meta,
+    render_navbar_brand,
     render_navbar_links,
 )
 
@@ -162,6 +163,7 @@ def render_content_next_navigation(sections):
 
 def render_content_navbar(course, website, available_pages):
     meta = render_navbar_meta(course)
+    brand = render_navbar_brand(website, content_page=True)
     links = render_navbar_links(website, available_pages)
 
     return """
@@ -178,11 +180,7 @@ def render_content_navbar(course, website, available_pages):
             </div>
         </div>
         <div class="course-navbar-brand">
-            <img
-                src=""
-                data-course-asset="img/scilifelab-logo-full-neg.png"
-                class="course-navbar-logo"
-                alt="SciLifeLab Training">
+""" + brand + """
         </div>
     </div>
 </div>
