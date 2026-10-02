@@ -7,11 +7,11 @@
 
 :::{.hero__copy}
 :::{.hero__title}
-Course title
+Training title
 :::
 
 :::{.hero__subtitle}
-Course subtitle
+Training subtitle
 :::
 :::
 

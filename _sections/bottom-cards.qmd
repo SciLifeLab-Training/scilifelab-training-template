@@ -4,12 +4,12 @@
   <span class="info-card__icon" aria-hidden="true">
     <img src="img/icons/person.svg" alt="" class="info-card__icon-img">
   </span>
-  <h2 class="info-card__heading">Course founders</h2>
+  <h2 class="info-card__heading">Founders</h2>
 </div>
 
 :::{.people-list}
-- Course founder 1
-- Course founder 2
+- Training founder 1
+- Training founder 2
 - ...
 :::
 :::
@@ -23,8 +23,8 @@
 </div>
 
 :::{.people-list}
-- Contributor 1
-- Contributor 2
+- Training contributor 1
+- Training contributor 2
 - ... 
 :::
 :::

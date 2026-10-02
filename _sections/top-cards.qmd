@@ -4,11 +4,11 @@
   <span class="info-card__icon" aria-hidden="true">
     <img src="img/icons/book-stack.svg" alt="" class="info-card__icon-img">
   </span>
-  <h2 class="info-card__heading">Course content</h2>
+  <h2 class="info-card__heading">Training content</h2>
 </div>
 
 :::{.card-copy}
-Description of the content of the course 
+Description of the content of the training.  
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra vehicula est non feugiat. Maecenas nec cursus eros, at consectetur enim. Ut tincidunt eros ipsum, ut tempor tortor eleifend eu.   
   
