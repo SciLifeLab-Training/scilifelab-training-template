@@ -830,7 +830,7 @@ body {
    ANNOUNCEMENTS SECTION - Overview page 
    ========================================================================== */
 
-/* Displays the announcements and team preview side by side */
+/* Display the announcements and team preview side by side. */
 .course-home-bottom {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -838,178 +838,156 @@ body {
     margin-top: 0.5rem;
 }
 
-/* Wrapper around the homepage announcements section */
+/* Add spacing around the announcements/team section. */
 .course-announcements {
     padding: 2rem 2.5rem 0;
 }
 
-/* Content wrapper */
+/* Add spacing around the announcements section.*/
 .course-announcements-content {
     padding-top: 1.5rem;
     margin-top: -2rem;
 }
 
-/* Section label */
-.course-announcements .course-section-label {
-    margin-bottom: 1.5rem;
-}
-
-.course-announcement {
-    position: relative;
-
-    padding-left: 1.8rem;
-    padding-bottom: 0.8rem;
-
-    color: #666;
-    font-size: 0.80rem;
-    line-height: 1.4;
-
-    max-width: 55ch;
-}
-
-.course-announcement:last-of-type {
-    padding-bottom: 0;
-}
-
+/* Add timeline before announcements.*/
 .course-announcement::before {
     content: "";
-
     position: absolute;
-
     left: 7px;
     top: 0.7rem;
     bottom: 0;
-
     width: 1px;
-
     background: #e5e5e5;
 }
 
+/* Add green circle in the timeline before announcements.*/
 .course-announcement::after {
     content: "";
-
     position: absolute;
-
     left: 3px;
     top: 0.35rem;
-
     width: 9px;
     height: 9px;
-
     border-radius: 50%;
-
     background: #9cc31c;
 }
 
+/* Position each individual announcement. */
+.course-announcement {
+    position: relative;
+    padding-left: 1.8rem;
+    padding-bottom: 0.8rem;
+    max-width: 55ch;
+}
+
+/* Style individual announcement date. */
 .course-announcement-date {
     font-size: 0.80rem;
     font-weight: 600;
-    color: #333;
-
+    color: #222;
     margin-bottom: 0.1rem;
 }
 
+/* Style individual announcement title. */
 .course-announcement-title {
     margin: 0 0 0.15rem;
-
     font-size: 0.80rem;
     font-weight: 600;
-
-    color: #333;
+    color: #222;
 }
 
+/* Style individual announcement text. */
 .course-announcement p {
     margin: 0;
-
     color: #666;
     font-size: 0.75rem;
     line-height: 1.4;
 }
 
-.course-announcement-empty {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    min-height: 100px;
-
-    color: #666;
-    font-size: 0.80rem;
-    line-height: 1.5;
-}
-
+/* Style 'view all announcements' link. */
 .course-announcements-link {
     display: inline-block;
+    margin-top: 0.75rem;
+    margin-bottom: 1.8rem;
     color: #087584;
     font-size: 0.80rem;
     font-weight: 600;
     text-decoration: none;
 }
 
+/* Underline 'view all announcements' link when hovered. */
 .course-announcements-content a:hover {
     color: #045c64;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
 
+/* Style empty announcement box. */
+.course-announcement-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    color: #666;
+    font-size: 0.80rem;
+    line-height: 1.5;
+}
+
 /* ==========================================================================
    TEAM SECTION - Overview page 
    ========================================================================== */
 
-/* Wrapper around the homepage course team section. Aligns the section with the rest of the homepage */
+/* Add spacing around the team section.*/
 .course-team {
     padding: 2rem 2.5rem 0;
 }
 
+/* Add spacing around the content of the team section.*/
 .course-team-content {
     padding-top: 1.5rem;
     margin-top: -2rem;
 }
 
+/* Control spacing between each team member card. */
 .course-team-member {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.1rem;
 }
 
+/* Style team member photo. */
 .course-team-photo {
     width: 58px;
     height: 58px;
-
     border-radius: 50%;
     object-fit: cover;
-
     flex-shrink: 0;
 }
 
-.course-team-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-}
-
+/* Group team member text. */
 .course-team-details p {
     margin: 0;
 }
 
+/* Style team member name. */
 .course-team-name {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #333;
-    margin: 0;
 }
 
+/* Style team member role. */
 .course-team-role {
     font-size: 0.75rem;
-    margin: 0;
+    color: #666;
 }
 
+/* Style team member affiliation. */
 .course-team-affiliation {
     font-size: 0.80rem;
-    margin: 0;
 }
 
+/* Style 'view full team' link. */
 .course-team-link {
     color: #087584;
     font-size: 0.80rem;
@@ -1017,12 +995,12 @@ body {
     text-decoration: none;
 }
 
+/* Underline 'view full team' link when hovered. */
 .course-team-link:hover {
     color: #045c64;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
-
 
 /* ==========================================================================
    FOOTER

@@ -78,11 +78,7 @@ ANNOUNCEMENTS
 
 {"".join(cards)}
 
-<a class="course-announcements-link" href="announcements.qmd">
-
-View all announcements →
-
-</a>
+<a class="course-announcements-link" href="announcements.qmd">View all announcements →</a>
 
 </div>
 
