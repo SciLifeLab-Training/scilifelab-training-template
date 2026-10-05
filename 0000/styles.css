@@ -4077,26 +4077,21 @@ html.course-content-page #quarto-content {
    ANNOUNCEMENTS PAGE
    ================================================== */
 
-/* --------------------------------------------------
-   Page header
-   -------------------------------------------------- */
+/* Remove default Quarto heading links. */
 .course-announcements-page .anchorjs-link,
 .course-announcements-section .anchorjs-link {
     display: none !important;
 }
-.course-announcements-header {
-    width: 100%;
-    max-width: var(--course-content-width);
 
+/* Add spacing and positioning around the page. */
+.course-announcements-header {
     margin: 2.5rem auto 0;
     padding: 0 var(--course-content-padding);
-
-    box-sizing: border-box;
 }
 
+/* Style the page label. */
 .course-announcements-label {
     margin-bottom: 0.85rem;
-
     color: #045c64;
     font-size: 0.85rem;
     font-weight: 700;
@@ -4104,117 +4099,77 @@ html.course-content-page #quarto-content {
     text-transform: uppercase;
 }
 
+/* Style the page title. */
 .course-announcements-header h1 {
     max-width: 28ch;
-
     margin: 0;
-
     font-size: 2rem;
     font-weight: 600;
     line-height: 1.25;
 }
 
+/* Style the intro text. */
 .course-announcements-intro {
     max-width: 55ch;
-
     margin: 0.75rem 0 0;
-
     color: #777;
     font-size: 1.05rem;
     line-height: 1.5;
 }
 
-
-/* --------------------------------------------------
-   Announcement list
-   -------------------------------------------------- */
-
+/* Position the announcement list. */
 .course-announcements-list {
-    width: 100%;
-    max-width: var(--course-content-width);
-
     margin: 2.75rem auto 4rem;
     padding: 0 var(--course-content-padding);
-
-    box-sizing: border-box;
 }
 
-
-/* --------------------------------------------------
-   Individual announcement
-   -------------------------------------------------- */
-
+/* Add timeline before announcements.*/
 .course-announcement-page-item {
     position: relative;
-
     max-width: 900px;
-
     padding: 0 0 1.75rem 2rem;
     margin: 0 0 1.75rem;
-
     border-left: 1px solid #e5e5e5;
 }
 
+/* Add green circle in the timeline before announcements.*/
 .course-announcement-page-item::before {
     content: "";
-
     position: absolute;
-
     left: -5px;
     top: 0.35rem;
-
     width: 9px;
     height: 9px;
-
     border-radius: 50%;
-
     background: #9cc31c;
 }
 
-
-/* --------------------------------------------------
-   Date
-   -------------------------------------------------- */
-
+/* Style announcement date.*/
 .course-announcement-page-date {
     margin-bottom: 0.3rem;
-
     color: #045c64;
     font-size: 0.80rem;
     font-weight: 600;
 }
 
-
-/* --------------------------------------------------
-   Title
-   -------------------------------------------------- */
-
+/* Style announcement title.*/
 .course-announcement-page-title {
     margin: 0 0 0.45rem;
-
-    color: #333;
+    color: #222;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.4;
-
     border: none;
 }
 
-
-/* --------------------------------------------------
-   Text
-   -------------------------------------------------- */
-
+/* Style announcement text.*/
 .course-announcement-page-text {
     max-width: 70ch;
-
     margin: 0;
-
     color: #555;
     font-size: 0.90rem;
     line-height: 1.55;
 }
-
 
 /* ==========================================================================
    RESPONSIVE LAYOUT
@@ -4465,5 +4420,4 @@ html.course-content-page #quarto-content {
   .course-faq-answer {
     padding: 0.8rem 1rem 0.9rem 1rem;
   }
-
 }
