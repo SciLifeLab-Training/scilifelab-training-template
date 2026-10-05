@@ -526,15 +526,15 @@ body {
 }
 
 /* ==========================================================================
-   UPCOMING SECTION
+   NEXT UP SECTION - Overview page 
    ========================================================================== */
 
-/* Adds spacing around the upcoming event section */
+/* Add spacing around the next up section. */
 .course-upcoming-section {
     padding: 1.5rem 2.5rem 0;
 }
 
-/* Styles the section label displayed above the upcoming event card */
+/* Style the section label displayed above the next up section. */
 .course-section-label {
     color: #045c64;
     font-size: 0.85rem;
@@ -543,55 +543,42 @@ body {
     text-transform: uppercase;
 }
 
-/* Creates the summary card highlighting the next scheduled course event */
+/* Position and style the next up card. */
 .course-upcoming-card {
     position: relative;
-
     display: grid;
     grid-template-columns: 80px 1fr 150px;
     gap: 3rem;
-
-    width: 100%;
     padding: 1.5rem 2rem;
-
-    background: white;
-    border: 1px solid #e7e7e7;
-    border-radius: 8px;
-
+    border: 1px solid #ececec;
+    border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0,0,0,.03);
 }
 
-/* Adds the accent stripe to the left edge of the event card */
+/* Add the accent stripe to the left edge of the next up card. */
 .course-upcoming-card::before {
     content: "";
-
     position: absolute;
-
     left: -1px;
     top: -1px;
     bottom: -1px;
-
     width: 4px;
-
     background: #9cc31c;
-    border-radius: 8px 0 0 8px;
+    border-radius: 6px 0 0 6px;
 }
 
-/* Arranges the event date as a vertically centered column */
+/* Arrange the event date as a vertically centered column. */
 .course-upcoming-day {
     position: relative;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
-
     font-size: 0.80rem;
     font-weight: 400;
 }
 
-/* Styles the day of the month within the date column */
+/* Style the day of the month within the event date column. */
 .course-upcoming-date {
     color: #045c64;
     font-size: 2rem;
@@ -600,16 +587,16 @@ body {
     margin: 0.15rem 0;
 }
 
-/* Styles the month beneath the event date */
+/* Style the month beneath the event date. */
 .course-upcoming-month {
-    color: #333;
+    color: #222;
     font-size: 0.80rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
 
-/* Draws a divider between the date column and the event details */
+/* Control the divider between the date column and the event details. */
 .course-upcoming-day::after {
     content: "";
     position: absolute;
@@ -617,11 +604,10 @@ body {
     top: 5%;
     bottom: 5%;
     width: 1px;
-
     background: #ececec;
 }
 
-/* Displays the scheduled start time for the upcoming event */
+/* Style the scheduled start time for the upcoming event. */
 .course-upcoming-time,
 .course-schedule-time {
     font-size: 0.80rem;
@@ -629,21 +615,15 @@ body {
     color: #555;
 }
 
-/* Highlights the event type using a coloured badge */
+/* Highlight the upcoming event type using a coloured badge. */
 .course-upcoming-type {
     display: inline-block;
     padding: 0.2rem 0.6rem;
-
     font-size: 0.75rem;
     font-weight: 700;
-
     border-radius: 999px;
     margin-left: 1rem;
 }
-
-/* ==========================================================================
-   EVENT TYPE BADGES
-   ========================================================================== */
 
 .course-type-lecture {
     background: #e8f3f4;
@@ -720,7 +700,7 @@ body {
     color: #555;
 }
 
-/* Styles the title of the upcoming event */
+/* Style the upcoming event title. */
 .course-upcoming-title {
     margin: 0.75rem 0;
     font-size: 1.15rem;
@@ -729,11 +709,13 @@ body {
     color: #222;
 }
 
+/* Style the upcoming event title when it's a link. */
 .course-upcoming-title a {
     color: inherit;
     text-decoration: none;
 }
 
+/* Style the upcoming event title when hovered. */
 .course-upcoming-title a:hover {
     color: inherit;
     text-decoration: underline;
@@ -741,20 +723,18 @@ body {
     text-underline-offset: 3px;
 }
 
-/* Aligns the presenter and location metadata beneath the event title */
+/* Align and style the upcoming event presenter and location metadata. */
 .course-upcoming-speaker,
 .course-upcoming-location {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-
-    color: #777;
-    font-size: 0.80rem;
-
+    color: #888;
+    font-size: 0.75rem;
     margin-top: 0.35rem;
 }
 
-/* Arranges the countdown and schedule link within the right-hand column of the card */
+/* Arrange the countdown and full schedule link within the right-hand column of the next up card */
 .course-upcoming-status {
     display: flex;
     flex-direction: column;
@@ -763,13 +743,13 @@ body {
     text-align: right;
 }
 
-/* Styles the relative time remaining until the event begins */
+/* Style the relative time remaining until the event begins */
 .course-upcoming-countdown {
     font-size: 0.80rem;
     color: #555;
 }
 
-/* Styles the link to the full course schedule */
+/* Style the link to the full course schedule */
 .course-upcoming-link {
     color: #087584;
     font-size: 0.85rem;
@@ -777,13 +757,12 @@ body {
     text-decoration: none;
 }
 
-/* Underlines the schedule link when hovered */
+/* Underline the link to the full schedule link when hovered */
 .course-upcoming-link:hover {
     color: #045c64;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
-
 
 /* ==========================================================================
    QUICK COURSE LINKS SECTION
@@ -4525,5 +4504,53 @@ html.course-content-page #quarto-content {
     margin-right: 0.2rem;
     grid-template-columns: 1fr;
     row-gap: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   NEXT UP SECTION - Overview page
+   -------------------------------------------------------------------------- */
+@media (max-width: 750px) {
+
+  .course-upcoming-section {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  .course-upcoming-card {
+    grid-template-columns: 80px 1fr;
+    column-gap: 2rem;
+    row-gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .course-upcoming-status {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding-left: 0.5rem;
+  }
+
+  .course-upcoming-status p {
+    margin: 0;
+  }
+
+  .course-upcoming-top p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  .course-upcoming-type {
+    margin-left: 0;
+  }
+
+    .course-upcoming-day::after {
+    right: -0.5rem;
   }
 }
