@@ -362,10 +362,12 @@ body {
 .landing-footer {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  margin-top: auto;
   padding: 0.45rem clamp(0.75rem, 2vw, 1rem);
   background: #b8b8b8;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  border-radius: 6px 6px 0 0
+  border-radius: 6px 6px 0 0;
 }
 
 /* Position the footer text and allow it to use the available width. */
@@ -3019,36 +3021,19 @@ html.course-content-page #quarto-content {
 
 
 /* ==================================================
-   FAQ
+   FREQUENTLY ASKED QUESTIONS - FAQ page
    ================================================== */
 
-/* --------------------------------------------------
-   Page container
-   -------------------------------------------------- */
-
+/* Add spacing and positioning around the page. */
 .course-faq-page {
     width: 100%;
-    max-width: var(--course-content-width);
-
     margin: 2.5rem auto 4rem;
     padding: 0 var(--course-content-padding);
-
-    box-sizing: border-box;
 }
 
-
-/* --------------------------------------------------
-   Page header
-   -------------------------------------------------- */
-
-.course-faq-header {
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #d9e0e3;
-}
-
+/* Style the page label. */
 .course-faq-label {
     margin-bottom: 0.85rem;
-
     color: #045c64;
     font-size: 0.85rem;
     font-weight: 700;
@@ -3056,180 +3041,98 @@ html.course-content-page #quarto-content {
     text-transform: uppercase;
 }
 
+/* Style the page title. */
 .course-faq-header h1 {
     max-width: 28ch;
-
     margin: 0;
-
     font-size: 2rem;
     font-weight: 600;
     line-height: 1.25;
 }
 
+/* Style the intro text. */
 .course-faq-intro {
     max-width: 70ch;
-
     margin: 0.75rem 0 0;
-
     color: #777;
     font-size: 1.05rem;
     line-height: 1.5;
 }
 
-
-/* --------------------------------------------------
-   FAQ section
-   -------------------------------------------------- */
-
-.course-faq-section {
-    padding: 2rem 0 0;
+/* Style the divider below the heading. */
+.course-faq-header {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #d9e0e3;
 }
 
-.course-faq-section + .course-faq-section {
-    padding-top: 2.5rem;
-}
-
-
-/* --------------------------------------------------
-   FAQ list
-   -------------------------------------------------- */
-
+/* Position the FAQ list. */
 .course-faq-list {
-    width: 100%;
-    margin: 0.75rem 0 0;
+    margin: 2.25rem 0 0;
 }
 
-
-/* --------------------------------------------------
-   FAQ item
-   -------------------------------------------------- */
-
+/* Style each FAQ item box. */
 .course-faq-item {
-    margin: 0;
-
-    background: #ffffff;
-
     border: 1px solid #d9e0e3;
     border-radius: 5px;
-
     overflow: hidden;
 }
 
-.course-faq-item + .course-faq-item {
-    margin-top: 0.75rem;
-}
-
-
-/* --------------------------------------------------
-   Question
-   -------------------------------------------------- */
-
+/* Style each FAQ item. */
 .course-faq-item summary {
     display: flex;
-    align-items: center;
-
     width: 100%;
-    box-sizing: border-box;
-
     padding: 1rem 1.15rem;
-
-    cursor: pointer;
-    list-style: none;
-
-    color: #101820;
-
+    color: #222;
     font-size: 0.95rem;
     font-weight: 600;
-    line-height: 1.45;
 }
 
-.course-faq-item summary::-webkit-details-marker {
-    display: none;
+/* Style the number in each FAQ item. */
+.course-faq-number {
+    width: 1.8rem;
+    color: #0b7180;
+    font-weight: 600;
 }
 
-.course-faq-item summary::marker {
-    display: none;
-}
-
+/* Change color of the FAQ item when hovered. */
 .course-faq-item summary:hover {
     background: #f7f9fa;
 }
 
-
-/* --------------------------------------------------
-   Question number
-   -------------------------------------------------- */
-
-.course-faq-number {
-    flex: 0 0 auto;
-
-    width: 1.8rem;
-
-    color: #0b7180;
-
-    font-weight: 600;
-}
-
-
-/* --------------------------------------------------
-   Question text
-   -------------------------------------------------- */
-
+/* Push arrow to the right of the FAQ box. */
 .course-faq-question {
     flex: 1;
 }
 
-
-/* --------------------------------------------------
-   Chevron
-   -------------------------------------------------- */
-
+/* Style arrow to the right of the FAQ box. */
 .course-faq-item summary .bi {
-    flex: 0 0 auto;
-
     margin-left: 1rem;
-
     color: #0b7180;
     font-size: 0.8rem;
-
     transition: transform 0.2s ease;
 }
 
-
-/* --------------------------------------------------
-   Open state
-   -------------------------------------------------- */
-
-.course-faq-item[open] {
-    border-color: #c8d5d9;
-}
-
-.course-faq-item[open] summary {
-    background: #f7f9fa;
-
-    border-bottom: 1px solid #d9e0e3;
-}
-
+/* Rotate arrow to the right of the FAQ box when FAQ box is open. */
 .course-faq-item[open] summary .bi {
     transform: rotate(180deg);
 }
 
+/* Style FAQ item when it's open. */
+.course-faq-item[open] summary {
+    background: #f7f9fa;
+    border-bottom: 1px solid #d9e0e3;
+}
 
-/* --------------------------------------------------
-   Answer
-   -------------------------------------------------- */
-
+/* Style FAQ answer. */
 .course-faq-answer {
     padding: 1rem 1.15rem 1.15rem 2.95rem;
-
     background: #ffffff;
 }
 
+/* Style FAQ answer. */
 .course-faq-answer p {
     margin: 0;
-
     color: #555;
-
     font-size: 0.9rem;
     line-height: 1.6;
 }
@@ -4549,4 +4452,18 @@ html.course-content-page #quarto-content {
   .course-announcements-content > p {
     margin-bottom: 0.0rem;
   }
+}
+
+/* --------------------------------------------------------------------------
+   FREQUENTLY ASKED QUESTIONS - FAQ page
+   -------------------------------------------------------------------------- */
+@media (max-width: 750px) {
+  .course-faq-item summary {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .course-faq-answer {
+    padding: 0.8rem 1rem 0.9rem 1rem;
+  }
+
 }
