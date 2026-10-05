@@ -355,6 +355,58 @@ body {
 }
 
 /* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+/* Control footer layout and padding. */
+.landing-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 0.45rem clamp(0.75rem, 2vw, 1rem);
+  background: #b8b8b8;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border-radius: 6px 6px 0 0
+}
+
+/* Position the footer text and allow it to use the available width. */
+.landing-footer__meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Style footer text. */
+.landing-footer__meta p {
+    margin: 0;
+    font-size: 0.70rem;
+    line-height: 1.25;
+    color: rgba(255,255,255,.9);
+}
+
+/* Position footer text. */
+.landing-footer__meta p + p {
+    margin-top: 0.45rem;
+}
+
+/* Position and size the repository logo. */
+.landing-footer__image {
+  height: 2rem;
+  position: relative;
+  top: 9px;
+}
+
+/* Style the footer links. */
+.landing-footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Change footer link colour on hover. */
+.landing-footer a:hover {
+  color: #045c64;
+}
+
+/* ==========================================================================
    WELCOME SECTION - Overview page 
    ========================================================================== */
 
@@ -1000,89 +1052,6 @@ body {
     color: #045c64;
     text-decoration: underline;
     text-underline-offset: 2px;
-}
-
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-
-/* Landing-page footer containing licence/build information on the left and the repository link on the right */
-.landing-footer {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  margin-top: auto;
-  padding: 0.45rem clamp(0.75rem, 2vw, 1rem);
-  background: #b8b8b8;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  border-radius: 6px 6px 0 0
-}
-
-/* Position the footer text and allow it to use the available width. */
-.landing-footer__meta {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Style footer text */
-.landing-footer__meta p {
-    margin: 0;
-    font-size: 0.70rem;
-    line-height: 1.25;
-    color: rgba(255,255,255,.9);
-}
-
-.landing-footer__meta p + p {
-    margin-top: 0.45rem;
-}
-
-/* Position the repository link on the right side of the footer. */
-.landing-footer__actions {
-  display: flex;
-  align-items: center;
-  align-self: center;
-  flex-shrink: 0;
-}
-
-.landing-footer__image-link {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 0;
-}
-
-/* Style the displayed size of the repository image/logo*/
-.landing-footer__image {
-  display: block;
-  height: 2rem;
-  width: auto;
-
-  position: relative;
-  top: 9px;
-}
-
-/* Keep links visible against the footer background. */
-.landing-footer a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-/* Change footer link colour on hover. */
-.landing-footer a:hover {
-  color: #045c64;
-}
-
-.course-content-page .landing-footer {
-    margin-top: 2rem;
-    flex-shrink: 0;
-    min-height: 3.5rem;
-    box-sizing: border-box;
-}
-
-.course-content-page .landing-footer__image {
-    height: 2rem;
-    width: auto;
-    max-height: none;
 }
 
 /* ==========================================================================
@@ -1900,6 +1869,20 @@ html.course-content-page .course-content-next-link:focus-visible .course-content
 /* ==========================================================================
    CONTENT PAGE FOOTER
    ========================================================================== */
+
+
+.course-content-page .landing-footer {
+    margin-top: 2rem;
+    flex-shrink: 0;
+    min-height: 3.5rem;
+    box-sizing: border-box;
+}
+
+.course-content-page .landing-footer__image {
+    height: 2rem;
+    width: auto;
+    max-height: none;
+}
 
 html.course-content-page .landing-footer {
     width: 100%;
@@ -4403,6 +4386,30 @@ html.course-content-page #quarto-content {
     width: 100%;
     box-sizing: border-box;
     padding-right: 3rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */ 
+
+@media (max-width: 750px) {
+  .landing-footer {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-footer {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 2rem;
+  }
+
+  .landing-footer__meta p {
+    font-size: 0.65rem;
   }
 }
 
