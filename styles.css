@@ -358,74 +358,46 @@ body {
    WELCOME SECTION - Overview page 
    ========================================================================== */
 
-.course-header h1 {
-  margin-bottom: 0.75rem;
-}
-
-.course-meta {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  color: var(--sl-muted);
-  margin-bottom: 0;
-  font-size: 0.9rem;
-}
-
-.course-meta__item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.course-meta__item .bi {
-  color: var(--sl-lime);
-}
-
-/* Creates a two-column layout for the welcome text and supporting image */
+/* Create a two-column layout for the welcome text and supporting image. */
 .course-welcome-layout {
     display: grid;
     grid-template-columns: 3fr 3fr;
     gap: 1rem;
-    align-items: start;
 }
 
-/* Adds consistent spacing around the welcome section */
+/* Add consistent spacing around the welcome section. */
 .course-welcome {
     position: relative;
     padding: 1rem var(--course-content-padding);
 }
 
-.course-welcome::after {
-    content: "";
-
-    position: absolute;
-    left: 2.5rem;
-    right: 2.5rem;
-    bottom: 0;
-
-    height: 1px;
-    background: #ececec;
-}
-
-/* Styles the main course heading displayed at the top of the welcome section */
+/* Style the main course heading displayed at the top of the welcome section. */
 .course-welcome h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    line-height: 1.15;
     margin-bottom: 1.25rem;
-
-    max-width: 24ch;
+    max-width: 26ch;
 }
 
-/* Arranges the course metadata, such as dates and location, in a horizontal row */
+/* Arrange the course metadata - dates and location - in a horizontal row. */
 .course-welcome-meta {
     display: flex;
     gap: 2rem;
-    align-items: center;
     margin-bottom: 1.0rem;
 }
 
-/* Aligns an individual metadata item with its accompanying icon */
+/* Control the size of custom icons within metadata row. */
+.course-welcome-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Control the color of custom icons within metadata row. */
+.course-welcome-item i {
+    color: #9cc31c;
+}
+
+/* Style and align the metadata item text. */
 .course-welcome-item {
     display: flex;
     align-items: center;
@@ -434,13 +406,7 @@ body {
     font-size: 0.80rem;
 }
 
-/* Controls the displayed size of custom icons used within the metadata row */
-.course-welcome-icon {
-    width: 18px;
-    height: 18px;
-}
-
-/* Styles the introductory heading shown beneath the course metadata */
+/* Style the introductory heading shown beneath the course metadata. */
 .course-welcome h2 {
     color: #045c64;
     font-size: 1.2rem;
@@ -451,20 +417,33 @@ body {
     padding-bottom: 0;
 }
 
-/* Applies the SciLifeLab accent colour to Bootstrap icons used in the metadata */
-.course-welcome-item i {
-    color: #9cc31c; /* SciLifeLab lime */
-}
-
-/* Limits the line length of the welcome text to improve readability */
+/* Limit the line length of the welcome text. */
 .course-welcome p {
     max-width: 55ch;
 }
 
+/* Control the welcome graphic to the right of the welcome text. */
 .course-welcome-graphic {
-  display: block;
-  width: 100%;
-  height: auto;
+    display: block;
+    height: 260px;
+    width: auto;
+    max-width: none;
+}
+
+/* Control the welcome graphic overflow on smaller screens. */
+.course-welcome-image {
+    overflow: hidden;
+}
+
+/* Style the divider between the welcome section and the next section. */
+.course-welcome::after {
+    content: "";
+    position: absolute;
+    left: var(--course-content-padding);
+    right: var(--course-content-padding);
+    bottom: 0;
+    height: 1px;
+    background: #ececec;
 }
 
 /* ==========================================================================
@@ -4463,6 +4442,8 @@ html.course-content-page #quarto-content {
   .course-navbar-layout {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .course-navbar-brand {
@@ -4528,3 +4509,39 @@ html.course-content-page #quarto-content {
     padding-right: 3rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+  WELCOME SECTION - Overview page 
+   -------------------------------------------------------------------------- */ 
+@media (max-width: 750px) {
+
+  :root {
+    --course-content-padding: 0.2rem;
+  }
+
+  .course-welcome {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    padding-bottom: 0rem;
+  }
+
+  .course-welcome-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .course-welcome-graphic {
+    display: none;
+  }
+
+  .course-welcome h1 {
+    max-width: none;
+  }
+
+  .course-welcome p {
+    max-width: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+  WELCOME SECTION - Overview page 
+   -------------------------------------------------------------------------- */ 
