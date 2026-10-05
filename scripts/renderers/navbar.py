@@ -35,12 +35,39 @@ def render_navbar_brand(website, content_page=False):
         else:
             image_source = f'src="{src}"'
 
-        html.append(
-            f'<img {image_source} '
-            f'alt="{alt}" '
-            f'class="course-navbar-logo" '
-            f'style="height: {height}px; width: auto;">'
-        )
+        # The primary logo gets a compact mobile variant.
+        if logo.get("primary", False):
+            compact_src = "img/scilifelab-logo-neg.png"
+            compact_src = escape(compact_src, quote=True)
+
+            if content_page:
+                compact_image_source = (
+                    f'src="" data-course-asset="{compact_src}"'
+                )
+            else:
+                compact_image_source = f'src="{compact_src}"'
+
+            html.append(
+                f'<img {image_source} '
+                f'alt="{alt}" '
+                f'class="course-navbar-logo course-navbar-logo-full" '
+                f'style="height: {height}px; width: auto;">'
+            )
+
+            html.append(
+                f'<img {compact_image_source} '
+                f'alt="" '
+                f'class="course-navbar-logo course-navbar-logo-symbol" '
+                f'style="height: {height}px; width: auto;">'
+            )
+
+        else:
+            html.append(
+                f'<img {image_source} '
+                f'alt="{alt}" '
+                f'class="course-navbar-logo" '
+                f'style="height: {height}px; width: auto;">'
+            )
 
     return "\n".join(html)
 

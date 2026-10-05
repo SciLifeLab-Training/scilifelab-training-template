@@ -210,6 +210,10 @@ body {
     flex: 0 0 auto;
 }
 
+.course-navbar .course-navbar-logo-symbol {
+    display: none;
+}
+
 /* --------------------------------------------------------------------------
    Navbar navigation menu
    -------------------------------------------------------------------------- */
@@ -4451,13 +4455,12 @@ html.course-content-page #quarto-content {
    RESPONSIVE LAYOUT
    ========================================================================== */
 
-  
 /* --------------------------------------------------------------------------
-   Navbar
+   Navbar and Template / Archived Banner
    -------------------------------------------------------------------------- */ 
+@media (max-width: 750px) {
 
-@media (max-width: 600px) {
-   .course-navbar-layout {
+  .course-navbar-layout {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 1.25rem;
   }
@@ -4472,7 +4475,6 @@ html.course-content-page #quarto-content {
     gap: 0.75rem;
   }
 
-  /* Reduce logo size on narrow screens while preserving proportions. */
   .course-navbar .course-navbar-logo {
     max-width: 42%;
     max-height: 36px;
@@ -4495,5 +4497,34 @@ html.course-content-page #quarto-content {
     flex-wrap: wrap;
     height: auto;
     gap: 0.75rem 1.25rem;
+  }
+
+  .template-banner,
+  .course-navbar {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 0;
+  }
+}
+
+@media (max-width: 950px) {
+
+  /* Switch from full SciLifeLab logo to compact symbol */
+  .course-navbar .course-navbar-logo-full {
+    display: none;
+  }
+
+  .course-navbar .course-navbar-logo-symbol {
+    display: block;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 1200px) {
+
+  .course-navbar-title {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 3rem;
   }
 }
