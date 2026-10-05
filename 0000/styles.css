@@ -2,19 +2,361 @@
    Fonts
    ========================================================================== */
 
-/* Imports the Lato font family used throughout the course website */
+/* Main typeface used throughout the training instance website. */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap");
 
-
 /* ==========================================================================
-   Global variables
+   Course page design settings
    ========================================================================== */
 
-/* Defines shared layout values used across the course website */
+/* Defines shared layout values used across the course website.*/
 :root {
-    --course-content-width: 1400px;
-    --course-content-padding: 2.5rem;
+  /* Maximum width used for course content. */
+  --course-content-width: 1400px;
+
+  /* Horizontal padding used around course content. */
+  --course-content-padding: 2.5rem;
 }
+
+/* ==========================================================================
+   Quarto layout overrides
+   ========================================================================== */
+
+/* Hide Quarto's default page title because training page titles are rendered
+ * by the training website components. */
+#title-block-header {
+  display: none;
+}
+
+/* ==========================================================================
+   Base page layout
+   ========================================================================== */
+
+/* Remove the browser's default body margin and set the main typeface. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+  font-size: 0.90rem;
+}
+
+/* Remove Quarto's default content width, margins, and padding so the course
+ * website can control the page layout.*/
+#quarto-content {
+  width: 100%;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh;
+}
+
+/* Remove Quarto's default margins and padding from the main content area. */
+#quarto-content main.content {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Define the content row in Quarto's page grid. */
+#quarto-content.page-rows-contents {
+  grid-template-rows: [content-top] 1fr [content-bottom];
+}
+
+/* Place the main content in the content row and use a vertical flex layout
+ * for its child elements.*/
+#quarto-content.page-rows-contents > main.content {
+  grid-row: content-top;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Use a vertical flex layout for the course page.
+ * The flexible height allows shorter pages to fill the viewport.*/
+.course-shell {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Shared training content
+   ========================================================================== */
+
+/* Give the main training content sections a shared maximum width
+ * and centre them horizontally.*/
+.course-page-header,
+.course-welcome,
+.course-links,
+.course-announcements,
+.course-team,
+.course-schedule {
+  width: 100%;
+  max-width: var(--course-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Add standard spacing around the training page header. */
+.course-page-header {
+  padding: 1rem var(--course-content-padding);
+}
+
+/* ==========================================================================
+   TEMPLATE AND ARCHIVED BANNER
+   ========================================================================== */
+
+/* Display a banner above the page content to identify a template or direct
+ * visitors to a newer training instance. */
+.template-banner {
+  padding: 0.8rem 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  background: #f3dfb3;
+  color: #292929;
+}
+
+/* Remove the default paragraph margin inside the banner. */
+.template-banner p {
+  margin: 0;
+}
+
+/* Emphasise links in the banner and make them visibly underlined. */
+.template-banner a {
+  color: #292929;
+  font-weight: 700;
+  margin-left: 0.4rem;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* ==========================================================================
+    NAVBAR
+   ========================================================================== */
+/* --------------------------------------------------------------------------
+   General navbar styles
+   -------------------------------------------------------------------------- */
+
+/* Provide the full-width teal gradient background for the navbar. */
+.course-navbar {
+    background:
+        linear-gradient(
+            135deg,
+            #045c64 0%,
+            #0d6d75 55%,
+            #045c64 100%
+        );
+    color: white;
+    border-radius: 0 0 6px 6px;
+}
+
+/* Define the two-column grid used to arrange the navbar content. */
+.course-navbar-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    padding: 1rem var(--course-content-padding);
+}
+
+/* Allow the title and navigation menu to participate directly in the navbar grid. */
+.course-navbar-content {
+    display: contents;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar title
+   -------------------------------------------------------------------------- */
+
+/* Place the training title in the upper-left area of the navbar. */
+.course-navbar-title {
+    align-self: center;
+}
+
+/* Style the training title displayed in the navbar. */
+.course-navbar-title h1 {
+    margin: 0;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.025em;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar logo
+   -------------------------------------------------------------------------- */
+
+/* Arrange the navbar logo elements in a horizontal row. */
+.course-navbar .course-navbar-brand {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Prevent Quarto-generated paragraphs from affecting the logo layout. */
+.course-navbar .course-navbar-brand p {
+    display: contents;
+}
+
+/* Display the navbar logo without distorting its proportions. */
+.course-navbar .course-navbar-logo {
+    display: block;
+    width: auto;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+.course-navbar .course-navbar-logo-symbol {
+    display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar navigation menu
+   -------------------------------------------------------------------------- */
+
+/* Place the navigation menu below the course title. */
+.course-navbar-menu {
+    grid-row: 2;
+    padding-top: 0.85rem;
+}
+
+/* Arrange the main navigation items horizontally. */
+.course-navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    height: 30px;
+}
+
+/* Prevent Quarto-generated paragraphs from affecting the navigation layout. */
+.course-navbar-links p {
+    display: contents;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar navigation links
+   -------------------------------------------------------------------------- */
+
+/* Define the shared appearance of main navbar links and the Information dropdown toggle. */
+.course-navbar-link {
+    display: inline-flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.80rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    transition:
+        color 0.15s ease;
+}
+
+/* Brighten navigation links when the pointer is over them. */
+.course-navbar-link:hover {
+    color: white;
+}
+
+/* Highlight the page currently being viewed in the navigation menu. */
+.course-navbar-link-active {
+    padding: 0.45rem 0.85rem;
+    color: white;
+    font-weight: 600;
+    background: #43858B;
+    border-radius: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar information dropdown
+   -------------------------------------------------------------------------- */
+
+/* Provide the positioning context for the dropdown menu. */
+.course-navbar-dropdown {
+    position: relative;
+}
+
+/* Style the small downward arrow beside the Information label. */
+.course-navbar-dropdown-icon {
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    line-height: 1;
+    transition: transform 0.15s ease;
+}
+
+/* Rotate the arrow when the dropdown is hovered or receives keyboard focus. */
+.course-navbar-dropdown:hover .course-navbar-dropdown-icon,
+.course-navbar-dropdown:focus-within .course-navbar-dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/* Shows the dropdown when hovering over Information or when it receives keyboard focus. */
+.course-navbar-dropdown:hover .course-navbar-dropdown-menu,
+.course-navbar-dropdown:focus-within .course-navbar-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Position and style the dropdown panel. */
+.course-navbar-dropdown-menu {
+    position: absolute;
+    z-index: 1000;
+    min-width: 180px;
+    padding: 0.35rem 0;
+    background: white;
+    border: 1px solid #d6e0e3;
+    border-radius: 4px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease,
+        visibility 0.15s ease;
+    top: calc(100% + 0.45rem);
+    left: 0;
+}
+
+/* Style individual links inside the dropdown. */
+.course-navbar-dropdown-link {
+    display: block;
+    padding: 0.55rem 0.9rem;
+    color: #222;
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-decoration: none;
+    transition:
+        color 0.15s ease,
+        background-color 0.15s ease;
+}
+
+/* Highlight dropdown links when hovered or focused. */
+.course-navbar-dropdown-link:hover,
+.course-navbar-dropdown-link:focus {
+    color: #087584;
+    background: #f3f6f7;
+    text-decoration: none;
+}
+
+/* Highlight the active page within the dropdown. */
+.course-navbar-dropdown-link-active {
+    color: #045c64;
+    font-weight: 600;
+    background: #edf5f6;
+}
+
+/* ==========================================================================
+   WELCOME SECTION - Overview page 
+   ========================================================================== */
 
 .course-header h1 {
   margin-bottom: 0.75rem;
@@ -38,453 +380,6 @@
 .course-meta__item .bi {
   color: var(--sl-lime);
 }
-
-
-/* Navbar */
-
-.navbar {
-  border: 0;
-}
-
-.navbar-title {
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
-.navbar-nav .nav-link {
-  color: white !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-}
-
-.navbar-nav .nav-link.active {
-  border-bottom: 1px solid var(--sl-lime);
-}
-
-
-/* Links */
-
-/* ==========================================================================
-   Quarto overrides
-   ========================================================================== */
-
-/* Hides Quarto's default title block because page titles are rendered as part of the course website components instead */
-#title-block-header {
-    display: none;
-}
-
-
-
-/* ==========================================================================
-   Base page
-   ========================================================================== */
-
-/* Removes the browser's default body margin and establishes Lato as the default font for the website*/
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: "Lato", "Helvetica Neue", sans-serif;
-    font-size: 0.90rem;
-}
-
-#quarto-content {
-    width: 100%;
-    max-width: none !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    min-height: 100vh;
-}
-
-#quarto-content.page-rows-contents {
-    grid-template-rows: [content-top] 1fr [content-bottom];
-}
-
-#quarto-content.page-rows-contents > main.content {
-    grid-row: content-top;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-#quarto-content main.content {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-
-/* ==========================================================================
-   Shared page content
-   ========================================================================== */
-
-/* Gives the main course content areas a shared maximum width and horizontal alignment*/
-.course-page-header,
-.course-welcome,
-.course-links,
-.course-announcements,
-.course-team,
-.course-schedule {
-    width: 100%;
-    max-width: var(--course-content-width);
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-}
-
-/* Provides the standard horizontal and vertical spacing for page headers */
-.course-page-header {
-    padding: 1rem var(--course-content-padding);
-}
-
-
-/* ==========================================================================
-   Course page shell
-   ========================================================================== */
-
-/* Provides the main vertical layout for each course page.The minimum height allows the page content to fill the viewport when the page is shorter than the available screen height */
-.course-shell {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    width: 100%;
-}
-
-/* ==========================================================================
-   TEMPLATE AND ARCHIVED BANNER
-   ========================================================================== */
-/*
- * Banner displayed above the landing-page hero.
- * Used to identify a template or direct visitors to a newer training instance.
- */
-.template-banner {
-  padding: 0.8rem 2rem;
-  text-align: center;
-  font-size: 0.95rem;
-  background: #f3dfb3;
-  color: #292929;
-}
-
-.template-banner p {
-  margin: 0;
-}
-
-.template-banner a {
-  color: #292929;
-  font-weight: 700;
-  margin-left: 0.4rem;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-}
-
-/* ==========================================================================
-   COURSE NAVBAR
-   ========================================================================== */
-
-/* Provides the full-width teal gradient background for the course navbar. */
-.course-navbar {
-    width: 100%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #045c64 0%,
-            #0d6d75 55%,
-            #045c64 100%
-        );
-
-    color: white;
-    border-radius: 0 0 6px 6px;
-}
-
-
-/* Arranges the course title, navigation menu, and SciLifeLab logo
-   into a two-column layout. */
-.course-navbar-layout {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-
-    width: 100%;
-    max-width: var(--course-content-width);
-
-    margin: 0 auto;
-    padding: 1rem var(--course-content-padding);
-
-    box-sizing: border-box;
-}
-
-
-/* Allows the title and navigation menu to participate directly
-   in the navbar grid rather than being treated as a single item. */
-.course-navbar-content {
-    display: contents;
-}
-
-
-/* ==========================================================================
-   COURSE TITLE
-   ========================================================================== */
-
-/* Places the course title in the upper-left area of the navbar. */
-.course-navbar-title {
-    grid-column: 1;
-    grid-row: 1;
-
-    justify-self: start;
-    align-self: center;
-}
-
-
-/* Styles the course title displayed in the navbar. */
-.course-navbar-title h1 {
-    margin: 0;
-
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: 0.025em;
-}
-
-
-/* ==========================================================================
-   COURSE LOGO
-   ========================================================================== */
-
-/* Places the logo in the upper-right area of the navbar. */
-.course-navbar-brand {
-    grid-column: 2;
-    grid-row: 1;
-
-    justify-self: end;
-    align-self: start;
-}
-
-
-/* Removes default paragraph spacing that Quarto may add around the logo. */
-.course-navbar-brand p {
-    margin: 0;
-}
-
-
-/* Controls the displayed size of the SciLifeLab logo. */
-.course-navbar-logo {
-    display: block;
-    height: 46px;
-    width: auto;
-}
-
-
-/* ==========================================================================
-   NAVIGATION MENU
-   ========================================================================== */
-
-/* Places the navigation menu below the course title. */
-.course-navbar-menu {
-    grid-column: 1;
-    grid-row: 2;
-
-    justify-self: start;
-
-    padding-top: 0.85rem;
-}
-
-
-/* Arranges the main navigation items horizontally. */
-.course-navbar-links {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-
-    height: 30px;
-
-    margin: 0;
-    padding: 0;
-}
-
-
-/* Prevents Quarto-generated paragraphs from affecting the flex layout. */
-.course-navbar-links p {
-    display: contents;
-}
-
-
-/* ==========================================================================
-   INDIVIDUAL NAVIGATION LINKS
-   ========================================================================== */
-
-/* Defines the typography and appearance shared by main navbar links
-   and the Course info dropdown toggle. */
-.course-navbar-link {
-    display: inline-flex;
-    align-items: center;
-
-    margin: 0;
-    padding: 0;
-
-    color: rgba(255, 255, 255, 0.82);
-
-    font-size: 0.80rem;
-    font-weight: 400;
-    line-height: 1.2;
-
-    text-transform: uppercase;
-    text-decoration: none;
-
-    white-space: nowrap;
-
-    border: none;
-    border-radius: 6px;
-    background: transparent;
-
-    transition:
-        color 0.15s ease,
-        background-color 0.15s ease;
-}
-
-
-/* Brightens navigation links when the pointer is over them. */
-.course-navbar-link:hover {
-    color: white;
-}
-
-
-/* ==========================================================================
-   ACTIVE NAVIGATION LINK
-   ========================================================================== */
-
-/* Highlights the page currently being viewed in the navigation menu. */
-.course-navbar-link-active {
-    padding: 0.45rem 0.85rem;
-
-    color: white;
-    font-weight: 600;
-
-    background: #43858B;
-    border-radius: 6px;
-}
-
-
-/* ==========================================================================
-   COURSE INFO DROPDOWN
-   ========================================================================== */
-
-/* Provides the positioning context for the dropdown menu. */
-.course-navbar-dropdown {
-    position: relative;
-}
-
-
-/* Styles the Course info dropdown button. */
-.course-navbar-dropdown-toggle {
-    cursor: pointer;
-}
-
-
-/* Small downward arrow beside "Course info". */
-.course-navbar-dropdown-icon {
-    margin-left: 0.4rem;
-
-    font-size: 0.7rem;
-    line-height: 1;
-
-    transition: transform 0.15s ease;
-}
-
-
-/* Rotates the arrow when the dropdown is open/hovered. */
-.course-navbar-dropdown:hover .course-navbar-dropdown-icon,
-.course-navbar-dropdown:focus-within .course-navbar-dropdown-icon {
-    transform: rotate(180deg);
-}
-
-
-/* Dropdown panel. */
-.course-navbar-dropdown-menu {
-    position: absolute;
-    top: calc(100% + 0.45rem);
-    left: 0;
-
-    z-index: 1000;
-
-    min-width: 180px;
-
-    padding: 0.35rem 0;
-
-    background: white;
-
-    border: 1px solid #d6e0e3;
-    border-radius: 4px;
-
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transform: translateY(-4px);
-
-    transition:
-        opacity 0.15s ease,
-        transform 0.15s ease,
-        visibility 0.15s ease;
-}
-
-
-/* Shows the dropdown when hovering over Course info
-   or when it receives keyboard focus. */
-.course-navbar-dropdown:hover .course-navbar-dropdown-menu,
-.course-navbar-dropdown:focus-within .course-navbar-dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-
-    transform: translateY(0);
-}
-
-
-/* Individual links inside the dropdown. */
-.course-navbar-dropdown-link {
-    display: block;
-
-    padding: 0.55rem 0.9rem;
-
-    color: #27343a;
-
-    font-size: 0.85rem;
-    font-weight: 400;
-    line-height: 1.3;
-
-    text-decoration: none;
-    white-space: nowrap;
-
-    transition:
-        color 0.15s ease,
-        background-color 0.15s ease;
-}
-
-
-/* Hover/focus state for dropdown links. */
-.course-navbar-dropdown-link:hover,
-.course-navbar-dropdown-link:focus {
-    color: #087584;
-
-    background: #f3f6f7;
-
-    text-decoration: none;
-}
-
-
-/* Active page inside the dropdown. */
-.course-navbar-dropdown-link-active {
-    color: #045c64;
-    font-weight: 600;
-    background: #edf5f6;
-}
-
-
-/* ==========================================================================
-   WELCOME SECTION
-   ========================================================================== */
 
 /* Creates a two-column layout for the welcome text and supporting image */
 .course-welcome-layout {
@@ -2244,7 +2139,6 @@ html.course-content-page #quarto-content {
     margin-top: 0;
     font-weight: 600;
     line-height: 1.25;
-    border: none;
 }
 
 .course-syllabus-section h2 {
@@ -3005,21 +2899,6 @@ html.course-content-page #quarto-content {
 /* --------------------------------------------------
    Section icons
    -------------------------------------------------- */
-
-.course-practicalities-section h2 {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-
-    margin: 0 0 0.55rem;
-
-    color: #101820;
-    font-size: 1.35rem;
-    font-weight: 600;
-    line-height: 1.25;
-
-    border: none;
-}
 
 .course-practicalities-section h2 i {
     display: inline-flex;
@@ -4569,4 +4448,83 @@ html.course-content-page #quarto-content {
     color: #555;
     font-size: 0.90rem;
     line-height: 1.55;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Navbar and Template / Archived Banner
+   -------------------------------------------------------------------------- */ 
+@media (max-width: 750px) {
+
+  .course-navbar-layout {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.25rem;
+  }
+
+  .course-navbar-brand {
+    grid-row: 1;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .course-navbar .course-navbar-logo {
+    max-width: 42%;
+    max-height: 36px;
+    width: auto;
+    object-fit: contain;
+    flex: 0 1 auto;
+  }
+
+  .course-navbar-title {
+    grid-row: 2;
+    min-width: 0;
+  }
+
+  .course-navbar-menu {
+    grid-row: 3;
+    min-width: 0;
+  }
+
+  .course-navbar-links {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .template-banner,
+  .course-navbar {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 0;
+  }
+}
+
+@media (max-width: 950px) {
+
+  /* Switch from full SciLifeLab logo to compact symbol */
+  .course-navbar .course-navbar-logo-full {
+    display: none;
+  }
+
+  .course-navbar .course-navbar-logo-symbol {
+    display: block;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 1200px) {
+
+  .course-navbar-title {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 3rem;
+  }
 }

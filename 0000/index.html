@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="course-navbar-content">
 <div class="course-navbar-title">
 <h1>
-Training title
+skjefbb jeaf jawehl fhgbaelwuug fluyawhliueflg haiwuejb fliawbegfihbwe
 </h1>
 </div>
 <div class="course-navbar-menu">
@@ -117,55 +117,40 @@ Information<i class="bi bi-chevron-down course-navbar-dropdown-icon"></i>
 </div>
 </div>
 <div class="course-navbar-brand">
-<p><img src="img/scilifelab-logo-full-neg.png" class="course-navbar-logo"></p>
+<p><img src="img/scilifelab-logo-full-neg.png" alt="SciLifeLab" class="course-navbar-logo course-navbar-logo-full" style="height: 46px; width: auto;"> <img src="img/scilifelab-logo-neg.png" alt="" class="course-navbar-logo course-navbar-logo-symbol" style="height: 46px; width: auto;"></p>
 </div>
 </div>
 </div>
 <script>
-
 document.addEventListener("DOMContentLoaded", function () {
-
     const currentPage =
         window.location.pathname.split("/").pop() || "index.html";
 
     document.querySelectorAll("[data-page]").forEach(function (link) {
-
         const page = link.dataset.page;
 
         if (!page) {
             return;
         }
 
-        const expectedPage =
-            page.replace(".qmd", ".html");
+        const expectedPage = page.replace(".qmd", ".html");
 
         if (expectedPage !== currentPage) {
             return;
         }
 
         if (link.classList.contains("course-navbar-dropdown-link")) {
-
-            link.classList.add(
-                "course-navbar-dropdown-link-active"
-            );
-
+            link.classList.add("course-navbar-dropdown-link-active");
         } else {
-
-            link.classList.add(
-                "course-navbar-link-active"
-            );
-
+            link.classList.add("course-navbar-link-active");
         }
-
     });
-
 });
-
 </script>
 <div class="course-welcome">
 <div class="course-welcome-layout">
-<section id="training-title" class="level1 course-welcome-text">
-<h1>Training title</h1>
+<section id="skjefbb-jeaf-jawehl-fhgbaelwuug-fluyawhliueflg-haiwuejb-fliawbegfihbwe" class="level1 course-welcome-text">
+<h1>skjefbb jeaf jawehl fhgbaelwuug fluyawhliueflg haiwuejb fliawbegfihbwe</h1>
 <div class="course-welcome-meta">
 <p><span class="course-welcome-item"> <i class="bi bi-calendar2-event"></i> 01 Jan 2026 – 02 Jan 2026 </span></p>
 <p><span class="course-welcome-item"> <i class="bi bi-geo-alt"></i> Venue name or online </span></p>
