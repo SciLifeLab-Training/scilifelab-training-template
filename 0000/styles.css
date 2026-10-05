@@ -358,74 +358,46 @@ body {
    WELCOME SECTION - Overview page 
    ========================================================================== */
 
-.course-header h1 {
-  margin-bottom: 0.75rem;
-}
-
-.course-meta {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  color: var(--sl-muted);
-  margin-bottom: 0;
-  font-size: 0.9rem;
-}
-
-.course-meta__item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.course-meta__item .bi {
-  color: var(--sl-lime);
-}
-
-/* Creates a two-column layout for the welcome text and supporting image */
+/* Create a two-column layout for the welcome text and supporting image. */
 .course-welcome-layout {
     display: grid;
     grid-template-columns: 3fr 3fr;
     gap: 1rem;
-    align-items: start;
 }
 
-/* Adds consistent spacing around the welcome section */
+/* Add consistent spacing around the welcome section. */
 .course-welcome {
     position: relative;
     padding: 1rem var(--course-content-padding);
 }
 
-.course-welcome::after {
-    content: "";
-
-    position: absolute;
-    left: 2.5rem;
-    right: 2.5rem;
-    bottom: 0;
-
-    height: 1px;
-    background: #ececec;
-}
-
-/* Styles the main course heading displayed at the top of the welcome section */
+/* Style the main course heading displayed at the top of the welcome section. */
 .course-welcome h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
-    line-height: 1.15;
     margin-bottom: 1.25rem;
-
-    max-width: 24ch;
+    max-width: 26ch;
 }
 
-/* Arranges the course metadata, such as dates and location, in a horizontal row */
+/* Arrange the course metadata - dates and location - in a horizontal row. */
 .course-welcome-meta {
     display: flex;
     gap: 2rem;
-    align-items: center;
     margin-bottom: 1.0rem;
 }
 
-/* Aligns an individual metadata item with its accompanying icon */
+/* Control the size of custom icons within metadata row. */
+.course-welcome-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Control the color of custom icons within metadata row. */
+.course-welcome-item i {
+    color: #9cc31c;
+}
+
+/* Style and align the metadata item text. */
 .course-welcome-item {
     display: flex;
     align-items: center;
@@ -434,13 +406,7 @@ body {
     font-size: 0.80rem;
 }
 
-/* Controls the displayed size of custom icons used within the metadata row */
-.course-welcome-icon {
-    width: 18px;
-    height: 18px;
-}
-
-/* Styles the introductory heading shown beneath the course metadata */
+/* Style the introductory heading shown beneath the course metadata. */
 .course-welcome h2 {
     color: #045c64;
     font-size: 1.2rem;
@@ -451,55 +417,61 @@ body {
     padding-bottom: 0;
 }
 
-/* Applies the SciLifeLab accent colour to Bootstrap icons used in the metadata */
-.course-welcome-item i {
-    color: #9cc31c; /* SciLifeLab lime */
-}
-
-/* Limits the line length of the welcome text to improve readability */
+/* Limit the line length of the welcome text. */
 .course-welcome p {
     max-width: 55ch;
 }
 
+/* Control the welcome graphic to the right of the welcome text. */
 .course-welcome-graphic {
-  display: block;
-  width: 100%;
-  height: auto;
+    display: block;
+    height: 260px;
+    width: auto;
+    max-width: none;
+}
+
+/* Control the welcome graphic overflow on smaller screens. */
+.course-welcome-image {
+    overflow: hidden;
+}
+
+/* Style the divider between the welcome section and the next section. */
+.course-welcome::after {
+    content: "";
+    position: absolute;
+    left: var(--course-content-padding);
+    right: var(--course-content-padding);
+    bottom: 0;
+    height: 1px;
+    background: #ececec;
 }
 
 /* ==========================================================================
-   COURSE REGISTRATION
+    REGISTRATION SECTION - Overview page 
    ========================================================================== */
 
+/* Control the registration section positioning and styling. */
 .course-registration {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     column-gap: 2.5rem;
-
     margin: 1.5rem 2.5rem;
     padding: 0.7rem 1.5rem;
-
     background: #eef7f7;
     border: 1px solid #dcebec;
     border-radius: 6px;
-
-    color: #3f474d;
 }
 
+/* Control the vertical alignment of section text. */
 .course-registration-content {
-    min-width: 0;
-    margin: 0;
-    align-self: center;
-
     transform: translateY(0.45rem);
 }
 
+/* Style the 'registration is open' title text. */
 .course-registration-title {
     margin: 0 0 0.2rem;
-
     color: #045C64;
-
     font-size: 0.85rem;
     font-weight: 700;
     line-height: 1.35;
@@ -507,82 +479,62 @@ body {
     text-transform: uppercase;
 }
 
+/* Style the registration deadline text. */
 .course-registration-deadline {
-    margin: 0;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.6;
     color: #222;
 }
 
+/* Style the training fee text. */
 .course-registration-fee {
     margin: 0.05rem 0 0;
     font-size: 0.85rem;
     font-weight: 400;
     line-height: 1.4;
     color: #222;
-
 }
 
+/* Style the training fee note text. */
 .course-registration-note {
     max-width: 75ch;
     margin: 0.1rem 0 0;
-
     color: #666;
     font-size: 0.75rem;
-    font-weight: 400;
     line-height: 1.35;
 }
 
-
+/* Style the registration link button. */
 .course-registration-button {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-
     padding: 0.65rem 1.1rem;
-
     background: #9cc31c;
-    color: #ffffff;
-
-    border-radius: 4px;
-
+    border-radius: 6px;
     font-size: 0.82rem;
     font-weight: 600;
     line-height: 1.2;
     text-decoration: none;
-
-    white-space: nowrap;
+    color: #ffffff;
     transform: translateY(0.45rem);
-
-    transition:
-        background-color 0.15s ease,
-        transform 0.15s ease;
 }
 
+/* Style hoover effect for the registration link button. */
 .course-registration-button:hover {
     background: #8aad18;
-    color: #ffffff;
     text-decoration: none;
 }
 
-.course-registration-button:focus-visible {
-    outline: 2px solid #045C64;
-    outline-offset: 3px;
-}
-
-
 /* ==========================================================================
-   UPCOMING SECTION
+   NEXT UP SECTION - Overview page 
    ========================================================================== */
 
-/* Adds spacing around the upcoming event section */
+/* Add spacing around the next up section. */
 .course-upcoming-section {
     padding: 1.5rem 2.5rem 0;
 }
 
-/* Styles the section label displayed above the upcoming event card */
+/* Style the section label displayed above the next up section. */
 .course-section-label {
     color: #045c64;
     font-size: 0.85rem;
@@ -591,55 +543,42 @@ body {
     text-transform: uppercase;
 }
 
-/* Creates the summary card highlighting the next scheduled course event */
+/* Position and style the next up card. */
 .course-upcoming-card {
     position: relative;
-
     display: grid;
     grid-template-columns: 80px 1fr 150px;
     gap: 3rem;
-
-    width: 100%;
     padding: 1.5rem 2rem;
-
-    background: white;
-    border: 1px solid #e7e7e7;
-    border-radius: 8px;
-
+    border: 1px solid #ececec;
+    border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0,0,0,.03);
 }
 
-/* Adds the accent stripe to the left edge of the event card */
+/* Add the accent stripe to the left edge of the next up card. */
 .course-upcoming-card::before {
     content: "";
-
     position: absolute;
-
     left: -1px;
     top: -1px;
     bottom: -1px;
-
     width: 4px;
-
     background: #9cc31c;
-    border-radius: 8px 0 0 8px;
+    border-radius: 6px 0 0 6px;
 }
 
-/* Arranges the event date as a vertically centered column */
+/* Arrange the event date as a vertically centered column. */
 .course-upcoming-day {
     position: relative;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
-
     font-size: 0.80rem;
     font-weight: 400;
 }
 
-/* Styles the day of the month within the date column */
+/* Style the day of the month within the event date column. */
 .course-upcoming-date {
     color: #045c64;
     font-size: 2rem;
@@ -648,16 +587,16 @@ body {
     margin: 0.15rem 0;
 }
 
-/* Styles the month beneath the event date */
+/* Style the month beneath the event date. */
 .course-upcoming-month {
-    color: #333;
+    color: #222;
     font-size: 0.80rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
 
-/* Draws a divider between the date column and the event details */
+/* Control the divider between the date column and the event details. */
 .course-upcoming-day::after {
     content: "";
     position: absolute;
@@ -665,11 +604,10 @@ body {
     top: 5%;
     bottom: 5%;
     width: 1px;
-
     background: #ececec;
 }
 
-/* Displays the scheduled start time for the upcoming event */
+/* Style the scheduled start time for the upcoming event. */
 .course-upcoming-time,
 .course-schedule-time {
     font-size: 0.80rem;
@@ -677,21 +615,15 @@ body {
     color: #555;
 }
 
-/* Highlights the event type using a coloured badge */
+/* Highlight the upcoming event type using a coloured badge. */
 .course-upcoming-type {
     display: inline-block;
     padding: 0.2rem 0.6rem;
-
     font-size: 0.75rem;
     font-weight: 700;
-
     border-radius: 999px;
     margin-left: 1rem;
 }
-
-/* ==========================================================================
-   EVENT TYPE BADGES
-   ========================================================================== */
 
 .course-type-lecture {
     background: #e8f3f4;
@@ -768,7 +700,7 @@ body {
     color: #555;
 }
 
-/* Styles the title of the upcoming event */
+/* Style the upcoming event title. */
 .course-upcoming-title {
     margin: 0.75rem 0;
     font-size: 1.15rem;
@@ -777,11 +709,13 @@ body {
     color: #222;
 }
 
+/* Style the upcoming event title when it's a link. */
 .course-upcoming-title a {
     color: inherit;
     text-decoration: none;
 }
 
+/* Style the upcoming event title when hovered. */
 .course-upcoming-title a:hover {
     color: inherit;
     text-decoration: underline;
@@ -789,20 +723,18 @@ body {
     text-underline-offset: 3px;
 }
 
-/* Aligns the presenter and location metadata beneath the event title */
+/* Align and style the upcoming event presenter and location metadata. */
 .course-upcoming-speaker,
 .course-upcoming-location {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-
-    color: #777;
-    font-size: 0.80rem;
-
+    color: #888;
+    font-size: 0.75rem;
     margin-top: 0.35rem;
 }
 
-/* Arranges the countdown and schedule link within the right-hand column of the card */
+/* Arrange the countdown and full schedule link within the right-hand column of the next up card. */
 .course-upcoming-status {
     display: flex;
     flex-direction: column;
@@ -811,13 +743,13 @@ body {
     text-align: right;
 }
 
-/* Styles the relative time remaining until the event begins */
+/* Style the relative time remaining until the event begins. */
 .course-upcoming-countdown {
     font-size: 0.80rem;
     color: #555;
 }
 
-/* Styles the link to the full course schedule */
+/* Style the link to the full course schedule. */
 .course-upcoming-link {
     color: #087584;
     font-size: 0.85rem;
@@ -825,24 +757,23 @@ body {
     text-decoration: none;
 }
 
-/* Underlines the schedule link when hovered */
+/* Underline the link to the full schedule link when hovered. */
 .course-upcoming-link:hover {
     color: #045c64;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
 
-
 /* ==========================================================================
-   QUICK COURSE LINKS SECTION
+   QUICK LINKS SECTION - Overview page 
    ========================================================================== */
 
-/* Wrapper around the homepage quick links section. Keeps the content aligned with the rest of the homepage */
+/* Add spacing around the quick links section. */
 .course-links {
     padding: 2rem 2.5rem 0;
 }
 
-/* Display the quick links as a responsive two-column grid */
+/* Display the quick links as a responsive two-column grid. */
 .course-links-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -851,31 +782,22 @@ body {
     border-bottom: 1px solid #ececec;
 }
 
-/* Layout for an individual quick link card */
+/* Layout for an individual quick link card. */
 .course-link-card {
     display: flex;
-    align-items: flex-start;
     gap: 1.8rem;
-
     padding: 1rem 0;
-
     border-top: 1px solid #ececec;
 }
 
-/* Styles the Bootstrap icon displayed to the left of each quick link */
+/* Style the Bootstrap icon displayed to the left of each quick link. */
 .course-link-icon {
     color: #9cc31c;
     font-size: 1.7rem;
-    flex-shrink: 0;
     margin-top: 0.15rem;
 }
 
-/* Holds the title, description and link for each quick link */
-.course-link-content {
-    flex: 1;
-}
-
-/* Styles the title of the course link */
+/* Style the title of the quick link. */
 .course-link-content h3 {
     margin: 0 0 0.35rem;
     font-size: 0.9rem;
@@ -883,12 +805,13 @@ body {
     color: #045c64;
 }
 
+/* Style the text of the quick link. */
 .course-link-content p {
     margin: 0 0 0.45rem;
     font-size: 0.80rem;
 }
 
-/*Styles the links */
+/* Style the link. */
 .course-link-content a {
     color: #087584;
     font-size: 0.80rem;
@@ -896,6 +819,7 @@ body {
     text-decoration: none;
 }
 
+/* Underline the link when hovered. */
 .course-link-content a:hover {
     color: #045c64;
     text-decoration: underline;
@@ -903,10 +827,8 @@ body {
 }
 
 /* ==========================================================================
-   COURSE ANNOUNCEMENTS SECTION
+   ANNOUNCEMENTS SECTION - Overview page 
    ========================================================================== */
-
-/* ======= Homepage bottom layout ========= */
 
 /* Displays the announcements and team preview side by side */
 .course-home-bottom {
@@ -915,9 +837,6 @@ body {
     gap: 2rem;
     margin-top: 0.5rem;
 }
-
-
-/* ======= Course announcements ========= */
 
 /* Wrapper around the homepage announcements section */
 .course-announcements {
@@ -934,9 +853,6 @@ body {
 .course-announcements .course-section-label {
     margin-bottom: 1.5rem;
 }
-
-
-/* ======= Individual announcements ========= */
 
 .course-announcement {
     position: relative;
@@ -985,9 +901,6 @@ body {
     background: #9cc31c;
 }
 
-
-/* ======= Announcement date ========= */
-
 .course-announcement-date {
     font-size: 0.80rem;
     font-weight: 600;
@@ -995,9 +908,6 @@ body {
 
     margin-bottom: 0.1rem;
 }
-
-
-/* ======= Announcement title ========= */
 
 .course-announcement-title {
     margin: 0 0 0.15rem;
@@ -1008,9 +918,6 @@ body {
     color: #333;
 }
 
-
-/* ======= Announcement text ========= */
-
 .course-announcement p {
     margin: 0;
 
@@ -1018,9 +925,6 @@ body {
     font-size: 0.75rem;
     line-height: 1.4;
 }
-
-
-/* ======= Empty state ========= */
 
 .course-announcement-empty {
     display: flex;
@@ -1033,9 +937,6 @@ body {
     font-size: 0.80rem;
     line-height: 1.5;
 }
-
-
-/* ======= View all link ========= */
 
 .course-announcements-link {
     display: inline-block;
@@ -4463,6 +4364,8 @@ html.course-content-page #quarto-content {
   .course-navbar-layout {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .course-navbar-brand {
@@ -4526,5 +4429,118 @@ html.course-content-page #quarto-content {
     width: 100%;
     box-sizing: border-box;
     padding-right: 3rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+  WELCOME SECTION - Overview page 
+   -------------------------------------------------------------------------- */ 
+@media (max-width: 750px) {
+
+  :root {
+    --course-content-padding: 0.2rem;
+  }
+
+  .course-welcome {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    padding-bottom: 0rem;
+  }
+
+  .course-welcome-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .course-welcome-graphic {
+    display: none;
+  }
+
+  .course-welcome h1 {
+    max-width: none;
+  }
+
+  .course-welcome p {
+    max-width: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+    REGISTRATION SECTION - Overview page 
+   -------------------------------------------------------------------------- */ 
+@media (max-width: 750px) {
+
+  .course-registration {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   NEXT UP SECTION - Overview page
+   -------------------------------------------------------------------------- */
+@media (max-width: 750px) {
+
+  .course-upcoming-section {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+
+  .course-upcoming-card {
+    grid-template-columns: 80px 1fr;
+    column-gap: 2rem;
+    row-gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .course-upcoming-status {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding-left: 0.5rem;
+  }
+
+  .course-upcoming-status p {
+    margin: 0;
+  }
+
+  .course-upcoming-top p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  .course-upcoming-type {
+    margin-left: 0;
+  }
+
+  .course-upcoming-day::after {
+    right: -0.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   QUICK LINKS SECTION - Overview page
+   -------------------------------------------------------------------------- */
+@media (max-width: 750px) {
+
+  .course-links {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    }
+}
+
+@media (max-width: 620px) {
+  .course-link-card {
+    gap: 1rem;
+  }
+  .course-link-icon {
+    font-size: 1.4rem;
   }
 }
