@@ -447,38 +447,31 @@ body {
 }
 
 /* ==========================================================================
-   COURSE REGISTRATION
+    REGISTRATION SECTION - Overview page 
    ========================================================================== */
 
+/* Control the registration section positioning and styling. */
 .course-registration {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     column-gap: 2.5rem;
-
     margin: 1.5rem 2.5rem;
     padding: 0.7rem 1.5rem;
-
     background: #eef7f7;
     border: 1px solid #dcebec;
     border-radius: 6px;
-
-    color: #3f474d;
 }
 
+/* Control the vertical alignment of section text. */
 .course-registration-content {
-    min-width: 0;
-    margin: 0;
-    align-self: center;
-
     transform: translateY(0.45rem);
 }
 
+/* Style the 'registration is open' title text. */
 .course-registration-title {
     margin: 0 0 0.2rem;
-
     color: #045C64;
-
     font-size: 0.85rem;
     font-weight: 700;
     line-height: 1.35;
@@ -486,71 +479,51 @@ body {
     text-transform: uppercase;
 }
 
+/* Style the registration deadline text. */
 .course-registration-deadline {
-    margin: 0;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.6;
     color: #222;
 }
 
+/* Style the training fee text. */
 .course-registration-fee {
     margin: 0.05rem 0 0;
     font-size: 0.85rem;
     font-weight: 400;
     line-height: 1.4;
     color: #222;
-
 }
 
+/* Style the training fee note text. */
 .course-registration-note {
     max-width: 75ch;
     margin: 0.1rem 0 0;
-
     color: #666;
     font-size: 0.75rem;
-    font-weight: 400;
     line-height: 1.35;
 }
 
-
+/* Style the registration link button. */
 .course-registration-button {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-
     padding: 0.65rem 1.1rem;
-
     background: #9cc31c;
-    color: #ffffff;
-
-    border-radius: 4px;
-
+    border-radius: 6px;
     font-size: 0.82rem;
     font-weight: 600;
     line-height: 1.2;
     text-decoration: none;
-
-    white-space: nowrap;
+    color: #ffffff;
     transform: translateY(0.45rem);
-
-    transition:
-        background-color 0.15s ease,
-        transform 0.15s ease;
 }
 
+/* Style hoover effect for the registration link button. */
 .course-registration-button:hover {
     background: #8aad18;
-    color: #ffffff;
     text-decoration: none;
 }
-
-.course-registration-button:focus-visible {
-    outline: 2px solid #045C64;
-    outline-offset: 3px;
-}
-
 
 /* ==========================================================================
    UPCOMING SECTION
@@ -4543,5 +4516,14 @@ html.course-content-page #quarto-content {
 }
 
 /* --------------------------------------------------------------------------
-  WELCOME SECTION - Overview page 
+    REGISTRATION SECTION - Overview page 
    -------------------------------------------------------------------------- */ 
+@media (max-width: 750px) {
+
+  .course-registration {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+}
