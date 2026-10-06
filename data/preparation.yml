@@ -292,4 +292,4 @@ preparation:
 
         - type: text
           content: |
-            Use this section for other information participants should know before the training, such as local IT requirements, administrative permissions, accessibility information,or other preparation details.
+            Use this section for other information participants should know before the training, such as local IT requirements, administrative permissions, accessibility information, or other preparation details.
