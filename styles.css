@@ -1235,7 +1235,7 @@ body {
     grid-template-columns:
         140px
         minmax(0, 1fr)
-        220px;
+        200px;
 
     column-gap: 2rem;
 
@@ -1314,7 +1314,7 @@ body {
 .course-schedule-location-column {
     display: flex;
     align-items: center;
-    padding-left: 5rem;
+    justify-content: flex-end;
 }
 
 
@@ -4409,8 +4409,96 @@ html.course-content-page #quarto-content {
   }
 }
 
+/* ==========================================================================
+   SCHEDULE Page
+   ========================================================================== */
+@media (max-width: 1040px) {
+  .course-schedule {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .course-schedule-sidebar {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    min-width: 0;
+    padding-bottom: 0.25rem;
+  }
+
+  .course-schedule-day-link {
+    width: auto;
+    min-width: 105px;
+    flex: 0 0 auto;
+    padding: 0.7rem 0.75rem;
+    border: 1px solid #ececec;
+    border-radius: 6px;
+    background: transparent;
+  }
+
+  .course-schedule-day-link.is-active {
+    background: #e5e5e5;
+  }
+}
+
+@media (max-width: 800px) {
+  .course-schedule-event {
+    grid-template-columns: 140px minmax(0, 1fr);
+    column-gap: 2rem;
+  }
+
+  .course-schedule-location-column {
+    grid-column: 2;
+    padding-left: 0;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 590px) {
+  .course-schedule-day-heading {
+    padding: 1rem 1rem 0.9rem;
+    font-size: 1.05rem;
+  }
+
+  .course-schedule-event {
+    grid-template-columns: 65px minmax(0, 1fr);
+    column-gap: 1rem;
+    row-gap: 0.35rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .course-schedule-time {
+    max-width: 55px;
+    line-height: 1.35;
+  }
+
+  .course-schedule-day::before {
+    left: 75px;
+    top: 4.5rem;
+    bottom: 4rem;
+  }
+
+  .course-schedule-event::after {
+    left: 68px;
+    top: 0.95rem;
+  }
+
+  .course-schedule .course-schedule-title {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 450px) {
+  .course-page-meta {
+    row-gap: 0.1rem;
+  }
+}
+
 /* --------------------------------------------------------------------------
-   FREQUENTLY ASKED QUESTIONS - FAQ page
+   FREQUENTLY ASKED QUESTIONS - FAQ Page
    -------------------------------------------------------------------------- */
 @media (max-width: 750px) {
   .course-faq-item summary {
