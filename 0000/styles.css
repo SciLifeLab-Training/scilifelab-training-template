@@ -134,9 +134,6 @@ body {
 /* ==========================================================================
     NAVBAR
    ========================================================================== */
-/* --------------------------------------------------------------------------
-   General navbar styles
-   -------------------------------------------------------------------------- */
 
 /* Provide the full-width teal gradient background for the navbar. */
 .course-navbar {
@@ -164,10 +161,6 @@ body {
     display: contents;
 }
 
-/* --------------------------------------------------------------------------
-   Navbar title
-   -------------------------------------------------------------------------- */
-
 /* Place the training title in the upper-left area of the navbar. */
 .course-navbar-title {
     align-self: center;
@@ -182,10 +175,6 @@ body {
     line-height: 1.2;
     letter-spacing: 0.025em;
 }
-
-/* --------------------------------------------------------------------------
-   Navbar logo
-   -------------------------------------------------------------------------- */
 
 /* Arrange the navbar logo elements in a horizontal row. */
 .course-navbar .course-navbar-brand {
@@ -214,10 +203,6 @@ body {
     display: none;
 }
 
-/* --------------------------------------------------------------------------
-   Navbar navigation menu
-   -------------------------------------------------------------------------- */
-
 /* Place the navigation menu below the course title. */
 .course-navbar-menu {
     grid-row: 2;
@@ -236,10 +221,6 @@ body {
 .course-navbar-links p {
     display: contents;
 }
-
-/* --------------------------------------------------------------------------
-   Navbar navigation links
-   -------------------------------------------------------------------------- */
 
 /* Define the shared appearance of main navbar links and the Information dropdown toggle. */
 .course-navbar-link {
@@ -272,10 +253,6 @@ body {
     background: #43858B;
     border-radius: 6px;
 }
-
-/* --------------------------------------------------------------------------
-   Navbar information dropdown
-   -------------------------------------------------------------------------- */
 
 /* Provide the positioning context for the dropdown menu. */
 .course-navbar-dropdown {
@@ -1284,6 +1261,496 @@ styled under NEXT UP section - Overview page. */
     height: 1px;
     background: #e5e5e5;
 }
+
+/* ==========================================================================
+   PREPARATION Page
+   ========================================================================== */
+
+/* Remove Quarto heading anchor icons from the Preparation page. */
+.course-preparation-page .anchorjs-link,
+.course-preparation .anchorjs-link {
+    display: none !important;
+}
+
+/* Position the preparation header and contact box. */
+.course-preparation-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 3rem;
+    width: 100%;
+    margin: 2.5rem auto 0;
+    padding: 0 var(--course-content-padding);
+}
+
+/* Style the page label. */
+.course-preparation-label {
+    margin-bottom: 0.85rem;
+    color: #045c64;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+/* Style the page title. */
+.course-preparation-header h1 {
+    max-width: 28ch;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Style the intro text. */
+.course-preparation-intro {
+    max-width: 55ch;
+    margin: 0.75rem 0 0;
+    color: #777;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Position and style the contact box in the header. */
+.course-preparation-contact {
+    align-self: start;
+    padding: 1.35rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    background: #f7f9fa;
+}
+
+/* Position and style the email icon in the contact box in the header. */
+.course-preparation-contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 0.75rem;
+    border-radius: 50%;
+    background: #C0D6D8;
+    color: #045C64;
+    font-size: 1.05rem;
+}
+
+/* Style the title of the contact box in the header. */
+.course-preparation-contact-title {
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+/* Style the text in the contact box in the header. */
+.course-preparation-contact p {
+    margin: 0 0 0.65rem;
+    color: #526476;
+    line-height: 1.45;
+}
+
+/* Style the email link in the contact box in the header. */
+.course-preparation-contact a {
+    color: #087584;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Underline the email link when hovered. */
+.course-preparation-contact a:hover {
+    color: #045c64;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Add spacing and positioning around the page. */
+.course-preparation {
+    margin: 2.75rem auto 2rem;
+    padding: 0 var(--course-content-padding);
+}
+
+/* Style divider line between each section. */
+.course-preparation-section {
+    padding: 1.5rem 0;
+    border-top: 1px solid #d9e0e3;
+}
+
+/* Style section text at the start of each section. */
+.course-preparation-text {
+    margin: 0 0 1.25rem;
+    color: #3f474d;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* General positioning and styling for all section boxes. */
+.course-preparation-box {
+    margin: 1.25rem 0;
+    box-sizing: border-box;
+    border: 1px solid #d6e0e3;
+    border-radius: 6px;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* General positioning for the body of all section boxes. */
+.course-preparation-box-body {
+    padding: 1.1rem 1.2rem 1.2rem;
+}
+
+/* Position of the checklist box. */
+.course-preparation-checklist {
+    width: fit-content;
+    max-width: 100%;
+}
+
+/* Position and style content inside the checklist box. */
+.course-preparation-checklist ul {
+    padding: 0;
+    list-style: none;
+}
+
+/* Position the check boxes inside the checklist box. */
+.course-preparation-checklist li label {
+    display: flex;
+    gap: 0.80rem;
+}
+
+/* Style the check boxes inside the checklist box. */
+.course-preparation-checkbox {
+    width: 13px;
+    min-width: 13px;
+    height: 13px;
+    margin: 0.18rem 0 0;
+    cursor: pointer;
+}
+
+/* Position and style individual checklist items inside the checklist box. */
+.course-preparation-checklist li {
+    padding: 0.22rem 0;
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+/* Positioning for general checklist box. */
+.course-preparation ul,
+.course-preparation ol {
+    margin-bottom: 0;
+}
+
+/* Style section headings. */
+.course-preparation-section > h2 {
+    margin: 0 0 0.9rem;
+    color: #222;
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.3;
+    border: none;
+}
+
+/* Turn account and software sections into columns. */
+.course-preparation-account,
+.course-preparation-software {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Position account section columns. */
+.course-preparation-account-grid .course-preparation-box {
+    margin: 0;
+}
+
+/* Turn content of account and software section columns into columns. */
+.course-preparation-account .course-preparation-box-body,
+.course-preparation-software .course-preparation-box-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Position column grid inside account section columns. */
+.course-preparation-account-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+/* Position and style column headings for all sections. */
+.course-preparation-box-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1.1rem;
+    background: #f3f6f7;
+    border-bottom: 1px solid #e1e6e8;
+}
+
+/* Style column heading text for all sections. */
+.course-preparation-box-title {
+    margin: 0;
+    color: #222;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+/* Style column heading icons for all sections. */
+.course-preparation-box-icon {
+    color: #0b7180;
+    font-size: 0.95rem;
+}
+
+/* Style resource description text for all sections. */
+.course-preparation-resource-description {
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+/* Position resource instruction text for all sections, add top divider. */
+.course-preparation-instructions {
+    margin: 1.1rem 0 0;
+    padding: 1rem 0 0;
+    border-top: 1px solid #e1e6e8;
+}
+
+/* Style resource instruction heading for all sections. */
+.course-preparation-instructions h4 {
+    margin: 0 0 0.55rem;
+    color: #222;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+/* Style resource instruction text for all sections. */
+.course-preparation-instructions p {
+    margin: 0 0 0.7rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+/* Position instructions lists for all sections. */
+.course-preparation-instructions ol li {
+    margin: 0.25rem 0;
+    padding-left: 0.15rem;
+}
+
+/* Position links for all sections. */
+.course-preparation-links {
+    padding: 0;
+    list-style: none;
+}
+
+/* Position links specifically in account and software section columns. */
+.course-preparation-account .course-preparation-links,
+.course-preparation-software .course-preparation-links {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+/* Position links list for all sections. */
+.course-preparation-links li {
+    padding: 0.35rem 0;
+    font-size: 0.86rem;
+    line-height: 1.4;
+}
+
+/* Style resource links for all sections. */
+.course-preparation-link {
+    color: #087584;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Underline resource links when hovered for all sections. */
+.course-preparation-link:hover {
+    color: #045c64;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Position column grid inside software section columns. */
+.course-preparation-software-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+/* Position software section columns. */
+.course-preparation-software-grid .course-preparation-box {
+    margin: 0;
+}
+
+/* Add and position divider line in hardware section requirements table. */
+.course-preparation-requirements {
+    margin: 1rem 0 0;
+    border-top: 1px solid #e1e6e8;
+}
+
+/* Position requirements table in hardware section. */
+.course-preparation-requirements > div {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.35fr) minmax(0, 1fr);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #e8ecee;
+}
+
+/* Style individual items in requirements table in hardware section. */
+.course-preparation-requirements dt {
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+/* Style individual item text in requirements table in hardware section. */
+.course-preparation-requirements dd {
+    margin: 0;
+    font-size: 0.86rem;
+}
+
+/* Remove inherent divider line for last item of requirements table in hardware section. */
+.course-preparation-requirements > div:last-child {
+    border-bottom: none;
+}
+
+/* Style citation box in required reading section. */
+.course-preparation-citation {
+    margin: 0.9rem 0 0;
+    padding: 0.75rem;
+    border-left: 2px solid #c9d8dc;
+    background: #f7f9fa;
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+/* Remove default paragraph spacing inside citation boxes. */
+.course-preparation-citation p {
+    margin: 0;
+}
+
+/* Style citation that is also a link in required reading section. */
+.course-preparation-citation a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Style citation that is also a link when hovered in required reading section. */
+.course-preparation-citation a:hover {
+    color: #087584;
+}
+
+/* Style reflection prompt box in required reading section. */
+.course-preparation-prompt {
+    margin: 1rem 0 0;
+    padding: 0.9rem 1rem;
+    border: 1px solid #d6e0e3;
+    border-radius: 3px;
+    background: #f7f9fa;
+    color: #414b50;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Style reflection prompt title in required reading section. */
+.course-preparation-prompt-title {
+    margin-bottom: 0.5rem;
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+/* Position gap between reflection prompt icon and title in required reading section. */
+.course-preparation-prompt-title p {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* Style reflection prompt icon in required reading section. */
+.course-preparation-prompt-title i {
+    color: #0b7180;
+}
+
+/* --------------------------------------------------------------------------
+   Callouts
+   -------------------------------------------------------------------------- */
+
+/* Positioning and styling for general callout boxes, for specific styling per box type, see below. */
+.course-preparation-callout {
+    margin: 1.25rem 0;
+    padding: 1.15rem 1.35rem;
+    box-sizing: border-box;
+    border: 1px solid #c7dfe3;
+    border-left: 3px solid;
+    border-radius: 6px;
+}
+
+/* Styling for general callout boxes headings, for specific styling per box type, see below. */
+.course-preparation-callout-title {
+    margin: 0 0 0.85rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+/* Position of gap between icon and header title, for specific styling per box type, see below. */
+.course-preparation-callout-title p {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+/* Styling for general callout boxes icons, for specific styling per box type, see below. */
+.course-preparation-callout-icon {
+    font-size: 1rem;
+}
+
+/* Styling for general callout boxes text. */
+.course-preparation-callout-content {
+    color: #3f4d52;
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+/* Styling for 'important' callout box. */
+.course-preparation-callout-important {
+    background: #edf7f8;
+    border-color: #c7dfe3;
+    border-left-color: #0b7180;
+}
+.course-preparation-callout-important .course-preparation-callout-title {
+    color: #075f68; 
+}
+.course-preparation-callout-important .course-preparation-callout-icon {
+    color: #0b7180;
+}
+
+/* Styling for 'warning' callout box. */
+.course-preparation-callout-warning {
+    background: #faf7ed;
+    border-color: #e7dfc7;
+    border-left-color: #9b7a2d;
+}
+.course-preparation-callout-warning .course-preparation-callout-title {
+    color: #765d22;
+}
+.course-preparation-callout-warning .course-preparation-callout-icon {
+    color: #9b7a2d;
+}
+
+/* Styling for 'note' callout box. */
+.course-preparation-callout-note {
+    background: #f1f7f3;
+    border-color: #d3e3d8;
+    border-left-color: #6f967b;
+}
+.course-preparation-callout-note .course-preparation-callout-title {
+    color: #526b5a;
+}
+.course-preparation-callout-note .course-preparation-callout-icon {
+    color: #6f967b;
+}
+
+/* Positioning for general callout boxes. */
+.course-preparation p:last-child {
+    margin-bottom: 0;
+}
+
 
 /* ==========================================================================
    COURSE CONTENT PAGES
@@ -2990,742 +3457,6 @@ html.course-content-page #quarto-content {
     line-height: 1.6;
 }
 
-
-/* ==========================================================================
-   PREPARATION PAGE
-   ========================================================================== */
-
-
-/* --------------------------------------------------------------------------
-   Page container
-   -------------------------------------------------------------------------- */
-
-.course-preparation-page {
-    width: 100%;
-    max-width: var(--course-content-width);
-
-    margin: 2.5rem auto 4rem;
-    padding: 0 var(--course-content-padding);
-
-    box-sizing: border-box;
-}
-
-/* Remove Quarto heading anchor icons from the Preparation page */
-.course-preparation-page .anchorjs-link,
-.course-preparation .anchorjs-link {
-    display: none !important;
-}
-
-
-/* --------------------------------------------------
-   Preparation header
-   -------------------------------------------------- */
-
-.course-preparation-header {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 280px;
-    gap: 3rem;
-
-    width: 100%;
-    max-width: var(--course-content-width);
-
-    margin: 2.5rem auto 0;
-    padding: 0 var(--course-content-padding);
-
-    box-sizing: border-box;
-}
-
-.course-preparation-label {
-    margin-bottom: 0.85rem;
-
-    color: #045c64;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-}
-
-.course-preparation-header h1 {
-    max-width: 28ch;
-
-    margin: 0;
-
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 1.25;
-}
-
-.course-preparation-intro {
-    max-width: 55ch;
-
-    margin: 0.75rem 0 0;
-
-    color: #777;
-    font-size: 1.05rem;
-    line-height: 1.5;
-}
-
-
-/* Contact box */
-
-.course-preparation-contact {
-    align-self: start;
-
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 1.35rem 1.5rem;
-
-    border: none;
-    border-radius: 5px;
-
-    background: #f7f9fa;
-}
-
-.course-preparation-contact-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 38px;
-    height: 38px;
-
-    margin-bottom: 0.75rem;
-
-    border-radius: 50%;
-
-    background: #C0D6D8;
-    color: #045C64;
-    font-size: 1.05rem;
-}
-
-.course-preparation-contact-title {
-    margin-bottom: 0.4rem;
-    font-weight: 700;
-}
-
-.course-preparation-contact p {
-    margin: 0 0 0.65rem;
-
-    color: #526476;
-    line-height: 1.45;
-}
-
-.course-preparation-contact a {
-    color: #087584;
-    font-weight: 600;
-    text-decoration: none;
-    overflow-wrap: anywhere;
-}
-
-.course-preparation-contact a:hover {
-    color: #045c64;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-}
-
-/* --------------------------------------------------------------------------
-   Main page content
-   -------------------------------------------------------------------------- */
-
-.course-preparation {
-    width: 100%;
-    max-width: var(--course-content-width);
-
-    margin: 2.75rem auto 3rem;
-    padding: 0 var(--course-content-padding);
-
-    box-sizing: border-box;
-}
-
-
-/* --------------------------------------------------------------------------
-   Sections
-   -------------------------------------------------------------------------- */
-
-.course-preparation-section {
-    width: 100%;
-
-    margin: 0;
-    padding: 1.5rem 0;
-
-    border-top: 1px solid #d9e0e3;
-}
-
-
-.course-preparation-section > h2 {
-    margin: 0 0 0.9rem;
-
-    color: #202b33;
-    font-size: 1.35rem;
-    font-weight: 600;
-    line-height: 1.3;
-
-    border: none;
-}
-
-
-.course-preparation-section > h2::after {
-    display: none;
-}
-
-.course-preparation-account,
-.course-preparation-software {
-    display: flex;
-    flex-direction: column;
-}
-
-.course-preparation-account .course-preparation-box-body,
-.course-preparation-software .course-preparation-box-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.course-preparation-account .course-preparation-links,
-.course-preparation-software .course-preparation-links {
-    margin-top: auto;
-    padding-top: 1rem;
-}
-
-/* --------------------------------------------------------------------------
-   Plain text blocks
-   -------------------------------------------------------------------------- */
-
-.course-preparation-text {
-    margin: 0 0 1.25rem;
-
-    color: #3f474d;
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-
-.course-preparation-text p {
-    margin: 0 0 0.9rem;
-}
-
-
-.course-preparation-text p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* --------------------------------------------------------------------------
-   Callouts
-   -------------------------------------------------------------------------- */
-
-/*
-   Important:
-   These are normal divs rather than <aside> elements.
-   This keeps Quarto from moving them into its aside/margin layout.
-*/
-
-.course-preparation-callout {
-    display: block;
-
-    width: 100%;
-    max-width: none;
-
-    margin: 1.25rem 0;
-    padding: 1.15rem 1.35rem;
-
-    box-sizing: border-box;
-
-    border: 1px solid #c7dfe3;
-    border-left: 3px solid #0b7180;
-    border-radius: 3px;
-
-    background: #edf7f8;
-
-    color: #34444a;
-}
-
-
-/* Callout title */
-
-.course-preparation-callout-title {
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-
-    margin: 0 0 0.85rem;
-
-    color: #075f68;
-    font-size: 0.9rem;
-    font-weight: 700;
-    line-height: 1.35;
-}
-
-
-.course-preparation-callout-icon {
-    flex-shrink: 0;
-
-    color: #0b7180;
-    font-size: 1rem;
-}
-
-
-/* Callout content */
-
-.course-preparation-callout-content {
-    color: #3f4d52;
-    font-size: 0.88rem;
-    line-height: 1.55;
-}
-
-
-.course-preparation-callout-content p {
-    margin: 0 0 0.75rem;
-}
-
-
-.course-preparation-callout-content p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* Callout variants */
-
-.course-preparation-callout-important {
-    background: #edf7f8;
-    border-color: #c7dfe3;
-    border-left-color: #0b7180;
-}
-
-
-.course-preparation-callout-warning {
-    background: #faf7ed;
-    border-color: #e7dfc7;
-    border-left-color: #9b7a2d;
-}
-
-.course-preparation-callout-warning .course-preparation-callout-title {
-    color: #765d22;
-}
-
-.course-preparation-callout-warning .course-preparation-callout-icon {
-    color: #9b7a2d;
-}
-
-.course-preparation-callout-note {
-    background: #f1f7f3;
-
-    border-color: #d3e3d8;
-    border-left-color: #6f967b;
-}
-
-.course-preparation-callout-note .course-preparation-callout-title {
-    color: #526b5a;
-}
-
-.course-preparation-callout-note .course-preparation-callout-icon {
-    color: #6f967b;
-}
-
-
-/* --------------------------------------------------------------------------
-   Standard preparation boxes
-   -------------------------------------------------------------------------- */
-
-.course-preparation-box {
-    width: 100%;
-
-    margin: 1.25rem 0;
-
-    box-sizing: border-box;
-
-    border: 1px solid #d6e0e3;
-    border-radius: 4px;
-
-    background: #fff;
-
-    overflow: hidden;
-}
-
-
-/* --------------------------------------------------------------------------
-   Box header
-   -------------------------------------------------------------------------- */
-
-.course-preparation-box-header {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-
-    padding: 0.7rem 1.1rem;
-
-    background: #f3f6f7;
-
-    border-bottom: 1px solid #e1e6e8;
-}
-
-
-.course-preparation-box-title {
-    margin: 0;
-
-    color: #27343a;
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.35;
-}
-
-
-.course-preparation-box-icon {
-    flex-shrink: 0;
-
-    color: #0b7180;
-    font-size: 0.95rem;
-}
-
-
-/* --------------------------------------------------------------------------
-   Box body
-   -------------------------------------------------------------------------- */
-
-.course-preparation-box-body {
-    padding: 1.1rem 1.2rem 1.2rem;
-}
-
-
-/* --------------------------------------------------------------------------
-   Checklist
-   -------------------------------------------------------------------------- */
-
-.course-preparation-checklist {
-    display: inline-block;
-    width: fit-content;
-    max-width: 100%;
-}
-
-
-.course-preparation-checklist ul {
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-
-.course-preparation-checklist li {
-    margin: 0;
-    padding: 0.22rem 0;
-
-    color: #3f474d;
-    font-size: 0.88rem;
-    line-height: 1.45;
-}
-
-
-.course-preparation-checklist li label {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.65rem;
-
-    cursor: pointer;
-}
-
-
-.course-preparation-checkbox {
-    width: 13px;
-    min-width: 13px;
-    height: 13px;
-
-    margin: 0.18rem 0 0;
-
-    cursor: pointer;
-}
-
-
-/* --------------------------------------------------------------------------
-   Account grid
-   -------------------------------------------------------------------------- */
-
-.course-preparation-account-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    gap: 1rem;
-
-    margin: 1.25rem 0;
-}
-
-
-.course-preparation-account-grid .course-preparation-box {
-    margin: 0;
-}
-
-.course-preparation-software-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-    margin: 1.25rem 0;
-}
-
-.course-preparation-software-grid .course-preparation-box {
-    margin: 0;
-}
-
-
-.course-preparation-instructions ol {
-    margin: 0.5rem 0 0;
-    padding-left: 1.5rem;
-}
-
-.course-preparation-instructions ol li {
-    margin: 0.25rem 0;
-    padding-left: 0.15rem;
-}
-
-/* --------------------------------------------------------------------------
-   Resource descriptions
-   -------------------------------------------------------------------------- */
-
-.course-preparation-resource-description {
-    color: #4b555b;
-    font-size: 0.88rem;
-    line-height: 1.55;
-}
-
-
-.course-preparation-resource-description p {
-    margin: 0 0 0.75rem;
-}
-
-
-.course-preparation-resource-description p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* --------------------------------------------------------------------------
-   Instructions
-   -------------------------------------------------------------------------- */
-
-.course-preparation-instructions {
-    margin: 1.1rem 0 0;
-    padding: 1rem 0 0;
-
-    border-top: 1px solid #e1e6e8;
-}
-
-
-.course-preparation-instructions h4 {
-    margin: 0 0 0.55rem;
-
-    color: #4f5b61;
-    font-size: 0.85rem;
-    font-weight: 600;
-    line-height: 1.35;
-}
-
-
-.course-preparation-instructions p {
-    margin: 0 0 0.7rem;
-
-    color: #414b50;
-    font-size: 0.88rem;
-    line-height: 1.55;
-}
-
-
-.course-preparation-instructions p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* --------------------------------------------------------------------------
-   Links
-   -------------------------------------------------------------------------- */
-
-.course-preparation-links {
-    margin: 1rem 0 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-
-.course-preparation-links li {
-    margin: 0;
-    padding: 0.35rem 0;
-
-    font-size: 0.86rem;
-    line-height: 1.4;
-}
-
-
-.course-preparation-link {
-    color: #087584;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-
-.course-preparation-link:hover {
-    color: #045c64;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-}
-
-
-/* --------------------------------------------------------------------------
-   Hardware requirements
-   -------------------------------------------------------------------------- */
-
-.course-preparation-requirements {
-    margin: 1rem 0 0;
-    padding: 0;
-
-    border-top: 1px solid #e1e6e8;
-}
-
-
-.course-preparation-requirements > div {
-    display: grid;
-
-    grid-template-columns: minmax(120px, 0.35fr) minmax(0, 1fr);
-
-    gap: 1.5rem;
-
-    padding: 0.6rem 0;
-
-    border-bottom: 1px solid #e8ecee;
-}
-
-
-.course-preparation-requirements > div:last-child {
-    border-bottom: none;
-}
-
-
-.course-preparation-requirements dt {
-    margin: 0;
-
-    color: #68747a;
-    font-size: 0.82rem;
-    font-weight: 600;
-}
-
-
-.course-preparation-requirements dd {
-    margin: 0;
-
-    color: #3f474d;
-    font-size: 0.86rem;
-}
-
-
-/* --------------------------------------------------------------------------
-   Reading blocks
-   -------------------------------------------------------------------------- */
-
-.course-preparation-citation {
-    margin: 0.9rem 0 0;
-    padding: 0.95rem 0.75rem 0.3rem;
-
-    border-left: 2px solid #c9d8dc;
-
-    background: #f7f9fa;
-
-    color: #68747a;
-    font-size: 0.82rem;
-    line-height: 1.5;
-}
-
-
-.course-preparation-citation a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.15s ease;
-}
-
-.course-preparation-citation a:hover {
-    color: #087584;
-}
-
-/* --------------------------------------------------------------------------
-   Reflection prompt
-   -------------------------------------------------------------------------- */
-
-.course-preparation-prompt {
-    margin: 1rem 0 0;
-    padding: 0.9rem 1rem;
-
-    border: 1px solid #d6e0e3;
-    border-radius: 3px;
-
-    background: #f7f9fa;
-
-    color: #414b50;
-    font-size: 0.86rem;
-    line-height: 1.5;
-}
-
-
-.course-preparation-prompt-title {
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-
-    margin-bottom: 0.5rem;
-
-    color: #52636a;
-    font-size: 0.83rem;
-    font-weight: 600;
-}
-
-
-.course-preparation-prompt-title i {
-    color: #0b7180;
-}
-
-
-.course-preparation-prompt p {
-    margin: 0 0 0.7rem;
-}
-
-
-.course-preparation-prompt p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* --------------------------------------------------------------------------
-   Standalone links block
-   -------------------------------------------------------------------------- */
-
-.course-preparation-links-block {
-    padding-bottom: 0;
-}
-
-
-.course-preparation-links-block .course-preparation-links {
-    margin-top: 0.25rem;
-}
-
-
-/* --------------------------------------------------------------------------
-   Remove unwanted default spacing from generated content
-   -------------------------------------------------------------------------- */
-
-.course-preparation p:last-child {
-    margin-bottom: 0;
-}
-
-
-.course-preparation h3,
-.course-preparation h4 {
-    border: none;
-}
-
-
-.course-preparation ul,
-.course-preparation ol {
-    margin-bottom: 0;
-}
-
 /* ==================================================
    RESOURCES
    ================================================== */
@@ -4345,6 +4076,56 @@ html.course-content-page #quarto-content {
 @media (max-width: 450px) {
   .course-page-meta {
     row-gap: 0.1rem;
+  }
+}
+
+/* ==========================================================================
+   PREPARATION Page
+   ========================================================================== */
+@media (max-width: 820px) {
+  .course-preparation-header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .course-preparation-contact {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: start;
+    padding: 1rem 1.25rem;
+  }
+
+  .course-preparation-contact-icon {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    margin-bottom: 0;
+  }
+
+  .course-preparation-contact-title,
+  .course-preparation-contact p,
+  .course-preparation-contact a {
+    grid-column: 2;
+  }
+
+  .course-preparation-account-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-preparation-software-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  .course-preparation-contact {
+    display: block;
+    padding: 1.35rem 1.5rem;
+  }
+
+  .course-preparation-contact-icon {
+    display: flex;
+    margin-bottom: 0.75rem;
   }
 }
 
