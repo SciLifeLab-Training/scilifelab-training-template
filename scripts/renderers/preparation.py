@@ -773,8 +773,9 @@ def _render_reading(block):
                     '<div class="course-preparation-citation">'
                 )
 
-                if url:
+                html.append("<p>")
 
+                if url:
                     html.append(
                         f'<a href="{escape(str(url), quote=True)}" '
                         'target="_blank" '
@@ -784,9 +785,9 @@ def _render_reading(block):
                 html.append(_text(text))
 
                 if url:
-
                     html.append("</a>")
 
+                html.append("</p>")
                 html.append("</div>")
 
             html.append("</div>")
