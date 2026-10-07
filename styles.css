@@ -2071,6 +2071,263 @@ styled under NEXT UP section - Overview page. */
     line-height: 1.5;
 }
 
+/* ==================================================
+   ANNOUNCEMENTS Page
+   ================================================== */
+
+/* Remove default Quarto heading links. */
+.course-announcements-page .anchorjs-link,
+.course-announcements-section .anchorjs-link {
+    display: none !important;
+}
+
+/* Add spacing and positioning around the page. */
+.course-announcements-header {
+    margin: 2.5rem auto 0;
+    padding: 0 var(--course-content-padding);
+}
+
+/* Style the page label. */
+.course-announcements-label {
+    margin-bottom: 0.85rem;
+    color: #045c64;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+/* Style the page title. */
+.course-announcements-header h1 {
+    max-width: 28ch;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Style the intro text. */
+.course-announcements-intro {
+    max-width: 55ch;
+    margin: 0.75rem 0 0;
+    color: #777;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Position the announcement list. */
+.course-announcements-list {
+    margin: 2.75rem auto 4rem;
+    padding: 0 var(--course-content-padding);
+}
+
+/* Add timeline before announcements.*/
+.course-announcement-page-item {
+    position: relative;
+    max-width: 900px;
+    padding: 0 0 1.75rem 2rem;
+    margin: 0 0 1.75rem;
+    border-left: 1px solid #e5e5e5;
+}
+
+/* Add green circle in the timeline before announcements.*/
+.course-announcement-page-item::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0.35rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #9cc31c;
+}
+
+/* Style announcement date.*/
+.course-announcement-page-date {
+    margin-bottom: 0.3rem;
+    color: #045c64;
+    font-size: 0.80rem;
+    font-weight: 600;
+}
+
+/* Style announcement title.*/
+.course-announcement-page-title {
+    margin: 0 0 0.45rem;
+    color: #222;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    border: none;
+}
+
+/* Style announcement text.*/
+.course-announcement-page-text {
+    max-width: 70ch;
+    margin: 0;
+    color: #555;
+    font-size: 0.90rem;
+    line-height: 1.55;
+}
+
+/* ==================================================
+   RESOURCES Page
+   ================================================== */
+/* Add spacing and positioning around the page. */
+.course-resources-header {
+    margin: 2.5rem auto 0;
+    padding: 0 var(--course-content-padding);
+}
+
+/* Remove default Quarto heading links. */
+.course-resources-page .anchorjs-link,
+.course-resources-section .anchorjs-link {
+    display: none !important;
+}
+
+/* Style the page label. */
+.course-resources-label {
+    margin-bottom: 0.85rem;
+    color: #045c64;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+/* Style the page title. */
+.course-resources-header h1 {
+    max-width: 28ch;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Style the intro text. */
+.course-resources-intro {
+    max-width: 70ch;
+    margin: 0.75rem 0 0;
+    color: #777;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Add spacing and positioning around the resource section. */
+.course-resources-section {
+    margin: 2.5rem auto 0;
+    padding: 0 var(--course-content-padding);
+}
+
+/* Position the resource type headings. */
+.course-resources-section-header {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    column-gap: 0.65rem;
+    row-gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+/* Position and style the resource type headings. */
+.course-resources-section-heading h2 {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    border: none;
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Position and style the resource type icons. */
+.course-resources-section-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    min-width: 2rem;
+    color: #A7C947;
+    font-size: 1.35rem;
+    line-height: 1;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Let the heading and explanatory text participate directly in the section header grid. */
+.course-resources-section-heading {
+    display: contents;
+}
+
+/* Style the resource type expanatory text. */
+.course-resources-section-heading p {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+/* Position the resource list. */
+.course-resources-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-left: 4rem;
+}
+
+/* Position the text within the resource list. */
+.course-resource {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0.85rem 1rem;
+    background: #f7f9fa;
+}
+
+/* Style the resource heading. */
+.course-resource h3 {
+    margin: 0 0 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+/* Style the resource text. */
+.course-resource p {
+    margin: 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+/* Style the view resource link. */
+.course-resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #087584;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Underline the view resource link on hover. */
+.course-resource-link:hover {
+    color: #045c64;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Style the view resource link icon. */
+.course-resource-link .bi {
+    font-size: 0.75rem;
+}
+
+/* Add padding below the last resource. */
+.course-resources-page {
+    padding-bottom: 4rem;
+}
+
 /* ==========================================================================
    COURSE CONTENT PAGES
    ========================================================================== */
@@ -3358,303 +3615,7 @@ html.course-content-page #quarto-content {
     line-height: 1.6;
 }
 
-/* ==================================================
-   RESOURCES
-   ================================================== */
 
-
-.course-resources-page .anchorjs-link,
-.course-resources-section .anchorjs-link {
-    display: none !important;
-}
-
-.course-resources-page {
-    padding-bottom: 4rem;
-}
-
-/* --------------------------------------------------
-   Resources header
-   -------------------------------------------------- */
-
-.course-resources-header {
-    width: 100%;
-    max-width: var(--course-content-width);
-
-    margin: 2.5rem auto 0;
-    padding: 0 var(--course-content-padding);
-
-    box-sizing: border-box;
-}
-
-.course-resources-label {
-    margin-bottom: 0.85rem;
-
-    color: #045c64;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-}
-
-.course-resources-header h1 {
-    max-width: 28ch;
-
-    margin: 0;
-
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 1.25;
-}
-
-.course-resources-intro {
-    max-width: 70ch;
-
-    margin: 0.75rem 0 0;
-
-    color: #777;
-    font-size: 1.05rem;
-    line-height: 1.5;
-}
-
-/* --------------------------------------------------
-   Resource sections
-   -------------------------------------------------- */
-
-.course-resources-section {
-    width: 100%;
-    max-width: var(--course-content-width);
-    margin: 2.5rem auto 0;
-    padding: 0 var(--course-content-padding);
-    box-sizing: border-box;
-}
-
-.course-resources-section + .course-resources-section {
-    margin-top: 2.75rem;
-}
-
-
-/* --------------------------------------------------
-   Section heading
-   -------------------------------------------------- */
-
-.course-resources-section-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.65rem;
-    margin-bottom: 1rem;
-}
-
-.course-resources-section-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 2rem;
-    flex-shrink: 0;
-
-    margin-top: 0.15rem;
-
-    color: #A7C947;
-    font-size: 1.35rem;
-    line-height: 1;
-}
-
-.course-resources-section-heading {
-    min-width: 0;
-}
-
-.course-resources-section-heading h2 {
-    margin: 0 0 0.25rem;
-    border: none;
-    font-size: 1.35rem;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.course-resources-section-heading p {
-    margin: 0;
-    color: #3f474d;
-    font-size: 0.9rem;
-    line-height: 1.45;
-}
-
-
-/* --------------------------------------------------
-   Resource list
-   -------------------------------------------------- */
-
-.course-resources-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    margin-left: 4rem;
-}
-
-
-/* --------------------------------------------------
-   Resource item
-   -------------------------------------------------- */
-
-.course-resource {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-
-    padding: 0.85rem 1rem;
-
-    background: #f7f9fa;
-}
-
-.course-resource-content {
-    min-width: 0;
-    flex: 1;
-}
-
-.course-resource h3 {
-    margin: 0 0 0.2rem;
-    border: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.35;
-    color: #3f474d;;
-}
-
-.course-resource p {
-    margin: 0;
-    color: #3f474d;;
-    font-size: 0.82rem;
-    line-height: 1.45;
-}
-
-
-/* --------------------------------------------------
-   Resource link
-   -------------------------------------------------- */
-
-.course-resource-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-
-    flex-shrink: 0;
-
-    color: #087584;
-    font-size: 0.82rem;
-    font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.course-resource-link:hover {
-    color: #045c64;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-}
-
-.course-resource-link .bi {
-    font-size: 0.75rem;
-}
-
-
-
-/* ==================================================
-   ANNOUNCEMENTS PAGE
-   ================================================== */
-
-/* Remove default Quarto heading links. */
-.course-announcements-page .anchorjs-link,
-.course-announcements-section .anchorjs-link {
-    display: none !important;
-}
-
-/* Add spacing and positioning around the page. */
-.course-announcements-header {
-    margin: 2.5rem auto 0;
-    padding: 0 var(--course-content-padding);
-}
-
-/* Style the page label. */
-.course-announcements-label {
-    margin-bottom: 0.85rem;
-    color: #045c64;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-}
-
-/* Style the page title. */
-.course-announcements-header h1 {
-    max-width: 28ch;
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 1.25;
-}
-
-/* Style the intro text. */
-.course-announcements-intro {
-    max-width: 55ch;
-    margin: 0.75rem 0 0;
-    color: #777;
-    font-size: 1.05rem;
-    line-height: 1.5;
-}
-
-/* Position the announcement list. */
-.course-announcements-list {
-    margin: 2.75rem auto 4rem;
-    padding: 0 var(--course-content-padding);
-}
-
-/* Add timeline before announcements.*/
-.course-announcement-page-item {
-    position: relative;
-    max-width: 900px;
-    padding: 0 0 1.75rem 2rem;
-    margin: 0 0 1.75rem;
-    border-left: 1px solid #e5e5e5;
-}
-
-/* Add green circle in the timeline before announcements.*/
-.course-announcement-page-item::before {
-    content: "";
-    position: absolute;
-    left: -5px;
-    top: 0.35rem;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #9cc31c;
-}
-
-/* Style announcement date.*/
-.course-announcement-page-date {
-    margin-bottom: 0.3rem;
-    color: #045c64;
-    font-size: 0.80rem;
-    font-weight: 600;
-}
-
-/* Style announcement title.*/
-.course-announcement-page-title {
-    margin: 0 0 0.45rem;
-    color: #222;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.4;
-    border: none;
-}
-
-/* Style announcement text.*/
-.course-announcement-page-text {
-    max-width: 70ch;
-    margin: 0;
-    color: #555;
-    font-size: 0.90rem;
-    line-height: 1.55;
-}
 
 /* ==========================================================================
    RESPONSIVE LAYOUT
@@ -3894,9 +3855,9 @@ html.course-content-page #quarto-content {
   }
 }
 
-/* ==========================================================================
+/* --------------------------------------------------------------------------
    SCHEDULE Page
-   ========================================================================== */
+   -------------------------------------------------------------------------- */
 @media (max-width: 1040px) {
   .course-schedule {
     grid-template-columns: 1fr;
@@ -3980,9 +3941,9 @@ html.course-content-page #quarto-content {
   }
 }
 
-/* ==========================================================================
+/* --------------------------------------------------------------------------
    PREPARATION Page
-   ========================================================================== */
+   -------------------------------------------------------------------------- */
 @media (max-width: 820px) {
   .course-preparation-header {
     grid-template-columns: 1fr;
@@ -4030,9 +3991,9 @@ html.course-content-page #quarto-content {
   }
 }
 
-/* ==========================================================================
+/* --------------------------------------------------------------------------
    PRACTICALITIES Page
-   ========================================================================== */
+   -------------------------------------------------------------------------- */
 @media (max-width: 820px) {
   .course-practicalities-header {
     grid-template-columns: 1fr;
@@ -4085,6 +4046,42 @@ html.course-content-page #quarto-content {
     display: flex;
     margin-bottom: 0.75rem;
   }
+}
+
+/* --------------------------------------------------------------------------
+   RESOURCES Page
+   -------------------------------------------------------------------------- */
+@media (max-width: 850px) {
+
+    .course-resources-section-heading p {
+        grid-column: 1 / -1;
+    }
+
+    .course-resources-list {
+        margin-left: 0;
+    }
+
+    .course-resource {
+        gap: 1rem;
+        padding: 0.75rem 0.9rem;
+    }
+
+    .course-resource h3 {
+        font-size: 0.85rem;
+    }
+
+    .course-resource p {
+        font-size: 0.78rem;
+        line-height: 1.4;
+    }
+
+    .course-resource-link {
+        font-size: 0.78rem;
+    }
+
+    .course-resource-link .bi {
+        font-size: 0.7rem;
+    }
 }
 
 /* --------------------------------------------------------------------------
