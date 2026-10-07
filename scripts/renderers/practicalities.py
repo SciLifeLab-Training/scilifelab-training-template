@@ -240,14 +240,15 @@ def render_practicalities(practicalities, course):
                 f'src="{map_embed_url}" '
                 'title="Venue map" '
                 'loading="lazy">'
-                "</iframe>"
-                "</div>"
+                '</iframe>'
+                '</div>'
                 f'<a class="course-practicalities-map-link" '
                 f'href="{venue["map_url"]}" '
                 'target="_blank" rel="noopener">'
-                "Open map"
-                "</a>"
-                "</div>"
+                '<i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>'
+                'Open map '
+                '</a>'
+                '</div>'
             )
 
         html.append("</div>")

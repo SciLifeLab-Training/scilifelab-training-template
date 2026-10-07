@@ -169,7 +169,7 @@ def render_team_page(team):
 
                 html.append(
                     '<span class="course-team-contact-badge">'
-                    'Course contact'
+                    'Training contact'
                     '</span>'
                 )
 
