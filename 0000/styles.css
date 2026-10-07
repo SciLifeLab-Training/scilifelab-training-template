@@ -1953,20 +1953,20 @@ styled under NEXT UP section - Overview page. */
     align-items: center;
     gap: 0.4rem;
     margin-top: 0.65rem;
-    color: #0075c9;
+    color: #087584;
     text-decoration: none;
 }
 
-/* Add venue map 'open map' icon. */
-.course-practicalities-map-link::before {
-    content: "\f1c5";
-    font-family: "bootstrap-icons";
+/* Style venue map link icon. */
+.course-practicalities-map-link .bi {
     font-size: 0.95rem;
 }
 
 /* Underline venue map link and icon on hover. */
 .course-practicalities-map-link:hover {
+    color: #045c64;
     text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 /* Position transport section links. */
@@ -2326,6 +2326,230 @@ styled under NEXT UP section - Overview page. */
 /* Add padding below the last resource. */
 .course-resources-page {
     padding-bottom: 4rem;
+}
+
+/* ==================================================
+    TEAM Page
+   ================================================== */
+
+/* Add spacing and positioning around the page. */
+.course-team-page {
+    margin: 2.5rem auto 4rem;
+    padding: 0 var(--course-content-padding);
+}
+
+/* Remove default Quarto heading links. */
+.course-team-page .anchorjs-link,
+.course-team-page-section .anchorjs-link {
+    display: none !important;
+}
+
+/* Style the page label. */
+.course-team-page-label {
+    margin-bottom: 0.85rem;
+    color: #045c64;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+/* Style the page title. */
+.course-team-page-header h1 {
+    max-width: 28ch;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Style the intro text. */
+.course-team-page-intro {
+    max-width: 70ch;
+    margin: 0.75rem 0 0;
+    color: #777;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Position and style horizontal divider. */
+.course-team-page-header {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #d9e0e3;
+}
+
+/* Add spacing around the team section. */
+.course-team-section {
+    padding: 2rem 0 0;
+}
+
+/* Style team member type headings. */
+.course-team-section h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.25;
+    border: none;
+}
+
+/* Style team member type descriptions. */
+.course-team-section-description {
+    margin: 0.45rem 0 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Position training lead cards in a grid. */
+.course-team-grid-leads {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+/* Position training instructor and contributor cards in a grid. */
+.course-team-grid-members {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+/* Position and style all team cards. */
+.course-team-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.4rem;
+    background: #f7f9fa;
+    border-radius: 6px;
+}
+
+/* Position all team cards photos. */
+.course-team-card-photo {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+}
+
+/* Resize training lead cards photos. */
+.course-team-grid-leads .course-team-card-photo {
+    width: 120px;
+    height: 120px;
+}
+
+/* Position content within team cards for all team cards. */
+.course-team-card-body {
+    margin-left: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width:0;
+
+}
+
+/* Style all training team names. */
+.course-team-card-name {
+    margin: 0;
+    font-size: 1.0rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Style training lead names. */
+.course-team-grid-leads .course-team-card-name {
+    font-size: 1.15rem;
+}
+
+/* Style all training team job titles. */
+.course-team-card-job-title {
+    margin-top: 0.45rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Style all training team affiliations. */
+.course-team-card-affiliation {
+    margin-top: 0.1rem;
+    font-size: 0.80rem;
+    line-height: 1.4;
+}
+
+/* Position training contact button. */
+.course-team-card-contact {
+    margin-top: 0.75rem;
+}
+
+/* Style training contact button. */
+.course-team-contact-badge {
+    display: inline-flex;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: #dceff1;
+    color: #045c64;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Style all training team bios. */
+.course-team-card-bio {
+    margin: 0.75rem 0 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+/* Position the row of training team contact links. */
+.course-team-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.9rem;
+}
+
+/* Position individual training team contact links. */
+.course-team-card-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    text-decoration: none;
+}
+
+/* Increase size of individual training team contact links. */
+.course-team-card-links i {
+    font-size: 1.1rem;
+}
+
+/* Style GitHub icon link. */
+.course-team-card-links .bi-github {
+    color: #181717;
+}
+
+/* Style LinkedIn icon link. */
+.course-team-card-links .bi-linkedin {
+    color: #0A66C2;
+}
+
+/* Style Envelope icon link. */
+.course-team-card-links .bi-envelope {
+    color: #222;
+}
+
+/* Style Globe icon link. */
+.course-team-card-links .bi-globe2 {
+    color: #B86F3E;
+}
+
+/* Style ORCID icon link. */
+.course-team-social-icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+/* Increase opacity of individual training team contact links on hover. */
+.course-team-card-links a:hover {
+    opacity: 0.75;
 }
 
 /* ==========================================================================
@@ -3163,342 +3387,6 @@ html.course-content-page #quarto-content {
 }
 
 /* ==================================================
-   COURSE TEAM PAGE
-   ================================================== */
-
-/* --------------------------------------------------
-   Page container
-   -------------------------------------------------- */
-
-.course-team-page {
-    width: 100%;
-    max-width: var(--course-content-width);
-    margin: 2.5rem auto 4rem;
-    padding: 0 var(--course-content-padding);
-    box-sizing: border-box;
-}
-
-.course-team-page .anchorjs-link,
-.course-team-page-section .anchorjs-link {
-    display: none !important;
-}
-
-/* --------------------------------------------------
-   Page header
-   -------------------------------------------------- */
-
-.course-team-page-header {
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #d9e0e3;
-}
-
-.course-team-page-label {
-    margin-bottom: 0.85rem;
-
-    color: #045c64;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-}
-
-.course-team-page-header h1 {
-    max-width: 28ch;
-
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 1.25;
-}
-
-
-.course-team-page-intro {
-    max-width: 70ch;
-
-    margin: 0.75rem 0 0;
-
-    color: #777;
-    font-size: 1.05rem;
-    line-height: 1.5;
-}
-
-/* --------------------------------------------------
-   Team sections
-   -------------------------------------------------- */
-
-.course-team-section {
-    padding: 2rem 0 0;
-}
-
-.course-team-section + .course-team-section {
-    padding-top: 2.5rem;
-}
-
-.course-team-section h2 {
-    margin: 0;
-
-    font-size: 1.35rem;
-    font-weight: 600;
-    line-height: 1.25;
-
-    border: none;
-}
-
-.course-team-section-description {
-    margin: 0.45rem 0 1.25rem;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-
-/* --------------------------------------------------
-   Training leads grid
-   -------------------------------------------------- */
-
-.course-team-grid-leads {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-}
-
-
-/* --------------------------------------------------
-   Instructor and contributor grid
-   -------------------------------------------------- */
-
-.course-team-grid-members {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-}
-
-/* --------------------------------------------------
-   Team cards
-   -------------------------------------------------- */
-
-.course-team-card {
-    display: flex;
-    align-items: flex-start;
-
-    min-width: 0;
-
-    box-sizing: border-box;
-
-    padding: 1.4rem;
-
-    background: #f7f9fa;
-    border-radius: 5px;
-}
-
-
-/* --------------------------------------------------
-   Training lead cards
-   -------------------------------------------------- */
-
-.course-team-grid-leads .course-team-card {
-    padding: 1.4rem;
-}
-
-
-/* --------------------------------------------------
-   Photos
-   -------------------------------------------------- */
-
-.course-team-card-photo {
-    flex: 0 0 auto;
-
-    width: 105px;
-    height: 105px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-    object-position: center;
-
-    display: block;
-}
-
-.course-team-grid-leads .course-team-card-photo {
-    width: 120px;
-    height: 120px;
-}
-
-/* --------------------------------------------------
-   Card content
-   -------------------------------------------------- */
-
-.course-team-card-body {
-    min-width: 0;
-    flex: 1;
-
-    margin-left: 1.15rem;
-
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.course-team-card-name {
-    margin: 0;
-
-    font-size: 1.0rem;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.course-team-grid-leads .course-team-card-name {
-    font-size: 1.15rem;
-}
-
-.course-team-card-job-title {
-    margin-top: 0.45rem;
-
-    color: #777;
-    font-size: 0.85rem;
-    line-height: 1.4;
-}
-
-.course-team-card-affiliation {
-    margin-top: 0.1rem;
-
-    color: #777;
-    font-size: 0.85rem;
-    line-height: 1.4;
-}
-
-
-/* --------------------------------------------------
-   Course contact
-   -------------------------------------------------- */
-
-.course-team-card-contact {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    gap: 0.55rem;
-
-    margin-top: 0.75rem;
-}
-
-.course-team-contact-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-
-    padding: 0.25rem 0.6rem;
-
-    border-radius: 999px;
-
-    background: #dceff1;
-    color: #045c64;
-
-    font-size: 0.75rem;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-.course-team-contact-email {
-    color: #045c64;
-
-    font-size: 0.78rem;
-    font-weight: 600;
-
-    text-decoration: none;
-
-    overflow-wrap: anywhere;
-}
-
-.course-team-contact-email:hover {
-    text-decoration: underline;
-}
-
-
-/* --------------------------------------------------
-   Biography
-   -------------------------------------------------- */
-
-.course-team-card-bio {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    overflow: hidden;
-
-    margin: 0.75rem 0 0;
-
-    color: #687178;
-    font-size: 0.82rem;
-    line-height: 1.45;
-}
-
-
-/* --------------------------------------------------
-   Profile links
-   -------------------------------------------------- */
-
-.course-team-card-links {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    gap: 0.75rem;
-
-    margin-top: auto;
-    padding-top: 0.9rem;
-}
-
-.course-team-card-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 22px;
-    height: 22px;
-
-    text-decoration: none;
-}
-
-.course-team-card-links a:hover {
-    opacity: 0.75;
-}
-
-.course-team-card-links i {
-    font-size: 1.1rem;
-}
-
-
-/* GitHub */
-
-.course-team-card-links .bi-github {
-    color: #181717;
-}
-
-
-/* LinkedIn */
-
-.course-team-card-links .bi-linkedin {
-    color: #0A66C2;
-}
-
-
-/* Email */
-
-.course-team-card-links .bi-envelope {
-    color: #045c64;
-}
-
-.course-team-card-links .bi-globe2 {
-    color: #045c64;
-}
-
-
-.course-team-social-icon {
-    display: block;
-    width: 18px;
-    height: 18px;
-}
-
-/* ==================================================
    FREQUENTLY ASKED QUESTIONS - FAQ page
    ================================================== */
 
@@ -3614,7 +3502,6 @@ html.course-content-page #quarto-content {
     font-size: 0.9rem;
     line-height: 1.6;
 }
-
 
 
 /* ==========================================================================
@@ -3745,6 +3632,18 @@ html.course-content-page #quarto-content {
 
   .course-welcome p {
     max-width: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .course-welcome-meta {
+    flex-direction: column;
+    gap: 0.05rem;
+    margin-bottom: 1rem;
+  }
+
+  .course-welcome-item {
+    font-size: 0.75rem;
   }
 }
 
@@ -4081,6 +3980,58 @@ html.course-content-page #quarto-content {
 
     .course-resource-link .bi {
         font-size: 0.7rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   TEAM Page
+   -------------------------------------------------------------------------- */
+@media (max-width:1100px) {
+    .course-team-card-photo {
+        width:clamp(85px, 9.5vw, 105px);
+        height:clamp(85px, 9.5vw, 105px);
+        flex:0 0 auto;
+    }
+
+    .course-team-grid-leads .course-team-card-photo {
+        width:clamp(90px, 10vw, 120px);
+        height:clamp(90px, 10vw, 120px);
+    }
+
+    .course-team-card {
+        min-width:0;
+    }
+}
+
+@media (max-width:850px) {
+    .course-team-grid-leads,
+    .course-team-grid-members {
+        grid-template-columns:1fr;
+    }
+
+    .course-team-card {
+        min-width:0;
+    }
+}
+
+
+@media (max-width:600px) {
+    .course-team-card {
+        padding:1.1rem;
+    }
+
+    .course-team-card-body {
+        margin-left:1rem;
+    }
+
+    .course-team-card-photo {
+        width:85px;
+        height:85px;
+    }
+
+    .course-team-grid-leads .course-team-card-photo {
+        width:90px;
+        height:90px;
     }
 }
 
