@@ -2552,6 +2552,292 @@ styled under NEXT UP section - Overview page. */
     opacity: 0.75;
 }
 
+/* ==================================================
+   SYLLABUS Page
+   ================================================== */
+
+/* Add spacing and positioning around the page. */
+.course-syllabus-header {
+    width: 100%;
+    margin: 2.5rem auto 0;
+    padding: 0 var(--course-content-padding);
+}
+
+/* Remove default Quarto heading links. */
+.course-syllabus-page .anchorjs-link,
+.course-syllabus-section .anchorjs-link {
+    display: none !important;
+}
+
+/* Style the page label. */
+.course-syllabus-label {
+    margin-bottom: 0.85rem;
+    color: #045c64;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+/* Style the page title. */
+.course-syllabus-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Style the page subtitle. */
+.course-syllabus-subtitle {
+    margin: 0.75rem 0 0;
+    color: #777;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Add spacing and positioning around the whole syllabus section. */
+.course-syllabus {
+    width: 100%;
+    margin: 2.75rem auto 3rem;
+    padding: 0 var(--course-content-padding);
+}
+
+/* Style section headers. */
+.course-syllabus-section h2,
+.course-syllabus-section h3 {
+    border: none;
+    margin-top: 0;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* Style section heading 2. */
+.course-syllabus-section h2 {
+    margin: 0 0 0.65rem;
+    font-size: 1.45rem;
+    line-height: 1.25;
+}
+
+/* Style section heading 3. */
+.course-syllabus-section h3 {
+    margin: 0 0 0.55rem;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+/* Style normal text. */
+.course-syllabus-section p {
+    max-width: 900px;
+    margin: 0 0 0.65rem;
+    line-height: 1.55;
+}
+
+/* Style keywords. */
+.course-syllabus-keywords {
+    margin-top: 0.85rem !important;
+    color: #777;
+    font-size: 0.88rem;
+}
+
+/* Style the word 'keyword'. */
+.course-syllabus-keywords strong {
+    color: #222;
+}
+
+/* Add padding below end of each section. */
+.course-syllabus-section {
+    padding: 0 0 1.5rem;
+}
+
+/* Add divider line below end of each section. */
+.course-syllabus-section + .course-syllabus-section {
+    padding-top: 1.5rem;
+    border-top: 1px solid #d9e0e3;
+}
+
+/* Position details section as a grid. */
+.course-syllabus-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    width: 100%;
+    max-width: 950px;
+    margin: 0;
+}
+
+/* Position one column within the details grid as a grid. */
+.course-syllabus-details > div {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 0.8rem;
+    padding: 0.3rem 0;
+}
+
+/* Styles details property text. */
+.course-syllabus-details dt {
+    font-weight: 700;
+}
+
+/* Styles details text. */
+.course-syllabus-details dd {
+    margin: 0;
+    line-height: 1.45;
+}
+
+/* Styles credit detail note text. */
+.course-syllabus-note {
+    display: inline-block;
+    margin-top: 0.15rem;
+    color: #777;
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+/* Style learning outcomes. */
+.course-syllabus-outcomes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 900px;
+    margin: 0.9rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Style learning outcomes list. */
+.course-syllabus-outcomes li {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 0.65rem;
+    counter-increment: syllabus-outcome;
+}
+
+/* Style learning outcomes list number circles. */
+.course-syllabus-outcome-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    margin-top: 0.05rem;
+    border-radius: 50%;
+    background: #C0D6D8;
+    color: #045C64;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+/* Get learning outcomes list numbers. */
+.course-syllabus-outcome-number::before {
+    content: counter(syllabus-outcome);
+}
+
+/* Position learning outcomes text. */
+.course-syllabus-outcome-text {
+    padding-top: 0.1rem;
+}
+
+/* Position prerequisites, forms of instruction, administration sections as a grid. */
+.course-syllabus-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3.5rem;
+    max-width: 950px;
+}
+
+/* Position prerequisites, forms of instruction, administration section lists. */
+.course-syllabus-column ul {
+    margin: 0;
+    padding-left: 1.15rem;
+}
+
+/* Position prerequisites, forms of instruction, administration section list items. */
+.course-syllabus-column li {
+    margin-bottom: 0.25rem;
+    line-height: 1.5;
+}
+
+/* Style list in 'administration' section. */
+.course-syllabus-column ul + h3 {
+    margin-top: 2.5rem;
+}
+
+/* Position team lead(s) within administration section as a grid. */
+.course-syllabus-leaders {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 400px;
+}
+
+/* Position team lead(s) boxes within administration section. */
+.course-syllabus-leader {
+    padding: 0.7rem 0.9rem;
+    border-left: 2px solid #045C64;
+    background: #f7f9fa;
+}
+
+/* Position team lead(s) names within administration section. */
+.course-syllabus-leader strong {
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Style team lead(s) institutions within administration section. */
+.course-syllabus-leader span,
+.course-syllabus-leader a {
+    display: block;
+    color: #777;
+    font-size: 0.86rem;
+    line-height: 1.45;
+}
+
+/* Style team lead(s) email link within administration section. */
+.course-syllabus-leader a {
+    color: #087584;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Underline for team lead(s) email link within administration section when hovered. */
+.course-syllabus-leader a:hover {
+    color: #045c64;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Set max width for reuse section. */
+.course-syllabus-reuse {
+    max-width: 950px;
+}
+
+/* Position reuse section as a grid. */
+.course-syllabus-reuse > div {
+    display: grid;
+    grid-template-columns: 130px minmax(0, 1fr);
+    gap: 1rem;
+    padding: 0.3rem 0;
+}
+
+/* Position 'preferred citation' throughout the grid. */
+.course-syllabus-reuse .course-syllabus-preferred-citation {
+    grid-column: 1 / -1;
+}
+
+/* Style the licence and DOI link. */
+.course-syllabus-reuse a {
+    color: #087584;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Underline the licence and DOI link on hover. */
+.course-syllabus-reuse a:hover {
+    color: #045c64;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
 /* ==========================================================================
    COURSE CONTENT PAGES
    ========================================================================== */
@@ -3034,356 +3320,6 @@ html.course-content-page .landing-footer__image {
 /* Do not force the content area to occupy a full viewport before the footer. */
 html.course-content-page #quarto-content {
     min-height: 0 !important;
-}
-
-
-
-
-/* ==================================================
-   SYLLABUS
-   ================================================== */
-
-/* --------------------------------------------------
-   Syllabus header
-   -------------------------------------------------- */
-
-.course-syllabus-header {
-    width: 100%;
-    max-width: var(--course-content-width);
-
-    margin: 2.5rem auto 0;
-    padding: 0 var(--course-content-padding);
-
-    box-sizing: border-box;
-}
-
-.course-syllabus-page .anchorjs-link,
-.course-syllabus-section .anchorjs-link {
-    display: none !important;
-}
-
-.course-syllabus-label {
-    margin-bottom: 0.85rem;
-    color: #045c64;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-}
-
-.course-syllabus-header h1 {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 1.25;
-}
-
-
-.course-syllabus-subtitle {
-    margin: 0.75rem 0 0;
-
-    color: #777;
-    font-size: 1.05rem;
-    line-height: 1.5;
-}
-
-
-/* --------------------------------------------------
-   Main syllabus content
-   -------------------------------------------------- */
-
-.course-syllabus {
-    width: 100%;
-    max-width: var(--course-content-width);
-
-    margin: 2.75rem auto 3rem;
-    padding: 0 var(--course-content-padding);
-
-    box-sizing: border-box;
-}
-
-
-/* --------------------------------------------------
-   Sections and headings
-   -------------------------------------------------- */
-
-.course-syllabus-section {
-    padding: 0 0 1.5rem;
-    margin: 0;
-}
-
-.course-syllabus-section + .course-syllabus-section {
-    padding-top: 1.5rem;
-    border-top: 1px solid #d9e0e3;
-}
-
-.course-syllabus-section h2,
-.course-syllabus-section h3 {
-    border: none;
-    margin-top: 0;
-    font-weight: 600;
-    line-height: 1.25;
-}
-
-.course-syllabus-section h2 {
-    margin: 0 0 0.65rem;
-    font-size: 1.45rem;
-    line-height: 1.25;
-}
-
-.course-syllabus-section h3 {
-    margin: 0 0 0.55rem;
-    font-size: 0.9rem;
-    line-height: 1.3;
-}
-
-.course-syllabus-section p {
-    max-width: 900px;
-    margin: 0 0 0.65rem;
-    line-height: 1.55;
-}
-
-.course-syllabus-column ul + h3 {
-    margin-top: 2.5rem;
-}
-
-
-/* --------------------------------------------------
-   Keywords
-   -------------------------------------------------- */
-
-.course-syllabus-keywords {
-    margin-top: 0.85rem !important;
-
-    color: #777;
-    font-size: 0.88rem;
-}
-
-.course-syllabus-keywords strong {
-    color: #000000;
-}
-
-
-/* --------------------------------------------------
-   Training details
-   -------------------------------------------------- */
-
-.course-syllabus-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 4rem;
-
-    width: 100%;
-    max-width: 900px;
-
-    margin: 0;
-}
-
-.course-syllabus-details > div {
-    display: grid;
-    grid-template-columns: 90px minmax(0, 1fr);
-    gap: 1rem;
-
-    padding: 0.3rem 0;
-}
-
-.course-syllabus-details dt {
-    font-weight: 700;
-}
-
-.course-syllabus-details dd {
-    margin: 0;
-    line-height: 1.45;
-}
-
-.course-syllabus-note {
-    display: inline-block;
-
-    margin-top: 0.15rem;
-
-    color: #777;
-    font-size: 0.75rem;
-    line-height: 1.4;
-}
-
-
-/* --------------------------------------------------
-   Learning outcomes
-   -------------------------------------------------- */
-
-.course-syllabus-outcomes {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    max-width: 900px;
-
-    margin: 0.9rem 0 0;
-    padding: 0;
-
-    list-style: none;
-
-    counter-reset: syllabus-outcome;
-}
-
-.course-syllabus-outcomes li {
-    display: grid;
-    grid-template-columns: 28px minmax(0, 1fr);
-    gap: 0.65rem;
-
-    align-items: start;
-
-    counter-increment: syllabus-outcome;
-}
-
-.course-syllabus-outcome-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 22px;
-    height: 22px;
-
-    margin-top: 0.05rem;
-
-    border-radius: 50%;
-
-    background: #C0D6D8;
-
-    color: #045C64;
-    font-size: 0.72rem;
-    font-weight: 700;
-}
-
-.course-syllabus-outcome-number::before {
-    content: counter(syllabus-outcome);
-}
-
-.course-syllabus-outcome-text {
-    padding-top: 0.1rem;
-    line-height: 1.5;
-}
-
-
-/* --------------------------------------------------
-   Two-column content
-   -------------------------------------------------- */
-
-.course-syllabus-columns {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 3.5rem;
-
-    max-width: 900px;
-}
-
-.course-syllabus-column {
-    min-width: 0;
-}
-
-.course-syllabus-column ul {
-    margin: 0;
-    padding-left: 1.15rem;
-}
-
-.course-syllabus-column li {
-    margin-bottom: 0.25rem;
-    line-height: 1.5;
-}
-
-
-/* --------------------------------------------------
-   Course leaders
-   -------------------------------------------------- */
-
-.course-syllabus-leaders {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-
-    max-width: 400px;
-}
-
-.course-syllabus-leader {
-    padding: 0.7rem 0.9rem;
-
-    border-left: 2px solid #045C64;
-
-    background: #f7f9fa;
-}
-
-.course-syllabus-leader strong {
-    display: block;
-    margin-bottom: 0.2rem;
-}
-
-.course-syllabus-leader span,
-.course-syllabus-leader a {
-    display: block;
-
-    color: #777;
-    font-size: 0.86rem;
-    line-height: 1.45;
-}
-
-.course-syllabus-leader a {
-    color: #087584;
-    font-weight: 600;
-    text-decoration: none;
-    overflow-wrap: anywhere;
-}
-
-.course-syllabus-leader a:hover {
-    color: #045c64;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-}
-
-
-/* --------------------------------------------------
-   Reuse
-   -------------------------------------------------- */
-
-.course-syllabus-reuse {
-    max-width: 900px;
-}
-
-.course-syllabus-reuse > div {
-    display: grid;
-    grid-template-columns: 130px minmax(0, 1fr);
-    gap: 1rem;
-    padding: 0.3rem 0;
-}
-
-.course-syllabus-reuse .course-syllabus-preferred-citation {
-    grid-column: 1 / -1;
-    display: block;
-}
-
-.course-syllabus-reuse .course-syllabus-preferred-citation dd {
-    margin-top: 0.35rem;
-    max-width: none;
-}
-
-.course-syllabus-reuse dt {
-    font-weight: 700;
-}
-
-.course-syllabus-reuse dd {
-    margin: 0;
-}
-
-.course-syllabus-reuse a {
-    color: #087584;
-    font-weight: 600;
-    text-decoration: none;
-    overflow-wrap: anywhere;
-}
-
-.course-syllabus-reuse a:hover {
-    color: #045c64;
-    text-decoration: underline;
-    text-underline-offset: 2px;
 }
 
 /* ==================================================
@@ -4032,6 +3968,21 @@ html.course-content-page #quarto-content {
     .course-team-grid-leads .course-team-card-photo {
         width:90px;
         height:90px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   SYLLABUS Page
+   -------------------------------------------------------------------------- */
+@media (max-width:700px) {
+    .course-syllabus-details {
+        grid-template-columns:1fr;
+        row-gap:1rem;
+    }
+
+    .course-syllabus-columns {
+        grid-template-columns:1fr;
+        gap:1.5rem;
     }
 }
 

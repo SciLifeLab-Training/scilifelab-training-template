@@ -70,8 +70,8 @@ course:
   #
   # Basic information about the training.
 
-  title: "Training title"
-  subtitle: "Short subtitle describing the training"
+  title: "Training title."
+  subtitle: "Short subtitle describing the training."
   description: >
     Provide a short description of the training, including its main
     topic, purpose, or focus.
