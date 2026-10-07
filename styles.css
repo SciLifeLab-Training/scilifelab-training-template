@@ -1021,6 +1021,322 @@ body {
 }
 
 /* ==========================================================================
+   CONTENT Pages
+   ========================================================================== */
+
+/* Add spacing and positioning around the page. */
+html.course-content-page #quarto-content > main.content {
+    padding: 3.0rem var(--course-content-padding) 0 !important;
+}
+
+/* Add spacing and positioning around the page. */
+html.course-content-page body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Do not force the content area to occupy a full viewport before the footer. */
+html.course-content-page #quarto-content {
+    min-height: 0 !important;
+}
+
+/* Hide Quarto's heading anchor-link icons */
+html.course-content-page a.anchorjs-link {
+    display: none !important;
+}
+
+/* Keep the content-page teal navbar aligned with the secondary navigation. */
+html.course-content-page .course-navbar {
+    width: 100% !important;
+    max-width: 1135px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Position the content navigation bar. */
+html.course-content-page .course-content-navigation {
+    width: 100%;
+    max-width: 1135px;
+    margin: 0 auto;
+    background: #f5f8f8;
+    border-bottom: none;
+    border-radius: 0 0 6px 6px;
+}
+
+/* Position the content navigation bar. */
+html.course-content-page
+.course-content-navigation-inner {
+    display: flex;
+    align-items: center;
+    min-height: 54px;
+    padding: 0 var(--course-content-padding);
+}
+
+/* Position the content inside the content navigation bar. */
+html.course-content-page
+.course-content-navigation-scroll {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-width: 0;
+    overflow: visible;
+}
+
+/* Style navigation toggle for content navigation bar. */
+html.course-content-page
+.course-content-navigation-toggle {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: #222;
+    font-family: inherit;
+    font-size: 0.80rem;
+    line-height: 1.2;
+}
+
+/* Style navigation arrow icon for content navigation bar. */
+html.course-content-page
+.course-content-navigation-icon {
+    margin-left: 0.4rem;
+    font-size: 0.65rem;
+    transition: transform 0.15s ease;
+}
+
+/* Rotate navigation arrow icon when content navigation bar dropdown is open. */
+html.course-content-page
+.course-content-navigation-dropdown.is-open
+.course-content-navigation-icon {
+    transform: rotate(180deg);
+}
+
+/* Change font color and background upon hover over content link. */
+html.course-content-page
+.course-content-navigation-toggle:hover,
+html.course-content-page
+.course-content-navigation-toggle:focus-visible {
+    background: #e5f0f1;
+    color: #045c64;
+}
+
+/* Show dropdown navigation menus upon hover over content link. */
+html.course-content-page
+.course-content-navigation-dropdown {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+/* Show dropdown navigation menus upon hover over content link. */
+html.course-content-page
+.course-content-navigation-dropdown.is-open
+.course-content-navigation-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Style dropdown navigation menus. */
+html.course-content-page
+.course-content-navigation-menu {
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 0;
+    z-index: 1000;
+    min-width: 190px;
+    padding: 0.35rem 0;
+    background: white;
+    border: 1px solid #d6e0e3;
+    border-radius: 6px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+    visibility: hidden;
+}
+
+/* Style items within dropdown navigation menus. */
+html.course-content-page
+.course-content-navigation-link {
+    display: block;
+    padding: 0.55rem 0.9rem;
+    color: #222;
+    font-size: 0.80rem;
+    line-height: 1.3;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Change color of items within dropdown navigation menus on hover. */
+html.course-content-page
+.course-content-navigation-link:hover {
+    background: #f3f6f7;
+    color: #087584;
+}
+
+/* Style active item within dropdown navigation menus. */
+html.course-content-page
+.course-content-navigation-link-active {
+    background: #e5f0f1;
+    color: #045c64 !important;
+    font-weight: 600;
+}
+
+/* Style content navigation bar active item. */
+html.course-content-page
+.course-content-navigation-toggle-active {
+    background: #dcecee;
+    color: #045c64;
+    font-weight: 600;
+}
+
+/* Remove underline on content navigation bar active item. */
+html.course-content-page
+.course-content-navigation-introduction,
+html.course-content-page
+.course-content-navigation-introduction:hover,
+html.course-content-page
+.course-content-navigation-introduction:focus {
+    text-decoration: none;
+}
+
+/* Add spacing and positioning around the content area. */
+html.course-content-page
+#quarto-document-content {
+    min-width: 0;
+}
+
+/* Display the training content pages header. */
+html.course-content-page #title-block-header {
+    display: block;
+}
+
+/* Position the TOC. */
+html.course-content-page #quarto-margin-sidebar #TOC {
+    margin-top: 2rem;
+}
+
+/* Style the TOC heading. */
+html.course-content-page #quarto-margin-sidebar #toc-title {
+    color: #045c64;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.6rem;
+    border-bottom: 2px solid #e5ebed;
+}
+
+/* Style the TOC links. */
+html.course-content-page #quarto-margin-sidebar #TOC .nav-link {
+    display: block;
+    padding: 0.15rem 0;
+    color: #747a7d;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-decoration: none;
+    border-left: none !important;
+}
+
+/* Change color of TOC link on hover. */
+html.course-content-page
+#quarto-margin-sidebar #TOC .nav-link:hover,
+html.course-content-page
+#quarto-margin-sidebar #TOC .nav-link:focus-visible {
+    color: #045c64 !important;
+    text-decoration: none;
+}
+
+/* Style active TOC link. */
+html.course-content-page #quarto-margin-sidebar #TOC .nav-link.active {
+    color: #045c64 !important;
+    font-weight: 600;
+    border-left: none !important;
+}
+
+/* Position Previous / next navigation. */
+html.course-content-page .course-content-next-navigation {
+    width: 100%;
+    max-width: 1135px;
+    margin: 2.5rem auto 1.5rem;
+    padding: 1.5rem var(--course-content-padding) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    border-top: 1px solid #d7e2e3;
+}
+
+/* Position Previous navigation on the left. */
+html.course-content-page .course-content-prev-link {
+    align-items: flex-start;
+    text-align: left;
+    margin-right: auto;
+}
+
+/* Position Next navigation on the right. */
+html.course-content-page .course-content-next-link {
+    align-items: flex-end;
+    text-align: right;
+    margin-left: auto;
+}
+
+/* Position Previous / next navigation links. */
+html.course-content-page .course-content-prev-link,
+html.course-content-page .course-content-next-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    max-width: 48%;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* Style Previous / next navigation labels. */
+html.course-content-page .course-content-next-label {
+    color: #52666a;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* Style Previous / next navigation links. */
+html.course-content-page .course-content-next-title {
+    color: #045c64;
+    font-weight: 600;
+}
+
+/* Underline Previous / next navigation links on hover. */
+html.course-content-page .course-content-prev-link:hover .course-content-next-title,
+html.course-content-page .course-content-next-link:hover .course-content-next-title,
+html.course-content-page .course-content-prev-link:focus-visible .course-content-next-title,
+html.course-content-page .course-content-next-link:focus-visible .course-content-next-title {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+/* Position course content pages footer. */
+html.course-content-page .landing-footer {
+    width: 100%;
+    max-width: 1135px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+    min-height: 4.2rem;
+}
+
+/* Style course content pages footer image. */
+html.course-content-page .landing-footer__image {
+    height: 2rem;
+    width: auto;
+    max-height: none;
+    top: 0;
+}
+
+/* ==========================================================================
    SCHEDULE PAGE
    ========================================================================== */
 
@@ -2442,7 +2758,6 @@ styled under NEXT UP section - Overview page. */
     flex-direction: column;
     height: 100%;
     min-width:0;
-
 }
 
 /* Style all training team names. */
@@ -2838,490 +3153,6 @@ styled under NEXT UP section - Overview page. */
     text-underline-offset: 2px;
 }
 
-/* ==========================================================================
-   COURSE CONTENT PAGES
-   ========================================================================== */
-
-html.course-content-page body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Keep the content-page teal navbar aligned with the secondary navigation. */
-html.course-content-page .course-navbar {
-    width: 100% !important;
-    max-width: 1135px !important;
-
-    margin-left: auto !important;
-    margin-right: auto !important;
-
-    box-sizing: border-box;
-}
-
-
-/* --------------------------------------------------------------------------
-   Quarto page container
-   -------------------------------------------------------------------------- */
-
-html.course-content-page #quarto-content {
-    width: 100% !important;
-    max-width: none !important;
-    min-height: 0;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    flex: 0 0 auto;
-}
-
-
-html.course-content-page #quarto-content > main.content {
-    display: grid !important;
-
-    width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-    padding: 3.0rem var(--course-content-padding) 0 !important;
-}
-
-
-/* --------------------------------------------------------------------------
-   Content page title
-   -------------------------------------------------------------------------- */
-
-html.course-content-page #title-block-header {
-    display: block;
-}
-
-/* ==========================================================================
-   COURSE CONTENT NAVIGATION
-   ========================================================================== */
-
-html.course-content-page .course-content-navigation {
-    width: 100%;
-    max-width: 1135px;
-
-    margin: 0 auto;
-
-    background: #f5f8f8;
-    border-bottom: none;
-    border-radius: 0 0 6px 6px;
-
-    box-sizing: border-box;
-}
-
-
-/* --------------------------------------------------------------------------
-   Navigation bar
-   -------------------------------------------------------------------------- */
-
-html.course-content-page
-.course-content-navigation-inner {
-    display: flex;
-    align-items: center;
-
-    min-height: 54px;
-
-    padding: 0 var(--course-content-padding);
-
-    box-sizing: border-box;
-}
-
-/* --------------------------------------------------------------------------
-   Module navigation
-   -------------------------------------------------------------------------- */
-
-html.course-content-page
-.course-content-navigation-introduction,
-html.course-content-page
-.course-content-navigation-introduction:hover,
-html.course-content-page
-.course-content-navigation-introduction:focus {
-    text-decoration: none;
-}
-
-html.course-content-page
-.course-content-navigation-scroll {
-    display: flex;
-    align-items: center;
-
-    gap: 0.35rem;
-
-    min-width: 0;
-
-    overflow: visible;
-}
-
-
-html.course-content-page
-.course-content-navigation-dropdown {
-    position: relative;
-
-    flex: 0 0 auto;
-}
-
-
-/* --------------------------------------------------------------------------
-   Module buttons
-   -------------------------------------------------------------------------- */
-
-html.course-content-page
-.course-content-navigation-toggle {
-    display: inline-flex;
-    align-items: center;
-
-    padding: 0.55rem 0.8rem;
-
-    border: none;
-    border-radius: 6px;
-
-    background: transparent;
-
-    color: #3f474d;
-
-    font-family: inherit;
-    font-size: 0.80rem;
-    font-weight: 400;
-    line-height: 1.2;
-
-    white-space: nowrap;
-
-    cursor: pointer;
-
-    transition:
-        background-color 0.15s ease,
-        color 0.15s ease;
-}
-
-
-html.course-content-page
-.course-content-navigation-toggle:hover,
-html.course-content-page
-.course-content-navigation-toggle:focus-visible {
-    background: #e5f0f1;
-    color: #045c64;
-}
-
-
-html.course-content-page
-.course-content-navigation-toggle-active {
-    background: #dcecee;
-    color: #045c64;
-    font-weight: 600;
-}
-
-
-/* --------------------------------------------------------------------------
-   Chevron
-   -------------------------------------------------------------------------- */
-
-html.course-content-page
-.course-content-navigation-icon {
-    margin-left: 0.4rem;
-
-    font-size: 0.65rem;
-
-    transition: transform 0.15s ease;
-}
-
-
-html.course-content-page
-.course-content-navigation-dropdown.is-open
-.course-content-navigation-icon {
-    transform: rotate(180deg);
-}
-
-
-/* --------------------------------------------------------------------------
-   Dropdown menu
-   -------------------------------------------------------------------------- */
-
-html.course-content-page
-.course-content-navigation-menu {
-    position: absolute;
-
-    top: calc(100% + 0.25rem);
-    left: 0;
-
-    z-index: 1000;
-
-    min-width: 190px;
-
-    padding: 0.35rem 0;
-
-    background: white;
-
-    border: 1px solid #d6e0e3;
-    border-radius: 5px;
-
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transform: translateY(-4px);
-
-    transition:
-        opacity 0.15s ease,
-        transform 0.15s ease,
-        visibility 0.15s ease;
-}
-
-
-/* This is the important rule: JS adds .is-open when clicked. */
-
-html.course-content-page
-.course-content-navigation-dropdown.is-open
-.course-content-navigation-menu {
-    opacity: 1;
-    visibility: visible;
-
-    transform: translateY(0);
-}
-
-
-/* --------------------------------------------------------------------------
-   Links inside module dropdown
-   -------------------------------------------------------------------------- */
-
-html.course-content-page
-.course-content-navigation-link {
-    display: block;
-
-    padding: 0.55rem 0.9rem;
-
-    color: #3f474d;
-
-    font-size: 0.80rem;
-    line-height: 1.3;
-
-    text-decoration: none;
-
-    white-space: nowrap;
-}
-
-
-html.course-content-page
-.course-content-navigation-link:hover {
-    background: #f3f6f7;
-
-    color: #087584;
-}
-
-
-html.course-content-page
-.course-content-navigation-link-active {
-    background: #e5f0f1;
-
-    color: #045c64 !important;
-
-    font-weight: 600;
-}
-
-/* ==========================================================================
-   CONTENT AREA
-   ========================================================================== */
-
-html.course-content-page
-#quarto-document-content {
-    min-width: 0;
-}
-
-/* ==========================================================================
-   CONTENT PAGE TOC
-   ========================================================================== */
-
-/* TOC heading */
-html.course-content-page #quarto-margin-sidebar #toc-title {
-    color: #045c64;
-
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-
-    padding-bottom: 0.6rem;
-    margin-bottom: 0.6rem;
-
-    border-bottom: 2px solid #e5ebed;
-}
-
-
-/* TOC links */
-html.course-content-page #quarto-margin-sidebar #TOC .nav-link {
-    display: block;
-
-    padding: 0.15rem 0;
-
-    color: #747a7d;
-    font-size: 0.8rem;
-    line-height: 1.5;
-
-    text-decoration: none;
-    border-left: none !important;
-}
-
-
-/* Active TOC link */
-html.course-content-page #quarto-margin-sidebar #TOC .nav-link.active {
-    color: #045c64 !important;
-    font-weight: 600;
-    border-left: none !important;
-}
-
-
-/* TOC link hover */
-html.course-content-page
-#quarto-margin-sidebar #TOC .nav-link:hover,
-html.course-content-page
-#quarto-margin-sidebar #TOC .nav-link:focus-visible {
-    color: #045c64 !important;
-    text-decoration: none;
-}
-
-/* Hide Quarto's heading anchor-link icons */
-html.course-content-page a.anchorjs-link {
-    display: none !important;
-}
-
-/* ==========================================================================
-   CONTENT PAGE NEXT NAVIGATION
-   ========================================================================== */
-/* Previous / next navigation — minimal text-link style */
-
-html.course-content-page .course-content-next-navigation {
-    width: 100%;
-    max-width: 1135px;
-    margin: 2.5rem auto 1.5rem;
-    padding: 1.5rem var(--course-content-padding) 0;
-    box-sizing: border-box;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-
-    border-top: 1px solid #d7e2e3;
-}
-
-html.course-content-page #quarto-margin-sidebar #TOC {
-    margin-top: 2rem;
-}
-
-html.course-content-page .course-content-next-navigation[hidden] {
-    display: none !important;
-}
-
-html.course-content-page .course-content-prev-link,
-html.course-content-page .course-content-next-link {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-
-    max-width: 48%;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-
-    color: #045c64;
-    text-decoration: none;
-}
-
-html.course-content-page .course-content-prev-link {
-    align-items: flex-start;
-    text-align: left;
-    margin-right: auto;
-}
-
-html.course-content-page .course-content-next-link {
-    align-items: flex-end;
-    text-align: right;
-    margin-left: auto;
-}
-
-html.course-content-page .course-content-next-label {
-    color: #52666a;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-}
-
-html.course-content-page .course-content-next-title {
-    color: #045c64;
-    font-weight: 600;
-}
-
-html.course-content-page .course-content-prev-link:hover .course-content-next-title,
-html.course-content-page .course-content-next-link:hover .course-content-next-title,
-html.course-content-page .course-content-prev-link:focus-visible .course-content-next-title,
-html.course-content-page .course-content-next-link:focus-visible .course-content-next-title {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
-@media (max-width: 600px) {
-    html.course-content-page .course-content-next-navigation {
-        gap: 1rem;
-    }
-
-    html.course-content-page .course-content-prev-link,
-    html.course-content-page .course-content-next-link {
-        max-width: 48%;
-    }
-}
-
-/* ==========================================================================
-   CONTENT PAGE FOOTER
-   ========================================================================== */
-
-
-.course-content-page .landing-footer {
-    margin-top: 2rem;
-    flex-shrink: 0;
-    min-height: 3.5rem;
-    box-sizing: border-box;
-}
-
-.course-content-page .landing-footer__image {
-    height: 2rem;
-    width: auto;
-    max-height: none;
-}
-
-html.course-content-page .landing-footer {
-    width: 100%;
-    max-width: 1135px;
-
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-
-    padding-top: 0.9rem;
-    padding-bottom: 0.9rem;
-
-    flex-shrink: 0;
-    min-height: 4.2rem;
-
-    box-sizing: border-box;
-}
-
-html.course-content-page .landing-footer__image {
-    height: 2rem;
-    width: auto;
-    max-height: none;
-    top: 0;
-}
-
-
-/* Do not force the content area to occupy a full viewport before the footer. */
-html.course-content-page #quarto-content {
-    min-height: 0 !important;
-}
-
 /* ==================================================
    FREQUENTLY ASKED QUESTIONS - FAQ page
    ================================================== */
@@ -3688,6 +3519,20 @@ html.course-content-page #quarto-content {
   .course-announcements-content > p {
     margin-bottom: 0.0rem;
   }
+}
+
+/* --------------------------------------------------------------------------
+   CONTENT Pages
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+    html.course-content-page .course-content-next-navigation {
+        gap: 1rem;
+    }
+
+    html.course-content-page .course-content-prev-link,
+    html.course-content-page .course-content-next-link {
+        max-width: 48%;
+    }
 }
 
 /* --------------------------------------------------------------------------
