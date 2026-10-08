@@ -522,7 +522,7 @@ body {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     column-gap: 2.5rem;
-    margin: 1.5rem 2.5rem;
+    margin: 1.5rem var(--course-content-padding);
     padding: 0.7rem 1.5rem;
     background: #eef7f7;
     border: 1px solid #dcebec;
@@ -597,7 +597,7 @@ body {
 
 /* Add spacing around the next up section. */
 .course-upcoming-section {
-    padding: 1.5rem 2.5rem 0;
+    padding: 1.5rem var(--course-content-padding) 0;
 }
 
 /* Style the section label displayed above the next up section. */
@@ -813,7 +813,7 @@ body {
 
 /* Add spacing around the quick links section. */
 .course-links {
-    padding: 2rem 2.5rem 0;
+    padding: 2rem var(--course-content-padding) 0;
 }
 
 /* Display the quick links as a responsive two-column grid. */
@@ -873,7 +873,7 @@ body {
 
 /* Add spacing around the announcements/team section. */
 .course-announcements {
-    padding: 2rem 2.5rem 0;
+    padding: 2rem var(--course-content-padding) 0;
 }
 
 /* Add spacing around the announcements section.*/
@@ -962,7 +962,7 @@ body {
 
 /* Add spacing around the team section.*/
 .course-team {
-    padding: 2rem 2.5rem 0;
+    padding: 2rem var(--course-content-padding) 0;
 }
 
 /* Add spacing around the content of the team section.*/
@@ -2942,6 +2942,14 @@ INFORMATION PAGES - SHARED STYLES
 /* ==========================================================================
    RESPONSIVE LAYOUT
    ========================================================================== */
+/* --------------------------------------------------------------------------
+   Shared layout values
+   -------------------------------------------------------------------------- */
+@media (max-width: 750px) {
+  :root {
+    --course-content-padding: 0.2rem;
+  }
+}
 
 /* --------------------------------------------------------------------------
    Navbar and Template / Archived Banner
@@ -3045,13 +3053,7 @@ INFORMATION PAGES - SHARED STYLES
   WELCOME SECTION - Overview page 
    -------------------------------------------------------------------------- */ 
 @media (max-width: 750px) {
-  :root {
-    --course-content-padding: 0.2rem;
-  }
-
   .course-welcome {
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
     padding-bottom: 0rem;
   }
 
@@ -3090,8 +3092,6 @@ INFORMATION PAGES - SHARED STYLES
 @media (max-width: 750px) {
   .course-registration {
     margin-top: 2.5rem;
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
     grid-template-columns: 1fr;
     row-gap: 1rem;
   }
@@ -3101,11 +3101,6 @@ INFORMATION PAGES - SHARED STYLES
    NEXT UP SECTION - Overview page
    -------------------------------------------------------------------------- */
 @media (max-width: 750px) {
-  .course-upcoming-section {
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
-  }
-
   .course-upcoming-card {
     grid-template-columns: 80px 1fr;
     column-gap: 2rem;
@@ -3150,8 +3145,6 @@ INFORMATION PAGES - SHARED STYLES
 @media (max-width: 750px) {
   .course-links {
     margin-top: 1.5rem;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
     }
 }
 
@@ -3167,14 +3160,6 @@ INFORMATION PAGES - SHARED STYLES
 /* --------------------------------------------------------------------------
    ANNOUNCEMENTS and TEAM SECTIONS - Overview page
    -------------------------------------------------------------------------- */
-@media (max-width: 750px) {
-  .course-announcements,
-  .course-team {
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
-    }
-}
-
 @media (max-width: 640px) {
   .course-home-bottom {
     grid-template-columns: 1fr;
