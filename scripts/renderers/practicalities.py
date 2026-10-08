@@ -73,20 +73,20 @@ def render_practicalities(practicalities, course):
     )
 
     html.append(
-        '<div class="course-practicalities-label">'
+        '<div class="course-page-label">'
         "Practicalities"
         "</div>"
     )
 
-    html.append("<h1>Practical information</h1>")
+    html.append('<h1 class="course-page-title">Practical information</h1>')
 
     if practicalities.get("intro"):
 
         html.append(
-            '<p class="course-practicalities-intro">'
+            '<p class="course-page-intro course-page-intro-narrow">'
             f'{practicalities["intro"]}'
             '</p>'
-        )
+        )   
 
     html.append("</div>")
 
@@ -95,17 +95,17 @@ def render_practicalities(practicalities, course):
 
     if contact_email:
         html.append(
-            '<div class="course-practicalities-contact">'
+            '<div class="course-page-contact">'
         )
 
         html.append(
-            '<div class="course-practicalities-contact-icon">'
+            '<div class="course-page-contact-icon">'
             '<i class="bi bi-envelope"></i>'
             "</div>"
         )
 
         html.append(
-            '<div class="course-practicalities-contact-title">'
+            '<div class="course-page-contact-title">'
             "Questions about the training?"
             "</div>"
         )
@@ -115,7 +115,7 @@ def render_practicalities(practicalities, course):
         )
 
         html.append(
-            f'<a href="mailto:{contact_email}">'
+            f'<a class="course-text-link" href="mailto:{contact_email}">'
             f"{contact_email}"
             "</a>"
         )
@@ -302,7 +302,7 @@ def render_practicalities(practicalities, course):
 
             for link in links:
                 html.append(
-                    f'<li><a href="{link["url"]}" '
+                    f'<li><a class="course-text-link" href="{link["url"]}" '
                     'target="_blank" rel="noopener">'
                     f'{link["title"]}</a></li>'
                 )
@@ -376,7 +376,7 @@ def render_practicalities(practicalities, course):
 
                 if hotel.get("url"):
                     name = (
-                        f'<a href="{hotel["url"]}" '
+                        f'<a class="course-text-link" href="{hotel["url"]}" '
                         'target="_blank" rel="noopener">'
                         f"{name}</a>"
                     )

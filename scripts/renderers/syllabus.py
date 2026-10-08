@@ -11,12 +11,12 @@ def render_syllabus(course, team):
 
     html.append('<div class="course-syllabus-header">')
     html.append('<div class="course-syllabus-header-main">')
-    html.append('<div class="course-syllabus-label">Syllabus</div>')
-    html.append(f'<h1>{course["title"]}</h1>')
+    html.append('<div class="course-page-label">Syllabus</div>')
+    html.append(f'<h1 class="course-page-title">{course["title"]}</h1>')
 
     if course.get("subtitle"):
         html.append(
-            f'<p class="course-syllabus-subtitle">{course["subtitle"]}</p>'
+            f'<p class="course-page-intro">{course["subtitle"]}</p>'
         )
 
     html.append('</div>')
@@ -356,7 +356,7 @@ def render_syllabus(course, team):
 
                 if leader.get("email"):
                     html.append(
-                        f'<a href="mailto:{leader["email"]}">'
+                        f'<a class="course-text-link" href="mailto:{leader["email"]}">'
                         f'{leader["email"]}'
                         '</a>'
                     )
@@ -395,7 +395,7 @@ def render_syllabus(course, team):
 
             if licence_url:
                 licence_html = (
-                    f'<a href="{licence_url}" '
+                    f'<a class="course-text-link" href="{licence_url}" '
                     f'target="_blank" rel="noopener">'
                     f'{licence}</a>'
                 )
@@ -412,7 +412,7 @@ def render_syllabus(course, team):
 
             if doi_url:
                 doi_html = (
-                    f'<a href="{doi_url}" '
+                    f'<a class="course-text-link" href="{doi_url}" '
                     f'target="_blank" rel="noopener">'
                     f'{doi}</a>'
                 )

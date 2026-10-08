@@ -87,7 +87,7 @@ NEXT UP
 <div class="course-upcoming-countdown"></div>
 
 <a
-    class="course-upcoming-link"
+    class="course-upcoming-link course-text-link"
     href="schedule.qmd">
     Full schedule →
 </a>

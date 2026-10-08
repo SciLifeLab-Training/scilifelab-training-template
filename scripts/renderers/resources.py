@@ -51,13 +51,13 @@ def render_resources(resources):
 
     html.append('<header class="course-resources-header">')
 
-    html.append('<div class="course-resources-label">Resources</div>')
+    html.append('<div class="course-page-label">Resources</div>')
 
-    html.append('<h1>Explore further after the training</h1>')
+    html.append('<h1 class="course-page-title">Explore further after the training</h1>')
 
     if resources.get("intro"):
         html.append(
-            '<p class="course-resources-intro">'
+            '<p class="course-page-intro">'
             f'{escape(str(resources["intro"]))}'
             '</p>'
         )
@@ -134,7 +134,7 @@ def render_resources(resources):
             if item_url:
                 html.append(
                     '<a '
-                    'class="course-resource-link" '
+                    'class="course-resource-link course-text-link" '
                     f'href="{item_url}" '
                     'target="_blank" '
                     'rel="noopener">'

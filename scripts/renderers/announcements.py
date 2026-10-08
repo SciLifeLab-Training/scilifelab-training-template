@@ -78,8 +78,7 @@ ANNOUNCEMENTS
 
 {"".join(cards)}
 
-<a class="course-announcements-link" href="announcements.qmd">View all announcements →</a>
-
+<a class="course-announcements-link course-text-link" href="announcements.qmd">View all announcements →</a>
 </div>
 
 :::
@@ -97,13 +96,13 @@ def render_announcements_page(announcements):
 
 <header class="course-announcements-header">
 
-<div class="course-announcements-label">
+<div class="course-page-label">
 Announcements
 </div>
 
-<h1>Announcements</h1>
+<h1 class="course-page-title">Announcements</h1>
 
-<p class="course-announcements-intro">
+<p class="course-page-intro course-page-intro-narrow">
 There are currently no announcements.
 </p>
 
@@ -126,16 +125,16 @@ There are currently no announcements.
     html.append('<header class="course-announcements-header">')
 
     html.append(
-        '<div class="course-announcements-label">'
+        '<div class="course-page-label">'
         'Announcements'
         '</div>'
     )
 
-    html.append('<h1>Training updates</h1>')
+    html.append('<h1 class="course-page-title">Training updates</h1>')
 
     if intro:
         html.append(
-            '<p class="course-announcements-intro">'
+            '<p class="course-page-intro course-page-intro-narrow">'
             f'{intro}'
             '</p>'
         )

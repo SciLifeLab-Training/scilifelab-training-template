@@ -75,7 +75,7 @@ def _link(link):
         return ""
 
     return (
-        '<a class="course-preparation-link" '
+        '<a class="course-text-link" '
         f'href="{escape(str(url), quote=True)}" '
         'target="_blank" '
         'rel="noopener">'
@@ -896,19 +896,19 @@ def render_preparation(preparation, course):
     )
 
     html.append(
-        '<div class="course-preparation-label">'
+        '<div class="course-page-label">'
         'Preparation'
         '</div>'
     )
 
     html.append(
-        "<h1>Prepare for the training</h1>"
+        '<h1 class="course-page-title">Prepare for the training</h1>'
     )
 
     if preparation.get("intro"):
 
         html.append(
-            '<p class="course-preparation-intro">'
+            '<p class="course-page-intro course-page-intro-narrow">'
             f'{_text(preparation["intro"])}'
             '</p>'
         )
@@ -922,17 +922,17 @@ def render_preparation(preparation, course):
     if contact_email:
 
         html.append(
-            '<div class="course-preparation-contact">'
+            '<div class="course-page-contact">'
         )
 
         html.append(
-            '<div class="course-preparation-contact-icon">'
+            '<div class="course-page-contact-icon">'
             '<i class="bi bi-envelope"></i>'
             '</div>'
         )
 
         html.append(
-            '<div class="course-preparation-contact-title">'
+            '<div class="course-page-contact-title">'
             'Questions about the training?'
             '</div>'
         )
@@ -942,7 +942,7 @@ def render_preparation(preparation, course):
         )
 
         html.append(
-            f'<a href="mailto:{contact_email}">'
+            f'<a class="course-text-link" href="mailto:{contact_email}">'
             f'{contact_email}'
             '</a>'
         )

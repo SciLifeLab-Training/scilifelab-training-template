@@ -19,17 +19,17 @@ def render_faq(faq):
     html.append('<header class="course-faq-header">')
 
     html.append(
-        '<div class="course-faq-label">FAQ</div>'
+        '<div class="course-page-label">FAQ</div>'
     )
 
     html.append(
-        '<h1>Frequently asked questions</h1>'
+        '<h1 class="course-page-title">Frequently asked questions</h1>'
     )
 
     if faq.get("intro"):
 
         html.append(
-            '<p class="course-faq-intro">'
+            '<p class="course-page-intro">'
             f'{faq["intro"]}'
             '</p>'
         )

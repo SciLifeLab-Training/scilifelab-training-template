@@ -72,7 +72,7 @@ def render_quick_links(website, schedule_events):
 
 <p>{page["description"]}</p>
 
-<a href="{page["href"]}">
+<a class="course-text-link" href="{page["href"]}">
 View {page["title"].lower()} →
 </a>
 

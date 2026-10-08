@@ -37,19 +37,19 @@ def render_team_page(team):
     html.append('<header class="course-team-page-header">')
 
     html.append(
-        '<div class="course-team-page-label">'
+        '<div class="course-page-label">'
         'Training team'
         '</div>'
     )
 
     html.append(
-        '<h1>Meet the training team</h1>'
+        '<h1 class="course-page-title">Meet the training team</h1>'
     )
 
     if team.get("intro"):
 
         html.append(
-            '<p class="course-team-page-intro">'
+            '<p class="course-page-intro">'
             f'{escape(str(team["intro"]))}'
             '</p>'
         )

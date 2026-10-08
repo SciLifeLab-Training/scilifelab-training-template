@@ -88,7 +88,7 @@ TEAM
 
 {"".join(rendered_members)}
 
-<a class="course-team-link" href="team.qmd">
+<a class="course-team-link course-text-link" href="team.qmd">
 
 View full team →
 
