@@ -1,3 +1,6 @@
+import re
+from datetime import date
+
 def validate_course(course):
 
     required = [
@@ -5,6 +8,7 @@ def validate_course(course):
         "description",
         "mode",
         "language",
+        "location",
         "target_audience",
         "learning_outcomes",
         "organizers",
@@ -36,6 +40,31 @@ def validate_course(course):
 
     if not course["contact"].get("email"):
         raise ValueError("course.contact.email is required")
+
+    reuse = course.get("reuse") or {}
+
+    for field in ["doi", "version_doi"]:
+        value = str(reuse.get(field) or "").strip()
+
+        if value and not re.match(
+            r"^(https?://(dx\.)?doi\.org/|doi:)?10\.\d{4,9}/\S+$",
+            value,
+        ):
+            raise ValueError(
+                f"course.reuse.{field} is not a valid DOI: '{value}'. "
+                'Write it like "10.5281/zenodo.1234567".'
+            )
+
+    release_date = str(reuse.get("release_date") or "").strip()
+
+    if release_date:
+        try:
+            date.fromisoformat(release_date)
+        except ValueError:
+            raise ValueError(
+                f"course.reuse.release_date is not a valid date: "
+                f"'{release_date}'. Write it as YYYY-MM-DD."
+            )
 
     return course
 
@@ -109,6 +138,12 @@ def validate_team(team):
         for field in required:
 
             if not member.get(field):
+                if field == "name":
+                    raise ValueError(
+                        "A team member is missing a name: fill in "
+                        "'given_names' and 'family_names'"
+                    )
+
                 raise ValueError(
                     f"Team member '{member_name}' "
                     f"is missing '{field}'"

@@ -1,7 +1,8 @@
 from utils import format_date
+from renderers.fair import concept_doi, version_doi, citation_text
 
 
-def render_syllabus(course, team):
+def render_syllabus(course, team, website):
 
     # ---------------------------------------------------------
     # Syllabus header
@@ -377,9 +378,9 @@ def render_syllabus(course, team):
 
     licence = reuse.get("licence")
     licence_url = reuse.get("licence_url")
-    doi = reuse.get("doi")
-    doi_url = reuse.get("doi_url")
-    preferred_citation = reuse.get("preferred_citation")
+    doi = version_doi(course) or concept_doi(course)
+    doi_url = f"https://doi.org/{doi}" if doi else ""
+    preferred_citation = citation_text(course, team, website)
 
     if licence or doi or preferred_citation:
         html.append(

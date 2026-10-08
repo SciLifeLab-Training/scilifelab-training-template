@@ -1,0 +1,35 @@
+{
+  "title": "Training title",
+  "upload_type": "lesson",
+  "description": "<p>Provide a short description of the training, including its main topic, purpose, or focus.</p>\n<p>Training dates: 2026-01-01 – 2026-01-02.</p>\n<p>Training website: <a href=\"https://your-organisation.github.io/your-repository/0000/\">https://your-organisation.github.io/your-repository/0000/</a></p>",
+  "creators": [
+    {
+      "name": "Lastname1, Firstname1",
+      "affiliation": "Institution or organisation",
+      "orcid": "0000-0000-0000-0000"
+    },
+    {
+      "name": "Lastname2, Firstname2",
+      "affiliation": "Institution or organisation"
+    },
+    {
+      "name": "Lastname3, Firstname3",
+      "affiliation": "Institution or organisation"
+    }
+  ],
+  "keywords": [
+    "Keyword 1",
+    "Keyword 2",
+    "Keyword 3"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "version": "0000",
+  "related_identifiers": [
+    {
+      "identifier": "https://your-organisation.github.io/your-repository/0000/",
+      "relation": "isSupplementedBy",
+      "resource_type": "other"
+    }
+  ]
+}

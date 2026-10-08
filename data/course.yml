@@ -16,6 +16,7 @@ course:
   # title
   # description
   # mode
+  # location
   # language
   # target_audience
   # learning_outcomes
@@ -32,7 +33,6 @@ course:
   # start_date
   # end_date
   # duration
-  # location
   # instruction
   # credits
   # expertise_level
@@ -42,17 +42,19 @@ course:
   # content_providers
   # reuse.licence
   # reuse.licence_url
+  # reuse.licence_id
   # reuse.doi
-  # reuse.doi_url
+  # reuse.version_doi
+  # reuse.release_date
+  # reuse.version
+  # reuse.website_url
+  # reuse.zenodo_communities
   # reuse.preferred_citation
   #
   # For example:
   #
   # - start_date and end_date can be omitted for training
   #   without fixed dates, such as self-paced training.
-  #
-  # - location can be omitted when it is not relevant.
-  #   For online training, it can be set to "Online".
   #
   # - duration can describe the expected workload for
   #   self-paced training.
@@ -91,6 +93,9 @@ course:
   #
   # Replace the placeholder dates with the actual training dates.
   # Dates must use ISO format: YYYY-MM-DD.
+  #
+  # Location is required. For a self-paced or online training, 
+  # set location: "Online" instead of leaving it empty
 
   start_date: "2026-01-01"
   end_date: "2026-01-02"
@@ -173,22 +178,82 @@ course:
     email: "training@example.org"
 
   # --------------------------------------------------
-  # Reuse
+  # Reuse, citation and DOI
   # --------------------------------------------------
   #
-  # Information about how the course material may be reused.
+  # This section describes how others may reuse and cite
+  # the training materials.
   #
-  # "licence_url" should point to the licence information.
-  # Add a DOI if the training or its materials have one.
-  # "preferred_citation" describes how reusers should cite
-  # the course material.
+  # It is used for the Syllabus page, the README, and the
+  # citation and archiving files that are created
+  # automatically (CITATION.cff and .zenodo.json).
+  #
+  # For a new training, you usually only need to check the
+  # licence. Leave all other fields empty: they are either
+  # filled in automatically, or only added after the
+  # training has been published on Zenodo.
 
   reuse:
 
+    # Licence
+    # -------
+    # The licence that says how others may reuse the
+    # materials. CC BY 4.0 lets anyone reuse and adapt them,
+    # as long as they credit the authors.
+    #
+    # "licence" is the name shown on the website, and
+    # "licence_url" is the page that explains the licence.
     licence: "CC BY 4.0"
     licence_url: "https://creativecommons.org/licenses/by/4.0/"
-    doi: "DOI, if applicable"
-    doi_url: "https://doi.org/10.xxxx/xxxxx"
-    preferred_citation: >
-      Provide the preferred citation for this course or its materials, including authors, title, year, DOI, or other information as appropriate.
 
+    # Leave empty. Only needed if you use an unusual licence:
+    # then enter its short code from https://spdx.org/licenses/
+    # (for example "CC-BY-SA-4.0").
+    licence_id: ""
+
+    # DOIs
+    # ----
+    # A DOI is a permanent link that makes the training
+    # citable. The DOIs are created by Zenodo when you
+    # publish a release of the training (see the README).
+    # Enter them like this: "10.5281/zenodo.1234567"
+    #
+    # doi: the DOI of the training as a whole. It stays the
+    # same for every time the training is given, and always
+    # points to the latest one. Add it after the very first
+    # release, and keep it when you create new instances.
+    doi: "10.5281/zenodo.20430336"
+
+    # version_doi: the DOI of this specific instance (this
+    # time the training is given). Add it after publishing
+    # this instance. Empty it again when you copy this
+    # branch to create a new instance.
+    version_doi: "10.5281/zenodo.20430336"
+    # release_date: the date this instance was published on
+    # Zenodo, written as YYYY-MM-DD (for example "2025-05-12").
+    # Add it together with version_doi, and empty it again
+    # when you copy this branch to create a new instance.
+    release_date: ""
+
+    # Optional fields
+    # ---------------
+    # Leave these empty unless you need them.
+
+    # The version of this instance. When empty, the year and
+    # month from the branch name are used (e.g. 2505).
+    version: ""
+
+    # The web address of this instance. When empty, it is
+    # worked out automatically. Only needed if the website
+    # uses its own domain name.
+    website_url: ""
+
+    # Zenodo communities the training should be listed in,
+    # for example: ["scilifelab"]
+    zenodo_communities: []
+
+    # How others should cite the training. When empty, a
+    # citation is created automatically from the team
+    # members, year, title, version and DOI. Only fill this
+    # in if you want a different citation.
+    preferred_citation: ""

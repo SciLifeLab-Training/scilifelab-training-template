@@ -17,7 +17,8 @@ team:
   # At least one team member is required.
   
   # Required fields for every team member:
-    # - name
+    # - given_names (first name or names)
+    # - family_names (surname, including e.g. "van der")
     # - roles
     # - affiliation
   
@@ -47,6 +48,9 @@ team:
     # - github
     # - website
     # - image
+    # - citation_author: set to false to leave this person out of the
+    #   citation and the Zenodo record. They are still shown on the
+    #   website. Everyone else is included as an author.
 
 
   # --------------------------------------------------
@@ -78,7 +82,8 @@ team:
     # preview, followed by instructors if fewer than two
     # training leads are available.
 
-    - name: "Training Lead Name"
+    - given_names: "Firstname1"
+      family_names: "Lastname1"
       roles:
         - Training lead
       job_title: "Job Title"
@@ -95,9 +100,11 @@ team:
       github: ""
       website: ""
       image: "img/photos/team-photo.jpeg"
+      citation_author: true
 
     # Add another training lead if applicable.
-    - name: "Training Lead Name"
+    - given_names: "Firstname2"
+      family_names: "Lastname2"
       roles:
         - Training lead
       job_title: "Job Title"
@@ -112,6 +119,7 @@ team:
       github: "https://github.com/example"
       website: "https://example.org"
       image: "img/photos/team-photo.jpeg"
+      citation_author: true
 
 
     # --------------------------------------------------
@@ -124,7 +132,8 @@ team:
     # Use the role "Instructor" to place a person in the
     # instructor section of the full Team page.
 
-    - name: "Instructor Name"
+    - given_names: "Firstname3"
+      family_names: "Lastname3"
       roles:
         - Instructor
       job_title: "Job Title"
@@ -139,6 +148,7 @@ team:
       github: ""
       website: ""
       image: "img/photos/team-photo.jpeg"
+      citation_author: true
 
     # Add another instructor if applicable.
 
@@ -153,7 +163,8 @@ team:
     # Use the role "Contributor" to place a person in the
     # contributor section of the full Team page.
 
-    - name: "Contributor Name"
+    - given_names: "Firstname4"
+      family_names: "Lastname4"
       roles:
         - Contributor
       job_title: "Job Title"
@@ -168,10 +179,12 @@ team:
       github: "https://github.com/example"
       website: ""
       image: "img/photos/team-photo.jpeg"
+      citation_author: false
 
     # Add another contributor if applicable.
     
-    - name: "Contributor Name"
+    - given_names: "Firstname5"
+      family_names: "Lastname5"
       roles:
         - Contributor
       job_title: ""
@@ -184,3 +197,4 @@ team:
       github: ""
       website: "https://example.org"
       image: ""
+      citation_author: false

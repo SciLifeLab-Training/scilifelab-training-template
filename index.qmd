@@ -3,6 +3,7 @@ title: Home
 title-block: false
 anchor-sections: false
 include-in-header:
+  - file: _generated/bioschemas.html
   - text: |
       <script src="js/schedule.js"></script>
 ---

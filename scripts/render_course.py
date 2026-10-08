@@ -55,10 +55,30 @@ from renderers.faq import render_faq
 from renderers.preparation import render_preparation
 from renderers.footer import render_footer
 from renderers.resources import render_resources
+from renderers.fair import write_fair_files, render_bioschemas
 
 
 ROOT = Path(__file__).resolve().parents[1]
 GENERATED_DIR = ROOT / "_generated"
+
+def complete_names(team):
+    """
+    Build each team member's display name from given_names and
+    family_names, when no name is given.
+    """
+
+    for member in team.get("members") or []:
+        if str(member.get("name") or "").strip():
+            continue
+
+        parts = [
+            str(member.get("given_names") or "").strip(),
+            str(member.get("family_names") or "").strip(),
+        ]
+
+        member["name"] = " ".join(part for part in parts if part)
+
+    return team
 
 
 def main():
@@ -76,7 +96,7 @@ def main():
     sections = load_content_sections(content)
     registration = website.get("registration", {})
     events = validate_schedule(load_schedule())
-    team = validate_team(load_team())
+    team = validate_team(complete_names(load_team()))
     announcements = load_announcements()
     practicalities = load_practicalities()
     faq = load_faq()
@@ -182,7 +202,7 @@ def main():
     
     write_partial(
         "syllabus.qmd",
-        render_syllabus(course, team),
+        render_syllabus(course, team, website),
     )
 
     write_partial(
@@ -211,9 +231,16 @@ def main():
     )
 
     write_partial(
-    "resources.qmd",
-    render_resources(resources),
+        "resources.qmd",
+        render_resources(resources),
     )
+
+    write_partial(
+        "bioschemas.html",
+        render_bioschemas(course, team, website),
+    )
+
+    write_fair_files(ROOT, course, team, website)
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,39 @@
+# This file is generated automatically from the data files in data/. Do not edit it by hand: edit the data files instead.
+# Validate with: cffconvert --validate
+cff-version: 1.2.0
+message: If you use or reuse these training materials, please cite them as below.
+title: Training title
+abstract: Provide a short description of the training, including its main topic, purpose, or focus.
+authors:
+- family-names: Lastname1
+  given-names: Firstname1
+  affiliation: Institution or organisation
+  orcid: https://orcid.org/0000-0000-0000-0000
+- family-names: Lastname2
+  given-names: Firstname2
+  affiliation: Institution or organisation
+- family-names: Lastname3
+  given-names: Firstname3
+  affiliation: Institution or organisation
+contact:
+- family-names: Lastname1
+  given-names: Firstname1
+  affiliation: Institution or organisation
+  orcid: https://orcid.org/0000-0000-0000-0000
+  email: training.lead@example.org
+keywords:
+- Keyword 1
+- Keyword 2
+- Keyword 3
+license: CC-BY-4.0
+url: https://your-organisation.github.io/your-repository/0000/
+repository-code: https://github.com/your-organisation/your-repository
+version: '0000'
+doi: 10.5281/zenodo.20430336
+identifiers:
+- type: doi
+  value: 10.5281/zenodo.20430336
+  description: This training instance
+- type: doi
+  value: 10.5281/zenodo.20430336
+  description: All instances of this training (latest version)
