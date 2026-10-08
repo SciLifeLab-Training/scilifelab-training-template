@@ -32,7 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -96,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="course-navbar-content">
 <div class="course-navbar-title">
 <h1>
-Training title.
+Training title
 </h1>
 </div>
 <div class="course-navbar-menu">
@@ -146,13 +145,13 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <div class="course-faq-page">
 <header class="course-faq-header">
-<div class="course-faq-label">
+<div class="course-page-label">
 FAQ
 </div>
-<h1>
+<h1 class="course-page-title">
 Frequently asked questions
 </h1>
-<p class="course-faq-intro">
+<p class="course-page-intro">
 Use this page to provide answers to common questions about the training. Include information that participants may need before or during the training.
 </p>
 </header>
@@ -227,13 +226,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

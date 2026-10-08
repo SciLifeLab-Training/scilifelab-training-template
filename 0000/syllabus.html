@@ -32,7 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -96,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="course-navbar-content">
 <div class="course-navbar-title">
 <h1>
-Training title.
+Training title
 </h1>
 </div>
 <div class="course-navbar-menu">
@@ -146,20 +145,20 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <div class="course-syllabus-header">
 <div class="course-syllabus-header-main">
-<div class="course-syllabus-label">
+<div class="course-page-label">
 Syllabus
 </div>
-<h1>
-Training title.
+<h1 class="course-page-title">
+Training title
 </h1>
-<p class="course-syllabus-subtitle">
+<p class="course-page-intro">
 Short subtitle describing the training.
 </p>
 </div>
 </div>
 <div class="course-syllabus">
 <section class="course-syllabus-section">
-<h2 class="anchored">
+<h2>
 Abstract
 </h2>
 <p>
@@ -170,7 +169,7 @@ Provide a short description of the training, including its main topic, purpose, 
 </p>
 </section>
 <section class="course-syllabus-section">
-<h2 class="anchored">
+<h2>
 Details
 </h2>
 <dl class="course-syllabus-details">
@@ -225,7 +224,7 @@ numerical value hp/ECTS<br><span class="course-syllabus-note">Provide the number
 </dl>
 </section>
 <section class="course-syllabus-section">
-<h2 class="anchored">
+<h2>
 Learning outcomes
 </h2>
 <p>
@@ -244,7 +243,7 @@ After completing this training, participants will be able to:
 </ol>
 </section>
 <section class="course-syllabus-section">
-<h2 class="anchored">
+<h2>
 Target audience
 </h2>
 <p>
@@ -255,12 +254,12 @@ Describe the intended participant group
 </p>
 </section>
 <section class="course-syllabus-section">
-<h2 class="anchored">
+<h2>
 Prerequisites
 </h2>
 <div class="course-syllabus-columns">
 <div class="course-syllabus-column">
-<h3 class="anchored">
+<h3>
 Knowledge
 </h3>
 <ul>
@@ -273,7 +272,7 @@ Add another knowledge prerequisite
 </ul>
 </div>
 <div class="course-syllabus-column">
-<h3 class="anchored">
+<h3>
 Technical
 </h3>
 <ul>
@@ -288,12 +287,12 @@ Add another technical prerequisite
 </div>
 </section>
 <section class="course-syllabus-section">
-<h2 class="anchored">
+<h2>
 Forms of instruction and examination
 </h2>
 <div class="course-syllabus-columns">
 <div class="course-syllabus-column">
-<h3 class="anchored">
+<h3>
 Forms of instruction
 </h3>
 <ul>
@@ -309,7 +308,7 @@ Add another teaching format or activity, e.g.&nbsp;In-person workshop
 </ul>
 </div>
 <div class="course-syllabus-column">
-<h3 class="anchored">
+<h3>
 Forms of examination
 </h3>
 <p>
@@ -319,12 +318,12 @@ Describe how participants will be assessed, if applicable. Remove or leave this 
 </div>
 </section>
 <section class="course-syllabus-section">
-<h2 class="anchored">
+<h2>
 Administration
 </h2>
 <div class="course-syllabus-columns">
 <div class="course-syllabus-column">
-<h3 class="anchored">
+<h3>
 Organising organisation(s)
 </h3>
 <ul>
@@ -335,7 +334,7 @@ Name of organizing institution
 Add another organizing institution
 </li>
 </ul>
-<h3 class="anchored">
+<h3>
 Content provider(s)
 </h3>
 <ul>
@@ -348,12 +347,12 @@ Name of another institution providing content
 </ul>
 </div>
 <div class="course-syllabus-column">
-<h3 class="anchored">
+<h3>
 Team lead(s)
 </h3>
 <div class="course-syllabus-leaders">
 <div class="course-syllabus-leader">
-<p><strong>Training Lead Name</strong> <span>Institution or organisation</span> <a href="mailto:training.lead@example.org">training.lead@example.org</a></p>
+<p><strong>Training Lead Name</strong> <span>Institution or organisation</span> <a class="course-text-link" href="mailto:training.lead@example.org">training.lead@example.org</a></p>
 </div>
 <div class="course-syllabus-leader">
 <p><strong>Training Lead Name</strong> <span>Institution or organisation</span></p>
@@ -363,7 +362,7 @@ Team lead(s)
 </div>
 </section>
 <section class="course-syllabus-section">
-<h2 class="anchored">
+<h2>
 Reuse
 </h2>
 <dl class="course-syllabus-details course-syllabus-reuse">
@@ -372,7 +371,7 @@ Reuse
 Licence
 </dt>
 <dd>
-<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
+<a class="course-text-link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
 </dd>
 </div>
 <div>
@@ -380,7 +379,7 @@ Licence
 DOI
 </dt>
 <dd>
-<a href="https://doi.org/10.xxxx/xxxxx" target="_blank" rel="noopener">DOI, if applicable</a>
+<a class="course-text-link" href="https://doi.org/10.xxxx/xxxxx" target="_blank" rel="noopener">DOI, if applicable</a>
 </dd>
 </div>
 <div class="course-syllabus-preferred-citation">
@@ -432,13 +431,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

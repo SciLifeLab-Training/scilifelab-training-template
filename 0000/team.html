@@ -32,7 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -96,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="course-navbar-content">
 <div class="course-navbar-title">
 <h1>
-Training title.
+Training title
 </h1>
 </div>
 <div class="course-navbar-menu">
@@ -146,18 +145,18 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <div class="course-team-page">
 <header class="course-team-page-header">
-<div class="course-team-page-label">
+<div class="course-page-label">
 Training team
 </div>
-<h1>
+<h1 class="course-page-title">
 Meet the training team
 </h1>
-<p class="course-team-page-intro">
+<p class="course-page-intro">
 Use this section to introduce the training team. Briefly describe who develops and delivers the training and the roles represented on the team.
 </p>
 </header>
 <section class="course-team-section">
-<h2 class="anchored">
+<h2>
 Training leads
 </h2>
 <p class="course-team-section-description">
@@ -167,7 +166,7 @@ Training leads are responsible for the overall development, coordination, and de
 <article class="course-team-card">
 <img class="course-team-card-photo" src="img/photos/team-photo.jpeg" alt="Training Lead Name">
 <div class="course-team-card-body">
-<h3 class="course-team-card-name anchored">
+<h3 class="course-team-card-name">
 Training Lead Name
 </h3>
 <div class="course-team-card-job-title">
@@ -190,7 +189,7 @@ Provide a 1-to-2-sentence biography describing this person's expertise, role in 
 <article class="course-team-card">
 <img class="course-team-card-photo" src="img/photos/team-photo.jpeg" alt="Training Lead Name">
 <div class="course-team-card-body">
-<h3 class="course-team-card-name anchored">
+<h3 class="course-team-card-name">
 Training Lead Name
 </h3>
 <div class="course-team-card-job-title">
@@ -210,7 +209,7 @@ Provide a 1-to-2-sentence biography describing this person's expertise, role in 
 </div>
 </section>
 <section class="course-team-section">
-<h2 class="anchored">
+<h2>
 Instructors
 </h2>
 <p class="course-team-section-description">
@@ -220,7 +219,7 @@ Instructors teach, facilitate, or otherwise contribute directly to the education
 <article class="course-team-card">
 <img class="course-team-card-photo" src="img/photos/team-photo.jpeg" alt="Instructor Name">
 <div class="course-team-card-body">
-<h3 class="course-team-card-name anchored">
+<h3 class="course-team-card-name">
 Instructor Name
 </h3>
 <div class="course-team-card-job-title">
@@ -240,7 +239,7 @@ Provide a 1-to-2-sentence biography describing this person's expertise, role in 
 </div>
 </section>
 <section class="course-team-section">
-<h2 class="anchored">
+<h2>
 Contributors
 </h2>
 <p class="course-team-section-description">
@@ -250,7 +249,7 @@ Contributors provide expertise, content, materials, or other support to the trai
 <article class="course-team-card">
 <img class="course-team-card-photo" src="img/photos/team-photo.jpeg" alt="Contributor Name">
 <div class="course-team-card-body">
-<h3 class="course-team-card-name anchored">
+<h3 class="course-team-card-name">
 Contributor Name
 </h3>
 <div class="course-team-card-job-title">
@@ -269,7 +268,7 @@ Provide a 1-to-2-sentence biography describing this person's expertise, role in 
 </article>
 <article class="course-team-card">
 <div class="course-team-card-body">
-<h3 class="course-team-card-name anchored">
+<h3 class="course-team-card-name">
 Contributor Name
 </h3>
 <div class="course-team-card-affiliation">
@@ -321,13 +320,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

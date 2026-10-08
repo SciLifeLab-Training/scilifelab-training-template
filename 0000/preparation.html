@@ -32,7 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -96,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="course-navbar-content">
 <div class="course-navbar-title">
 <h1>
-Training title.
+Training title
 </h1>
 </div>
 <div class="course-navbar-menu">
@@ -146,27 +145,27 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <div class="course-preparation-header">
 <div class="course-preparation-header-main">
-<div class="course-preparation-label">
+<div class="course-page-label">
 Preparation
 </div>
-<h1>
+<h1 class="course-page-title">
 Prepare for the training
 </h1>
-<p class="course-preparation-intro">
+<p class="course-page-intro course-page-intro-narrow">
 Use this page to provide participants with the accounts, software, hardware, reading, and other information they need before attending the training.
 </p>
 </div>
-<div class="course-preparation-contact">
-<div class="course-preparation-contact-icon">
+<div class="course-page-contact">
+<div class="course-page-contact-icon">
 <i class="bi bi-envelope"></i>
 </div>
-<div class="course-preparation-contact-title">
+<div class="course-page-contact-title">
 Questions about the training?
 </div>
 <p>
 Get in touch with the training team.
 </p>
-<p><a href="mailto:training@example.org">training@example.org</a></p>
+<p><a class="course-text-link" href="mailto:training@example.org">training@example.org</a></p>
 </div>
 </div>
 <div class="course-preparation">
@@ -179,7 +178,7 @@ Use the <code>checklist</code> block type to provide participants with a simple 
 <div class="course-preparation-box course-preparation-checklist">
 <div class="course-preparation-box-header">
 <i class="bi bi-check2-square course-preparation-box-icon"></i>
-<h3 class="course-preparation-box-title anchored">
+<h3 class="course-preparation-box-title">
 Preparation checklist
 </h3>
 </div>
@@ -202,7 +201,7 @@ Preparation checklist
 </div>
 </section>
 <section class="course-preparation-section">
-<h2 class="anchored">
+<h2>
 Accounts
 </h2>
 <div class="course-preparation-text">
@@ -214,7 +213,7 @@ Describe the accounts participants need to create or access before the training.
 <div class="course-preparation-box course-preparation-account">
 <div class="course-preparation-box-header">
 <i class="bi bi-person-badge course-preparation-box-icon"></i>
-<h3 class="course-preparation-box-title anchored">
+<h3 class="course-preparation-box-title">
 Account 1
 </h3>
 </div>
@@ -225,7 +224,7 @@ Briefly explain what the account is, why participants need it, and how it will b
 </p>
 </div>
 <div class="course-preparation-instructions">
-<h4 class="anchored">
+<h4>
 Instructions
 </h4>
 <p>
@@ -245,10 +244,10 @@ Create account step 3.
 </div>
 <ul class="course-preparation-links">
 <li>
-<a class="course-preparation-link" href="https://example.org" target="_blank" rel="noopener">Account registration link</a>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Account registration link</a>
 </li>
 <li>
-<a class="course-preparation-link" href="https://example.org" target="_blank" rel="noopener">Account documentation link</a>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Account documentation link</a>
 </li>
 </ul>
 </div>
@@ -256,7 +255,7 @@ Create account step 3.
 <div class="course-preparation-box course-preparation-account">
 <div class="course-preparation-box-header">
 <i class="bi bi-person-badge course-preparation-box-icon"></i>
-<h3 class="course-preparation-box-title anchored">
+<h3 class="course-preparation-box-title">
 Account 2
 </h3>
 </div>
@@ -267,7 +266,7 @@ Add additional account requirements as separate <code>account</code> blocks. Con
 </p>
 </div>
 <div class="course-preparation-instructions">
-<h4 class="anchored">
+<h4>
 Instructions
 </h4>
 <p>
@@ -276,7 +275,7 @@ Provide the steps participants should follow to create or configure this account
 </div>
 <ul class="course-preparation-links">
 <li>
-<a class="course-preparation-link" href="https://example.org" target="_blank" rel="noopener">Create account link</a>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Create account link</a>
 </li>
 </ul>
 </div>
@@ -294,7 +293,7 @@ Use an <strong>important</strong> callout to highlight information that particip
 </div>
 </section>
 <section class="course-preparation-section">
-<h2 class="anchored">
+<h2>
 Software requirements
 </h2>
 <div class="course-preparation-text">
@@ -306,7 +305,7 @@ List the software participants need before the training. Use the <code>software<
 <div class="course-preparation-box course-preparation-software">
 <div class="course-preparation-box-header">
 <i class="bi bi-download course-preparation-box-icon"></i>
-<h3 class="course-preparation-box-title anchored">
+<h3 class="course-preparation-box-title">
 Software 1
 </h3>
 </div>
@@ -317,7 +316,7 @@ Briefly describe the software and explain why participants need it. Include vers
 </p>
 </div>
 <div class="course-preparation-instructions">
-<h4 class="anchored">
+<h4>
 Instructions
 </h4>
 <p>
@@ -337,10 +336,10 @@ Install software step 3.
 </div>
 <ul class="course-preparation-links">
 <li>
-<a class="course-preparation-link" href="https://example.org" target="_blank" rel="noopener">Software download link</a>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Software download link</a>
 </li>
 <li>
-<a class="course-preparation-link" href="https://example.org" target="_blank" rel="noopener">Software documentation link</a>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Software documentation link</a>
 </li>
 </ul>
 </div>
@@ -348,7 +347,7 @@ Install software step 3.
 <div class="course-preparation-box course-preparation-software">
 <div class="course-preparation-box-header">
 <i class="bi bi-download course-preparation-box-icon"></i>
-<h3 class="course-preparation-box-title anchored">
+<h3 class="course-preparation-box-title">
 Software 2
 </h3>
 </div>
@@ -359,7 +358,7 @@ Add additional software requirements as separate <code>software</code> blocks. C
 </p>
 </div>
 <div class="course-preparation-instructions">
-<h4 class="anchored">
+<h4>
 Instructions
 </h4>
 <p>
@@ -368,7 +367,7 @@ Provide the installation or configuration steps here.
 </div>
 <ul class="course-preparation-links">
 <li>
-<a class="course-preparation-link" href="https://example.org" target="_blank" rel="noopener">Software download link</a>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Software download link</a>
 </li>
 </ul>
 </div>
@@ -376,7 +375,7 @@ Provide the installation or configuration steps here.
 <div class="course-preparation-box course-preparation-software">
 <div class="course-preparation-box-header">
 <i class="bi bi-download course-preparation-box-icon"></i>
-<h3 class="course-preparation-box-title anchored">
+<h3 class="course-preparation-box-title">
 Software 3
 </h3>
 </div>
@@ -387,7 +386,7 @@ Add another software requirement here.
 </p>
 </div>
 <div class="course-preparation-instructions">
-<h4 class="anchored">
+<h4>
 Instructions
 </h4>
 <p>
@@ -409,7 +408,7 @@ Use a <strong>warning</strong> callout for information about a potential problem
 </div>
 </section>
 <section class="course-preparation-section">
-<h2 class="anchored">
+<h2>
 Hardware requirements
 </h2>
 <div class="course-preparation-text">
@@ -420,7 +419,7 @@ Describe the computer or other equipment participants need to bring or have acce
 <div class="course-preparation-box course-preparation-hardware">
 <div class="course-preparation-box-header">
 <i class="bi bi-laptop course-preparation-box-icon"></i>
-<h3 class="course-preparation-box-title anchored">
+<h3 class="course-preparation-box-title">
 Hardware 1
 </h3>
 </div>
@@ -465,7 +464,7 @@ Requirement
 </div>
 </dl>
 <div class="course-preparation-instructions">
-<h4 class="anchored">
+<h4>
 Instructions
 </h4>
 <p>
@@ -486,7 +485,7 @@ Use a <strong>note</strong> callout for useful background information, tips, rem
 </div>
 </section>
 <section class="course-preparation-section">
-<h2 class="anchored">
+<h2>
 Required reading
 </h2>
 <div class="course-preparation-text">
@@ -497,7 +496,7 @@ Provide reading materials that participants should review before the training. U
 <div class="course-preparation-box course-preparation-reading">
 <div class="course-preparation-box-header">
 <i class="bi bi-book course-preparation-box-icon"></i>
-<h3 class="course-preparation-box-title anchored">
+<h3 class="course-preparation-box-title">
 Reading 1
 </h3>
 </div>
@@ -522,7 +521,7 @@ Briefly describe the reading and explain what participants should get from it. A
 </div>
 </div>
 <div class="course-preparation-instructions">
-<h4 class="anchored">
+<h4>
 Instructions
 </h4>
 <p>
@@ -542,7 +541,7 @@ Add a question or reflection prompt if participants should think about something
 <div class="course-preparation-box course-preparation-reading">
 <div class="course-preparation-box-header">
 <i class="bi bi-book course-preparation-box-icon"></i>
-<h3 class="course-preparation-box-title anchored">
+<h3 class="course-preparation-box-title">
 Reading 2
 </h3>
 </div>
@@ -563,7 +562,7 @@ Add another required reading resource here.
 </div>
 </section>
 <section class="course-preparation-section">
-<h2 class="anchored">
+<h2>
 Additional information
 </h2>
 <div class="course-preparation-text">
@@ -611,13 +610,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

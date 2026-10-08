@@ -66,7 +66,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
@@ -122,14 +121,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
-<div class="course-navbar">
-    <div class="course-navbar-layout">
-        <div class="course-navbar-content">
-            <div class="course-navbar-title">
-<h1>Training title.</h1>
-            </div>
-            <div class="course-navbar-menu">
-                <div class="course-navbar-links">
+
+<div class="course-content-page-shell">
+
+    <div class="course-navbar">
+
+        <div class="course-navbar-layout">
+
+            <div class="course-navbar-content">
+
+                <div class="course-navbar-title">
+
+<h1>Training title</h1>
+
+                </div>
+
+                <div class="course-navbar-menu">
+
+                    <div class="course-navbar-links">
+
 <a class="course-navbar-link" href="index.html" data-page="index.qmd">Overview</a>
 <a class="course-navbar-link" href="content/index.html" data-page="content/index.qmd">Content</a>
 <a class="course-navbar-link" href="schedule.html" data-page="schedule.qmd">Schedule</a>
@@ -145,27 +155,121 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a class="course-navbar-dropdown-link" href="faq.html" data-page="faq.qmd">FAQ</a>
 </div>
 </div>
+
+                    </div>
+
                 </div>
+
             </div>
-        </div>
-        <div class="course-navbar-brand">
+
+            <div class="course-navbar-brand">
+
 <img src="" data-course-asset="img/scilifelab-logo-full-neg.png" alt="SciLifeLab" class="course-navbar-logo course-navbar-logo-full" style="height: 46px; width: auto;">
-<img src="" data-course-asset="img/scilifelab-logo-neg.png" alt="" class="course-navbar-logo course-navbar-logo-symbol" style="height: 46px; width: auto;"></div>
+<img src="" data-course-asset="img/scilifelab-logo-neg.png" alt="" class="course-navbar-logo course-navbar-logo-symbol" style="height: 46px; width: auto;">
+
+            </div>
+
+        </div>
+
     </div>
+
+<nav class="course-content-navigation" aria-label="Course content">
+    <div class="course-content-navigation-inner">
+        <div class="course-content-navigation-scroll">
+<a class="course-content-navigation-toggle course-content-navigation-introduction" href="" data-content-page="index.html">
+    Introduction
+</a>
+<div class="course-content-navigation-dropdown">
+    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="How to structure a page">
+        Module 1
+        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
+    </button>
+    <div class="course-content-navigation-menu">
+<a class="course-content-navigation-link" href="" data-content-page="module-1/introduction.html">
+    How to structure a page
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-1/headings-and-text.html">
+    Headings and text
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-1/lists-and-tables.html">
+    Lists and tables
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-1/other-content-elements.html">
+    Other content elements
+</a>
 </div>
+</div>
+<div class="course-content-navigation-dropdown">
+    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="How to highlight information">
+        Module 2
+        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
+    </button>
+    <div class="course-content-navigation-menu">
+<a class="course-content-navigation-link" href="" data-content-page="module-2/introduction.html">
+    How to highlight information
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-2/callout-boxes.html">
+    Callout boxes
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-2/collapsible-boxes.html">
+    Collapsible callout boxes
+</a>
+</div>
+</div>
+<div class="course-content-navigation-dropdown">
+    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Module 3 Title">
+        Module 3
+        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
+    </button>
+    <div class="course-content-navigation-menu">
+<a class="course-content-navigation-link" href="" data-content-page="module-3/introduction.html">
+    How to add media and interactive elements
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-3/links.html">
+    Links
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-3/images-presentations-videos.html">
+    Images, presentations and videos
+</a>
+</div>
+</div>
+</div>
+    </div>
+</nav></div>
+
 <script>
+
 document.documentElement.classList.add("course-content-page");
 
 document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector(".course-navbar");
+
+    const pageShell = document.querySelector(
+        ".course-content-page-shell"
+    );
+
     const footer = document.querySelector(".landing-footer");
 
+
     /*
-     * Move the shared site chrome outside Quarto's
-     * main-content / TOC grid.
+     * Move the generated content-page site chrome
+     * outside Quarto's main-content / TOC grid.
      */
-    if (navbar) {
-        document.body.insertBefore(navbar, document.body.firstChild);
+
+    if (pageShell) {
+        const quartoContent =
+            document.querySelector("#quarto-content");
+
+        if (quartoContent) {
+            document.body.insertBefore(
+                pageShell,
+                quartoContent
+            );
+        } else {
+            document.body.insertBefore(
+                pageShell,
+                document.body.firstChild
+            );
+        }
     }
 
     if (footer) {
@@ -322,28 +426,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /*
      * --------------------------------------------------------------------------
-     * Move horizontal course content navigation below navbar
-     * --------------------------------------------------------------------------
-     */
-    const contentNavigation =
-        document.querySelector(".course-content-navigation");
-
-    if (contentNavigation) {
-        if (navbar) {
-            navbar.parentNode.insertBefore(
-                contentNavigation,
-                navbar.nextSibling
-            );
-        } else {
-            document.body.insertBefore(
-                contentNavigation,
-                document.body.firstChild
-            );
-        }
-    }
-
-    /*
-     * --------------------------------------------------------------------------
      * Course content dropdowns
      * --------------------------------------------------------------------------
      */
@@ -472,70 +554,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<nav class="course-content-navigation" aria-label="Course content">
-    <div class="course-content-navigation-inner">
-        <div class="course-content-navigation-scroll">
-<a class="course-content-navigation-toggle course-content-navigation-introduction" href="" data-content-page="index.html">
-    Introduction
-</a>
-<div class="course-content-navigation-dropdown">
-    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="How to structure a page">
-        Module 1
-        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
-    </button>
-    <div class="course-content-navigation-menu">
-<a class="course-content-navigation-link" href="" data-content-page="module-1/introduction.html">
-    How to structure a page
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/headings-and-text.html">
-    Headings and text
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/lists-and-tables.html">
-    Lists and tables
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/other-content-elements.html">
-    Other content elements
-</a>
-</div>
-</div>
-<div class="course-content-navigation-dropdown">
-    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="How to highlight information">
-        Module 2
-        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
-    </button>
-    <div class="course-content-navigation-menu">
-<a class="course-content-navigation-link" href="" data-content-page="module-2/introduction.html">
-    How to highlight information
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-2/callout-boxes.html">
-    Callout boxes
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-2/collapsible-boxes.html">
-    Collapsible callout boxes
-</a>
-</div>
-</div>
-<div class="course-content-navigation-dropdown">
-    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Module 3 Title">
-        Module 3
-        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
-    </button>
-    <div class="course-content-navigation-menu">
-<a class="course-content-navigation-link" href="" data-content-page="module-3/introduction.html">
-    How to add media and interactive elements
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-3/links.html">
-    Links
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-3/images-presentations-videos.html">
-    Images, presentations and videos
-</a>
-</div>
-</div>
-</div>
-    </div>
-</nav>
-
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Links</h1>
@@ -557,7 +575,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <p>Each example below shows the Markdown syntax and how the link appears when rendered.</p>
 <p><br></p>
 <section id="linking-to-a-website" class="level2">
-<h2 class="anchored" data-anchor-id="linking-to-a-website">Linking to a website</h2>
+<h2 data-anchor-id="linking-to-a-website">Linking to a website</h2>
 <p>Use links to direct participants to external websites or online resources. Use descriptive link text that tells participants where the link will take them or what information they will find.</p>
 <p><strong>Markdown syntax</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>For more information,<span class="co">[</span><span class="ot">visit the SciLifeLab website</span><span class="co">](https://www.scilifelab.se/)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -565,7 +583,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <p>For more information, <a href="https://www.scilifelab.se/">visit the SciLifeLab website</a></p>
 </section>
 <section id="linking-to-another-page-within-your-training-repository" class="level2">
-<h2 class="anchored" data-anchor-id="linking-to-another-page-within-your-training-repository">Linking to another page within your training repository</h2>
+<h2 data-anchor-id="linking-to-another-page-within-your-training-repository">Linking to another page within your training repository</h2>
 <p>You can link directly to another page in your training website. Use the relative path to the page, including its <code>.qmd</code> filename. Quarto will resolve the link to the corresponding rendered page when the website is built.</p>
 <p><strong>Markdown syntax</strong></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Go to the introduction of Module 3</span><span class="co">](/content/module-3/introduction.qmd)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -573,7 +591,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <p><a href="../../content/module-3/introduction.html">Go to the introduction of Module 3</a></p>
 </section>
 <section id="linking-to-a-file-or-resource-within-your-training-repository" class="level2">
-<h2 class="anchored" data-anchor-id="linking-to-a-file-or-resource-within-your-training-repository">Linking to a file or resource within your training repository</h2>
+<h2 data-anchor-id="linking-to-a-file-or-resource-within-your-training-repository">Linking to a file or resource within your training repository</h2>
 <p>You can link to files, such as PDF documents or other downloadable resources. Place the file in the <code>docs</code> folder at the root of your training repository. When linking to it from a page inside a <code>content/module folder</code>, use <code>../../docs/</code> followed by the filename. Adjust the path if your file is stored elsewhere.</p>
 <p>Replace the example filename and path with those of your own file.</p>
 <p><strong>Markdown syntax</strong></p>
@@ -582,14 +600,14 @@ document.addEventListener("DOMContentLoaded", function () {
 <p><a href="../../docs/example-pdf.pdf">Download the participant guide</a></p>
 </section>
 <section id="linking-to-resources-hosted-elsewhere" class="level2">
-<h2 class="anchored" data-anchor-id="linking-to-resources-hosted-elsewhere">Linking to resources hosted elsewhere</h2>
+<h2 data-anchor-id="linking-to-resources-hosted-elsewhere">Linking to resources hosted elsewhere</h2>
 <p>You can also link to resources hosted outside your training repository, such as presentations and documents in Google Slides or Google Docs. This allows participants to view or make a copy of a resource without you having to add the file to your repository.</p>
 <p>For Google Slides and Google Docs, you can use the document ID from its URL to create different links. The document ID is the long string of letters and numbers between <code>/d/</code> and the next <code>/</code> in the URL.</p>
 <p>For example, a Google Slides URL may look like this:</p>
 <pre class="text"><code>https://docs.google.com/presentation/d/DOCUMENT_ID/edit</code></pre>
 <p>Replace <code>DOCUMENT_ID</code> with the ID from your own presentation.</p>
 <section id="providing-a-view-link" class="level3">
-<h3 class="anchored" data-anchor-id="providing-a-view-link">Providing a view link</h3>
+<h3 data-anchor-id="providing-a-view-link">Providing a view link</h3>
 <p>Use the <code>/view</code> ending to link directly to the presentation or document.</p>
 <p><strong>HTML syntax</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://docs.google.com/presentation/d/DOCUMENT_ID/view"</span> <span class="er">target</span><span class="ot">=</span><span class="st">"_blank"</span><span class="kw">&gt;</span></span>
@@ -599,7 +617,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <p><a href="https://docs.google.com/presentation/d/1mhc8IzBRyYvwjFHlACkeSIRyzXiC2HTnspF__PnhDHI/view" target="_blank">View in Google Slides</a></p>
 </section>
 <section id="providing-a-copy-link" class="level3">
-<h3 class="anchored" data-anchor-id="providing-a-copy-link">Providing a copy link</h3>
+<h3 data-anchor-id="providing-a-copy-link">Providing a copy link</h3>
 <p>For Google Slides and Google Docs, you can use <code>/copy</code> to let participants create their own copy of a resource.</p>
 <p><strong>HTML syntax</strong></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://docs.google.com/presentation/d/DOCUMENT_ID/copy"</span> <span class="er">target</span><span class="ot">=</span><span class="st">"_blank"</span><span class="kw">&gt;</span></span>
@@ -801,13 +819,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

@@ -66,7 +66,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
@@ -122,14 +121,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
-<div class="course-navbar">
-    <div class="course-navbar-layout">
-        <div class="course-navbar-content">
-            <div class="course-navbar-title">
-<h1>Training title.</h1>
-            </div>
-            <div class="course-navbar-menu">
-                <div class="course-navbar-links">
+
+<div class="course-content-page-shell">
+
+    <div class="course-navbar">
+
+        <div class="course-navbar-layout">
+
+            <div class="course-navbar-content">
+
+                <div class="course-navbar-title">
+
+<h1>Training title</h1>
+
+                </div>
+
+                <div class="course-navbar-menu">
+
+                    <div class="course-navbar-links">
+
 <a class="course-navbar-link" href="index.html" data-page="index.qmd">Overview</a>
 <a class="course-navbar-link" href="content/index.html" data-page="content/index.qmd">Content</a>
 <a class="course-navbar-link" href="schedule.html" data-page="schedule.qmd">Schedule</a>
@@ -145,27 +155,121 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a class="course-navbar-dropdown-link" href="faq.html" data-page="faq.qmd">FAQ</a>
 </div>
 </div>
+
+                    </div>
+
                 </div>
+
             </div>
-        </div>
-        <div class="course-navbar-brand">
+
+            <div class="course-navbar-brand">
+
 <img src="" data-course-asset="img/scilifelab-logo-full-neg.png" alt="SciLifeLab" class="course-navbar-logo course-navbar-logo-full" style="height: 46px; width: auto;">
-<img src="" data-course-asset="img/scilifelab-logo-neg.png" alt="" class="course-navbar-logo course-navbar-logo-symbol" style="height: 46px; width: auto;"></div>
+<img src="" data-course-asset="img/scilifelab-logo-neg.png" alt="" class="course-navbar-logo course-navbar-logo-symbol" style="height: 46px; width: auto;">
+
+            </div>
+
+        </div>
+
     </div>
+
+<nav class="course-content-navigation" aria-label="Course content">
+    <div class="course-content-navigation-inner">
+        <div class="course-content-navigation-scroll">
+<a class="course-content-navigation-toggle course-content-navigation-introduction" href="" data-content-page="index.html">
+    Introduction
+</a>
+<div class="course-content-navigation-dropdown">
+    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="How to structure a page">
+        Module 1
+        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
+    </button>
+    <div class="course-content-navigation-menu">
+<a class="course-content-navigation-link" href="" data-content-page="module-1/introduction.html">
+    How to structure a page
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-1/headings-and-text.html">
+    Headings and text
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-1/lists-and-tables.html">
+    Lists and tables
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-1/other-content-elements.html">
+    Other content elements
+</a>
 </div>
+</div>
+<div class="course-content-navigation-dropdown">
+    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="How to highlight information">
+        Module 2
+        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
+    </button>
+    <div class="course-content-navigation-menu">
+<a class="course-content-navigation-link" href="" data-content-page="module-2/introduction.html">
+    How to highlight information
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-2/callout-boxes.html">
+    Callout boxes
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-2/collapsible-boxes.html">
+    Collapsible callout boxes
+</a>
+</div>
+</div>
+<div class="course-content-navigation-dropdown">
+    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Module 3 Title">
+        Module 3
+        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
+    </button>
+    <div class="course-content-navigation-menu">
+<a class="course-content-navigation-link" href="" data-content-page="module-3/introduction.html">
+    How to add media and interactive elements
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-3/links.html">
+    Links
+</a>
+<a class="course-content-navigation-link" href="" data-content-page="module-3/images-presentations-videos.html">
+    Images, presentations and videos
+</a>
+</div>
+</div>
+</div>
+    </div>
+</nav></div>
+
 <script>
+
 document.documentElement.classList.add("course-content-page");
 
 document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector(".course-navbar");
+
+    const pageShell = document.querySelector(
+        ".course-content-page-shell"
+    );
+
     const footer = document.querySelector(".landing-footer");
 
+
     /*
-     * Move the shared site chrome outside Quarto's
-     * main-content / TOC grid.
+     * Move the generated content-page site chrome
+     * outside Quarto's main-content / TOC grid.
      */
-    if (navbar) {
-        document.body.insertBefore(navbar, document.body.firstChild);
+
+    if (pageShell) {
+        const quartoContent =
+            document.querySelector("#quarto-content");
+
+        if (quartoContent) {
+            document.body.insertBefore(
+                pageShell,
+                quartoContent
+            );
+        } else {
+            document.body.insertBefore(
+                pageShell,
+                document.body.firstChild
+            );
+        }
     }
 
     if (footer) {
@@ -322,28 +426,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /*
      * --------------------------------------------------------------------------
-     * Move horizontal course content navigation below navbar
-     * --------------------------------------------------------------------------
-     */
-    const contentNavigation =
-        document.querySelector(".course-content-navigation");
-
-    if (contentNavigation) {
-        if (navbar) {
-            navbar.parentNode.insertBefore(
-                contentNavigation,
-                navbar.nextSibling
-            );
-        } else {
-            document.body.insertBefore(
-                contentNavigation,
-                document.body.firstChild
-            );
-        }
-    }
-
-    /*
-     * --------------------------------------------------------------------------
      * Course content dropdowns
      * --------------------------------------------------------------------------
      */
@@ -472,70 +554,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<nav class="course-content-navigation" aria-label="Course content">
-    <div class="course-content-navigation-inner">
-        <div class="course-content-navigation-scroll">
-<a class="course-content-navigation-toggle course-content-navigation-introduction" href="" data-content-page="index.html">
-    Introduction
-</a>
-<div class="course-content-navigation-dropdown">
-    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="How to structure a page">
-        Module 1
-        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
-    </button>
-    <div class="course-content-navigation-menu">
-<a class="course-content-navigation-link" href="" data-content-page="module-1/introduction.html">
-    How to structure a page
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/headings-and-text.html">
-    Headings and text
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/lists-and-tables.html">
-    Lists and tables
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-1/other-content-elements.html">
-    Other content elements
-</a>
-</div>
-</div>
-<div class="course-content-navigation-dropdown">
-    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="How to highlight information">
-        Module 2
-        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
-    </button>
-    <div class="course-content-navigation-menu">
-<a class="course-content-navigation-link" href="" data-content-page="module-2/introduction.html">
-    How to highlight information
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-2/callout-boxes.html">
-    Callout boxes
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-2/collapsible-boxes.html">
-    Collapsible callout boxes
-</a>
-</div>
-</div>
-<div class="course-content-navigation-dropdown">
-    <button class="course-content-navigation-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Module 3 Title">
-        Module 3
-        <i class="bi bi-chevron-down course-content-navigation-icon"></i>
-    </button>
-    <div class="course-content-navigation-menu">
-<a class="course-content-navigation-link" href="" data-content-page="module-3/introduction.html">
-    How to add media and interactive elements
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-3/links.html">
-    Links
-</a>
-<a class="course-content-navigation-link" href="" data-content-page="module-3/images-presentations-videos.html">
-    Images, presentations and videos
-</a>
-</div>
-</div>
-</div>
-    </div>
-</nav>
-
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Images, presentations and videos</h1>
@@ -557,11 +575,11 @@ document.addEventListener("DOMContentLoaded", function () {
 <p>Each example below shows the syntax and how the element appears when rendered.</p>
 <p><br></p>
 <section id="adding-images" class="level2">
-<h2 class="anchored" data-anchor-id="adding-images">Adding images</h2>
+<h2 data-anchor-id="adding-images">Adding images</h2>
 <p>Use images to illustrate concepts, show examples, or provide visual guidance. Add descriptive text that will be displayed as a caption. You can also resize and align images.</p>
 <p>Place the image in the <code>docs</code> folder at the root of your training repository. From a page inside a module folder, use <code>../../docs/</code> followed by the image filename. Replace the example filename and text with your own.</p>
 <section id="basic-image" class="level3">
-<h3 class="anchored" data-anchor-id="basic-image">Basic image</h3>
+<h3 data-anchor-id="basic-image">Basic image</h3>
 <p><strong>Markdown syntax</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="al">![A descriptive text explaining what the image shows](../../docs/example-image.svg)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Rendered result</strong></p>
@@ -575,7 +593,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="al">![](../../docs/example-image.svg)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="resizing-an-image" class="level3">
-<h3 class="anchored" data-anchor-id="resizing-an-image">Resizing an image</h3>
+<h3 data-anchor-id="resizing-an-image">Resizing an image</h3>
 <p>You can set the width of an image using Quarto’s <code>width</code> attribute. For example, use <code>width="10%"</code> to display the image at 10% of the available text width.</p>
 <p><strong>Markdown syntax</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="al">![A descriptive text explaining what the image shows](../../docs/example-image.svg)</span>{width="10%"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -588,7 +606,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </section>
 <section id="aligning-an-image" class="level3">
-<h3 class="anchored" data-anchor-id="aligning-an-image">Aligning an image</h3>
+<h3 data-anchor-id="aligning-an-image">Aligning an image</h3>
 <p>You can align an image to the left, center, or right using Quarto’s <code>fig-align</code> attribute.</p>
 <p><strong>Markdown syntax</strong></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="al">![A descriptive text explaining what the image shows](../../docs/example-image.svg)</span>{fig-align="left"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -602,7 +620,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 </section>
 <section id="embedding-a-presentation" class="level2">
-<h2 class="anchored" data-anchor-id="embedding-a-presentation">Embedding a presentation</h2>
+<h2 data-anchor-id="embedding-a-presentation">Embedding a presentation</h2>
 <p>You can embed a presentation so participants can view it directly on the training page, rather than following a link to another website. Presentation platforms such as PowerPoint or Google Slides provide embed code that you can add to your page.</p>
 <p>For example, see <a href="https://www.youtube.com/watch?v=1eE8qKv-98g&amp;t=179s">how to find the embed code in Google Slides</a> (from 1:41).</p>
 <p><strong>HTML syntax</strong></p>
@@ -618,7 +636,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </iframe>
 </section>
 <section id="embedding-videos" class="level2">
-<h2 class="anchored" data-anchor-id="embedding-videos">Embedding videos</h2>
+<h2 data-anchor-id="embedding-videos">Embedding videos</h2>
 <p>You can add a video file to your training repository and display it with a video player. The <code>controls</code> attribute allows participants to play, pause, and adjust the volume.</p>
 <p><strong>HTML syntax</strong></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;video</span> <span class="er">controls</span> <span class="er">width</span><span class="ot">=</span><span class="st">"100%"</span><span class="kw">&gt;</span></span>
@@ -812,13 +830,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

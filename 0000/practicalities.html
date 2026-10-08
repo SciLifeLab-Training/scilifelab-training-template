@@ -32,7 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -96,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="course-navbar-content">
 <div class="course-navbar-title">
 <h1>
-Training title.
+Training title
 </h1>
 </div>
 <div class="course-navbar-menu">
@@ -147,31 +146,31 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="course-practicalities-page">
 <header class="course-practicalities-header">
 <div class="course-practicalities-header-main">
-<div class="course-practicalities-label">
+<div class="course-page-label">
 Practicalities
 </div>
-<h1>
+<h1 class="course-page-title">
 Practical information
 </h1>
-<p class="course-practicalities-intro">
+<p class="course-page-intro course-page-intro-narrow">
 Use this page to provide participants with practical information they need before attending the training, including the venue, transport, accommodation, food, and other useful details.
 </p>
 </div>
-<div class="course-practicalities-contact">
-<div class="course-practicalities-contact-icon">
+<div class="course-page-contact">
+<div class="course-page-contact-icon">
 <i class="bi bi-envelope"></i>
 </div>
-<div class="course-practicalities-contact-title">
+<div class="course-page-contact-title">
 Questions about the training?
 </div>
 <p>
 Get in touch with the training team.
 </p>
-<p><a href="mailto:training@example.org">training@example.org</a></p>
+<p><a class="course-text-link" href="mailto:training@example.org">training@example.org</a></p>
 </div>
 </header>
 <section class="course-practicalities-section">
-<h2 class="anchored">
+<h2>
 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>Venue
 </h2>
 <p>
@@ -208,7 +207,7 @@ Room name or number
 </div>
 </section>
 <section class="course-practicalities-section">
-<h2 class="anchored">
+<h2>
 <i class="bi bi-bus-front-fill" aria-hidden="true"></i>Transport
 </h2>
 <p>
@@ -216,10 +215,10 @@ Describe how participants can reach the venue using public transport. Include th
 </p>
 <ul class="course-practicalities-links">
 <li>
-<a href="https://example.org" target="_blank" rel="noopener">Public transport website link</a>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Public transport website link</a>
 </li>
 <li>
-<a href="https://example.org" target="_blank" rel="noopener">Public transport app link</a>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Public transport app link</a>
 </li>
 </ul>
 <p>
@@ -227,7 +226,7 @@ Provide information about parking near the venue, including availability, restri
 </p>
 </section>
 <section class="course-practicalities-section">
-<h2 class="anchored">
+<h2>
 <i class="bi bi-building" aria-hidden="true"></i>Accommodation
 </h2>
 <p>
@@ -252,7 +251,7 @@ Walking time
 <tbody>
 <tr>
 <td>
-<a href="https://example.org" target="_blank" rel="noopener">Hotel name</a>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Hotel name</a>
 </td>
 <td>
 x meter
@@ -278,7 +277,7 @@ x min
 </div>
 </section>
 <section class="course-practicalities-section">
-<h2 class="anchored">
+<h2>
 <i class="bi bi-cup-hot-fill" aria-hidden="true"></i>Food &amp; refreshments
 </h2>
 <p>
@@ -289,12 +288,12 @@ Provide information about dietary requirements, allergies, or how participants s
 </p>
 </section>
 <section class="course-practicalities-section">
-<h2 class="anchored">
+<h2>
 <i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i>Other information
 </h2>
 <div class="course-practicalities-additional">
 <div class="course-practicalities-additional-item">
-<h3 class="anchored">
+<h3>
 Example: What to bring
 </h3>
 <p>
@@ -302,7 +301,7 @@ List anything participants should bring with them, such as a laptop, charger, id
 </p>
 </div>
 <div class="course-practicalities-additional-item">
-<h3 class="anchored">
+<h3>
 Example: Wi-Fi
 </h3>
 <p>
@@ -310,7 +309,7 @@ Provide information about Wi-Fi access at the venue, including the network name 
 </p>
 </div>
 <div class="course-practicalities-additional-item">
-<h3 class="anchored">
+<h3>
 Example: Accessibility
 </h3>
 <p>
@@ -318,7 +317,7 @@ Provide information about accessibility at the venue and any arrangements partic
 </p>
 </div>
 <div class="course-practicalities-additional-item">
-<h3 class="anchored">
+<h3>
 Other information
 </h3>
 <p>
@@ -366,13 +365,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
