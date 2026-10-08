@@ -1275,8 +1275,9 @@ html.course-content-page #quarto-margin-sidebar #toc-title {
 html.course-content-page #quarto-margin-sidebar #TOC .nav-link {
     display: block;
     padding: 0.15rem 0;
-    color: #747a7d;
+    color: #5f6669;
     font-size: 0.8rem;
+    font-weight: 400;
     line-height: 1.5;
     text-decoration: none;
     border-left: none !important;
