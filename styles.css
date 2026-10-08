@@ -29,7 +29,7 @@
     --course-color-surface: #f7f9fa;
 }
 
-/* Style standard text links, such as "View all →" and resource links. */
+/* Style standard text links. */
 .course-text-link {
     color: var(--course-color-link);
     font-weight: 600;
@@ -121,8 +121,7 @@ body {
    Shared training content
    ========================================================================== */
 
-/* Give the main training content sections a shared maximum width
- * and centre them horizontally.*/
+/* Make the main content sections fill their container.*/
 .course-page-header,
 .course-welcome,
 .course-links,
@@ -585,7 +584,7 @@ body {
     transform: translateY(0.45rem);
 }
 
-/* Style hoover effect for the registration link button. */
+/* Style hover effect for the registration link button. */
 .course-registration-button:hover {
     background: #8aad18;
     text-decoration: none;
@@ -681,7 +680,8 @@ body {
     color: #555;
 }
 
-/* Highlight the upcoming event type using a coloured badge. */
+/* Highlight the event type using a coloured badge.
+ * The colours come from the event type variables below. */
 .course-upcoming-type {
     display: inline-block;
     padding: 0.2rem 0.6rem;
@@ -689,68 +689,71 @@ body {
     font-weight: 700;
     border-radius: 999px;
     margin-left: 1rem;
+    background: var(--course-type-bg, var(--course-color-border-light));
+    color: var(--course-type-color, #555);
 }
 
-/* Color of the coloured badges for different event types.*/
+/* Event type colours, used by the badges and the schedule timeline dots.
+ * Each type only sets variables, so the class can sit on any element. */
 .course-type-lecture {
-    background: #e8f3f4;
-    color: var(--course-color-primary);
+    --course-type-bg: #e8f3f4;
+    --course-type-color: var(--course-color-primary);
 }
 .course-type-workshop {
-    background: #eef6e8;
-    color: #5f7f15;
+    --course-type-bg: #eef6e8;
+    --course-type-color: #5f7f15;
 }
 .course-type-practical {
-    background: #fff2dc;
-    color: #9b6200;
+    --course-type-bg: #fff2dc;
+    --course-type-color: #9b6200;
 }
 .course-type-discussion {
-    background: #f3e8f8;
-    color: #6b3f8f;
+    --course-type-bg: #f3e8f8;
+    --course-type-color: #6b3f8f;
 }
 .course-type-break {
-    background: #eceff1;
-    color: #5f6b72;
+    --course-type-bg: #eceff1;
+    --course-type-color: #5f6b72;
 }
 .course-type-welcome {
-    background: #e8f3f4;
-    color: var(--course-color-primary);
+    --course-type-bg: #e8f3f4;
+    --course-type-color: var(--course-color-primary);
 }
 .course-type-lunch {
-    background: #eef6e8;
-    color: #5f7f15;
+    --course-type-bg: #eef6e8;
+    --course-type-color: #5f7f15;
 }
 .course-type-presentation {
-    background: #e9eef8;
-    color: #405a8a;
+    --course-type-bg: #e9eef8;
+    --course-type-color: #405a8a;
 }
 .course-type-assessment {
-    background: #f8e8e8;
-    color: #9a4040;
+    --course-type-bg: #f8e8e8;
+    --course-type-color: #9a4040;
 }
 .course-type-group-work {
-    background: #f3e8f8;
-    color: #6b3f8f;
+    --course-type-bg: #f3e8f8;
+    --course-type-color: #6b3f8f;
 }
 .course-type-exercise {
-    background: #fff2dc;
-    color: #9b6200;
+    --course-type-bg: #fff2dc;
+    --course-type-color: #9b6200;
 }
 .course-type-consultation {
-    background: #e8f1f7;
-    color: #416b85;
+    --course-type-bg: #e8f1f7;
+    --course-type-color: #416b85;
 }
 .course-type-quiz {
-    background: #f0eaf7;
-    color: #704c91;
+    --course-type-bg: #f0eaf7;
+    --course-type-color: #704c91;
 }
 .course-type-feedback {
-    background: #e8f4ed;
-    color: #39704f;
+    --course-type-bg: #e8f4ed;
+    --course-type-color: #39704f;
 }
 .course-type-seminar {
-    background: var(--course-color-border-light);
-    color: #555;
+    --course-type-bg: var(--course-color-border-light);
+    --course-type-color: #555;
 }
 
 /* Style the upcoming event title. */
@@ -1456,6 +1459,7 @@ html.course-content-page .landing-footer__image {
     box-sizing: border-box;
     border-radius: 50%;
     border: 2px solid white;
+    background: var(--course-type-color, #555);
 }
 
 /* Connect each timeline dot to the next dot. */
@@ -1468,53 +1472,6 @@ html.course-content-page .landing-footer__image {
     width: 1.5px;
     background: #d9e5e6;
     z-index: 0;
-}
-
-/* Color of the timeline dots for different types of events in the schedule box. */
-.course-schedule-event:has(.course-type-lecture)::after {
-    background: var(--course-color-primary);
-}
-.course-schedule-event:has(.course-type-workshop)::after {
-    background: #5f7f15;
-}
-.course-schedule-event:has(.course-type-practical)::after {
-    background: #9b6200;
-}
-.course-schedule-event:has(.course-type-discussion)::after {
-    background: #6b3f8f;
-}
-.course-schedule-event:has(.course-type-break)::after {
-    background: #5f6b72;
-}
-.course-schedule-event:has(.course-type-welcome)::after {
-    background: var(--course-color-primary);
-}
-.course-schedule-event:has(.course-type-lunch)::after {
-    background: #5f7f15;
-}
-.course-schedule-event:has(.course-type-presentation)::after {
-    background: #405a8a;
-}
-.course-schedule-event:has(.course-type-assessment)::after {
-    background: #9a4040;
-}
-.course-schedule-event:has(.course-type-group-work)::after {
-    background: #6b3f8f;
-}
-.course-schedule-event:has(.course-type-exercise)::after {
-    background: #9b6200;
-}
-.course-schedule-event:has(.course-type-consultation)::after {
-    background: #416b85;
-}
-.course-schedule-event:has(.course-type-quiz)::after {
-    background: #704c91;
-}
-.course-schedule-event:has(.course-type-feedback)::after {
-    background: #39704f;
-}
-.course-schedule-event:has(.course-type-seminar)::after {
-    background: #555;
 }
 
 /* Position colored event type badges. Event type badges 
@@ -2039,7 +1996,7 @@ INFORMATION PAGES - SHARED STYLES
     color: #6f967b;
 }
 
-/* Positioning for general callout boxes. */
+/* Positioning every last paragraph. */
 .course-preparation p:last-child {
     margin-bottom: 0;
 }
@@ -2088,7 +2045,7 @@ INFORMATION PAGES - SHARED STYLES
     justify-content: center;
     width: 28px;
     min-width: 28px;
-    color: #A7C947;
+    color: var(--course-color-accent);
     font-size: 1.45rem;
 }
 
@@ -2356,7 +2313,7 @@ INFORMATION PAGES - SHARED STYLES
     justify-content: center;
     width: 2rem;
     min-width: 2rem;
-    color: #A7C947;
+    color: var(--course-color-accent);
     font-size: 1.35rem;
     line-height: 1;
     grid-column: 1;
@@ -3407,10 +3364,6 @@ INFORMATION PAGES - SHARED STYLES
     .course-team-grid-leads,
     .course-team-grid-members {
         grid-template-columns:1fr;
-    }
-
-    .course-team-card {
-        min-width:0;
     }
 }
 

@@ -135,7 +135,7 @@ def render_schedule(events, course):
             time = f"{start_time:%H:%M}–{end_time:%H:%M}"
 
             event_type = event["type"].replace("_", " ").title()
-            event_class = event["type"].lower()
+            event_class = event["type"].lower().replace("_", "-")
 
             people = ", ".join(event["people"])
 
@@ -179,7 +179,7 @@ def render_schedule(events, course):
 
             rows.append(
                 f"""
-<div class="course-schedule-event">
+<div class="course-schedule-event course-type-{event_class}">
 
 {separator_html}
 
