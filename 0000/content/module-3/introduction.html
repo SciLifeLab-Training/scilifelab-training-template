@@ -134,6 +134,9 @@ ul.task-list li input[type="checkbox"] {
 
 <nav class="course-content-navigation" aria-label="Course content">
     <div class="course-content-navigation-inner">
+        <button class="course-content-navigation-arrow course-content-navigation-arrow-left" type="button" tabindex="-1" aria-hidden="true">
+            <i class="bi bi-chevron-left"></i>
+        </button>
         <div class="course-content-navigation-scroll">
 <a class="course-content-navigation-toggle course-content-navigation-introduction" href="" data-content-page="index.html">
     Introduction
@@ -193,6 +196,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+        <button class="course-content-navigation-arrow course-content-navigation-arrow-right" type="button" tabindex="-1" aria-hidden="true">
+            <i class="bi bi-chevron-right"></i>
+        </button>
     </div>
 </nav></div>
 
@@ -386,11 +392,78 @@ document.addEventListener("DOMContentLoaded", function () {
     /*
      * --------------------------------------------------------------------------
      * Course content dropdowns
+     *
+     * The navigation bar scrolls sideways, which would clip normally
+     * positioned menus, so open menus use position: fixed and are
+     * placed under their toggle here.
      * --------------------------------------------------------------------------
      */
-    document.querySelectorAll(
+    const contentNavScroll = document.querySelector(
+        ".course-content-navigation-scroll"
+    );
+
+    const contentDropdowns = document.querySelectorAll(
         ".course-content-navigation-dropdown"
-    ).forEach(function (dropdown) {
+    );
+
+    function positionContentMenu(dropdown) {
+        const toggle = dropdown.querySelector(
+            ".course-content-navigation-toggle"
+        );
+        const menu = dropdown.querySelector(
+            ".course-content-navigation-menu"
+        );
+
+        if (!toggle || !menu) {
+            return;
+        }
+
+        const rect = toggle.getBoundingClientRect();
+        const maxLeft = window.innerWidth - menu.offsetWidth - 8;
+
+        menu.style.top = (rect.bottom + 4) + "px";
+        menu.style.left = Math.max(8, Math.min(rect.left, maxLeft)) + "px";
+    }
+
+    function closeContentDropdown(dropdown) {
+        dropdown.classList.remove("is-open");
+
+        const toggle = dropdown.querySelector(
+            ".course-content-navigation-toggle"
+        );
+
+        if (toggle) {
+            toggle.setAttribute("aria-expanded", "false");
+        }
+    }
+
+    function closeAllContentDropdowns(except) {
+        document.querySelectorAll(
+            ".course-content-navigation-dropdown.is-open"
+        ).forEach(function (openDropdown) {
+            if (openDropdown !== except) {
+                closeContentDropdown(openDropdown);
+            }
+        });
+    }
+
+    function openContentDropdown(dropdown) {
+        closeAllContentDropdowns(dropdown);
+
+        dropdown.classList.add("is-open");
+
+        const toggle = dropdown.querySelector(
+            ".course-content-navigation-toggle"
+        );
+
+        if (toggle) {
+            toggle.setAttribute("aria-expanded", "true");
+        }
+
+        positionContentMenu(dropdown);
+    }
+
+    contentDropdowns.forEach(function (dropdown) {
         const toggle = dropdown.querySelector(
             ".course-content-navigation-toggle"
         );
@@ -399,61 +472,142 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Open on hover (desktop)
-        dropdown.addEventListener("mouseenter", function () {
-            dropdown.classList.add("is-open");
-            toggle.setAttribute("aria-expanded", "true");
+        let closeTimer = null;
+
+        // Open on hover, for mouse users only.
+        dropdown.addEventListener("pointerenter", function (event) {
+            if (event.pointerType !== "mouse") {
+                return;
+            }
+
+            window.clearTimeout(closeTimer);
+            openContentDropdown(dropdown);
         });
 
-        // Close when the pointer leaves
-        dropdown.addEventListener("mouseleave", function () {
-            dropdown.classList.remove("is-open");
-            toggle.setAttribute("aria-expanded", "false");
+        // Close shortly after the mouse leaves, so it can cross
+        // the small gap between the toggle and the menu.
+        dropdown.addEventListener("pointerleave", function (event) {
+            if (event.pointerType !== "mouse") {
+                return;
+            }
+
+            closeTimer = window.setTimeout(function () {
+                closeContentDropdown(dropdown);
+            }, 150);
         });
 
-        // Preserve click-to-toggle behavior (touchscreens and keyboard)
+        // Toggle on click or tap (touchscreens and keyboard).
         toggle.addEventListener("click", function (event) {
             event.stopPropagation();
 
-            const isOpen = dropdown.classList.contains("is-open");
-
-            document.querySelectorAll(
-                ".course-content-navigation-dropdown.is-open"
-            ).forEach(function (openDropdown) {
-                openDropdown.classList.remove("is-open");
-
-                const openToggle = openDropdown.querySelector(
-                    ".course-content-navigation-toggle"
-                );
-
-                if (openToggle) {
-                    openToggle.setAttribute("aria-expanded", "false");
-                }
-            });
-
-            if (!isOpen) {
-                dropdown.classList.add("is-open");
-                toggle.setAttribute("aria-expanded", "true");
+            if (dropdown.classList.contains("is-open")) {
+                closeContentDropdown(dropdown);
+            } else {
+                openContentDropdown(dropdown);
             }
         });
     });
 
+    // Close menus when clicking elsewhere or pressing Escape.
     document.addEventListener("click", function () {
+        closeAllContentDropdowns(null);
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeAllContentDropdowns(null);
+        }
+    });
+
+    // Keep open menus under their toggle while scrolling or resizing.
+    function repositionOpenContentMenus() {
         document.querySelectorAll(
             ".course-content-navigation-dropdown.is-open"
-        ).forEach(function (dropdown) {
-            dropdown.classList.remove("is-open");
+        ).forEach(positionContentMenu);
+    }
 
-            const toggle = dropdown.querySelector(
-                ".course-content-navigation-toggle"
-            );
+    window.addEventListener("resize", repositionOpenContentMenus);
+    window.addEventListener(
+        "scroll", repositionOpenContentMenus, { passive: true }
+    );
 
-            if (toggle) {
-                toggle.setAttribute("aria-expanded", "false");
-            }
+    if (contentNavScroll) {
+        contentNavScroll.addEventListener(
+            "scroll", repositionOpenContentMenus, { passive: true }
+        );
+
+        // Scroll the current module into view, so it is visible
+        // when the bar is wider than the screen.
+        const activeToggle = contentNavScroll.querySelector(
+            ".course-content-navigation-toggle-active"
+        );
+
+        if (activeToggle) {
+            const activeItem =
+                activeToggle.closest(".course-content-navigation-dropdown")
+                || activeToggle;
+
+            contentNavScroll.scrollLeft =
+                activeItem.offsetLeft
+                - (contentNavScroll.clientWidth - activeItem.offsetWidth) / 2;
+        }
+    }
+
+    /*
+     * --------------------------------------------------------------------------
+     * Content navigation scroll indicators
+     * Show the fade and arrow on each side that has more modules.
+     * --------------------------------------------------------------------------
+     */
+    const contentNav = document.querySelector(".course-content-navigation");
+
+    function updateContentNavArrows() {
+        if (!contentNav || !contentNavScroll) {
+            return;
+        }
+
+        const maxScroll =
+            contentNavScroll.scrollWidth - contentNavScroll.clientWidth;
+
+        contentNav.classList.toggle(
+            "can-scroll-left",
+            contentNavScroll.scrollLeft > 1
+        );
+
+        contentNav.classList.toggle(
+            "can-scroll-right",
+            contentNavScroll.scrollLeft < maxScroll - 1
+        );
+    }
+
+    if (contentNav && contentNavScroll) {
+        contentNav.querySelectorAll(
+            ".course-content-navigation-arrow"
+        ).forEach(function (arrow) {
+            const direction = arrow.classList.contains(
+                "course-content-navigation-arrow-left"
+            ) ? -1 : 1;
+
+            arrow.addEventListener("click", function () {
+                contentNavScroll.scrollBy({
+                    left: direction * contentNavScroll.clientWidth * 0.7,
+                    behavior: "smooth"
+                });
+            });
         });
-    });
 
+        contentNavScroll.addEventListener(
+            "scroll", updateContentNavArrows, { passive: true }
+        );
+        window.addEventListener("resize", updateContentNavArrows);
+
+        // Check again once fonts and images have loaded,
+        // since they can change the width of the modules.
+        window.addEventListener("load", updateContentNavArrows);
+
+        updateContentNavArrows();
+    }
+    
     /*
      * --------------------------------------------------------------------------
      * TOC link navigation and active state
