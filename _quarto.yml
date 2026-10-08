@@ -29,6 +29,7 @@ format:
     favicon: img/scilifelab-logo-green.png
     toc: false
     page-layout: full
+    anchor-sections: false
 
 execute:
   freeze: auto

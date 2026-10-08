@@ -163,14 +163,16 @@ def main():
         render_schedule(events, course),
     )
 
+    content_navigation = render_content_navigation(sections)
+
     write_partial(
         "content-navbar.html",
-        render_content_navbar(course, website, available_pages),
-    )
-    
-    write_partial(
-        "content-navigation.html",
-        render_content_navigation(sections),
+        render_content_navbar(
+            course,
+            website,
+            available_pages,
+            content_navigation,
+        ),
     )
 
     write_partial(

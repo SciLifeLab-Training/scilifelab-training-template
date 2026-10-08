@@ -161,42 +161,90 @@ def render_content_next_navigation(sections):
     return "\n".join(html)
 
 
-def render_content_navbar(course, website, available_pages):
+def render_content_navbar(
+    course,
+    website,
+    available_pages,
+    content_navigation,
+):
     meta = render_navbar_meta(course)
     brand = render_navbar_brand(website, content_page=True)
     links = render_navbar_links(website, available_pages)
 
     return """
-<div class="course-navbar">
-    <div class="course-navbar-layout">
-        <div class="course-navbar-content">
-            <div class="course-navbar-title">
+<div class="course-content-page-shell">
+
+    <div class="course-navbar">
+
+        <div class="course-navbar-layout">
+
+            <div class="course-navbar-content">
+
+                <div class="course-navbar-title">
+
 """ + meta + """
-            </div>
-            <div class="course-navbar-menu">
-                <div class="course-navbar-links">
-""" + links + """
+
                 </div>
+
+                <div class="course-navbar-menu">
+
+                    <div class="course-navbar-links">
+
+""" + links + """
+
+                    </div>
+
+                </div>
+
             </div>
-        </div>
-        <div class="course-navbar-brand">
+
+            <div class="course-navbar-brand">
+
 """ + brand + """
+
+            </div>
+
         </div>
+
     </div>
+
+""" + content_navigation + """
+
 </div>
+
 <script>
+
 document.documentElement.classList.add("course-content-page");
 
 document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector(".course-navbar");
+
+    const pageShell = document.querySelector(
+        ".course-content-page-shell"
+    );
+
     const footer = document.querySelector(".landing-footer");
 
+
     /*
-     * Move the shared site chrome outside Quarto's
-     * main-content / TOC grid.
+     * Move the generated content-page site chrome
+     * outside Quarto's main-content / TOC grid.
      */
-    if (navbar) {
-        document.body.insertBefore(navbar, document.body.firstChild);
+
+    if (pageShell) {
+        const quartoContent =
+            document.querySelector("#quarto-content");
+
+        if (quartoContent) {
+            document.body.insertBefore(
+                pageShell,
+                quartoContent
+            );
+        } else {
+            document.body.insertBefore(
+                pageShell,
+                document.body.firstChild
+            );
+        }
     }
 
     if (footer) {
@@ -350,28 +398,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("[data-course-asset]").forEach(function (image) {
         image.src = siteRoot + image.dataset.courseAsset;
     });
-
-    /*
-     * --------------------------------------------------------------------------
-     * Move horizontal course content navigation below navbar
-     * --------------------------------------------------------------------------
-     */
-    const contentNavigation =
-        document.querySelector(".course-content-navigation");
-
-    if (contentNavigation) {
-        if (navbar) {
-            navbar.parentNode.insertBefore(
-                contentNavigation,
-                navbar.nextSibling
-            );
-        } else {
-            document.body.insertBefore(
-                contentNavigation,
-                document.body.firstChild
-            );
-        }
-    }
 
     /*
      * --------------------------------------------------------------------------

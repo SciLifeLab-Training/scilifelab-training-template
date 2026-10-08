@@ -11,11 +11,12 @@
 
 /* Defines shared layout values used across the course website.*/
 :root {
-  /* Maximum width used for course content. */
-  --course-content-width: 1400px;
-
-  /* Horizontal padding used around course content. */
-  --course-content-padding: 2.5rem;
+    /* Horizontal padding used around course content. */
+    --course-content-padding: 2.5rem;
+    /* Maximum width of the navbar, page content and footer. */
+    --course-shell-max-width: 1135px;
+    /* White space kept on each side of the page. */
+    --course-shell-gutter: 1.35rem;
 }
 
 /* ==========================================================================
@@ -70,13 +71,26 @@ body {
   flex-direction: column;
 }
 
-/* Use a vertical flex layout for the course page.
- * The flexible height allows shorter pages to fill the viewport.*/
+/* Let normal course pages span the full Quarto grid so the course shell,
+ * not Quarto's grid columns, controls the side spacing. */
+#quarto-content > main.content:has(> .course-shell) {
+    grid-column: screen-start / screen-end;
+}
+
+/* Use a vertical flex layout for the course page, centred with a
+ * shared maximum width and side gutter.
+ * The flexible height allows shorter pages to fill the viewport. */
 .course-shell {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: min(
+        var(--course-shell-max-width),
+        calc(100% - 2 * var(--course-shell-gutter))
+    );
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -92,9 +106,6 @@ body {
 .course-team,
 .course-schedule {
   width: 100%;
-  max-width: var(--course-content-width);
-  margin-left: auto;
-  margin-right: auto;
   box-sizing: border-box;
 }
 
@@ -1041,24 +1052,24 @@ html.course-content-page #quarto-content {
     min-height: 0 !important;
 }
 
-/* Hide Quarto's heading anchor-link icons */
-html.course-content-page a.anchorjs-link {
-    display: none !important;
-}
-
-/* Keep the content-page teal navbar aligned with the secondary navigation. */
-html.course-content-page .course-navbar {
-    width: 100% !important;
-    max-width: 1135px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+/* Centre the content-page chrome using the same width and gutter
+ * as normal course pages. */
+html.course-content-page .course-content-page-shell,
+html.course-content-page .course-content-next-navigation,
+html.course-content-page .landing-footer {
+    width: min(
+        var(--course-shell-max-width),
+        calc(100% - 2 * var(--course-shell-gutter))
+    );
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
 /* Position the content navigation bar. */
 html.course-content-page .course-content-navigation {
     width: 100%;
-    max-width: 1135px;
-    margin: 0 auto;
     background: #f5f8f8;
     border-bottom: none;
     border-radius: 0 0 6px 6px;
@@ -1127,6 +1138,17 @@ html.course-content-page
 .course-content-navigation-dropdown {
     position: relative;
     flex: 0 0 auto;
+}
+
+/* Create hover bridge for dropdown navigation menus. */
+html.course-content-page
+.course-content-navigation-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0.25rem;
 }
 
 /* Show dropdown navigation menus upon hover over content link. */
@@ -1256,9 +1278,8 @@ html.course-content-page #quarto-margin-sidebar #TOC .nav-link.active {
 
 /* Position Previous / next navigation. */
 html.course-content-page .course-content-next-navigation {
-    width: 100%;
-    max-width: 1135px;
-    margin: 2.5rem auto 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
     padding: 1.5rem var(--course-content-padding) 0;
     display: flex;
     justify-content: space-between;
@@ -1318,10 +1339,6 @@ html.course-content-page .course-content-next-link:focus-visible .course-content
 
 /* Position course content pages footer. */
 html.course-content-page .landing-footer {
-    width: 100%;
-    max-width: 1135px;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: auto;
     padding-top: 0.9rem;
     padding-bottom: 0.9rem;
@@ -1398,14 +1415,14 @@ html.course-content-page .landing-footer__image {
     border-radius: 6px;
 }
 
-/* Displays schedule of day link that is active. */
-.course-schedule-day.is-active {
-    display: block !important;
-}
-
 /* Hide schedule display of day links that are not active. */
 .course-schedule-day {
     display: none;
+}
+
+/* Displays schedule of day link that is active. */
+.course-schedule-day.is-active {
+    display: block;
 }
 
 /* Position and style the box that displays the schedule for the active day link. */
@@ -1434,6 +1451,7 @@ html.course-content-page .landing-footer__image {
         200px;
     column-gap: 2rem;
     padding: 0.9rem 2rem 0.10rem;
+    position: relative;
 }
 
 /* Style the time inside the schedule box. */
@@ -1441,11 +1459,6 @@ html.course-content-page .landing-footer__image {
     font-size: 0.80rem;
     font-weight: 600;
     color: #555;
-}
-
-/* Position the dots of the timeline in the schedule box. */
-.course-schedule-event {
-    position: relative;
 }
 
 /* Position and style the dots of the timeline in the schedule box. */
@@ -1581,13 +1594,6 @@ styled under NEXT UP section - Overview page. */
 /* ==========================================================================
    PREPARATION Page
    ========================================================================== */
-
-/* Remove Quarto heading anchor icons from the Preparation page. */
-.course-preparation-page .anchorjs-link,
-.course-preparation .anchorjs-link {
-    display: none !important;
-}
-
 /* Position the preparation header and contact box. */
 .course-preparation-header {
     display: grid;
@@ -2077,12 +2083,6 @@ styled under NEXT UP section - Overview page. */
     padding: 0 var(--course-content-padding);
 }
 
-/* Remove Quarto heading anchor icons from the Practicalities page. */
-.course-practicalities-page .anchorjs-link,
-.course-practicalities-section .anchorjs-link {
-    display: none !important;
-}
-
 /* Position the practicalities header and contact box. */
 .course-practicalities-header {
     display: grid;
@@ -2390,13 +2390,6 @@ styled under NEXT UP section - Overview page. */
 /* ==================================================
    ANNOUNCEMENTS Page
    ================================================== */
-
-/* Remove default Quarto heading links. */
-.course-announcements-page .anchorjs-link,
-.course-announcements-section .anchorjs-link {
-    display: none !important;
-}
-
 /* Add spacing and positioning around the page. */
 .course-announcements-header {
     margin: 2.5rem auto 0;
@@ -2492,12 +2485,6 @@ styled under NEXT UP section - Overview page. */
 .course-resources-header {
     margin: 2.5rem auto 0;
     padding: 0 var(--course-content-padding);
-}
-
-/* Remove default Quarto heading links. */
-.course-resources-page .anchorjs-link,
-.course-resources-section .anchorjs-link {
-    display: none !important;
 }
 
 /* Style the page label. */
@@ -2652,12 +2639,6 @@ styled under NEXT UP section - Overview page. */
 .course-team-page {
     margin: 2.5rem auto 4rem;
     padding: 0 var(--course-content-padding);
-}
-
-/* Remove default Quarto heading links. */
-.course-team-page .anchorjs-link,
-.course-team-page-section .anchorjs-link {
-    display: none !important;
 }
 
 /* Style the page label. */
@@ -2876,12 +2857,6 @@ styled under NEXT UP section - Overview page. */
     width: 100%;
     margin: 2.5rem auto 0;
     padding: 0 var(--course-content-padding);
-}
-
-/* Remove default Quarto heading links. */
-.course-syllabus-page .anchorjs-link,
-.course-syllabus-section .anchorjs-link {
-    display: none !important;
 }
 
 /* Style the page label. */
@@ -3320,13 +3295,14 @@ styled under NEXT UP section - Overview page. */
     gap: 0.75rem 1.25rem;
   }
 
-  .template-banner,
-  .course-navbar {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  border-radius: 0;
-  }
+    .template-banner,
+    .course-navbar,
+    html.course-content-page .course-content-navigation {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        border-radius: 0;
+    }
 }
 
 @media (max-width: 950px) {
@@ -3352,7 +3328,8 @@ styled under NEXT UP section - Overview page. */
    -------------------------------------------------------------------------- */ 
 
 @media (max-width: 750px) {
-  .landing-footer {
+  .landing-footer,
+  html.course-content-page .landing-footer {
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
@@ -3524,16 +3501,7 @@ styled under NEXT UP section - Overview page. */
 /* --------------------------------------------------------------------------
    CONTENT Pages
    -------------------------------------------------------------------------- */
-@media (max-width: 600px) {
-    html.course-content-page .course-content-next-navigation {
-        gap: 1rem;
-    }
 
-    html.course-content-page .course-content-prev-link,
-    html.course-content-page .course-content-next-link {
-        max-width: 48%;
-    }
-}
 
 /* --------------------------------------------------------------------------
    SCHEDULE Page

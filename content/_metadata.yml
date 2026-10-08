@@ -3,10 +3,10 @@ format:
     toc: true
     toc-location: right
     toc-title: "On this page"
+    anchor-sections: false
 
     include-before-body:
     - ../_generated/content-navbar.html
-    - ../_generated/content-navigation.html
 
     include-after-body:
       - ../_generated/content-next-navigation.html
