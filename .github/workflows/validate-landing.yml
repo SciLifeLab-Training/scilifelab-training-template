@@ -17,6 +17,7 @@ on:
       - 'styles.css'
       - 'README.md'
       - 'tests/**'
+      - 'CITATION.cff'
   workflow_dispatch:
 
 jobs:
@@ -48,6 +49,11 @@ jobs:
 
       - name: Run tests
         run: python -m pytest -q
+      
+      - name: Validate CITATION.cff
+        run: |
+             python -m pip install cffconvert
+             cffconvert --validate
 
       - name: Render landing
         run: quarto render
