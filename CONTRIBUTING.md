@@ -7,7 +7,7 @@ suggest changes to the training materials and the training website.
 
 Open an issue in this repository. Describe what you found or what you would
 like to change, and which training instance and page it concerns, for
-example `release-2505`, Module 2.
+example `release-2705`, Module 2.
 
 ## Making a change
 
@@ -46,4 +46,4 @@ next release, unless `citation_author: false` is set for them.
 ## Licence
 
 By contributing, you agree that your contributions are made available under
-the licence of this repository. See [LICENSE](LICENSE).
+the licence of this repository. See [LICENSE](LICENSE.md).

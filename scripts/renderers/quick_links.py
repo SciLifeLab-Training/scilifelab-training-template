@@ -1,7 +1,4 @@
-from pathlib import Path
-
-
-def render_quick_links(website, schedule_events):
+def render_quick_links(website, available_pages):
 
     """Render up to four homepage quick links."""
 
@@ -26,39 +23,10 @@ def render_quick_links(website, schedule_events):
 
         page = pages[key]
 
-        # Schedule is available only when events exist.
-        if key == "schedule":
-
-            if not schedule_events:
-                continue
-
-        # Course Content and Course Syllabus are always available.
-        elif key in ["content", "syllabus"]:
-
-            pass
-
-        # All other pages are available only when
-        # their QMD file contains meaningful body content.
-        else:
-
-            path = Path(page["href"])
-
-            if not path.exists():
-                continue
-
-            content = path.read_text(encoding="utf-8")
-
-            # Remove YAML front matter.
-            if content.startswith("---"):
-
-                parts = content.split("---", 2)
-
-                if len(parts) == 3:
-                    content = parts[2]
-
-            # Ignore whitespace-only pages.
-            if not content.strip():
-                continue
+        # Content and Syllabus are always shown. The other pages are
+        # shown only when they are also in the navbar.
+        if key not in ("content", "syllabus") and key not in available_pages:
+            continue
 
         cards.append(
             f"""

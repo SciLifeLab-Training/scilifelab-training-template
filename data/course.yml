@@ -20,6 +20,7 @@ course:
   # language
   # target_audience
   # learning_outcomes
+  # keywords
   # organizers
   # contact.email
 
@@ -37,9 +38,9 @@ course:
   # credits
   # expertise_level
   # prerequisites
-  # keywords
   # examination
   # content_providers
+  # funding
   # reuse.licence
   # reuse.licence_url
   # reuse.licence_id
@@ -93,21 +94,23 @@ course:
   #
   # Replace the placeholder dates with the actual training dates.
   # Dates must use ISO format: YYYY-MM-DD.
-  #
-  # Location is required. For a self-paced or online training, 
-  # set location: "Online" instead of leaving it empty
-
   start_date: "2026-01-01"
   end_date: "2026-01-02"
+
   duration: "Number of days"
   mode: "Online / In-person / Hybrid"
-
   instruction:
     - "Describe the main teaching format or activity, e.g. Self-study"
     - "Add another teaching format or activity, e.g. Online lectures"
     - "Add another teaching format or activity, e.g. In-person workshop"
     
+  # Location is required. For a self-paced or online training, 
+  # set location: "Online" instead of leaving it empty
   location: "Venue name or online"
+
+  # The language of the training, e.g. "English" or "Swedish".
+  # For other languages, use the three-letter code from
+  # https://iso639-3.sil.org (e.g. "ita" for Italian).
   language: "Language the training is provided in"
 
   # --------------------------------------------------
@@ -158,16 +161,21 @@ course:
   # --------------------------------------------------
   #
   # Organisations responsible for organising the training
-  # and providing its educational content.
-
   organizers:
     - "Name of organizing institution"
     - "Add another organizing institution"
 
+  # Organisations providing educational content, if applicable. 
   content_providers:
     - "Name of institution providing content"
     - "Name of another institution providing content"
 
+  # Organisations funding the training, if applicable. 
+  funding:
+    - funder: "Name of funding organisation"
+      grant_number: ""
+      grant_title: ""
+  
   # --------------------------------------------------
   # Contact
   # --------------------------------------------------
@@ -198,9 +206,7 @@ course:
     # Licence
     # -------
     # The licence that says how others may reuse the
-    # materials. CC BY 4.0 lets anyone reuse and adapt them,
-    # as long as they credit the authors.
-    #
+    # materials.
     # "licence" is the name shown on the website, and
     # "licence_url" is the page that explains the licence.
     licence: "CC BY 4.0"
@@ -208,7 +214,6 @@ course:
 
     # Leave empty. Only needed if you use an unusual licence:
     # then enter its short code from https://spdx.org/licenses/
-    # (for example "CC-BY-SA-4.0").
     licence_id: ""
 
     # DOIs
@@ -222,13 +227,13 @@ course:
     # same for every time the training is given, and always
     # points to the latest one. Add it after the very first
     # release, and keep it when you create new instances.
-    doi: "10.5281/zenodo.20430336"
+    doi: ""
 
     # version_doi: the DOI of this specific instance (this
     # time the training is given). Add it after publishing
     # this instance. Empty it again when you copy this
     # branch to create a new instance.
-    version_doi: "10.5281/zenodo.20430336"
+    version_doi: ""
     # release_date: the date this instance was published on
     # Zenodo, written as YYYY-MM-DD (for example "2025-05-12").
     # Add it together with version_doi, and empty it again

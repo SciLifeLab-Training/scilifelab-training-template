@@ -52,7 +52,7 @@ website:
 
       # - src: "img/nbis-neg.png"
       #   alt: "Partner organisation"
-      #  height: 26
+      #   height: 26
 
 
   # Navigation links are generated from the available pages.
@@ -174,9 +174,8 @@ website:
   # and used in the website navigation.
   #
   # Content and Syllabus are always included as quick links. 
-  # Other optional pages are included only when their corresponding .qmd
-  # file exists (e.g. practicalities.qmd) and contains content 
-  # after its YAML front matter (i.e. after 
+  # Other optional pages are included only when twhen they also appear in the navbar,
+  # i.e. when their data file contains data after its YAML front matter (i.e. after 
   # ---
   # title: Practicalities
   # title-block: false
@@ -298,12 +297,13 @@ website:
     built_with:
       text: "This website was built using the"
       template_name: "SciLifeLab Training Webpage Template"
-      template_url: "https://github.com/SciLifeLab-Training/scilifelab-training-template-staging"
+      template_url: "https://github.com/SciLifeLab-Training/scilifelab-training-template"
       suffix: "and is hosted on GitHub Pages."
 
     # Link and image used for the repository icon in the footer.
-    # Replace "url" with the GitHub repository for this
-    # specific course website.
+    # Replace "url" with the GitHub repository for this specific
+    # course website. The url is required: it is also used to work
+    # out the website address for the citation and Bioschemas files.
     repository:
       url: "https://github.com/your-organisation/your-repository"
 

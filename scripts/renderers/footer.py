@@ -133,4 +133,4 @@ def render_footer(website):
 
     html.append("</div>")
 
-    return "\n".join(html).strip()
+    return "".join(html).strip()

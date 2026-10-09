@@ -29,11 +29,3 @@ license: CC-BY-4.0
 url: https://your-organisation.github.io/your-repository/0000/
 repository-code: https://github.com/your-organisation/your-repository
 version: '0000'
-doi: 10.5281/zenodo.20430336
-identifiers:
-- type: doi
-  value: 10.5281/zenodo.20430336
-  description: This training instance
-- type: doi
-  value: 10.5281/zenodo.20430336
-  description: All instances of this training (latest version)

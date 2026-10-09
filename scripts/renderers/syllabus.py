@@ -1,5 +1,10 @@
 from utils import format_date
-from renderers.fair import concept_doi, version_doi, citation_text
+from renderers.fair import (
+    concept_doi,
+    version_doi,
+    citation_text,
+    funding,
+)
 
 
 def render_syllabus(course, team, website):
@@ -299,6 +304,20 @@ def render_syllabus(course, team, website):
         if provider
     ]
 
+    # Each funder is shown with its grant title and number, if given.
+    funders = []
+
+    for entry in funding(course):
+        text = entry["funder"]
+
+        if entry["grant_title"]:
+            text += f', {entry["grant_title"]}'
+
+        if entry["grant_number"]:
+            text += f' (grant {entry["grant_number"]})'
+
+        funders.append(text)
+
     team_members = team.get("members") or []
 
     leaders = [
@@ -307,12 +326,12 @@ def render_syllabus(course, team, website):
         if "Training lead" in person.get("roles", [])
     ]
 
-    if organizers or content_providers or leaders:
+    if organizers or content_providers or funders or leaders:
         html.append('<section class="course-syllabus-section">')
         html.append('<h2>Administration</h2>')
         html.append('<div class="course-syllabus-columns">')
 
-        if organizers or content_providers:
+        if organizers or content_providers or funders:
             html.append('<div class="course-syllabus-column">')
 
             if organizers:
@@ -334,6 +353,17 @@ def render_syllabus(course, team, website):
 
                 for provider in content_providers:
                     html.append(f'<li>{provider}</li>')
+
+                html.append('</ul>')
+
+            if funders:
+                html.append(
+                    '<h3>Funder(s)</h3>'
+                )
+                html.append('<ul>')
+
+                for funder in funders:
+                    html.append(f'<li>{funder}</li>')
 
                 html.append('</ul>')
 

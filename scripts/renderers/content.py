@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
         : "/";
 
     const contentPath = pathname.includes(contentMarker)
-        ? pathname.split(contentMarker)[1].replace(/^\/+|\/+$/g, "")
+        ? pathname.split(contentMarker)[1].replace(/^\\/+|\\/+$/g, "")
         : "";
 
     const currentContentPage =

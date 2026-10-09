@@ -155,7 +155,7 @@ def main():
 
     write_partial(
         "quick_links.qmd",
-        render_quick_links(website, events),
+        render_quick_links(website, available_pages),
     )
 
     write_partial(

@@ -7,13 +7,14 @@ place to edit:
 
 - CITATION.cff       citation metadata (GitHub, reference managers)
 - .zenodo.json       metadata for the Zenodo record of each release
-- README.md          the "About this training" section between the markers
+- README.md          the generated blocks, when the README has them
 - bioschemas.html    Bioschemas JSON-LD for the overview page (e.g. for TeSS)
 
 The generated files should never be edited by hand: they are
 overwritten on every render.
 """
 
+import html
 import json
 import os
 import re
@@ -38,8 +39,6 @@ GENERATED_NOTICE = (
     "in data/. Do not edit it by hand: edit the data files instead."
 )
 
-README_START = "<!-- training-info:start -->"
-README_END = "<!-- training-info:end -->"
 
 BIOSCHEMAS_COURSE = "https://bioschemas.org/profiles/Course/1.0-RELEASE"
 BIOSCHEMAS_COURSE_INSTANCE = (
@@ -80,6 +79,41 @@ LANGUAGES = {
 
 # Order in which team members are listed as authors.
 ROLE_ORDER = ["Training lead", "Instructor", "Contributor"]
+
+# Funders whose grants Zenodo can link to, with their funder DOI
+# (from the Open Funder Registry). Zenodo only accepts grants from
+# these funders: grants from other funders are mentioned in the
+# description of the Zenodo record instead.
+# Keys are normalised: lower case, without punctuation.
+ZENODO_FUNDERS = {
+    "european commission": "10.13039/501100000780",
+    "ec": "10.13039/501100000780",
+    "horizon europe": "10.13039/501100000780",
+    "horizon 2020": "10.13039/501100000780",
+    "research council of finland": "10.13039/501100002341",
+    "academy of finland": "10.13039/501100002341",
+    "agence nationale de la recherche": "10.13039/501100001665",
+    "australian research council": "10.13039/501100000923",
+    "austrian science fund": "10.13039/501100002428",
+    "canadian institutes of health research": "10.13039/501100000024",
+    "european environment agency": "10.13039/501100000806",
+    "fundacao para a ciencia e a tecnologia": "10.13039/501100001871",
+    "national health and medical research council": "10.13039/501100000925",
+    "national institutes of health": "10.13039/100000002",
+    "nih": "10.13039/100000002",
+    "national science foundation": "10.13039/100000001",
+    "nsf": "10.13039/100000001",
+    "nederlandse organisatie voor wetenschappelijk onderzoek": "10.13039/501100003246",
+    "nwo": "10.13039/501100003246",
+    "schweizerischer nationalfonds": "10.13039/501100001711",
+    "swiss national science foundation": "10.13039/501100001711",
+    "snsf": "10.13039/501100001711",
+    "science foundation ireland": "10.13039/501100001602",
+    "uk research and innovation": "10.13039/100014013",
+    "ukri": "10.13039/100014013",
+    "wellcome trust": "10.13039/100004440",
+    "wellcome": "10.13039/100004440",
+}
 
 DOI_PATTERN = re.compile(r"^10\.\d{4,9}/\S+$")
 ORCID_PATTERN = re.compile(
@@ -173,8 +207,20 @@ def _language(course):
     """Return the language as (BCP 47 tag, ISO 639-3 code)."""
 
     language = _text(course.get("language"))
+    key = language.lower()
 
-    return LANGUAGES.get(language.lower(), (language, ""))
+    if key in LANGUAGES:
+        return LANGUAGES[key]
+
+    # Also accept the codes themselves, e.g. "en" or "eng".
+    for tag, code in LANGUAGES.values():
+        if key in (tag, code):
+            return tag, code
+
+    if re.match(r"^[a-z]{3}$", key):
+        return "", key
+
+    return language, ""
 
 
 def _orcid(value):
@@ -593,89 +639,241 @@ def _dates(course):
 # ---------------------------------------------------------
 # README.md
 # ---------------------------------------------------------
+#
+# The README is filled in through named blocks, each marked like:
+#
+#   <!-- generated:course-information -->
+#   <!-- /generated:course-information -->
+#
+# Only the text between a block's two markers is replaced, so the
+# rest of the README can be written by hand. A README without
+# markers (such as the template's own README) is left unchanged.
 
-def render_readme_section(course, team, website):
-    """Return the generated "About this training" README section."""
+README_BLOCK = re.compile(
+    r"(<!-- generated:([a-z-]+) -->\n).*?(<!-- /generated:\2 -->)",
+    flags=re.S,
+)
+
+
+def _badge_text(value):
+    """Escape text for a shields.io badge."""
+
+    from urllib.parse import quote
+
+    value = value.replace("-", "--").replace("_", "__").replace(" ", "_")
+
+    return quote(value, safe="_.")
+
+
+def _readme_header(course, team, website):
+    """Title, badges and short description."""
 
     reuse = course.get("reuse") or {}
-    url = website_url(course, website)
     doi = _doi(course)
+    licence_name = _text(reuse.get("licence")) or licence_id(course)
+    link = licence_url(course)
 
-    facts = [
-        ("Dates", _dates(course)),
-        ("Mode", _text(course.get("mode"))),
-        ("Location", _text(course.get("location"))),
-        ("Language", _text(course.get("language"))),
-        ("Expertise level", _text(course.get("expertise_level"))),
-        ("Website", f"<{url}>" if url else ""),
-        ("DOI", f"[{doi}](https://doi.org/{doi})" if doi else ""),
-    ]
+    badges = []
 
-    lines = [
-        README_START,
-        "<!-- This section is generated automatically from the data files "
-        "in data/. Edit the data files instead; text outside the markers "
-        "is kept. -->",
-        "",
-        f"# {_text(course.get('title'))}",
-        "",
-    ]
+    if doi:
+        badges.append(
+            f"[![DOI](https://zenodo.org/badge/DOI/{doi}.svg)]"
+            f"(https://doi.org/{doi})"
+        )
+
+    if licence_name:
+        badge = (
+            "![Licence](https://img.shields.io/badge/licence-"
+            f"{_badge_text(licence_name)}-blue)"
+        )
+        badges.append(f"[{badge}]({link})" if link else badge)
+
+    lines = [f"# {_text(course.get('title'))}", ""]
+
+    if badges:
+        lines += [" ".join(badges), ""]
 
     if _text(course.get("subtitle")):
         lines += [f"*{_text(course.get('subtitle'))}*", ""]
 
     if _text(course.get("description")):
-        lines += [_text(course.get("description")), ""]
+        lines += [_text(course.get("description"))]
 
-    lines += [
+    return lines
+
+
+def _readme_course_information(course, team, website):
+    """Key facts about this instance of the training."""
+
+    url = website_url(course, website)
+    doi = _doi(course)
+
+    facts = [
+        ("Course website", f"<{url}>" if url else ""),
+        ("Dates", _dates(course)),
+        ("Duration", _text(course.get("duration"))),
+        ("Mode", _text(course.get("mode"))),
+        ("Location", _text(course.get("location"))),
+        ("Target audience", _text(course.get("target_audience"))),
+        ("Expertise level", _text(course.get("expertise_level"))),
+        ("Language", _text(course.get("language"))),
+        ("Version", version(course)),
+        ("DOI", f"[{doi}](https://doi.org/{doi})" if doi else ""),
+    ]
+
+    return ["## Course information", ""] + [
         f"- **{label}:** {value}"
         for label, value in facts
         if value
     ]
 
+
+def _readme_learning_outcomes(course, team, website):
+    """The learning outcomes."""
+
+    outcomes = _list(course.get("learning_outcomes"))
+
+    if not outcomes:
+        return []
+
+    return [
+        "## Learning outcomes",
+        "",
+        "After completing this training, participants will be able to:",
+        "",
+    ] + [f"- {outcome}" for outcome in outcomes]
+
+
+def _readme_contributors(course, team, website):
+    """Everyone in the training team, with role, ORCID and affiliation."""
+
+    members = [
+        member
+        for member in team.get("members") or []
+        if _text(member.get("name"))
+    ]
+
+    if not members:
+        return []
+
+    def role_rank(member):
+        roles = member.get("roles") or []
+        ranks = [ROLE_ORDER.index(r) for r in roles if r in ROLE_ORDER]
+        return min(ranks) if ranks else len(ROLE_ORDER)
+
+    def cell(value):
+        return _text(value).replace("|", "\\|")
+
+    lines = [
+        "## Contributors",
+        "",
+        "| Name | Role | ORCID | Affiliation |",
+        "|------|------|-------|-------------|",
+    ]
+
+    for member in sorted(members, key=role_rank):
+        orcid = _orcid(member.get("orcid"))
+        orcid_cell = (
+            f"[{orcid.removeprefix('https://orcid.org/')}]({orcid})"
+            if orcid else ""
+        )
+
+        lines.append(
+            f"| {cell(member.get('name'))} "
+            f"| {cell(', '.join(member.get('roles') or []))} "
+            f"| {orcid_cell} "
+            f"| {cell(member.get('affiliation'))} |"
+        )
+
+    return lines
+
+
+def _readme_citation(course, team, website):
+    """How to cite the training."""
+
+    return [
+        "## Citation",
+        "",
+        "If you use these materials, please cite them as:",
+        "",
+        f"> {_citation_text(course, team, website)}",
+        "",
+        "Citation metadata is available in [CITATION.cff](CITATION.cff).",
+    ]
+
+
+def _readme_licence(course, team, website):
+    """The licence of the training materials."""
+
+    reuse = course.get("reuse") or {}
     licence_name = _text(reuse.get("licence")) or licence_id(course)
     link = licence_url(course)
 
-    lines += [
-        "",
-        "## How to cite",
-        "",
-        _citation_text(course, team, website),
-        "",
-        "Citation metadata is available in [CITATION.cff](CITATION.cff).",
-        "",
-        "## Licence",
-        "",
-        (
-            f"The training materials are licensed under "
-            f"[{licence_name}]({link})."
-            if licence_name and link
-            else "See [LICENSE](LICENSE)."
-        ),
-        "",
-        README_END,
-    ]
+    if licence_name and link:
+        text = (
+            "Unless otherwise stated, the training materials are "
+            f"licensed under [{licence_name}]({link})."
+        )
+    elif licence_name:
+        text = (
+            "Unless otherwise stated, the training materials are "
+            f"licensed under {licence_name}."
+        )
+    else:
+        text = "See [LICENSE](LICENSE)."
 
-    return "\n".join(lines)
+    return ["## Licence", "", text]
 
 
-def update_readme(text, section):
+def _readme_acknowledgements(course, team, website):
+    """Funding, when given in course.yml."""
+
+    entries = funding(course)
+
+    if not entries:
+        return []
+
+    return [
+        "## Acknowledgements",
+        "",
+        "This training was funded by:",
+        "",
+    ] + [f"- {_funding_text(entry)}" for entry in entries]
+
+
+README_BLOCKS = {
+    "header": _readme_header,
+    "course-information": _readme_course_information,
+    "learning-outcomes": _readme_learning_outcomes,
+    "contributors": _readme_contributors,
+    "citation": _readme_citation,
+    "licence": _readme_licence,
+    "acknowledgements": _readme_acknowledgements,
+}
+
+
+def update_readme(text, course, team, website):
     """
-    Replace the generated section of a README.
+    Fill in the generated blocks of a README.
 
-    Only the text between the start and end markers is replaced.
-    When the markers are missing, the section is added at the top.
+    Blocks with an unknown name are left unchanged, and so is a
+    README without any blocks. A block whose data is missing
+    (for example no funding) is emptied, heading included.
     """
 
-    pattern = re.compile(
-        re.escape(README_START) + r".*?" + re.escape(README_END),
-        flags=re.S,
-    )
+    def fill(match):
+        start, name, end = match.group(1), match.group(2), match.group(3)
+        render = README_BLOCKS.get(name)
 
-    if pattern.search(text):
-        return pattern.sub(lambda _: section, text, count=1)
+        if render is None:
+            return match.group(0)
 
-    return section + "\n\n" + text
+        lines = render(course, team, website)
+        body = "\n".join(lines) + "\n" if lines else ""
+
+        return start + body + end
+
+    return README_BLOCK.sub(fill, text)
 
 
 # ---------------------------------------------------------
@@ -704,6 +902,116 @@ def _zenodo_creator(member):
     return creator
 
 
+# Zenodo contributor type for each team role. The first matching
+# role in ROLE_ORDER is used.
+ZENODO_CONTRIBUTOR_TYPES = {
+    "Training lead": "ProjectLeader",
+    "Instructor": "ProjectMember",
+    "Contributor": "Other",
+}
+
+
+def _zenodo_contributors(team):
+    """
+    Return the team members left out of the citation
+    (citation_author: false) as Zenodo contributors.
+
+    They are shown on the Zenodo record, but are not part of
+    the citation.
+    """
+
+    contributors = []
+
+    for member in team.get("members") or []:
+        if member.get("citation_author", True) is not False:
+            continue
+
+        if not _text(member.get("name")):
+            continue
+
+        roles = member.get("roles") or []
+
+        contributor_type = next(
+            (
+                ZENODO_CONTRIBUTOR_TYPES[role]
+                for role in ROLE_ORDER
+                if role in roles
+            ),
+            "Other",
+        )
+
+        contributor = _zenodo_creator(member)
+        contributor["type"] = contributor_type
+        contributors.append(contributor)
+
+    return contributors
+
+
+def funding(course):
+    """
+    Return the funding entries from course.yml as a list of
+    dictionaries with funder, grant_number and grant_title.
+    """
+
+    entries = []
+
+    for entry in course.get("funding") or []:
+        if not isinstance(entry, dict):
+            continue
+
+        funder = _text(entry.get("funder"))
+
+        if not funder:
+            continue
+
+        entries.append({
+            "funder": funder,
+            "grant_number": _text(entry.get("grant_number")),
+            "grant_title": _text(entry.get("grant_title")),
+        })
+
+    return entries
+
+
+def _zenodo_funder_doi(funder):
+    """Return the funder DOI when Zenodo supports the funder."""
+
+    key = re.sub(r"[^a-z0-9 ]", "", funder.lower()
+                 .replace("ã", "a").replace("ç", "c"))
+
+    return ZENODO_FUNDERS.get(" ".join(key.split()), "")
+
+
+def _zenodo_grants(course):
+    """Return the grants Zenodo can link to."""
+
+    grants = []
+
+    for entry in funding(course):
+        funder_doi = _zenodo_funder_doi(entry["funder"])
+
+        if funder_doi and entry["grant_number"]:
+            grants.append(
+                {"id": f"{funder_doi}::{entry['grant_number']}"}
+            )
+
+    return grants
+
+
+def _funding_text(entry):
+    """Return a funding entry as one line of text."""
+
+    text = entry["funder"]
+
+    if entry["grant_title"]:
+        text += f", {entry['grant_title']}"
+
+    if entry["grant_number"]:
+        text += f" (grant {entry['grant_number']})"
+
+    return text
+
+
 def render_zenodo_json(course, team, website):
     """
     Return the contents of .zenodo.json.
@@ -716,13 +1024,20 @@ def render_zenodo_json(course, team, website):
     reuse = course.get("reuse") or {}
     url = website_url(course, website)
 
+    funded_by = [_funding_text(entry) for entry in funding(course)]
+
     description = [
-        f"<p>{_text(course.get('description'))}</p>"
+        f"<p>{html.escape(_text(course.get('description')))}</p>"
         if _text(course.get("description")) else "",
         f"<p>Training dates: {_dates(course)}.</p>"
         if _dates(course) else "",
-        f'<p>Training website: <a href="{url}">{url}</a></p>'
+        f'<p>Training website: <a href="{html.escape(url)}">'
+        f"{html.escape(url)}</a></p>"
         if url else "",
+        "<p>Funded by: "
+        + "; ".join(html.escape(text) for text in funded_by)
+        + ".</p>"
+        if funded_by else "",
     ]
 
     data = {
@@ -730,6 +1045,7 @@ def render_zenodo_json(course, team, website):
         "upload_type": "lesson",
         "description": "\n".join(part for part in description if part),
         "creators": [_zenodo_creator(member) for member in authors(team)],
+        "contributors": _zenodo_contributors(team),
         "keywords": _list(course.get("keywords")),
         "license": licence_id(course).lower(),
         "access_right": "open",
@@ -749,6 +1065,7 @@ def render_zenodo_json(course, team, website):
             {"identifier": community}
             for community in _list(reuse.get("zenodo_communities"))
         ],
+        "grants": _zenodo_grants(course),
     }
 
     return json.dumps(
@@ -809,6 +1126,10 @@ def render_bioschemas(course, team, website):
         ),
         "instructor": instructors,
         "organizer": organizers,
+        "funder": [
+            {"@type": "Organization", "name": entry["funder"]}
+            for entry in funding(course)
+        ],
         "url": instance_url,
     }
 
@@ -884,8 +1205,8 @@ def _write_if_changed(path, content):
 
 def write_fair_files(root, course, team, website):
     """
-    Write CITATION.cff, .zenodo.json and the generated
-    README section to the repository root.
+    Write CITATION.cff and .zenodo.json to the repository root,
+    and fill in the generated blocks of README.md.
     """
 
     root = Path(root)
@@ -900,16 +1221,20 @@ def write_fair_files(root, course, team, website):
         render_zenodo_json(course, team, website),
     )
 
+    # Only fill in the README when it has generated blocks, so the
+    # template's own README is never changed.
     readme = root / "README.md"
-    current = readme.read_text(encoding="utf-8") if readme.exists() else ""
 
-    _write_if_changed(
-        readme,
-        update_readme(
-            current,
-            render_readme_section(course, team, website),
-        ),
-    )
+    if readme.exists():
+        _write_if_changed(
+            readme,
+            update_readme(
+                readme.read_text(encoding="utf-8"),
+                course,
+                team,
+                website,
+            ),
+        )
 
 
 def citation_text(course, team, website):
