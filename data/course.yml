@@ -23,6 +23,8 @@ course:
   # keywords
   # organizers
   # contact.email
+  # reuse.licence
+
 
   # ==================================================
   # Optional fields
@@ -41,7 +43,6 @@ course:
   # examination
   # content_providers
   # funding
-  # reuse.licence
   # reuse.licence_url
   # reuse.licence_id
   # reuse.doi

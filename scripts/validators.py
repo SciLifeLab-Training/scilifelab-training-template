@@ -7,7 +7,7 @@ what is wrong and how to fix it in the data files.
 
 import re
 from datetime import date
-
+from renderers.fair import licence_id
 
 DOI_PATTERN = r"^(https?://(dx\.)?doi\.org/|doi:)?10\.\d{4,9}/\S+$"
 ORCID_PATTERN = r"^(https://orcid\.org/)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$"
@@ -108,6 +108,20 @@ def validate_course(course):
             )
 
     _check_date(reuse.get("release_date"), "course.reuse.release_date")
+
+    # A licence is needed for the citation, Zenodo and Bioschemas, and must
+    # be one fair.py recognises, or be given as an SPDX code in licence_id.
+    if not str(reuse.get("licence") or reuse.get("licence_id") or "").strip():
+        raise ValueError(
+            'course.reuse.licence is required, for example "CC BY 4.0".'
+        )
+
+    if not licence_id(course):
+        raise ValueError(
+            f"course.reuse.licence '{reuse.get('licence')}' is not "
+            "recognised. Add its short code from https://spdx.org/licenses/ "
+            "to course.reuse.licence_id."
+        )
 
     return course
 
@@ -252,6 +266,13 @@ def validate_team(team):
                 )
 
             course_contact_found = True
+
+    # CITATION.cff and Zenodo need at least one author.
+    if all(member.get("citation_author") is False for member in members):
+        raise ValueError(
+            "At least one team member must be a citation author: remove "
+            "'citation_author: false' from at least one member."
+        )
 
     if not course_contact_found:
         raise ValueError(

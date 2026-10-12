@@ -1,19 +1,31 @@
 """
-Generate FAIR metadata for a training instance.
+Generate FAIR metadata for a training.
 
-All metadata is generated from the existing data files
-(course.yml, team.yml and website.yml), so there is only one
-place to edit:
+All metadata is generated from the data files (course.yml, team.yml
+and website.yml), so there is only one place to edit:
 
 - CITATION.cff       citation metadata (GitHub, reference managers)
 - .zenodo.json       metadata for the Zenodo record of each release
 - README.md          the generated blocks, when the README has them
-- bioschemas.html    Bioschemas JSON-LD for the overview page (e.g. for TeSS)
+- bioschemas.html    Bioschemas JSON-LD (e.g. for ELIXIR TeSS)
+
+This file is the same on the main branch and on the release-YYMM
+branches. The public functions take a "scope":
+
+- scope="instance" (default): one training instance, on a
+  release-YYMM branch. The website is the instance website,
+  the version defaults to the instance id (YYMM), and the
+  Bioschemas markup is a Course with this CourseInstance.
+- scope="course": the training as a whole, on the main branch.
+  The website is the landing page, the version is only set when
+  reuse.version is given, and the Bioschemas markup is the Course
+  only. It has the same @id as on the instance pages.
 
 The generated files should never be edited by hand: they are
 overwritten on every render.
 """
 
+import functools
 import html
 import json
 import os
@@ -36,7 +48,7 @@ CFF_MESSAGE = (
 
 GENERATED_NOTICE = (
     "This file is generated automatically from the data files "
-    "in data/. Do not edit it by hand: edit the data files instead."
+    "in {source}. Do not edit it by hand: edit the data files instead."
 )
 
 
@@ -78,7 +90,9 @@ LANGUAGES = {
 }
 
 # Order in which team members are listed as authors.
-ROLE_ORDER = ["Training lead", "Instructor", "Contributor"]
+# "Founder" is used on the main branch, the other roles on the
+# release-YYMM branches.
+ROLE_ORDER = ["Founder", "Training lead", "Instructor", "Contributor"]
 
 # Funders whose grants Zenodo can link to, with their funder DOI
 # (from the Open Funder Registry). Zenodo only accepts grants from
@@ -120,6 +134,67 @@ ORCID_PATTERN = re.compile(
     r"^https://orcid\.org/\d{4}-\d{4}-\d{4}-\d{3}[\dX]$"
 )
 INSTANCE_BRANCH_PATTERN = re.compile(r"^release-(\d{4})$")
+
+
+# ---------------------------------------------------------
+# Scope: one training instance, or the training as a whole
+# ---------------------------------------------------------
+
+SCOPES = ("instance", "course")
+
+# The scope of the metadata being generated. Set by the public
+# functions below through their scope argument; never set directly.
+_SCOPE = "instance"
+
+
+def _scoped(function):
+    """
+    Give a public function a scope argument ("instance" or "course").
+
+    Without a scope argument, the current scope is kept, so a public
+    function called by another one uses the scope of its caller.
+    """
+
+    @functools.wraps(function)
+    def wrapper(*args, scope=None, **kwargs):
+        global _SCOPE
+
+        if scope is None:
+            return function(*args, **kwargs)
+
+        if scope not in SCOPES:
+            raise ValueError(
+                f"scope must be one of {', '.join(SCOPES)}, got {scope!r}"
+            )
+
+        previous = _SCOPE
+        _SCOPE = scope
+
+        try:
+            return function(*args, **kwargs)
+        finally:
+            _SCOPE = previous
+
+    return wrapper
+
+
+def _course_scope():
+    """Return True when describing the training as a whole (main)."""
+
+    return _SCOPE == "course"
+
+
+def upload_type(course):
+    """
+    Return the Zenodo upload type: reuse.upload_type, or "lesson".
+
+    The template repository sets it to "software" to describe the
+    template itself.
+    """
+
+    reuse = course.get("reuse") or {}
+
+    return _text(reuse.get("upload_type")) or "lesson"
 
 
 # ---------------------------------------------------------
@@ -307,13 +382,39 @@ def repository_url(website):
     return _text(repository.get("url"))
 
 
+def pages_url(website):
+    """
+    Return the GitHub Pages address of the repository, e.g.
+    https://organisation.github.io/repository/
+
+    This is where the landing page is published. Returns "" when
+    the repository URL in website.yml is not a GitHub address.
+    """
+
+    match = re.match(
+        r"^https://github\.com/([^/]+)/([^/]+?)(\.git)?/?$",
+        repository_url(website),
+    )
+
+    if not match:
+        return ""
+
+    owner, repo = match.group(1).lower(), match.group(2)
+
+    return f"https://{owner}.github.io/{repo}/"
+
+
 def website_url(course, website):
     """
-    Return the URL of this training instance's website.
+    Return the URL of the website being described.
 
-    Uses reuse.website_url when given. Otherwise it is derived
-    from the GitHub repository URL and the instance id, e.g.
-    https://organisation.github.io/repository/2505/
+    Uses reuse.website_url when given. Otherwise it is derived from
+    the GitHub repository URL:
+
+    - for a training instance, the instance website, e.g.
+      https://organisation.github.io/repository/2505/
+    - for the training as a whole (scope="course"), the landing
+      page, e.g. https://organisation.github.io/repository/
     """
 
     reuse = course.get("reuse") or {}
@@ -322,19 +423,17 @@ def website_url(course, website):
     if explicit:
         return explicit
 
-    match = re.match(
-        r"^https://github\.com/([^/]+)/([^/]+?)(\.git)?/?$",
-        repository_url(website),
-    )
+    landing = pages_url(website)
+
+    if _course_scope():
+        return landing
 
     instance = instance_id()
 
-    if not match or not instance:
+    if not landing or not instance:
         return ""
 
-    owner, repo = match.group(1).lower(), match.group(2)
-
-    return f"https://{owner}.github.io/{repo}/{instance}/"
+    return f"{landing}{instance}/"
 
 
 def course_url(course, website):
@@ -345,6 +444,10 @@ def course_url(course, website):
     """
 
     instance_url = website_url(course, website)
+
+    if _course_scope():
+        return instance_url
+
     instance = instance_id()
 
     if instance_url and instance:
@@ -354,11 +457,20 @@ def course_url(course, website):
 
 
 def version(course):
-    """Return the version: reuse.version, or the instance id."""
+    """
+    Return the version: reuse.version, or the instance id.
+
+    For the training as a whole (scope="course") there is no
+    instance id, so only reuse.version is used.
+    """
 
     reuse = course.get("reuse") or {}
+    explicit = _text(reuse.get("version"))
 
-    return _text(reuse.get("version")) or instance_id()
+    if explicit or _course_scope():
+        return explicit
+
+    return instance_id()
 
 
 # ---------------------------------------------------------
@@ -527,12 +639,24 @@ def _citation_text(course, team, website):
 # CITATION.cff
 # ---------------------------------------------------------
 
-def render_citation_cff(course, team, website):
-    """Return the contents of CITATION.cff."""
+@_scoped
+def render_citation_cff(course, team, website, source="data/"):
+    """
+    Return the contents of CITATION.cff.
+
+    source is the folder named in the "do not edit" notice at the
+    top of the file.
+    """
+
+    message = (
+        "If you use this software, please cite it as below."
+        if upload_type(course) == "software"
+        else CFF_MESSAGE
+    )
 
     cff = {
         "cff-version": "1.2.0",
-        "message": CFF_MESSAGE,
+        "message": message,
         "title": _text(course.get("title")),
     }
 
@@ -591,23 +715,31 @@ def render_citation_cff(course, team, website):
         cff["doi"] = doi
 
     if version_doi(course) and concept_doi(course):
+        if _course_scope():
+            descriptions = ("This version", "All versions (latest version)")
+        else:
+            descriptions = (
+                "This training instance",
+                "All instances of this training (latest version)",
+            )
+
         cff["identifiers"] = [
             {
                 "type": "doi",
                 "value": version_doi(course),
-                "description": "This training instance",
+                "description": descriptions[0],
             },
             {
                 "type": "doi",
                 "value": concept_doi(course),
-                "description": "All instances of this training (latest version)",
+                "description": descriptions[1],
             },
         ]
 
     header = "".join(
         f"# {line}\n"
         for line in [
-            GENERATED_NOTICE,
+            GENERATED_NOTICE.format(source=source),
             "Validate with: cffconvert --validate",
         ]
     )
@@ -794,7 +926,11 @@ def _readme_citation(course, team, website):
     return [
         "## Citation",
         "",
-        "If you use these materials, please cite them as:",
+        (
+            "If you use this software, please cite it as:"
+            if upload_type(course) == "software"
+            else "If you use these materials, please cite them as:"
+        ),
         "",
         f"> {_citation_text(course, team, website)}",
         "",
@@ -852,6 +988,7 @@ README_BLOCKS = {
 }
 
 
+@_scoped
 def update_readme(text, course, team, website):
     """
     Fill in the generated blocks of a README.
@@ -905,6 +1042,7 @@ def _zenodo_creator(member):
 # Zenodo contributor type for each team role. The first matching
 # role in ROLE_ORDER is used.
 ZENODO_CONTRIBUTOR_TYPES = {
+    "Founder": "ProjectLeader",
     "Training lead": "ProjectLeader",
     "Instructor": "ProjectMember",
     "Contributor": "Other",
@@ -1012,6 +1150,7 @@ def _funding_text(entry):
     return text
 
 
+@_scoped
 def render_zenodo_json(course, team, website):
     """
     Return the contents of .zenodo.json.
@@ -1026,12 +1165,17 @@ def render_zenodo_json(course, team, website):
 
     funded_by = [_funding_text(entry) for entry in funding(course)]
 
+    website_label = (
+        "Website" if upload_type(course) == "software"
+        else "Training website"
+    )
+
     description = [
         f"<p>{html.escape(_text(course.get('description')))}</p>"
         if _text(course.get("description")) else "",
         f"<p>Training dates: {_dates(course)}.</p>"
         if _dates(course) else "",
-        f'<p>Training website: <a href="{html.escape(url)}">'
+        f'<p>{website_label}: <a href="{html.escape(url)}">'
         f"{html.escape(url)}</a></p>"
         if url else "",
         "<p>Funded by: "
@@ -1042,7 +1186,7 @@ def render_zenodo_json(course, team, website):
 
     data = {
         "title": _text(course.get("title")),
-        "upload_type": "lesson",
+        "upload_type": upload_type(course),
         "description": "\n".join(part for part in description if part),
         "creators": [_zenodo_creator(member) for member in authors(team)],
         "contributors": _zenodo_contributors(team),
@@ -1079,11 +1223,19 @@ def render_zenodo_json(course, team, website):
 # Bioschemas JSON-LD
 # ---------------------------------------------------------
 
+@_scoped
 def render_bioschemas(course, team, website):
     """
-    Return Bioschemas Course and CourseInstance markup as a
-    <script type="application/ld+json"> block.
+    Return Bioschemas markup as a <script type="application/ld+json">
+    block: a Course with this CourseInstance, or only the Course for
+    the training as a whole (scope="course").
+
+    Returns "" for the template's example instance (release-0000),
+    which should not be listed as a real course.
     """
+
+    if not _course_scope() and instance_id() == "0000":
+        return ""
 
     # The instance has its own page; the course is shared by all instances.
     instance_url = website_url(course, website) or repository_url(website)
@@ -1091,9 +1243,12 @@ def render_bioschemas(course, team, website):
 
     doi = concept_doi(course)
 
-    # Use the concept DOI as the course identifier when there is one, so
-    # all instances are recognised as runs of the same course.
-    course_id = f"https://doi.org/{doi}" if doi else f"{course_page}#course"
+    # The course identifier is always the landing page address with
+    # "#course", on the landing page and on every instance page, so all
+    # instances are recognised as runs of the same course. It never
+    # changes, also not when a DOI is added later: the concept DOI is
+    # given as "identifier" instead.
+    course_id = f"{course_page}#course"
 
     members = authors(team)
     prerequisites = course.get("prerequisites") or {}
@@ -1160,8 +1315,16 @@ def render_bioschemas(course, team, website):
         ),
         "provider": organizers,
         "creator": [_schema_person(member) for member in members],
-        "hasCourseInstance": [_without_empty(instance)],
     }
+
+    if _course_scope():
+        # The landing page describes the training as a whole. Language
+        # and funders belong to the Course; the instances describe
+        # themselves on their own pages, with the same Course @id.
+        data["inLanguage"] = language
+        data["funder"] = instance["funder"]
+    else:
+        data["hasCourseInstance"] = [_without_empty(instance)]
 
     data = _without_empty(data)
 
@@ -1203,7 +1366,8 @@ def _write_if_changed(path, content):
     print(f"Updated {path.name}")
 
 
-def write_fair_files(root, course, team, website):
+@_scoped
+def write_fair_files(root, course, team, website, source="data/"):
     """
     Write CITATION.cff and .zenodo.json to the repository root,
     and fill in the generated blocks of README.md.
@@ -1213,7 +1377,7 @@ def write_fair_files(root, course, team, website):
 
     _write_if_changed(
         root / "CITATION.cff",
-        render_citation_cff(course, team, website),
+        render_citation_cff(course, team, website, source=source),
     )
 
     _write_if_changed(
@@ -1237,6 +1401,7 @@ def write_fair_files(root, course, team, website):
         )
 
 
+@_scoped
 def citation_text(course, team, website):
     """Return the citation text shown in the README and on the Syllabus page."""
 
