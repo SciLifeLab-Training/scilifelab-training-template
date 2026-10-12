@@ -370,7 +370,8 @@ body {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     margin-top: auto;
-    padding: 0.45rem clamp(0.75rem, 2vw, 1rem);
+    padding: 0.9rem clamp(0.75rem, 2vw, 1rem);
+    min-height: 4.2rem;
     background: #b8b8b8;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     border-radius: 6px 6px 0 0;
@@ -398,9 +399,9 @@ body {
 
 /* Position and size the repository logo. */
 .landing-footer__image {
+    display: block;
     height: 2rem;
-    position: relative;
-    top: 9px;
+    width: auto;
 }
 
 /* Style the footer links. */
@@ -1043,9 +1044,33 @@ html.course-content-page body {
     flex-direction: column;
 }
 
-/* Do not force the content area to occupy a full viewport before the footer. */
+/* Let the content grid fill the page, so the footer stays at the bottom of short pages. The footer and previous / next navigation are moved
+ * into this grid by the content page script. */
 html.course-content-page #quarto-content {
     min-height: 0 !important;
+    flex: 1 0 auto;
+    grid-template-rows: [content-top] auto [content-bottom] auto 1fr;
+}
+
+/* Place the previous / next navigation and the footer below the content, across the full width of the grid. */
+html.course-content-page #quarto-content > .course-content-next-navigation {
+    grid-column: screen-start / screen-end;
+    grid-row: 2;
+    padding-top: 1.5rem;
+}
+
+html.course-content-page #quarto-content > .landing-footer {
+    grid-column: screen-start / screen-end;
+    grid-row: 3;
+    align-self: end;
+    padding-top: 0.9rem;
+}
+
+/* Let the table of contents column run down to the end of the page, so the table of contents stays visible while the footer comes into view. */
+html.course-content-page #quarto-margin-sidebar {
+    grid-row: 1 / 4;
+    align-self: start;
+    height: auto;
 }
 
 /* Centre the content-page chrome using the same width and gutter
@@ -1356,22 +1381,6 @@ html.course-content-page .course-content-prev-link:focus-visible .course-content
 html.course-content-page .course-content-next-link:focus-visible .course-content-next-title {
     text-decoration: underline;
     text-underline-offset: 0.2em;
-}
-
-/* Position course content pages footer. */
-html.course-content-page .landing-footer {
-    margin-top: auto;
-    padding-top: 0.9rem;
-    padding-bottom: 0.9rem;
-    min-height: 4.2rem;
-}
-
-/* Style course content pages footer image. */
-html.course-content-page .landing-footer__image {
-    height: 2rem;
-    width: auto;
-    max-height: none;
-    top: 0;
 }
 
 /* ==========================================================================
@@ -3053,8 +3062,6 @@ INFORMATION PAGES - SHARED STYLES
 @media (max-width: 600px) {
     .landing-footer {
         column-gap: 1.25rem;
-        padding-top: 0.9rem;
-        padding-bottom: 0.9rem;
     }
 
     .landing-footer__meta p {
