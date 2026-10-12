@@ -140,8 +140,10 @@ The generated HTML uses the same classes as the original hand-written sections, 
 | `target_audience`, `expertise_level` | No | README, Bioschemas |
 | `organizers` | No, list | Bioschemas `provider` |
 | `funding` | No, list | README, Zenodo, Bioschemas `funder` |
-| `reuse.licence`, `reuse.licence_url`, `reuse.licence_id` | No | README, citation, Zenodo, Bioschemas |
-| `reuse.doi` | No | The concept DOI of the training: README, citation, Bioschemas `@id` |
+| `reuse.licence` | Yes | README, citation, Zenodo, Bioschemas. Must be recognised, or have an SPDX code in `reuse.licence_id` |
+| `reuse.licence_url`, `reuse.licence_id` | No | README, citation, Zenodo, Bioschemas |
+| `reuse.doi` | No | The concept DOI of the training: README, citation, Bioschemas `identifier` |
+| `reuse.release_date` | No | The date of the first Zenodo release; its year is used in the citation |
 | `reuse.website_url`, `reuse.zenodo_communities`, `reuse.preferred_citation` | No | See [section 9](#9-fair-metadata) |
 
 Use the same title, description, keywords and learning outcomes as on the `release-YYMM` branches, so the landing page and the instances describe the same training.
@@ -212,8 +214,8 @@ cffconvert --validate      # optional: pip install cffconvert
 
 The generator stops the render with a message that explains how to fix the data:
 
-- **`course.yml`:** `title` and `description` are required; `learning_outcomes` and `keywords` must be non-empty lists; `topics`, `organizers` and `funding` must be lists when given; `reuse.doi` and `reuse.version_doi` must be valid DOIs when given.
-- **`team.yml`:** at least one member; every member needs a name, a non-empty list of allowed roles (`Founder`, `Contributor`) and an `affiliation`; `orcid` must be valid when given; a `course_contact` needs an email.
+- **`course.yml`:** `title` and `description` are required; `learning_outcomes` and `keywords` must be non-empty lists; `topics`, `organizers` and `funding` must be lists when given; `reuse.doi` and `reuse.version_doi` must be valid DOIs when given; `reuse.release_date` must be a valid `YYYY-MM-DD` date when given; `reuse.licence` is required and must be recognised (or have `reuse.licence_id`).
+- **`team.yml`:** at least one member; every member needs a name, a non-empty list of allowed roles (`Founder`, `Contributor`) and an `affiliation`; `orcid` must be valid when given; a `course_contact` needs an email; at least one member must be a citation author.
 - **`website.yml`:** `template` must be `true` or `false`; each logo needs a `src`; `footer.repository.url` must be a GitHub repository address; `labels` may only contain the documented keys.
 - **`instances.yml`:** see [section 4.4](#44-datainstancesyml).
 - **`_template/`** (template mode only): `course.title` and `course.description` are required, and `team.yml` follows the same rules as `data/team.yml`.
@@ -257,7 +259,7 @@ Compared with a training instance:
 | DOI | `reuse.version_doi`, or the concept DOI `reuse.doi` | The same |
 | Bioschemas | The Course only, with `inLanguage` and `funder` | The Course with this CourseInstance |
 
-The Course `@id` is the concept DOI (`https://doi.org/...`) when set, otherwise the landing page address with `#course`. It is the same on the landing page and on every instance page, so registries recognise all instances as runs of one training.
+The Course `@id` is always the landing page address with `#course`. It is the same on the landing page and on every instance page, so registries recognise all instances as runs of one training. It never changes, also not when a DOI is added: the concept DOI is given as `identifier`.
 
 The README blocks are the same as on the instance branches (`header`, `course-information`, `learning-outcomes`, `contributors`, `citation`, `licence`, `acknowledgements`). A README without markers is never changed.
 
@@ -269,7 +271,7 @@ In the template repository, `main` is both the template and an example landing p
 |---|---|---|
 | Template banner on the landing page | Shown | Hidden |
 | `CITATION.cff`, `.zenodo.json`, README blocks | The template, from `_template/course.yml` and `_template/team.yml` | The training, from `data/course.yml` and `data/team.yml` |
-| Bioschemas markup | None (the page shows an example training) | The training, from `data/` |
+| Bioschemas markup | The example training, from `data/` | The training, from `data/` |
 
 `_template/course.yml` sets `reuse.upload_type: software`, so the template is archived on Zenodo as software and `CITATION.cff` uses the software citation message. Update `reuse.version` and `reuse.release_date` there before each template release.
 

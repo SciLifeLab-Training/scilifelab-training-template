@@ -24,6 +24,8 @@ course:
   # description
   # learning_outcomes
   # keywords
+  # reuse.licence
+
 
   # ==================================================
   # Optional fields
@@ -35,7 +37,6 @@ course:
   # expertise_level
   # organizers
   # funding
-  # reuse.licence
   # reuse.licence_url
   # reuse.licence_id
   # reuse.doi

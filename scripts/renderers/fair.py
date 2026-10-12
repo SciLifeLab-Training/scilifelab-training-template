@@ -1229,7 +1229,13 @@ def render_bioschemas(course, team, website):
     Return Bioschemas markup as a <script type="application/ld+json">
     block: a Course with this CourseInstance, or only the Course for
     the training as a whole (scope="course").
+
+    Returns "" for the template's example instance (release-0000),
+    which should not be listed as a real course.
     """
+
+    if not _course_scope() and instance_id() == "0000":
+        return ""
 
     # The instance has its own page; the course is shared by all instances.
     instance_url = website_url(course, website) or repository_url(website)
@@ -1237,9 +1243,12 @@ def render_bioschemas(course, team, website):
 
     doi = concept_doi(course)
 
-    # Use the concept DOI as the course identifier when there is one, so
-    # all instances are recognised as runs of the same course.
-    course_id = f"https://doi.org/{doi}" if doi else f"{course_page}#course"
+    # The course identifier is always the landing page address with
+    # "#course", on the landing page and on every instance page, so all
+    # instances are recognised as runs of the same course. It never
+    # changes, also not when a DOI is added later: the concept DOI is
+    # given as "identifier" instead.
+    course_id = f"{course_page}#course"
 
     members = authors(team)
     prerequisites = course.get("prerequisites") or {}
