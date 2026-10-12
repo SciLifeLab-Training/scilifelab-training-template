@@ -1,33 +1,37 @@
 {
-  "title": "Training title",
-  "upload_type": "lesson",
-  "description": "<p>Description of the content of the training. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra vehicula est non feugiat. Maecenas nec cursus eros, at consectetur enim. Ut tincidunt eros ipsum, ut tempor tortor eleifend eu. Aliquam hendrerit dui tristique felis faucibus semper. Integer placerat, mauris id tempus ultricies, felis magna ultricies risus, nec ullamcorper nisi justo ut mi. Duis scelerisque molestie sollicitudin.</p>\n<p>Training website: <a href=\"https://scilifelab-training.github.io/scilifelab-training-template/\">https://scilifelab-training.github.io/scilifelab-training-template/</a></p>",
+  "title": "SciLifeLab Training Webpage Template",
+  "upload_type": "software",
+  "description": "<p>A Quarto-based template for creating, publishing and maintaining FAIR, reusable training websites with GitHub Pages. A landing page lists all instances of a training, and each training instance has its own website with an overview, schedule, content pages, syllabus and information pages, generated from structured data files.</p>\n<p>Website: <a href=\"https://scilifelab-training.github.io/scilifelab-training-template/\">https://scilifelab-training.github.io/scilifelab-training-template/</a></p>",
   "creators": [
     {
-      "name": "Lastname1, Firstname1",
-      "affiliation": "Institution or organisation"
+      "name": "Luijten, Ineke",
+      "affiliation": "SciLifeLab Training Hub",
+      "orcid": "0000-0001-5768-275X"
     },
     {
-      "name": "Lastname2, Firstname2",
-      "affiliation": "Institution or organisation"
+      "name": "Norgren, Nina",
+      "affiliation": "SciLifeLab Training Hub",
+      "orcid": "0000-0002-3823-1555"
     },
     {
-      "name": "Lastname3, Firstname3",
-      "affiliation": "Institution or organisation"
-    },
-    {
-      "name": "Lastname4, Firstname4",
-      "affiliation": "Institution or organisation"
+      "name": "Panouris, Dimitris",
+      "affiliation": "SciLifeLab Training Hub",
+      "orcid": "0009-0005-2282-2982"
     }
   ],
   "keywords": [
-    "Keyword 1",
-    "Keyword 2",
-    "Keyword 3",
-    "Keyword 4"
+    "training",
+    "training materials",
+    "course website",
+    "template",
+    "Quarto",
+    "GitHub Pages",
+    "FAIR",
+    "open educational resources"
   ],
   "license": "cc-by-4.0",
   "access_right": "open",
+  "version": "1.0.0-alpha",
   "language": "eng",
   "related_identifiers": [
     {

@@ -114,10 +114,9 @@ landing page architecture, validation, generated files and deployment.
 
 | Name | Role | ORCID | Affiliation |
 |------|------|-------|-------------|
-| Firstname1 Lastname1 | Founder |  | Institution or organisation |
-| Firstname2 Lastname2 | Founder |  | Institution or organisation |
-| Firstname3 Lastname3 | Contributor |  | Institution or organisation |
-| Firstname4 Lastname4 | Contributor |  | Institution or organisation |
+| Ineke Luijten | Founder | [0000-0001-5768-275X](https://orcid.org/0000-0001-5768-275X) | SciLifeLab Training Hub |
+| Nina Norgren | Founder | [0000-0002-3823-1555](https://orcid.org/0000-0002-3823-1555) | SciLifeLab Training Hub |
+| Dimitris Panouris | Founder | [0009-0005-2282-2982](https://orcid.org/0009-0005-2282-2982) | SciLifeLab Training Hub |
 <!-- /generated:contributors -->
 
 ## Contributing to the template
@@ -136,9 +135,9 @@ scripts or documentation.
 <!-- generated:citation -->
 ## Citation
 
-If you use these materials, please cite them as:
+If you use this software, please cite it as:
 
-> Lastname1, F.; Lastname2, F.; Lastname3, F.; Lastname4, F. Training title. https://scilifelab-training.github.io/scilifelab-training-template/
+> Luijten, I.; Norgren, N.; Panouris, D. SciLifeLab Training Webpage Template. Version 1.0.0-alpha. https://scilifelab-training.github.io/scilifelab-training-template/
 
 Citation metadata is available in [CITATION.cff](CITATION.cff).
 <!-- /generated:citation -->
