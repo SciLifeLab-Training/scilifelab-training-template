@@ -262,8 +262,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    const quartoGrid = document.querySelector("#quarto-content");
+
     if (footer) {
-        document.body.appendChild(footer);
+        (quartoGrid || document.body).appendChild(footer);
     }
 
     const pathname = window.location.pathname;
@@ -361,11 +363,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (activePageNavigation) {
         const pageFooter = document.querySelector(".landing-footer");
-
-        if (pageFooter && pageFooter.parentNode === document.body) {
-            document.body.insertBefore(activePageNavigation, pageFooter);
+        
+        if (pageFooter) {
+            pageFooter.parentNode.insertBefore(
+                activePageNavigation,
+                pageFooter
+            );
         } else {
-            document.body.appendChild(activePageNavigation);
+            (quartoGrid || document.body).appendChild(activePageNavigation);
         }
     }
 

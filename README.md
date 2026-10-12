@@ -125,7 +125,7 @@ This includes documentation of the training instance-page architecture, validati
 The SciLifeLab Training Webpage Template is developed and maintained by SciLifeLab Training Hub.
 
 | Name | Role | ORCID |
-|---|---|---|---|
+|---|---|---|
 | Ineke Luijten | Scientific Training Officer | [0000-0001-5768-275X](https://orcid.org/0000-0001-5768-275X) |
 | Dimitris Panouris | System Developer | [0009-0005-2282-2982](https://orcid.org/0009-0005-2282-2982)| 
 | Nina Norgren | Training Manager |[0000-0002-3823-1555](https://orcid.org/0000-0002-3823-1555)| 
@@ -140,15 +140,15 @@ scripts or documentation.
   [template repository](https://github.com/SciLifeLab-Training/scilifelab-training-template/issues).
 - **Propose a change:** fork the
   [template repository](https://github.com/SciLifeLab-Training/scilifelab-training-template)
-  and open a pull request. Changes to the training pages go to
+  and open a pull request. Changes to a specific training instance page go to
   `release-0000`, and changes to the landing page go to `main`.
   The [developer specification](docs/_developer-SPEC.md) describes how
   the template works.
 
 > [!NOTE]
 > `CONTRIBUTING.md` is not about this template! It is part of the
-> template for template user trainings: it tells people how to contribute to
-> template user training materials, and template users can adapt it to their training.
+> template for template users: it tells people how to contribute to
+> template user training materials, and template users can adapt it to their own training.
 
 ## Citation
 
