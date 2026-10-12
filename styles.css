@@ -794,34 +794,35 @@ a.anchorjs-link {
 
 /*
  * The following media queries adapt the landing page to smaller screens.
+ * They use the same breakpoints as the training instance pages:
  *
- * 1024px and below: compact tablet/laptop layout.
- * 850px and below: information cards in one column.
- * 768px and below:  single-column tablet/mobile layout.
- * 414px and below:  compact mobile-phone layout.
+ * 1100px and below: large tablets and small laptops: compact hero and banner.
+ * 850px and below:  tablets: information cards in one column.
+ * 750px and below:  mobile: full screen width and single-column layout.
+ * 450px and below:  small mobile: compact spacing and stacked buttons.
  *
  * These rules normally do not need to be changed when adapting the template
- * for a course.
+ * for a training.
  */
 
 /* ==========================================================================
-   Tablet and smaller screens (1024px and below)
+   Large tablets and small laptops (1100px and below)
    ========================================================================== */
-@media (max-width: 1024px) {
 
-  /* Reduce hero spacing on smaller screens. */
+@media (max-width: 1100px) {
+
+  /* Reduce hero spacing. */
   .hero {
     gap: 0.95rem;
     padding: 2.45rem 1.45rem 2.15rem;
   }
 
-  /* Reduce the space available to organisation logos. */
+  /* Reduce the space available to organisation logos, and show them slightly smaller. */
   .hero__brand {
     gap: 0.82rem;
     max-width: min(27rem, 58vw);
   }
 
-  /* Display organisation logos at a smaller size. */
   .hero__partner-logo {
     max-height: 2.45rem;
   }
@@ -831,22 +832,20 @@ a.anchorjs-link {
     font-size: clamp(1.55rem, 1.9vw, 1.95rem);
   }
 
-  /* Reduce the width of the image column in the course instances banner. */
+  /* Narrow the image column of the "All training instances" banner. */
   .instances-band {
     grid-template-columns: clamp(8.5rem, 18vw, 12rem) minmax(0, 1fr);
   }
 
-  /* Reduce the minimum height of the decorative course image. */
   .instances-band__media {
     min-height: 8.5rem;
   }
 
-  /* Reduce spacing around the course-instance content. */
   .instances-band__content {
     padding: 0.9rem 1rem 0.95rem;
   }
 
-  /* Make course-instance buttons slightly narrower. */
+  /* Make training-instance buttons slightly narrower. */
   .instance-grid--band ul {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 10rem));
   }
@@ -855,11 +854,11 @@ a.anchorjs-link {
 /* ==========================================================================
    Tablets (850px and below)
    ========================================================================== */
+
 @media (max-width: 850px) {
 
-  /* Stack the information cards in one column, so they do not become
-   * too narrow. The upper cards are shown in this order:
-   * Course content → Learning outcomes → Topics covered → Keywords. */
+  /* Stack the information cards in one column, so they do not become too narrow. The upper cards are shown in this order:
+   * Training content → Learning outcomes → Topics covered → Keywords. */
   .cards-grid {
     grid-template-columns: 1fr;
   }
@@ -874,35 +873,63 @@ a.anchorjs-link {
 }
 
 /* ==========================================================================
-   Tablet/mobile layout (768px and below)
+   Mobile (750px and below)
    ========================================================================== */
-@media (max-width: 768px) {
 
-  /* Reduce hero spacing further for narrow screens. */
+@media (max-width: 750px) {
+
+  /* Use the full screen width, as on the training instance pages: the
+   * hero, banner and footer run from edge to edge, and the cards keep a
+   * small margin. */
+  #quarto-content.page-rows-contents > main.content,
+  main.content {
+    grid-column: screen-start / screen-end;
+  }
+
+  .hero,
+  .instances-band,
+  .landing-footer {
+    border-radius: 0;
+  }
+
+  /* Hero: less spacing, and the logos above the title instead of in the
+   * upper-right corner. */
   .hero {
     gap: 1.1rem;
     padding: 2rem 1rem 1.7rem;
   }
 
-  /* Move organisation logos into the normal page flow instead of positioning
-   * them in the upper-right corner of the hero. */
   .hero__brand {
     position: static;
     justify-self: start;
     max-width: none;
   }
 
-  /* Reduce organisation logo size. */
   .hero__partner-logo {
     max-height: 2.35rem;
   }
 
-  /* Switch the instances banner to a single-column layout. */
-  .instances-band {
-    grid-template-columns: 1fr;
+  /* Hero buttons: smaller, with less space between them. */
+  .hero__actions ul {
+    width: 100%;
+    gap: 0.9rem;
   }
 
-  /* Display the decorative course image as a shallow full-width banner. */
+  .hero-cta {
+    gap: 0.55rem;
+    min-height: 2.7rem;
+    padding: 0.55rem 1.15rem;
+    font-size: 0.92rem;
+  }
+
+  /* "All training instances" banner: one column, with the image as a
+   * shallow strip across the top. */
+  .instances-band {
+    grid-template-columns: 1fr;
+    border-left: 0;
+    border-right: 0;
+  }
+
   .instances-band__media {
     min-height: 6.15rem;
   }
@@ -912,49 +939,30 @@ a.anchorjs-link {
     gap: 0.7rem;
   }
 
-  /* Adjust the course instances heading for the narrower layout. */
   .instances-band__title p {
     font-size: 1.45rem;
   }
 
-  /* Allow course-instance buttons to resize and wrap according to the
-   * available screen width. */
+  /* Let the training-instance buttons resize and wrap to the screen. */
   .instance-grid--band ul {
     grid-template-columns: repeat(auto-fit, minmax(10.25rem, 1fr));
     gap: 0.6rem;
   }
 
-   /* Allow the hero action-button container to use the full available width,
-   * with less space between the buttons. */
-  .hero__actions ul {
-    width: 100%;
-    gap: 0.9rem;
-  }
-
-  /* Make the hero action buttons smaller. */
-  .hero-cta {
-    gap: 0.55rem;
-    min-height: 2.7rem;
-    padding: 0.55rem 1.15rem;
-    font-size: 0.92rem;
-  }
-
-  /* Keep the footer text and repository image side by side while reducing
-   * the surrounding spacing. */
+  /* Footer: less spacing around the text and the repository logo. */
   .landing-footer {
-    align-items: center;
-    grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.85rem;
     padding: 0.8rem 0.9rem;
   }
 }
 
 /* ==========================================================================
-   Small mobile screens (414px and below)
+   Small mobile (450px and below)
    ========================================================================== */
-@media (max-width: 414px) {
 
-  /* Stack the hero action buttons, each across the full available width. */
+@media (max-width: 450px) {
+
+  /* Stack the hero buttons, each across the full width. */
   .hero__actions li {
     flex: 1 1 100%;
   }
@@ -964,7 +972,7 @@ a.anchorjs-link {
     justify-content: space-between;
   }
 
-  /* Adjust information-card heading spacing and sizing. */
+  /* Smaller information-card headings and icons. */
   .info-card__header {
     gap: 0.85rem;
   }
@@ -983,18 +991,11 @@ a.anchorjs-link {
     font-size: 1.6rem;
   }
 
-  /* Make footer text more compact on small phone screens. */
-  .landing-footer__meta p {
-    font-size: 0.68rem;
-    line-height: 1.32;
-  }
-
-  /* Reduce the height of the decorative course image. */
+  /* More compact "All training instances" banner. */
   .instances-band__media {
     min-height: 5rem;
   }
 
-  /* Reduce spacing inside the course instances banner. */
   .instances-band__content {
     padding: 0.82rem 0.9rem 0.9rem;
   }
@@ -1003,11 +1004,21 @@ a.anchorjs-link {
     font-size: 1.32rem;
   }
 
-  /* Make course-instance buttons more compact. */
   .instance-pill {
     min-height: 2.45rem;
     padding: 0.42rem 0.8rem;
     border-radius: 0.52rem;
     font-size: 0.84rem;
+  }
+
+  /* Slightly smaller footer text, with enough space between the lines
+   * and between the two paragraphs. */
+  .landing-footer__meta p {
+    font-size: 0.68rem;
+    line-height: 1.55;
+  }
+
+  .landing-footer__meta p + p {
+    margin-top: 0.6rem;
   }
 }
