@@ -1,7 +1,7 @@
 course:
 
-  # This file contains course-specific information used
-  # throughout the website, including the course syllabus.
+  # This file contains training instance-specific information used
+  # throughout the website, including the syllabus.
   #
   # Some fields are required and some are optional,
   # depending on the type and format of the training.
