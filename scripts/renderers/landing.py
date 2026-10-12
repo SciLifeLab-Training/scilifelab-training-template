@@ -12,7 +12,7 @@ import html
 
 USER_GUIDE_URL = (
     "https://scilifelab-training.github.io/"
-    "scilifelab-course-webpage-template-user-guide/"
+    "scilifelab-training-template-user-guide/"
 )
 
 

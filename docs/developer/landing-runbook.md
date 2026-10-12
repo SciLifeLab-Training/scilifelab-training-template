@@ -2,7 +2,7 @@
 
 This document describes the technical architecture, data model, validation, generated files, FAIR metadata, deployment and recovery procedures for the landing page on the `main` branch.
 
-It is intended for developers and maintainers of the SciLifeLab Training Webpage Template. Instructions for training organisers are provided in the [User Guide](https://scilifelab-training.github.io/scilifelab-course-webpage-template-user-guide/). The training instance branches are documented in `docs/_developer-SPEC.md` on the `release-0000` branch.
+It is intended for developers and maintainers of the SciLifeLab Training Webpage Template. Instructions for training organisers are provided in the [User Guide](https://scilifelab-training.github.io/scilifelab-training-template-user-guide/). The training instance branches are documented in `docs/_developer-SPEC.md` on the `release-0000` branch.
 
 ## 1. Architecture overview
 
@@ -338,6 +338,6 @@ If the "Commit generated metadata files" step fails because `main` changed in th
 
 ## 14. Related documentation
 
-- [User Guide](https://scilifelab-training.github.io/scilifelab-course-webpage-template-user-guide/): instructions for training organisers.
+- [User Guide](https://scilifelab-training.github.io/scilifelab-training-template-user-guide/): instructions for training organisers.
 - [`landing-migration-map.md`](landing-migration-map.md): how the earlier landing page models map to the current data files.
 - `docs/_developer-SPEC.md` on `release-0000`: the training instance branches.
