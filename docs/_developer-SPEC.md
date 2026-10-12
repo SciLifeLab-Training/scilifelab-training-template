@@ -2,7 +2,7 @@
 
 This document describes the technical architecture, data model, validation, generated files, FAIR metadata and deployment of a **training instance branch** (`release-YYMM`).
 
-It is intended for developers and maintainers of the SciLifeLab Training Webpage Template. Instructions for training organisers are provided in the [User Guide](https://scilifelab-training.github.io/scilifelab-course-webpage-template-user-guide/). The landing page is documented separately in `docs/developer/landing-runbook.md` on the `main` branch.
+It is intended for developers and maintainers of the SciLifeLab Training Webpage Template. Instructions for training organisers are provided in the [User Guide](https://scilifelab-training.github.io/scilifelab-training-template-user-guide/). The landing page is documented separately in `docs/developer/landing-runbook.md` on the `main` branch.
 
 This document describes implemented behaviour, not planned functionality. For exact behaviour, the code in `scripts/` and the authored `.qmd` files is authoritative. Keep this document in sync when that code changes (see [section 17](#17-keeping-this-specification-current)).
 
@@ -593,7 +593,7 @@ Update this document when a change affects:
 
 ## 18. Related documentation
 
-- [User Guide](https://scilifelab-training.github.io/scilifelab-course-webpage-template-user-guide/): instructions for training organisers.
+- [User Guide](https://scilifelab-training.github.io/scilifelab-training-template-user-guide/): instructions for training organisers.
 - `docs/developer/landing-runbook.md` on `main`: landing page architecture and deployment.
 - `docs/developer/landing-migration-map.md` on `main`: mapping of the legacy landing page configuration.
 - `docs/_template-README.md`: README template for training instances.

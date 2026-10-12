@@ -23,7 +23,7 @@ The landing page that lists all instances of a training lives on the
 
 ## User Guide
 
-New to the template? See the **[SciLifeLab Training Webpage Template User Guide](https://scilifelab-training.github.io/scilifelab-course-webpage-template-user-guide/)**.
+New to the template? See the **[SciLifeLab Training Webpage Template User Guide](https://scilifelab-training.github.io/scilifelab-training-template-user-guide/)**.
 
 The User Guide provides step-by-step instructions for:
 
