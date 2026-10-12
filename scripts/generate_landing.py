@@ -19,6 +19,7 @@ import html
 import re
 import shutil
 import sys
+from datetime import date
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -33,7 +34,11 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
-from renderers.fair import render_bioschemas, write_fair_files  # noqa: E402
+from renderers.fair import (  # noqa: E402
+    licence_id,
+    render_bioschemas,
+    write_fair_files,
+)
 from renderers.footer import render_footer  # noqa: E402
 from renderers.landing import (  # noqa: E402
     render_bottom_cards,
@@ -389,6 +394,20 @@ def validate_course(course: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(reuse, dict):
         raise ValidationError("course.reuse must be a mapping.")
 
+    # A licence is needed for the citation, Zenodo and Bioschemas, and must
+    # be one fair.py recognises, or be given as an SPDX code in licence_id.
+    if not str(reuse.get("licence") or reuse.get("licence_id") or "").strip():
+        raise ValidationError(
+            'course.reuse.licence is required, for example "CC BY 4.0".'
+        )
+
+    if not licence_id(course):
+        raise ValidationError(
+            f"course.reuse.licence {reuse.get('licence')!r} is not recognised. "
+            "Add its short code from https://spdx.org/licenses/ to "
+            "course.reuse.licence_id."
+        )
+    
     for field in ("doi", "version_doi"):
         value = str(reuse.get(field) or "").strip()
         if value and not re.match(DOI_PATTERN, value, re.IGNORECASE):
@@ -396,6 +415,16 @@ def validate_course(course: dict[str, Any]) -> dict[str, Any]:
                 f"course.reuse.{field} is not a valid DOI: {value!r}. "
                 'Write it like "10.5281/zenodo.1234567".'
             )
+
+    release_date = str(reuse.get("release_date") or "").strip()
+    if release_date:
+        try:
+            date.fromisoformat(release_date)
+        except ValueError:
+            raise ValidationError(
+                f"course.reuse.release_date is not a valid date: "
+                f"{release_date!r}. Write it as YYYY-MM-DD."
+            ) from None
 
     return course
 
@@ -464,6 +493,13 @@ def validate_team(team: dict[str, Any]) -> dict[str, Any]:
                 "but has no email address."
             )
 
+    # CITATION.cff and Zenodo need at least one author.
+    if all(member.get("citation_author") is False for member in members):
+        raise ValidationError(
+            "At least one team member must be a citation author: remove "
+            "'citation_author: false' from at least one member."
+        )
+    
     return team
 
 

@@ -127,3 +127,32 @@ def test_template_citation_is_software() -> None:
     )
     assert zenodo["upload_type"] == "software"
     assert zenodo["version"]
+
+def test_course_requires_a_licence(landing_data) -> None:
+    course = copy.deepcopy(landing_data[0])
+    course["reuse"]["licence"] = ""
+    course["reuse"]["licence_id"] = ""
+    with pytest.raises(gl.ValidationError) as exc:
+        gl.validate_course(course)
+    assert "licence is required" in str(exc.value)
+
+
+def test_course_rejects_unknown_licence_without_id(landing_data) -> None:
+    course = copy.deepcopy(landing_data[0])
+    course["reuse"]["licence"] = "My own licence"
+    course["reuse"]["licence_id"] = ""
+    with pytest.raises(gl.ValidationError) as exc:
+        gl.validate_course(course)
+    assert "not recognised" in str(exc.value)
+
+    course["reuse"]["licence_id"] = "LicenseRef-own"
+    gl.validate_course(course)
+
+
+def test_team_needs_a_citation_author(landing_data) -> None:
+    team = copy.deepcopy(landing_data[1])
+    for member in team["members"]:
+        member["citation_author"] = False
+    with pytest.raises(gl.ValidationError) as exc:
+        gl.validate_team(team)
+    assert "citation author" in str(exc.value)

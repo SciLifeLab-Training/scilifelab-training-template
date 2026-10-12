@@ -39,6 +39,7 @@ course:
   # reuse.licence_url
   # reuse.licence_id
   # reuse.doi
+  # reuse.release_date
   # reuse.website_url
   # reuse.zenodo_communities
   # reuse.preferred_citation
@@ -76,15 +77,12 @@ course:
   # --------------------------------------------------
   #
   # Each list is shown in its own card on the landing page.
-  # The topics card is left out when there are no topics.
 
   learning_outcomes:
     - "Learning outcome 1"
     - "Learning outcome 2"
     - "Learning outcome 3"
 
-  # Keywords help people find the training in Zenodo and in training
-  # registries.
   keywords:
     - "Keyword 1"
     - "Keyword 2"
@@ -109,7 +107,7 @@ course:
 
   target_audience: "Describe the intended participant group"
 
-  # For example "Beginner", "Intermediate" or "Advanced".
+  # Choose from: "Beginner", "Intermediate" or "Advanced".
   expertise_level: ""
 
   # --------------------------------------------------
@@ -159,6 +157,10 @@ course:
     # release-YYMM branches, for example "10.5281/zenodo.1234567".
     doi: ""
 
+    # release_date: the date the training was first published on Zenodo,
+    # written as YYYY-MM-DD (for example "2025-05-12"). 
+    release_date: ""
+
     # Optional fields
     # ---------------
     # Leave these empty unless you need them.
@@ -173,5 +175,6 @@ course:
     zenodo_communities: []
 
     # How others should cite the training. When empty, a citation is
-    # created automatically from the team members, title and DOI.
+    # created automatically from the team members, year (from
+    # release_date), title and DOI.
     preferred_citation: ""

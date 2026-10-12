@@ -1,4 +1,86 @@
 instances:
+
+  # This file lists the training instances: each time the training is
+  # given. Each instance has its own release-YYMM branch and website.
+  #
+  # The instances listed here are shown as buttons in the
+  # "All training instances" banner on the landing page. The instance
+  # marked as current is also used for the buttons at the top of the page
+  # ("Take me to the current instance" and "Register now").
+  #
+  # Creating a release-YYMM branch does NOT add the instance here
+  # automatically: add it to this list yourself.
+  #
+  # The generator (scripts/generate_landing.py) checks this file and stops
+  # the website from rendering if something is wrong.
+
+  # ==================================================
+  # Rules
+  # ==================================================
+  #
+  # - At least one instance is required.
+  # - Exactly one instance must have "status: current". All other
+  #   instances have "status: previous".
+  # - The current instance must have "visible: true".
+  # - Every instance must have its own slug: never use the same slug twice.
+
+  # ==================================================
+  # Fields
+  # ==================================================
+  #
+  # slug (required)
+  #   The year and month of the instance as YYMM, the same as in its branch
+  #   name. For example "2611" for the branch release-2611 (November 2026).
+  #   "0000" is only used for the template's example instance.
+  #
+  # label (required)
+  #   The text on the instance's button, for example "November 2026".
+  #   Changing the label only changes the text visitors see, not the link.
+  #
+  # status (required)
+  #   current: the instance that is running now or coming up next.
+  #   previous: an earlier instance.
+  #
+  # visible (required)
+  #   true: show the instance in the "All training instances" banner.
+  #   false: hide it. The instance stays in this list and its website stays
+  #   online; it is only left out of the banner.
+  #
+  # show_in_hero (optional, current instance only)
+  #   true (default): show the "Take me to the current instance" button at
+  #   the top of the page.
+  #   false: hide that button. Use this (NOT "visible: false") if you
+  #   do not want the current instance at the top of the page.
+  #
+  # instance_url (required)
+  #   The link to the instance's website: "./YYMM/" with the same YYMM as
+  #   the slug, for example "./2611/". A full web address
+  #   (https://...) is also allowed.
+  #
+  # registration_url (optional, current instance only)
+  #   The link to the registration page or form. When filled in for the
+  #   current instance, a "Register now" button is shown at the top of the
+  #   page. Leave it empty ("") to hide that button, for example after
+  #   registration has closed.
+  #
+  # sort_key (required)
+  #   The year and month as a number YYYYMM, for example 202611. The
+  #   current instance is always shown first in the banner; the previous
+  #   instances follow, newest first, sorted by sort_key.
+
+  # ==================================================
+  # Adding a new instance
+  # ==================================================
+  #
+  # 1. Copy a complete entry below, from "- slug:" to "sort_key:", and
+  #    paste it at the top of the list.
+  # 2. Change slug, label, instance_url and sort_key to the new instance.
+  # 3. Give the new instance "status: current", and change the old current
+  #    instance to "status: previous" (and "show_in_hero: false").
+  #
+  # Keep the indentation exactly as in the examples: "- slug:" is indented
+  # by two spaces, and the other fields of the entry by four.
+
   - slug: "0000"
     label: "September 2026"
     status: current
@@ -6,7 +88,7 @@ instances:
     show_in_hero: true
     instance_url: "./0000/"
     registration_url: "https://example.org/registration"
-    sort_key: 200000
+    sort_key: 202609
 
   - slug: "2505"
     label: "May 2025"
@@ -18,7 +100,7 @@ instances:
     sort_key: 202505
 
   - slug: "2411"
-    label: "Nov 2024"
+    label: "November 2024"
     status: previous
     visible: false
     show_in_hero: false
