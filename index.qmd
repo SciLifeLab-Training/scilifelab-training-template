@@ -3,13 +3,24 @@ format:
   html:
     toc: false
     page-layout: full
+metadata-files:
+  - _generated/page-metadata.yml
+include-in-header:
+  - file: _generated/bioschemas.html
 ---
 
 :::{.landing-shell}
+
 {{< include _sections/template-banner.qmd >}}
+
 {{< include _sections/hero.qmd >}}
+
 {{< include _sections/top-cards.qmd >}}
+
 {{< include _sections/instances-band.qmd >}}
+
 {{< include _sections/bottom-cards.qmd >}}
+
 {{< include _sections/footer.qmd >}}
+
 :::

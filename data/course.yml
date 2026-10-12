@@ -1,0 +1,177 @@
+course:
+
+  # This file contains information about the training as a whole.
+  # It is used for the landing page, the README and the files that
+  # make the training citable and findable (CITATION.cff, .zenodo.json
+  # and the Bioschemas markup for training registries such as TeSS).
+  #
+  # Information about one specific time the training is given (dates,
+  # location, schedule, team) belongs on the release-YYMM branch of
+  # that training instance, in its own data/course.yml.
+  #
+  # Use the same title, description, keywords and learning outcomes
+  # here as on your release-YYMM branches, so the landing page and the
+  # training instances describe the same training.
+  #
+  # The generator (scripts/generate_landing.py) checks the required
+  # fields and stops the website from rendering if any required
+  # information is missing.
+
+  # ==================================================
+  # Required fields
+  # ==================================================
+  # title
+  # description
+  # learning_outcomes
+  # keywords
+
+  # ==================================================
+  # Optional fields
+  # ==================================================
+  # subtitle
+  # topics
+  # language
+  # target_audience
+  # expertise_level
+  # organizers
+  # funding
+  # reuse.licence
+  # reuse.licence_url
+  # reuse.licence_id
+  # reuse.doi
+  # reuse.website_url
+  # reuse.zenodo_communities
+  # reuse.preferred_citation
+
+
+  # --------------------------------------------------
+  # Identity
+  # --------------------------------------------------
+  #
+  # Shown at the top of the landing page.
+
+  title: "Training title"
+  subtitle: "Training subtitle"
+
+  # --------------------------------------------------
+  # Description
+  # --------------------------------------------------
+  #
+  # Shown in the "Training content" card on the landing page, and
+  # used as the summary in the README, the citation and the Zenodo
+  # record.
+  #
+  # Separate paragraphs with an empty line. You can use Markdown,
+  # for example **bold** text or [links](https://example.org).
+
+  description: |
+    Description of the content of the training.
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra vehicula est non feugiat. Maecenas nec cursus eros, at consectetur enim. Ut tincidunt eros ipsum, ut tempor tortor eleifend eu.
+
+    Aliquam hendrerit dui tristique felis faucibus semper. Integer placerat, mauris id tempus ultricies, felis magna ultricies risus, nec ullamcorper nisi justo ut mi. Duis scelerisque molestie sollicitudin.
+
+  # --------------------------------------------------
+  # Learning outcomes, keywords and topics
+  # --------------------------------------------------
+  #
+  # Each list is shown in its own card on the landing page.
+  # The topics card is left out when there are no topics.
+
+  learning_outcomes:
+    - "Learning outcome 1"
+    - "Learning outcome 2"
+    - "Learning outcome 3"
+
+  # Keywords help people find the training in Zenodo and in training
+  # registries.
+  keywords:
+    - "Keyword 1"
+    - "Keyword 2"
+    - "Keyword 3"
+    - "Keyword 4"
+
+  topics:
+    - "Topic 1"
+    - "Topic 2"
+    - "Topic 3"
+    - "Topic 4"
+
+  # --------------------------------------------------
+  # Audience and language
+  # --------------------------------------------------
+  #
+  # Not shown on the landing page. Used for the README, Zenodo and
+  # Bioschemas.
+
+  # The language of the training, for example "English".
+  language: "English"
+
+  target_audience: "Describe the intended participant group"
+
+  # For example "Beginner", "Intermediate" or "Advanced".
+  expertise_level: ""
+
+  # --------------------------------------------------
+  # Administration
+  # --------------------------------------------------
+
+  # Organisations responsible for the training.
+  organizers:
+    - "Name of organizing institution"
+
+  # Organisations funding the training, if applicable.
+  # Example:
+  #   funding:
+  #     - funder: "European Commission"
+  #       grant_number: "101057388"
+  #       grant_title: "Name of the project"
+  funding: []
+
+  # --------------------------------------------------
+  # Reuse, citation and DOI
+  # --------------------------------------------------
+  #
+  # This section describes how others may reuse and cite the
+  # training. It is used for the README and for the files that are
+  # created automatically (CITATION.cff and .zenodo.json).
+  #
+  # For a new training, you usually only need to check the licence.
+
+  reuse:
+
+    # Licence
+    # -------
+    # "licence" is the name shown in the README, and "licence_url"
+    # is the page that explains the licence.
+    licence: "CC BY 4.0"
+    licence_url: "https://creativecommons.org/licenses/by/4.0/"
+
+    # Leave empty. Only needed if you use an unusual licence: then
+    # enter its short code from https://spdx.org/licenses/
+    licence_id: ""
+
+    # DOI
+    # ---
+    # The DOI of the training as a whole (the "Cite all versions" DOI
+    # on Zenodo). Zenodo creates it when you publish the first
+    # training instance. Use the same value as reuse.doi on your
+    # release-YYMM branches, for example "10.5281/zenodo.1234567".
+    doi: ""
+
+    # Optional fields
+    # ---------------
+    # Leave these empty unless you need them.
+
+    # The web address of the landing page. When empty, it is worked
+    # out automatically. Only needed if the website uses its own
+    # domain name.
+    website_url: ""
+
+    # Zenodo communities the training should be listed in, for
+    # example: ["scilifelab"]
+    zenodo_communities: []
+
+    # How others should cite the training. When empty, a citation is
+    # created automatically from the team members, title and DOI.
+    preferred_citation: ""

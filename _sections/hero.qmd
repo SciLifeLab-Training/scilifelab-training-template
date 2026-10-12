@@ -1,18 +1,10 @@
 :::{.hero}
 :::{.hero__brand}
-<div class="hero__brand-item">
-  <img src="img/logos/SciLifeLab_Logotype_NEG.png" alt="SciLifeLab" class="hero__partner-logo">
-</div>
+{{< include _generated/hero-brand.qmd >}}
 :::
 
 :::{.hero__copy}
-:::{.hero__title}
-Training title
-:::
-
-:::{.hero__subtitle}
-Training subtitle
-:::
+{{< include _generated/hero-copy.qmd >}}
 :::
 
 :::{.hero__actions}

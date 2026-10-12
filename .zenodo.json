@@ -1,0 +1,39 @@
+{
+  "title": "Training title",
+  "upload_type": "lesson",
+  "description": "<p>Description of the content of the training. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra vehicula est non feugiat. Maecenas nec cursus eros, at consectetur enim. Ut tincidunt eros ipsum, ut tempor tortor eleifend eu. Aliquam hendrerit dui tristique felis faucibus semper. Integer placerat, mauris id tempus ultricies, felis magna ultricies risus, nec ullamcorper nisi justo ut mi. Duis scelerisque molestie sollicitudin.</p>\n<p>Training website: <a href=\"https://scilifelab-training.github.io/scilifelab-training-template/\">https://scilifelab-training.github.io/scilifelab-training-template/</a></p>",
+  "creators": [
+    {
+      "name": "Lastname1, Firstname1",
+      "affiliation": "Institution or organisation"
+    },
+    {
+      "name": "Lastname2, Firstname2",
+      "affiliation": "Institution or organisation"
+    },
+    {
+      "name": "Lastname3, Firstname3",
+      "affiliation": "Institution or organisation"
+    },
+    {
+      "name": "Lastname4, Firstname4",
+      "affiliation": "Institution or organisation"
+    }
+  ],
+  "keywords": [
+    "Keyword 1",
+    "Keyword 2",
+    "Keyword 3",
+    "Keyword 4"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://scilifelab-training.github.io/scilifelab-training-template/",
+      "relation": "isSupplementedBy",
+      "resource_type": "other"
+    }
+  ]
+}

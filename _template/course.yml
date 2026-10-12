@@ -1,0 +1,51 @@
+course:
+
+  # Metadata of the SciLifeLab Training Webpage Template itself.
+  #
+  # Used only while website.template is true in data/website.yml:
+  # CITATION.cff, .zenodo.json and the generated blocks of README.md
+  # then describe the template instead of the example training.
+  #
+  # Using the template for your own training? Set website.template to
+  # false. This folder is then no longer used, and you can delete it.
+
+  title: "SciLifeLab Training Webpage Template"
+
+  description: >-
+    A Quarto-based template for creating, publishing and maintaining
+    FAIR, reusable training websites with GitHub Pages. A landing page
+    lists all instances of a training, and each training instance has
+    its own website with an overview, schedule, content pages, syllabus
+    and information pages, generated from structured data files.
+
+  keywords:
+    - "training"
+    - "training materials"
+    - "course website"
+    - "template"
+    - "Quarto"
+    - "GitHub Pages"
+    - "FAIR"
+    - "open educational resources"
+
+  language: "English"
+
+  reuse:
+    licence: "CC BY 4.0"
+    licence_url: "https://creativecommons.org/licenses/by/4.0/"
+
+    # The template is archived on Zenodo as software.
+    upload_type: "software"
+
+    # The template version. Update it before each release of the
+    # template, together with release_date.
+    version: "1.0.0-alpha"
+    release_date: ""
+
+    # After the first Zenodo release of the template: doi is the
+    # "Cite all versions" DOI, version_doi the DOI of this release.
+    doi: ""
+    version_doi: ""
+
+    zenodo_communities: []
+    preferred_citation: ""

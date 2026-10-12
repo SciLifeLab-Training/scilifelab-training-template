@@ -67,15 +67,16 @@ def test_load_yaml_dict_rejects_non_mapping(tmp_path: Path) -> None:
     assert "top-level mapping" in str(exc.value)
 
 
-def test_load_ui_labels_rejects_unknown_keys(tmp_path: Path) -> None:
-    ui = tmp_path / "ui.yml"
-    ui.write_text(
-        "hero_view_current_lable: Broken typo\n",
-        encoding="utf-8",
-    )
+def test_validate_labels_rejects_unknown_keys() -> None:
     with pytest.raises(gl.ValidationError) as exc:
-        gl.load_ui_labels(ui)
+        gl.validate_labels({"hero_view_current_lable": "Broken typo"})
     assert "unknown key(s)" in str(exc.value)
+
+
+def test_validate_labels_fills_in_defaults() -> None:
+    labels = gl.validate_labels({"instances_band_title": "Earlier runs"})
+    assert labels["instances_band_title"] == "Earlier runs"
+    assert labels["hero_view_current_label"] == gl.UI_DEFAULTS["hero_view_current_label"]
 
 
 def test_validate_instances_rejects_multiple_current() -> None:

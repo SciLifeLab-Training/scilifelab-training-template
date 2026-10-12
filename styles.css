@@ -5,15 +5,11 @@
 /* Main typeface used throughout the landing page. */
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap");
 
-
 /* ==========================================================================
    Landing page design settings
    ========================================================================== */
 
-/*
- * Change these variables to customise the main colours
- * used throughout the landing page.
- */
+/* Change these variables to customise the main colours used throughout the landing page.*/
 :root {
   /* Main page background. */
   --lp-page-bg: #ffffff;
@@ -72,23 +68,17 @@ body {
   font-family: "Lato", "Helvetica Neue", sans-serif;
 }
 
-
 /* ==========================================================================
    Quarto layout overrides
    ========================================================================== */
 
-/*
- * Hide Quarto's default page title because the landing page uses its own
- * title in _sections/hero.qmd.
- */
+/* Hide Quarto's default page title because the landing page uses its own title in _sections/hero.qmd. */
 #title-block-header {
   display: none;
 }
 
-/*
- * Remove Quarto's default content width, margins, and padding so that landing
- * page sections can span the full browser width.
- */
+/* Remove Quarto's default content width, margins, and padding so that landing
+ * page sections can span the full browser width. */
 #quarto-content,
 main.content,
 .quarto-container {
@@ -102,18 +92,14 @@ main.content,
   min-height: 100vh;
 }
 
-/*
- * Override Quarto's page grid so the landing-page content can extend to the
- * bottom of the page.
- */
+/* Override Quarto's page grid so the landing-page content can extend to the
+ * bottom of the page. */
 #quarto-content.page-rows-contents > main.content {
   grid-row: content-top / page-bottom;
 }
 
-/*
- * Use a flexible full-height content area. This allows .landing-shell to
- * control the vertical landing-page layout.
- */
+/* Use a flexible full-height content area. This allows .landing-shell to
+ * control the vertical landing-page layout. */
 main.content {
   display: flex;
   min-height: 100vh;
@@ -124,15 +110,12 @@ a.anchorjs-link {
   display: none;
 }
 
-
 /* ==========================================================================
    Landing page shell
    ========================================================================== */
 
-/*
- * Main wrapper around all landing-page sections.
- * Uses a vertical flex layout and fills the available browser height.
- */
+/* Main wrapper around all landing-page sections.
+ * Uses a vertical flex layout and fills the available browser height. */
 .landing-shell {
   flex: 1 0 auto;
   width: 100%;
@@ -143,16 +126,13 @@ a.anchorjs-link {
   padding-bottom: 0;
 }
 
-
 /* ==========================================================================
-   Template onboarding banner
+   Template banner
    ========================================================================== */
 
-/*
- * Template-only banner displayed above the landing-page hero.
+/* Template-only banner displayed above the landing-page hero.
  * This banner links to the SciLifeLab Course Page Template User Guide and
- * should be removed when the template is adapted for a course.
- */
+ * should be removed when the template is adapted for a course. */
 .template-banner {
   padding: 0.8rem 2rem;
   text-align: center;
@@ -175,17 +155,13 @@ a.anchorjs-link {
   text-underline-offset: 0.15em;
 }
 
-
 /* ==========================================================================
    Hero
    ========================================================================== */
 
-/*
- * Main course header containing the course title, subtitle, organisation
+/* Main course header containing the course title, subtitle, organisation
  * logo(s), and action buttons.
- *
- * The background gradient can be changed here to customise the hero colours.
- */
+ * The background gradient can be changed here to customise the hero colours. */
 .hero {
   position: relative;
   overflow: hidden;
@@ -204,10 +180,8 @@ a.anchorjs-link {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-/*
- * Add a subtle translucent highlight over the hero background.
- * This is decorative and does not affect the hero content.
- */
+/* Add a subtle translucent highlight over the hero background.
+ * This is decorative and does not affect the hero content. */
 .hero::before {
   content: "";
   position: absolute;
@@ -222,7 +196,6 @@ a.anchorjs-link {
   pointer-events: none;
   z-index: 0;
 }
-
 
 /* ==========================================================================
    Hero content
@@ -245,15 +218,12 @@ a.anchorjs-link {
   margin: 0;
 }
 
-
 /* ==========================================================================
    Hero organisation logo(s)
    ========================================================================== */
 
-/*
- * Position organisation logos in the upper-right corner of the hero.
- * Multiple logos can wrap when insufficient horizontal space is available.
- */
+/* Position organisation logos in the upper-right corner of the hero.
+ * Multiple logos can wrap when insufficient horizontal space is available. */
 .hero__brand {
   position: absolute;
   top: 2rem;
@@ -273,17 +243,14 @@ a.anchorjs-link {
   flex: 0 0 auto;
 }
 
-/*
- * Maximum displayed height of organisation logos.
- * Change max-height if larger or smaller logos are preferred.
- */
+/* Maximum displayed height of organisation logos.
+ * Change max-height if larger or smaller logos are preferred. */
 .hero__partner-logo {
   display: block;
   height: auto;
   max-height: 3.5rem;
   width: auto;
 }
-
 
 /* ==========================================================================
    Hero title and subtitle
@@ -297,35 +264,31 @@ a.anchorjs-link {
   padding-top: 2.3rem;
 }
 
-/*
- * Course title typography.
- * clamp() allows the title size to adapt to the browser width.
- */
+/* Shrinks smoothly with the screen width, from 3.5rem on wide screens
+ * to 2.1rem on phones, so long titles do not take up the whole screen. */
 .hero__title p {
-  font-size: clamp(3.5rem, 4.5vw, 4rem);
+  font-size: clamp(2.1rem, 1rem + 3.2vw, 3.5rem);
   font-weight: 300;
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
 /* Course subtitle typography and maximum line width. */
+/* Shrinks smoothly with the screen width, from 1.45rem to 1.05rem. */
 .hero__subtitle p {
   max-width: 35rem;
-  font-size: clamp(1.45rem, 1.45vw, 1.5rem);
+  font-size: clamp(1.05rem, 0.8rem + 0.85vw, 1.45rem);
   font-weight: 300;
   line-height: 1.4;
   color: var(--lp-white);
 }
 
-
 /* ==========================================================================
    Hero action buttons
    ========================================================================== */
 
-/*
- * Arrange the current-instance and registration buttons horizontally.
- * Buttons wrap automatically on narrower screens.
- */
+/* Arrange the current-instance and registration buttons horizontally.
+ * Buttons wrap automatically on narrower screens. */
 .hero__actions ul {
   list-style: none;
   display: flex;
@@ -377,24 +340,18 @@ a.anchorjs-link {
   line-height: 1;
 }
 
-/*
- * Primary hero action.
- * The primary action links to the current course instance.
- */
+/* Primary hero action. The primary action links to the current course instance. */
 .hero-cta--primary {
   background: var(--lp-white);
   color: var(--lp-hero-bg);
 }
 
-
 /* ==========================================================================
    Information card grids
    ========================================================================== */
 
-/*
- * Base two-column grid used for the landing-page information cards.
- * Change the gap to increase or decrease the space between cards.
- */
+/* Base two-column grid used for the landing-page information cards.
+ * Change the gap to increase or decrease the space between cards. */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -424,24 +381,19 @@ a.anchorjs-link {
     "keywords topics-covered";
 }
 
-/*
- * Two-column grid containing the lower information cards
- * (for example, course founders and contributors).
- */
+/* Two-column grid containing the lower information cards
+ * (for example, course founders and contributors). */
 .cards-grid--bottom {
   padding-top: 0.6rem;
   align-items: stretch;
 }
 
-
 /* ==========================================================================
    Information cards
    ========================================================================== */
 
-/*
- * Shared appearance of all information cards.
- * The main card background can be changed with --lp-card-bg in :root.
- */
+/* Shared appearance of all information cards.
+ * The main card background can be changed with --lp-card-bg in :root. */
 .cards-grid .info-card {
   background: var(--lp-card-bg);
   border-radius: 0.4rem;
@@ -473,7 +425,6 @@ a.anchorjs-link {
   min-height: 11.75rem;
 }
 
-
 /* ==========================================================================
    Information card headings and icons
    ========================================================================== */
@@ -486,10 +437,8 @@ a.anchorjs-link {
   margin-bottom: 1rem;
 }
 
-/*
- * Coloured container behind each card icon.
- * Change --lp-accent in :root to customise its background colour.
- */
+/* Coloured container behind each card icon.
+ * Change --lp-accent in :root to customise its background colour. */
 .info-card__icon {
   flex: 0 0 auto;
   display: grid;
@@ -519,7 +468,6 @@ a.anchorjs-link {
   padding: 0;
   background: transparent;
 }
-
 
 /* ==========================================================================
    Information card text and lists
@@ -583,25 +531,20 @@ a.anchorjs-link {
   gap: 0.18rem;
 }
 
-
 /* ==========================================================================
    Keyword tags
    ========================================================================== */
 
-/*
- * Display keywords as compact tags instead of a vertical list.
- * Tags automatically wrap onto another line when necessary.
- */
+/* Display keywords as compact tags instead of a vertical list.
+ * Tags automatically wrap onto another line when necessary. */
 .cards-grid--top .info-card--keywords .card-copy ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
 }
 
-/*
- * Appearance of individual keyword tags.
- * Change the background and text colour here to customise the tags.
- */
+/* Appearance of individual keyword tags.
+ * Change the background and text colour here to customise the tags. */
 .cards-grid--top .info-card--keywords .card-copy ul li {
   padding: 0.24rem 0.62rem;
   padding-left: 0.62rem;
@@ -617,7 +560,6 @@ a.anchorjs-link {
 .cards-grid--top .info-card--keywords .card-copy ul li::before {
   content: none;
 }
-
 
 /* ==========================================================================
    Course founders and contributors
@@ -640,17 +582,13 @@ a.anchorjs-link {
   font-weight: 400;
 }
 
-
 /* ==========================================================================
    All course instances banner
    ========================================================================== */
 
-/*
- * Two-column banner containing a decorative course image on the left and
+/* Two-column banner containing a decorative course image on the left and
  * links to available course instances on the right.
- *
- * The banner background can be changed with --lp-band-bg in :root.
- */
+ * The banner background can be changed with --lp-band-bg in :root. */
 .instances-band {
   display: grid;
   grid-template-columns: clamp(12rem, 22vw, 26rem) minmax(0, 1fr);
@@ -664,15 +602,11 @@ a.anchorjs-link {
   align-items: stretch;
 }
 
-
 /* ==========================================================================
    Course instances banner image
    ========================================================================== */
 
-/*
- * Container for the decorative course image.
- * The image itself is set in _sections/instances-band.qmd.
- */
+/* Container for the decorative course image. The image itself is set in _sections/instances-band.qmd. */
 .instances-band__media {
   position: relative;
   display: block;
@@ -682,11 +616,9 @@ a.anchorjs-link {
   overflow: hidden;
 }
 
-/*
- * Fill the available image area while preserving the image proportions.
+/* Fill the available image area while preserving the image proportions.
  * object-fit: cover may crop part of the image to fill the available space.
- * Change object-position to control which part of the image remains visible.
- */
+ * Change object-position to control which part of the image remains visible. */
 .instances-band__image {
   position: absolute;
   inset: 0;
@@ -696,7 +628,6 @@ a.anchorjs-link {
   object-fit: cover;
   object-position: center;
 }
-
 
 /* ==========================================================================
    Course instances banner content
@@ -733,7 +664,6 @@ a.anchorjs-link {
   line-height: 1.02;
 }
 
-
 /* ==========================================================================
    Course instance links
    ========================================================================== */
@@ -745,10 +675,8 @@ a.anchorjs-link {
   padding: 0;
 }
 
-/*
- * Arrange course instances in fixed-width columns.
- * Additional instances automatically wrap onto another row.
- */
+/* Arrange course instances in fixed-width columns.
+ * Additional instances automatically wrap onto another row. */
 .instance-grid--band ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10.75rem, 10.75rem));
@@ -776,10 +704,8 @@ a.anchorjs-link {
   box-shadow: none;
 }
 
-/*
- * Highlight the current course instance.
- * Change --lp-pill-bg in :root to customise its background colour.
- */
+/* Highlight the current course instance.
+ * Change --lp-pill-bg in :root to customise its background colour. */
 .instance-pill--current {
   border-color: transparent;
   background: var(--lp-pill-bg);
@@ -787,17 +713,13 @@ a.anchorjs-link {
   box-shadow: 0 3px 6px rgba(73, 31, 83, 0.24);
 }
 
-
 /* ==========================================================================
    Footer
    ========================================================================== */
 
-/*
- * Landing-page footer containing licence/build information on the left and
+/* Landing-page footer containing licence/build information on the left and
  * the repository link on the right.
- *
- * The footer background can be changed with --lp-footer-bg in :root.
- */
+ * The footer background can be changed with --lp-footer-bg in :root. */
 .landing-footer {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -810,7 +732,6 @@ a.anchorjs-link {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   border-radius: 0.3rem 0.3rem 0 0;
 }
-
 
 /* ==========================================================================
    Footer text
@@ -832,7 +753,6 @@ a.anchorjs-link {
   color: rgba(255, 255, 255, 0.9);
 }
 
-
 /* ==========================================================================
    Footer repository link
    ========================================================================== */
@@ -848,13 +768,9 @@ a.anchorjs-link {
 .landing-footer__image-link {
   display: inline-flex;
   align-items: center;
-  margin-top: 0.8rem;
 }
 
-/*
- * Control the displayed size of the repository image/logo.
- * Increase or decrease height to change its size.
- */
+/* Control the displayed size of the repository image/logo. Increase or decrease height to change its size. */
 .landing-footer__image {
   display: block;
   height: 2rem;
@@ -872,7 +788,6 @@ a.anchorjs-link {
   color: var(--lp-hero-bg);
 }
 
-
 /* ==========================================================================
    Responsive layout
    ========================================================================== */
@@ -881,6 +796,7 @@ a.anchorjs-link {
  * The following media queries adapt the landing page to smaller screens.
  *
  * 1024px and below: compact tablet/laptop layout.
+ * 850px and below: information cards in one column.
  * 768px and below:  single-column tablet/mobile layout.
  * 414px and below:  compact mobile-phone layout.
  *
@@ -888,11 +804,9 @@ a.anchorjs-link {
  * for a course.
  */
 
-
 /* ==========================================================================
    Tablet and smaller screens (1024px and below)
    ========================================================================== */
-
 @media (max-width: 1024px) {
 
   /* Reduce hero spacing on smaller screens. */
@@ -938,11 +852,30 @@ a.anchorjs-link {
   }
 }
 
+/* ==========================================================================
+   Tablets (850px and below)
+   ========================================================================== */
+@media (max-width: 850px) {
+
+  /* Stack the information cards in one column, so they do not become
+   * too narrow. The upper cards are shown in this order:
+   * Course content → Learning outcomes → Topics covered → Keywords. */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid--top {
+    grid-template-areas:
+      "course-content"
+      "learning-outcomes"
+      "topics-covered"
+      "keywords";
+  }
+}
 
 /* ==========================================================================
    Tablet/mobile layout (768px and below)
    ========================================================================== */
-
 @media (max-width: 768px) {
 
   /* Reduce hero spacing further for narrow screens. */
@@ -951,10 +884,8 @@ a.anchorjs-link {
     padding: 2rem 1rem 1.7rem;
   }
 
-  /*
-   * Move organisation logos into the normal page flow instead of positioning
-   * them in the upper-right corner of the hero.
-   */
+  /* Move organisation logos into the normal page flow instead of positioning
+   * them in the upper-right corner of the hero. */
   .hero__brand {
     position: static;
     justify-self: start;
@@ -966,25 +897,8 @@ a.anchorjs-link {
     max-height: 2.35rem;
   }
 
-  /*
-   * Stack the four upper information cards vertically:
-   * Course content → Learning outcomes → Topics covered → Keywords.
-   */
-  .cards-grid--top {
-    grid-template-areas:
-      "course-content"
-      "learning-outcomes"
-      "topics-covered"
-      "keywords";
-  }
-
-  /*
-   * Switch information cards, the instances banner, and the footer to
-   * single-column layouts where applicable.
-   */
-  .cards-grid,
-  .instances-band,
-  .landing-footer {
+  /* Switch the instances banner to a single-column layout. */
+  .instances-band {
     grid-template-columns: 1fr;
   }
 
@@ -1003,24 +917,30 @@ a.anchorjs-link {
     font-size: 1.45rem;
   }
 
-  /*
-   * Allow course-instance buttons to resize and wrap according to the
-   * available screen width.
-   */
+  /* Allow course-instance buttons to resize and wrap according to the
+   * available screen width. */
   .instance-grid--band ul {
     grid-template-columns: repeat(auto-fit, minmax(10.25rem, 1fr));
     gap: 0.6rem;
   }
 
-  /* Allow the hero action-button container to use the full available width. */
+   /* Allow the hero action-button container to use the full available width,
+   * with less space between the buttons. */
   .hero__actions ul {
     width: 100%;
+    gap: 0.9rem;
   }
 
-  /*
-   * Keep the footer text and repository image side by side while reducing
-   * the surrounding spacing.
-   */
+  /* Make the hero action buttons smaller. */
+  .hero-cta {
+    gap: 0.55rem;
+    min-height: 2.7rem;
+    padding: 0.55rem 1.15rem;
+    font-size: 0.92rem;
+  }
+
+  /* Keep the footer text and repository image side by side while reducing
+   * the surrounding spacing. */
   .landing-footer {
     align-items: center;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -1029,23 +949,16 @@ a.anchorjs-link {
   }
 }
 
-
 /* ==========================================================================
    Small mobile screens (414px and below)
    ========================================================================== */
-
 @media (max-width: 414px) {
 
-  /* Reduce the course title and subtitle sizes for small phone screens. */
-  .hero__title p {
-    font-size: 2.45rem;
+  /* Stack the hero action buttons, each across the full available width. */
+  .hero__actions li {
+    flex: 1 1 100%;
   }
 
-  .hero__subtitle p {
-    font-size: 1rem;
-  }
-
-  /* Make hero action buttons span the full available width. */
   .hero-cta {
     width: 100%;
     justify-content: space-between;

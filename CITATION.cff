@@ -1,65 +1,27 @@
-# --------------------------------------------------------------------
-# How to cite this repository
-#
-# GitHub reads this file from the main branch and shows it under
-# "Cite this repository" on the repository page.
-#
-# This file cites the SciLifeLab Training Webpage Template itself.
-#
-# Using the template for your own training? Replace the values below
-# with those of your training:
-#   - title, abstract and keywords: the title, description and
-#     keywords of your training (see data/course.yml on your latest
-#     release-YYMM branch);
-#   - authors: the people to credit for the training;
-#   - doi: the concept DOI ("Cite all versions") of your training on
-#     Zenodo, once you have one;
-#   - repository-code and url: your repository and landing page.
-# Remove "version" and "date-released": the versions of your training
-# are its training instances, which each have their own citation.
-#
-# Check the file with: cffconvert --validate
-# --------------------------------------------------------------------
-
+# This file is generated automatically from the data files in data/. Do not edit it by hand: edit the data files instead.
+# Validate with: cffconvert --validate
 cff-version: 1.2.0
-message: "If you use this template, please cite it as below."
-type: software
-
-title: "SciLifeLab Training Webpage Template"
-abstract: >-
-  A Quarto-based template for creating, publishing and maintaining
-  FAIR, reusable training websites with GitHub Pages. A landing page
-  lists all instances of a training, and each training instance has
-  its own website with an overview, schedule, content pages, syllabus
-  and information pages, generated from structured data files.
-
+message: If you use or reuse these training materials, please cite them as below.
+title: Training title
+abstract: Description of the content of the training. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra vehicula est non feugiat. Maecenas nec cursus eros, at consectetur enim. Ut tincidunt eros ipsum, ut tempor tortor eleifend eu. Aliquam hendrerit dui tristique felis faucibus semper. Integer placerat, mauris id tempus ultricies, felis magna ultricies risus, nec ullamcorper nisi justo ut mi. Duis scelerisque molestie sollicitudin.
 authors:
-  - family-names: "Luijten"
-    given-names: "Ineke"
-    affiliation: "SciLifeLab Training Hub"
-    orcid: "https://orcid.org/0000-0001-5768-275X"
-  - family-names: "Norgren"
-    given-names: "Nina"
-    affiliation: "SciLifeLab Training Hub"
-    orcid: "https://orcid.org/0000-0002-3823-1555"
-  - family-names: "Panouris"
-    given-names: "Dimitris"
-    affiliation: "SciLifeLab Training Hub"
-
+- family-names: Lastname1
+  given-names: Firstname1
+  affiliation: Institution or organisation
+- family-names: Lastname2
+  given-names: Firstname2
+  affiliation: Institution or organisation
+- family-names: Lastname3
+  given-names: Firstname3
+  affiliation: Institution or organisation
+- family-names: Lastname4
+  given-names: Firstname4
+  affiliation: Institution or organisation
 keywords:
-  - training
-  - training materials
-  - course website
-  - template
-  - Quarto
-  - GitHub Pages
-  - FAIR
-  - open educational resources
-
-version: "1.0.0-alpha"
-# date-released: "YYYY-MM-DD"   # add on the day of the release
-# doi: "10.5281/zenodo.XXXXXXX" # add the concept DOI after the first Zenodo release
-
+- Keyword 1
+- Keyword 2
+- Keyword 3
+- Keyword 4
 license: CC-BY-4.0
-repository-code: "https://github.com/SciLifeLab-Training/scilifelab-training-template"
-url: "https://scilifelab-training.github.io/scilifelab-training-template/"
+url: https://scilifelab-training.github.io/scilifelab-training-template/
+repository-code: https://github.com/SciLifeLab-Training/scilifelab-training-template

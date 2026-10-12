@@ -8,6 +8,7 @@ on:
       - '.github/workflows/deploy-landing.yml'
       - '_quarto.yml'
       - '_sections/**'
+      - '_template/**'
       - 'data/**'
       - 'img/**'
       - 'index.qmd'
@@ -51,6 +52,23 @@ jobs:
 
       - name: Render landing
         run: quarto render
+
+      - name: Commit generated metadata files
+        run: |
+          set -euo pipefail
+          git config user.email "do_not_email@example.com"
+          git config user.name "gh_action"
+
+          git add CITATION.cff .zenodo.json README.md
+
+          if git diff --cached --quiet; then
+            echo "Metadata files are up to date."
+            exit 0
+          fi
+
+          git commit -m "Update generated metadata files"
+          git pull --rebase origin main
+          git push origin HEAD:main
 
       - name: Checkout gh-pages
         uses: actions/checkout@v4

@@ -1,0 +1,31 @@
+team:
+
+  # The people behind the SciLifeLab Training Webpage Template.
+  # Used only while website.template is true in data/website.yml
+  # (see _template/course.yml).
+
+  members:
+
+    - given_names: "Ineke"
+      family_names: "Luijten"
+      roles:
+        - Founder
+      job_title: "Scientific Training Officer"
+      affiliation: "SciLifeLab Training Hub"
+      orcid: "https://orcid.org/0000-0001-5768-275X"
+
+    - given_names: "Nina"
+      family_names: "Norgren"
+      roles:
+        - Founder
+      job_title: "Training Manager"
+      affiliation: "SciLifeLab Training Hub"
+      orcid: "https://orcid.org/0000-0002-3823-1555"
+
+    - given_names: "Dimitris"
+      family_names: "Panouris"
+      roles:
+        - Founder
+      job_title: "System Developer"
+      affiliation: "SciLifeLab Training Hub"
+      orcid: "https://orcid.org/0009-0005-2282-2982"

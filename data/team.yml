@@ -1,0 +1,84 @@
+team:
+
+  # This file lists the people behind the training as a whole.
+  # They are shown in the "Founders" and "Contributors" cards on the
+  # landing page, and credited in the README, the citation and the
+  # Zenodo record.
+  #
+  # The team of one specific training instance (training leads,
+  # instructors) belongs on the release-YYMM branch, in its own
+  # data/team.yml.
+  #
+  # The generator (scripts/generate_landing.py) checks the required
+  # fields and stops the website from rendering if any required
+  # information is missing.
+
+  # ==================================================
+  # Team data rules
+  # ==================================================
+
+  # At least one team member is required.
+
+  # Required fields for every team member:
+    # - given_names (first name or names)
+    # - family_names (surname, including e.g. "van der")
+    # - roles
+    # - affiliation
+
+  # Allowed roles:
+    # - Founder: started or is responsible for the training.
+    # - Contributor: contributed materials or expertise.
+
+  # Optional fields for team members:
+    # - orcid, for example "https://orcid.org/0000-0002-1825-0097"
+    # - email
+    # - course_contact: set to true for the person to contact about
+    #   the training. They are listed as the contact in CITATION.cff,
+    #   with their email address.
+    # - citation_author: set to false to leave this person out of the
+    #   citation and the list of Zenodo authors. They are still shown
+    #   on the landing page. Everyone else is included as an author.
+
+  members:
+
+    # --------------------------------------------------
+    # Founders
+    # --------------------------------------------------
+
+    - given_names: "Firstname1"
+      family_names: "Lastname1"
+      roles:
+        - Founder
+      affiliation: "Institution or organisation"
+      orcid: ""
+      email: ""
+      course_contact: false
+      citation_author: true
+
+    - given_names: "Firstname2"
+      family_names: "Lastname2"
+      roles:
+        - Founder
+      affiliation: "Institution or organisation"
+      orcid: ""
+      citation_author: true
+
+    # --------------------------------------------------
+    # Contributors
+    # --------------------------------------------------
+
+    - given_names: "Firstname3"
+      family_names: "Lastname3"
+      roles:
+        - Contributor
+      affiliation: "Institution or organisation"
+      orcid: ""
+      citation_author: true
+
+    - given_names: "Firstname4"
+      family_names: "Lastname4"
+      roles:
+        - Contributor
+      affiliation: "Institution or organisation"
+      orcid: ""
+      citation_author: true

@@ -1,0 +1,102 @@
+website:
+
+  # This file controls the landing page: logos, labels, the
+  # "All training instances" banner and the footer.
+  #
+  # The training instances themselves are listed in
+  # data/instances.yml.
+
+  # ==================================================
+  # Template mode
+  # ==================================================
+  #
+  # true: this repository is the SciLifeLab Training Webpage Template
+  # itself. The landing page shows the "Want to use this template?"
+  # banner, and CITATION.cff, .zenodo.json and the README describe the
+  # template (from the files in _template/), not this example training.
+  #
+  # false: this repository is your own training. Set this to false
+  # when you start using the template. The banner disappears, and
+  # CITATION.cff, .zenodo.json and the README describe your training,
+  # from data/course.yml and data/team.yml.
+
+  template: false
+
+  # ==================================================
+  # Hero
+  # ==================================================
+  #
+  # The top of the landing page. The title and subtitle come from
+  # data/course.yml.
+  #
+  # Logos: add one or more logos. Use logos that are white or made
+  # for a dark background. SVG files are preferred.
+
+  hero:
+    logos:
+      - src: "img/logos/SciLifeLab_Logotype_NEG.png"
+        alt: "SciLifeLab"
+
+      # - src: "img/logos/partner-logo.svg"
+      #   alt: "Partner organisation"
+
+  # ==================================================
+  # Labels
+  # ==================================================
+  #
+  # Text on the buttons and headings that are created automatically.
+
+  labels:
+    # Button that links to the current training instance.
+    hero_view_current_label: "Take me to the current instance"
+    # Button that links to the registration of the current instance.
+    # Only shown when the current instance has a registration_url in
+    # data/instances.yml.
+    hero_registration_open_label: "Register now"
+    # Heading of the banner that lists all training instances.
+    instances_band_title: "All training instances"
+
+  # ==================================================
+  # "All training instances" banner
+  # ==================================================
+  #
+  # The decorative image on the left of the banner.
+
+  instances_band:
+    image: "img/images/navet-band.png"
+
+  # ==================================================
+  # Footer
+  # ==================================================
+  #
+  # Organisation and licence information are displayed when
+  # provided. The repository link and icon are displayed only when
+  # both a repository URL and image are provided.
+
+  footer:
+
+    # Name of the organisation, programme, or group responsible for
+    # the training.
+    organisation: "SciLifeLab Training Hub"
+
+    # Licence applied to the training website and materials.
+    licence:
+      name: "CC BY 4.0"
+      url: "https://creativecommons.org/licenses/by/4.0/"
+
+    # Text describing how the website was built.
+    # Usually this can be left unchanged.
+    built_with:
+      text: "This website was built using the"
+      template_name: "SciLifeLab Training Webpage Template"
+      template_url: "https://github.com/SciLifeLab-Training/scilifelab-training-template"
+      suffix: "and is hosted on GitHub Pages."
+
+    # Link and image used for the repository icon in the footer.
+    # Replace "url" with the GitHub repository of your training. The
+    # url is required: it is also used to work out the website
+    # address for the citation and Bioschemas files.
+    repository:
+      url: "https://github.com/SciLifeLab-Training/scilifelab-training-template"
+      image: "img/logos/Github_Neg.png"
+      alt: "GitHub repository"

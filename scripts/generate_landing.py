@@ -1,10 +1,24 @@
 #!/usr/bin/env python3
-"""Validate landing metadata and generate dynamic Quarto partials."""
+"""
+Validate the landing page data and generate the landing page.
+
+Runs as the Quarto pre-render step on the main branch. It reads the
+data files in data/, checks them, and writes:
+
+- the landing page sections to _generated/ (included by _sections/);
+- the Bioschemas markup of the training to _generated/bioschemas.html;
+- CITATION.cff, .zenodo.json and the generated blocks of README.md.
+
+In template mode (website.template: true), the citation files and
+README describe the template itself, from the files in _template/.
+"""
 
 from __future__ import annotations
 
 import html
 import re
+import shutil
+import sys
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -12,12 +26,40 @@ from urllib.parse import urlparse
 import yaml
 
 
-ROOT = Path(__file__).resolve().parents[1]
-INSTANCES_FILE = ROOT / "data" / "instances.yml"
-UI_FILE = ROOT / "data" / "ui.yml"
+SCRIPTS_DIR = Path(__file__).resolve().parent
+
+# Make scripts/renderers importable, also when this module is imported
+# by the tests as scripts.generate_landing.
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+
+from renderers.fair import render_bioschemas, write_fair_files  # noqa: E402
+from renderers.footer import render_footer  # noqa: E402
+from renderers.landing import (  # noqa: E402
+    render_bottom_cards,
+    render_hero_brand,
+    render_hero_copy,
+    render_instances_band_media,
+    render_template_banner,
+    render_top_cards,
+)
+
+
+ROOT = SCRIPTS_DIR.parent
+DATA_DIR = ROOT / "data"
+INSTANCES_FILE = DATA_DIR / "instances.yml"
+COURSE_FILE = DATA_DIR / "course.yml"
+TEAM_FILE = DATA_DIR / "team.yml"
+WEBSITE_FILE = DATA_DIR / "website.yml"
+TEMPLATE_DIR = ROOT / "_template"
 GENERATED_DIR = ROOT / "_generated"
 HERO_ACTIONS_FILE = GENERATED_DIR / "hero-actions.qmd"
 INSTANCES_BAND_FILE = GENERATED_DIR / "instances-band.qmd"
+
+DOI_PATTERN = r"^(https?://(dx\.)?doi\.org/|doi:)?10\.\d{4,9}/\S+$"
+ORCID_PATTERN = r"^(https://orcid\.org/)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$"
+GITHUB_REPOSITORY_PATTERN = r"^https://github\.com/[^/\s]+/[^/\s]+?/?$"
+ALLOWED_ROLES = ("Founder", "Contributor")
 
 class ValidationError(ValueError):
     """Raised when YAML data fails validation."""
@@ -58,16 +100,20 @@ def load_yaml_dict(path: Path) -> dict[str, Any]:
     return content
 
 
-def load_ui_labels(path: Path) -> dict[str, str]:
-    if not path.exists():
+def validate_labels(content: Any) -> dict[str, str]:
+    """Check website.labels and fill in the default for a missing label."""
+
+    if content is None:
         return UI_DEFAULTS.copy()
 
-    content = load_yaml_dict(path)
+    if not isinstance(content, dict):
+        raise ValidationError("website.labels must be a mapping.")
+
     unknown_keys = sorted(set(content.keys()) - set(UI_DEFAULTS.keys()))
     if unknown_keys:
         unknown_fmt = ", ".join(repr(key) for key in unknown_keys)
         raise ValidationError(
-            "ui.yml contains unknown key(s): "
+            "website.labels contains unknown key(s): "
             f"{unknown_fmt}. Allowed keys: {', '.join(UI_DEFAULTS.keys())}."
         )
 
@@ -75,9 +121,9 @@ def load_ui_labels(path: Path) -> dict[str, str]:
     for key, default in UI_DEFAULTS.items():
         value = content.get(key, default)
         if not isinstance(value, str) or not value.strip():
-           raise ValidationError(
-               f"ui.yml.{key} must be a non-empty string when provided."
-           )
+            raise ValidationError(
+                f"website.labels.{key} must be a non-empty string when provided."
+            )
         labels[key] = value
 
     return labels
@@ -299,16 +345,265 @@ def write_generated_partials(
     HERO_ACTIONS_FILE.write_text(hero_actions, encoding="utf-8")
     INSTANCES_BAND_FILE.write_text(instances_band, encoding="utf-8")
 
+# ---------------------------------------------------------
+# Course, team and website data
+# ---------------------------------------------------------
+
+def _load_section(path: Path, key: str) -> dict[str, Any]:
+    """Load the mapping under a top-level key, e.g. 'course'."""
+
+    content = load_yaml_dict(path)
+    section = content.get(key)
+
+    if not isinstance(section, dict):
+        raise ValidationError(
+            f"{path.name} must contain a '{key}' mapping."
+        )
+
+    return section
+
+
+def _check_list(value: Any, field: str, required: bool = False) -> None:
+    if value in (None, "") and not required:
+        return
+    if not isinstance(value, list):
+        raise ValidationError(f"{field} must be a list.")
+    if required and not [item for item in value if str(item or "").strip()]:
+        raise ValidationError(f"{field} must contain at least one item.")
+
+
+def validate_course(course: dict[str, Any]) -> dict[str, Any]:
+    """Check data/course.yml (the training as a whole)."""
+
+    for field in ("title", "description"):
+        if not str(course.get(field) or "").strip():
+            raise ValidationError(f"course.{field} is required.")
+
+    _check_list(course.get("learning_outcomes"), "course.learning_outcomes", True)
+    _check_list(course.get("keywords"), "course.keywords", True)
+    _check_list(course.get("topics"), "course.topics")
+    _check_list(course.get("organizers"), "course.organizers")
+    _check_list(course.get("funding"), "course.funding")
+
+    reuse = course.get("reuse") or {}
+    if not isinstance(reuse, dict):
+        raise ValidationError("course.reuse must be a mapping.")
+
+    for field in ("doi", "version_doi"):
+        value = str(reuse.get(field) or "").strip()
+        if value and not re.match(DOI_PATTERN, value, re.IGNORECASE):
+            raise ValidationError(
+                f"course.reuse.{field} is not a valid DOI: {value!r}. "
+                'Write it like "10.5281/zenodo.1234567".'
+            )
+
+    return course
+
+
+def complete_names(team: dict[str, Any]) -> dict[str, Any]:
+    """Build each member's display name from given_names and family_names."""
+
+    for member in team.get("members") or []:
+        if not isinstance(member, dict) or str(member.get("name") or "").strip():
+            continue
+        parts = [
+            str(member.get("given_names") or "").strip(),
+            str(member.get("family_names") or "").strip(),
+        ]
+        member["name"] = " ".join(part for part in parts if part)
+
+    return team
+
+
+def validate_team(team: dict[str, Any]) -> dict[str, Any]:
+    """Check data/team.yml (Founders and Contributors)."""
+
+    members = team.get("members")
+
+    if not isinstance(members, list) or not members:
+        raise ValidationError("team.members must contain at least one member.")
+
+    for index, member in enumerate(members):
+        if not isinstance(member, dict):
+            raise ValidationError(f"team.members[{index}] must be a mapping.")
+
+        name = str(member.get("name") or "").strip()
+        if not name:
+            raise ValidationError(
+                "A team member is missing a name: fill in "
+                "'given_names' and 'family_names'."
+            )
+
+        roles = member.get("roles")
+        if not isinstance(roles, list) or not roles:
+            raise ValidationError(
+                f"Team member '{name}' must have a list of roles."
+            )
+
+        invalid = sorted(set(roles) - set(ALLOWED_ROLES))
+        if invalid:
+            raise ValidationError(
+                f"Team member '{name}' has invalid role(s): "
+                f"{', '.join(map(str, invalid))}. "
+                f"Allowed roles are: {', '.join(ALLOWED_ROLES)}."
+            )
+
+        if not str(member.get("affiliation") or "").strip():
+            raise ValidationError(f"Team member '{name}' is missing 'affiliation'.")
+
+        orcid = str(member.get("orcid") or "").strip()
+        if orcid and not re.match(ORCID_PATTERN, orcid):
+            raise ValidationError(
+                f"Team member '{name}' has an invalid ORCID: {orcid!r}. "
+                'Write it like "https://orcid.org/0000-0002-1825-0097".'
+            )
+
+        if member.get("course_contact") is True and not member.get("email"):
+            raise ValidationError(
+                f"Team member '{name}' is marked as course_contact "
+                "but has no email address."
+            )
+
+    return team
+
+
+def validate_website(website: dict[str, Any]) -> dict[str, Any]:
+    """Check data/website.yml."""
+
+    if not isinstance(website.get("template", False), bool):
+        raise ValidationError("website.template must be true or false.")
+
+    logos = (website.get("hero") or {}).get("logos") or []
+    _check_list(logos, "website.hero.logos")
+    for index, logo in enumerate(logos):
+        if not isinstance(logo, dict) or not str(logo.get("src") or "").strip():
+            raise ValidationError(f"website.hero.logos[{index}] needs a 'src'.")
+
+    footer = website.get("footer") or {}
+    repository = str((footer.get("repository") or {}).get("url") or "").strip()
+
+    if not re.match(GITHUB_REPOSITORY_PATTERN, repository):
+        raise ValidationError(
+            "website.footer.repository.url must be the GitHub address of "
+            "this repository, for example "
+            '"https://github.com/organisation/repository"'
+        )
+
+    website["labels"] = validate_labels(website.get("labels"))
+
+    return website
+
+
+def load_landing_data() -> tuple[dict, dict, dict]:
+    """Load and check course.yml, team.yml and website.yml."""
+
+    course = validate_course(_load_section(COURSE_FILE, "course"))
+    team = validate_team(complete_names(_load_section(TEAM_FILE, "team")))
+    website = validate_website(_load_section(WEBSITE_FILE, "website"))
+
+    return course, team, website
+
+
+def load_citation_data(
+    course: dict[str, Any], team: dict[str, Any], website: dict[str, Any]
+) -> tuple[dict, dict]:
+    """
+    Return the course and team to describe in the citation files.
+
+    In template mode these are the template's own metadata in
+    _template/, otherwise the training's data files.
+    """
+
+    if website.get("template") is not True:
+        return course, team
+
+    template_course = validate_course_metadata(
+        _load_section(TEMPLATE_DIR / "course.yml", "course")
+    )
+    template_team = validate_team(
+        complete_names(_load_section(TEMPLATE_DIR / "team.yml", "team"))
+    )
+
+    return template_course, template_team
+
+
+def validate_course_metadata(course: dict[str, Any]) -> dict[str, Any]:
+    """Check _template/course.yml: a title and description are enough."""
+
+    for field in ("title", "description"):
+        if not str(course.get(field) or "").strip():
+            raise ValidationError(f"_template/course.yml: course.{field} is required.")
+
+    return course
+
+
+# ---------------------------------------------------------
+# Writing the landing page
+# ---------------------------------------------------------
+
+def write_landing_sections(
+    course: dict[str, Any], team: dict[str, Any], website: dict[str, Any]
+) -> None:
+    """Write the data-driven landing page sections to _generated/."""
+
+    sections = {
+        "template-banner.qmd": render_template_banner(website),
+        "hero-brand.qmd": render_hero_brand(website),
+        "hero-copy.qmd": render_hero_copy(course),
+        "top-cards.qmd": render_top_cards(course),
+        "instances-band-media.qmd": render_instances_band_media(website),
+        "bottom-cards.qmd": render_bottom_cards(team),
+        "footer.qmd": render_footer(website),
+        # Page metadata for index.qmd: the browser tab title and the
+        # description used by search engines and link previews.
+        "page-metadata.yml": yaml.safe_dump(
+            {
+                "pagetitle": " ".join(str(course.get("title")).split()),
+                "description-meta": " ".join(
+                    str(course.get("subtitle") or course.get("description")).split()
+                ),
+            },
+            allow_unicode=True,
+            sort_keys=False,
+            width=1000,
+        ),
+        
+        # No Bioschemas in template mode: the page then shows an
+        # example training, which should not be listed as a real course.
+        "bioschemas.html": (
+            ""
+            if website.get("template") is True
+            else render_bioschemas(course, team, website, scope="course") + "\n"
+        ),
+    }
+
+    for name, content in sections.items():
+        (GENERATED_DIR / name).write_text(content, encoding="utf-8")
+
+
 def main() -> None:
     instances_data = load_yaml_dict(INSTANCES_FILE)
     instances = validate_instances_data(instances_data)
-    ui_labels = load_ui_labels(UI_FILE)
-    write_generated_partials(instances, ui_labels)
-    print(
-        "Generated dynamic partials:",
-        HERO_ACTIONS_FILE.relative_to(ROOT),
-        INSTANCES_BAND_FILE.relative_to(ROOT),
+    course, team, website = load_landing_data()
+
+    # Start every render with a clean generated directory.
+    if GENERATED_DIR.exists():
+        shutil.rmtree(GENERATED_DIR)
+
+    write_generated_partials(instances, website["labels"])
+    write_landing_sections(course, team, website)
+
+    citation_course, citation_team = load_citation_data(course, team, website)
+    write_fair_files(
+        ROOT,
+        citation_course,
+        citation_team,
+        website,
+        source="_template/" if website.get("template") is True else "data/",
+        scope="course",
     )
+
+    print("Generated the landing page sections in", GENERATED_DIR.relative_to(ROOT))
 
 
 if __name__ == "__main__":
