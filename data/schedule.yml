@@ -1,9 +1,21 @@
-# This file contains the schedule for the training. Its data is used
-# to display the full schedule page and the upcoming section on the
-# overview page.
-#
-# Add one entry (= 1 event) for each session, break, or other scheduled part of the training.
+# OPTIONAL 
 
+# This file contains the schedule of the training: one entry per session,
+# break or other scheduled part. It is shown on the Schedule page, and the
+# next upcoming event is shown in the "Next up" section on the overview
+# page.
+
+# ==================================================
+# Leaving information out
+# ==================================================
+#
+# The schedule is optional. Without events, the Schedule page and the
+# "Next up" section on the overview page are left out.
+#
+# - To remove one event, delete it from its "- title:" line down to its
+#   "content:" line.
+# - To leave out the whole schedule, for example for self-paced training,
+#   delete all events, or empty or delete this file.
 
 events:
 
@@ -11,24 +23,23 @@ events:
   # Event fields
   # ==================================================
   #
-  # The schedule renderer expects the following fields for each event:
+  # Every event needs title, type, group, start and end. Do not leave these
+  # empty.
   #
   # - title: The event title displayed in the schedule.
   # - type: The event type, used for its label and styling.
   # - group: The day or group the event belongs to, e.g. "Day 1".
   # - start: The event start date and time.
   # - end: The event end date and time.
+
+  # Every event also has optional fields
+  #
   # - location: Where the event takes place. Use "" if not applicable.
   # - people: Names of the people leading or contributing to the event.
   #   Use [] if no names should be displayed.
-  #
-  # Optional field:
-  #
   # - content: Path to a content page associated with the event.
   #   Leave as "" if the event does not have an associated page.
-  #
-  # Note: The current validator checks that the file contains an
-  # "events" list. It does not validate the fields within each event.
+
   #
   # ==================================================
   # Dates and times

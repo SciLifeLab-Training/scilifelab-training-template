@@ -1,4 +1,7 @@
 website:
+
+# REQUIRED
+
 # This file contains the information displayed on the
 # overview page of a training website.
 #
@@ -62,16 +65,12 @@ website:
   #
   # The Information dropdown is displayed when at least one of
   # its links is available. Team and Syllabus are always included.
-  # Preparation, Practicalities, Announcements, Resources and FAQ 
-  # are included if their corresponding data files (e.g. preparation.yml)
-  # contain data. 
-  #
-  # IMPORTANT: deleting the corresponding quarto file (e.g. 
-  # preparation.qmd) does therefore not by itself remove preparation 
-  # from the navbar.
+  # Preparation, Practicalities, Announcements, Resources and FAQ
+  # are included only when their data file has content to show.
+  # A file that is empty, deleted, or contains only an introduction
+  # leaves the page out of the navbar and the quick links.
   #
   # The current page is highlighted automatically.
-
 
   # ==================================================
   # Welcome section
@@ -250,10 +249,8 @@ website:
   #
   # Always displayed.
   # Announcements are configured in data/announcements.yml.
-  # If there are no announcement items, the section displays
-  # "No active announcements."
-  #
-  # IMPORTANT: Keep data/announcements.yml in place, even when it is empty. 
+  # Without announcements (an empty or deleted announcements.yml), the
+  # section shows "No active announcements."
 
   # ==================================================
   # Team section

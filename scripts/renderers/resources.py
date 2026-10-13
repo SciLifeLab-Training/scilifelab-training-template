@@ -64,9 +64,19 @@ def render_resources(resources):
 
     html.append('</header>')
 
+    # Remember where the page content starts, so a page with only a
+    # header (no resources) can be left out completely.
+    content_start = len(html)
+
     for key, title, description, icon in sections:
 
-        items = resources.get(key) or []
+        # Only resources with a title are shown, so an emptied or
+        # half-filled entry does not appear as an empty card.
+        items = [
+            item
+            for item in resources.get(key) or []
+            if isinstance(item, dict) and str(item.get("title") or "").strip()
+        ]
 
         if not items:
             continue
@@ -100,15 +110,15 @@ def render_resources(resources):
         for item in items:
 
             item_title = escape(
-                str(item.get("title", ""))
+                str(item.get("title") or "")
             )
 
             item_description = escape(
-                str(item.get("description", ""))
+                str(item.get("description") or "")
             )
 
             item_url = escape(
-                str(item.get("url", "")),
+                str(item.get("url") or ""),
                 quote=True,
             )
 
@@ -148,6 +158,10 @@ def render_resources(resources):
         html.append('</div>')
 
         html.append('</section>')
+
+    # Leave the page out when it has no resources.
+    if len(html) == content_start:
+        return ""
 
     html.append('</div>')
 

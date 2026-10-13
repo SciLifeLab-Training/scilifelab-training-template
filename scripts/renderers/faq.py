@@ -3,8 +3,14 @@ def render_faq(faq):
     if not faq:
         return ""
 
-    questions = faq.get("questions") or []
+    # Only questions with both a question and an answer are shown.
+    questions = [
+        item
+        for item in faq.get("questions") or []
+        if isinstance(item, dict) and item.get("question") and item.get("answer")
+    ]
 
+    # Leave the page out when there are no questions.
     if not questions:
         return ""
 

@@ -1,5 +1,29 @@
 preparation:
 
+# OPTIONAL 
+
+  # This file contains what participants need to do or prepare before the
+  # training, such as accounts, software and reading. It is shown on the
+  # Preparation page, grouped in sections.
+
+  # ==================================================
+  # Leaving information out
+  # ==================================================
+  #
+  # Every section and every block is optional. A block is only shown when
+  # it has content, and a section is only shown when it has at least one
+  # block with content.
+  #
+  # - To remove one block, delete it from its "- type:" line down to the
+  #   line before the next "- type:".
+  # - To remove a whole section, delete it from its "- title:" line down to
+  #   the line before the next section's "- title:".
+  # - A section title is optional: use title: "" for a section without a
+  #   heading.
+  # - To hide the whole Preparation page (also from the navbar and the
+  #   quick links), empty or delete this file. A file with only the intro
+  #   is also left out.
+
   # --------------------------------------------------
   # Page introduction
   # --------------------------------------------------

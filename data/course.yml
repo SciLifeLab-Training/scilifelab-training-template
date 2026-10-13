@@ -1,5 +1,7 @@
 course:
 
+# REQUIRED 
+
   # This file contains training instance-specific information used
   # throughout the website, including the syllabus.
   #
@@ -24,7 +26,6 @@ course:
   # organizers
   # contact.email
   # reuse.licence
-
 
   # ==================================================
   # Optional fields
@@ -66,7 +67,6 @@ course:
   #
   # - examination can be omitted when there is no formal
   #   examination or assessment.
-
 
   # --------------------------------------------------
   # Identity

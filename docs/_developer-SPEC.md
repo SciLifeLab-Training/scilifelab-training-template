@@ -2,7 +2,7 @@
 
 This document describes the technical architecture, data model, validation, generated files, FAIR metadata and deployment of a **training instance branch** (`release-YYMM`).
 
-It is intended for developers and maintainers of the SciLifeLab Training Webpage Template. Instructions for training organisers are provided in the [User Guide](https://scilifelab-training.github.io/scilifelab-training-template-user-guide/). The landing page is documented separately in `docs/developer/landing-runbook.md` on the `main` branch.
+It is intended for developers and maintainers of the SciLifeLab Training Webpage Template. Instructions for training organisers are provided in the [User Guide](https://scilifelab-training.github.io/scilifelab-course-webpage-template-user-guide/). The landing page is documented separately in `docs/developer/landing-runbook.md` on the `main` branch.
 
 This document describes implemented behaviour, not planned functionality. For exact behaviour, the code in `scripts/` and the authored `.qmd` files is authoritative. Keep this document in sync when that code changes (see [section 17](#17-keeping-this-specification-current)).
 
@@ -158,11 +158,11 @@ Do not edit files in `_generated/`. They are overwritten on every render.
 | `course.yml` | Training identity, delivery, educational information, administration, reuse and DOIs | Yes |
 | `team.yml` | People, roles and contact information | Yes |
 | `website.yml` | Navbar logos, welcome, registration, quick links, footer and content sections | Yes |
-| `schedule.yml` | Scheduled events | File required; may contain `events: []` |
-| `announcements.yml` | Announcements | File required; may be empty |
-| `preparation.yml`, `practicalities.yml`, `faq.yml`, `resources.yml` | Information pages | File required; content optional |
+| `schedule.yml` | Scheduled events | Optional; may be empty or deleted |
+| `announcements.yml` | Announcements | Optional; may be empty or deleted |
+| `preparation.yml`, `practicalities.yml`, `faq.yml`, `resources.yml` | Information pages | Optional; may be empty or deleted |
 
-The loaders open the YAML files by name, so keep every file in the repository. "Optional" means that the corresponding page or section can be empty, not that the file can be deleted.
+`course.yml`, `team.yml` and `website.yml` are required. The optional files may be empty, contain only comments, or be deleted; their page is then left out (see [section 5](#5-page-availability-and-navigation)).
 
 ### 4.1 `course.yml`
 
@@ -213,18 +213,25 @@ The top-level `content` mapping in the same file defines the content sections (s
 
 ## 5. Page availability and navigation
 
-`render_course.py` calculates `available_pages`, which controls which optional pages appear in the navbar.
+`render_course.py` calculates `available_pages`, which controls which optional pages appear in the navbar and the quick links. **An optional page is only available when it has content to show.**
 
-| Page | Availability |
+| Page | Available when |
 |---|---|
 | Overview, Content, Syllabus, Team | Always |
-| Schedule | When `schedule.yml` contains events |
-| Practicalities | When practicalities data is not empty |
-| Preparation | When `preparation.yml` has `sections` |
-| FAQ, Resources | When their data is not empty |
-| Announcements | When `announcements.yml` contains items |
+| Schedule | `schedule.yml` contains events |
+| Announcements | `announcements.yml` contains items |
+| Practicalities, Preparation, FAQ, Resources | The page renderer produces content below the page header |
 
-"Not empty" means that the top-level mapping or list in the file contains anything, including placeholder text. To hide an optional page, empty its data (for example `faq: {}`).
+For the four information pages, `render_course.py` renders the page first and uses the result: each renderer returns an empty string when there is nothing to show below the header. An introduction on its own therefore does not make a page available. What counts as content:
+
+- **Practicalities:** at least one of venue, transport, accommodation, food or additional information.
+- **Preparation:** at least one section with a block that has content.
+- **FAQ:** at least one question with both `question` and `answer`.
+- **Resources:** at least one resource with a `title`.
+
+The optional data files (`schedule.yml`, `announcements.yml`, `practicalities.yml`, `preparation.yml`, `faq.yml`, `resources.yml`) may be empty, contain only comments, contain only their top-level key (for example `faq:`), or be deleted: `loaders.load_optional` treats all of these as "no content". `course.yml`, `team.yml` and `website.yml` are required.
+
+Empty fields (for example `room:` with no value) are skipped by the renderers rather than shown as text.
 
 Navbar structure: Overview, Content, Schedule (when available), and an Information dropdown with Preparation, Practicalities, Announcements, Resources, Team, Syllabus and FAQ (each when available).
 
@@ -593,7 +600,7 @@ Update this document when a change affects:
 
 ## 18. Related documentation
 
-- [User Guide](https://scilifelab-training.github.io/scilifelab-training-template-user-guide/): instructions for training organisers.
+- [User Guide](https://scilifelab-training.github.io/scilifelab-course-webpage-template-user-guide/): instructions for training organisers.
 - `docs/developer/landing-runbook.md` on `main`: landing page architecture and deployment.
 - `docs/developer/landing-migration-map.md` on `main`: mapping of the legacy landing page configuration.
 - `docs/_template-README.md`: README template for training instances.

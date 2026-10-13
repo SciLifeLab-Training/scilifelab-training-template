@@ -1,5 +1,46 @@
 resources:
 
+# OPTIONAL 
+
+  # This file contains resources participants can explore after the
+  # training, such as further reading, tools and datasets. They are shown
+  # on the Resources page, grouped in categories.
+
+  # ==================================================
+  # Categories
+  # ==================================================
+  #
+  # Resources are grouped in these categories, shown in this order:
+  #
+  #   further_reading               Further reading
+  #   useful_links                  Useful links
+  #   documentation_and_tutorials   Documentation and tutorials
+  #   tools_and_software            Tools and software
+  #   datasets                      Datasets
+  #   related_training              Related training
+  #
+  # Use these names exactly. Other category names are not shown.
+  #
+  # Each resource has:
+  #   - title (required): the name of the resource.
+  #   - description (optional): one or two sentences about it.
+  #   - url (optional): the link. Without a url, no "View resource" link
+  #     is shown.
+
+  # ==================================================
+  # Leaving information out
+  # ==================================================
+  #
+  # Every category is optional, and is only shown when it contains at
+  # least one resource with a title.
+  #
+  # - To remove one resource, delete it from its "- title:" line down to
+  #   its "url:" line.
+  # - To leave out a whole category, delete it including its name, for
+  #   example the "datasets:" line and everything indented below it.
+  # - To hide the whole Resources page (also from the navbar and the quick
+  #   links), empty or delete this file. A file with only the intro is
+  #   also left out.
 
   # --------------------------------------------------
   # Page introduction

@@ -90,7 +90,7 @@ def render_practicalities(practicalities, course):
 
     html.append("</div>")
 
-    contact = course.get("contact", {})
+    contact = (course.get("contact") or {})
     contact_email = contact.get("email")
 
     if contact_email:
@@ -124,13 +124,17 @@ def render_practicalities(practicalities, course):
 
     html.append("</header>")
 
+    # Remember where the page content starts, so a page with only a
+    # header (no venue, transport, ...) can be left out completely.
+    content_start = len(html)
+
     # ---------------------------------------------------------
     # Venue
     # ---------------------------------------------------------
 
-    venue = practicalities.get("venue", {})
-    venue_name = venue.get("name", "")
-    venue_address = venue.get("address", "")
+    venue = (practicalities.get("venue") or {})
+    venue_name = venue.get("name") or ""
+    venue_address = venue.get("address") or ""
 
     # Extract city from the address.
     # Expected format:
@@ -259,7 +263,7 @@ def render_practicalities(practicalities, course):
     # Transport
     # ---------------------------------------------------------
 
-    transport = practicalities.get("transport", {})
+    transport = (practicalities.get("transport") or {})
 
     if (
         transport.get("description")
@@ -291,7 +295,7 @@ def render_practicalities(practicalities, course):
 
         links = [
             link
-            for link in transport.get("links", [])
+            for link in (transport.get("links") or [])
             if link.get("title") and link.get("url")
         ]
 
@@ -320,14 +324,11 @@ def render_practicalities(practicalities, course):
     # Accommodation
     # ---------------------------------------------------------
 
-    accommodation = practicalities.get(
-        "accommodation",
-        {},
-    )
+    accommodation = practicalities.get("accommodation") or {}
 
     hotels = [
         hotel
-        for hotel in accommodation.get("hotels", [])
+        for hotel in (accommodation.get("hotels") or [])
         if hotel.get("name")
     ]
 
@@ -384,8 +385,8 @@ def render_practicalities(practicalities, course):
                 html.append(
                     "<tr>"
                     f"<td>{name}</td>"
-                    f'<td>{hotel.get("distance", "")}</td>'
-                    f'<td>{hotel.get("walking_time", "")}</td>'
+                    f'<td>{hotel.get("distance") or ""}</td>'
+                    f'<td>{hotel.get("walking_time") or ""}</td>'
                     "</tr>"
                 )
 
@@ -399,7 +400,7 @@ def render_practicalities(practicalities, course):
     # Food
     # ---------------------------------------------------------
 
-    food = practicalities.get("food", {})
+    food = (practicalities.get("food") or {})
 
     if (
         food.get("description")
@@ -435,7 +436,7 @@ def render_practicalities(practicalities, course):
 
     additional = [
         item
-        for item in practicalities.get("additional", [])
+        for item in (practicalities.get("additional") or [])
         if item.get("title") and item.get("content")
     ]
 
@@ -466,6 +467,10 @@ def render_practicalities(practicalities, course):
 
         html.append("</div>")
         html.append("</section>")
+
+    # Leave the page out when it has no content below the header.
+    if len(html) == content_start:
+        return ""
 
     html.append("</div>")
 

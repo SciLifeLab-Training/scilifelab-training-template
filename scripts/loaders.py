@@ -24,7 +24,7 @@ def load_content():
 
 
 def load_schedule():
-    return load_yaml("schedule.yml")["events"]
+    return load_optional("schedule.yml", "events", [])
 
 
 def load_team():
@@ -32,26 +32,45 @@ def load_team():
     return data.get("team", {})
 
 
+def load_optional(filename, key, empty):
+    """
+    Load an optional data file.
+
+    The file may be missing, empty, or contain only comments, or its
+    top-level key (for example "faq:") may be empty or left out. In
+    all these cases the page simply has no content.
+    """
+
+    path = DATA / filename
+
+    if not path.exists():
+        return empty
+
+    data = load_yaml(filename) or {}
+
+    if not isinstance(data, dict):
+        return empty
+
+    value = data.get(key)
+
+    return value if value else empty
+
+
 def load_announcements():
-
-    with open("data/announcements.yml", encoding="utf-8") as f:
-        data = yaml.safe_load(f) or {}
-
-    return data.get("announcements", {})
+    return load_optional("announcements.yml", "announcements", {})
 
 
 def load_practicalities():
-    data = load_yaml("practicalities.yml") or {}
-    return data.get("practicalities", {})
+    return load_optional("practicalities.yml", "practicalities", {})
+
 
 def load_faq():
-    data = load_yaml("faq.yml") or {}
-    return data.get("faq", [])
+    return load_optional("faq.yml", "faq", {})
+
 
 def load_preparation():
-    data = load_yaml("preparation.yml") or {}
-    return data.get("preparation", {})
+    return load_optional("preparation.yml", "preparation", {})
+
 
 def load_resources():
-    data = load_yaml("resources.yml") or {}
-    return data.get("resources", {})
+    return load_optional("resources.yml", "resources", {})

@@ -1,5 +1,25 @@
 practicalities:
 
+# OPTIONAL 
+
+  # This file contains practical information for participants, such as
+  # the venue, transport, accommodation and food. It is shown on the
+  # Practicalities page.
+
+  # ==================================================
+  # Leaving information out
+  # ==================================================
+  #
+  # Every section (venue, transport, accommodation, food, additional) is
+  # optional, and is only shown when it has content.
+  #
+  # - To leave out one detail, empty it, for example:   room: ""
+  # - To leave out a whole section, delete it including its name, for
+  #   example the "food:" line and everything indented below it.
+  # - To hide the whole Practicalities page (also from the navbar and the
+  #   quick links), empty or delete this file. A file with only the intro
+  #   is also left out.
+
   # --------------------------------------------------
   # Page introduction
   # --------------------------------------------------

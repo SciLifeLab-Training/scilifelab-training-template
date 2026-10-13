@@ -1,5 +1,7 @@
 team:
 
+# REQUIRED 
+
   # This file contains information about the training team
   # used throughout the website, including the Team page,
   # syllabus, and overview page team preview.

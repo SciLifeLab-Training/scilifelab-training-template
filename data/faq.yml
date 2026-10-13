@@ -1,5 +1,23 @@
 faq:
 
+# OPTIONAL 
+
+  # This file contains frequently asked questions and their answers. They
+  # are shown on the FAQ page, numbered in the order they appear here.
+
+  # ==================================================
+  # Leaving information out
+  # ==================================================
+  #
+  # Each question needs both a question and an answer. A question without
+  # an answer is not shown, and the questions are numbered automatically.
+  #
+  # - To remove one question, delete it from its "- question:" line down to
+  #   the end of its answer.
+  # - To hide the whole FAQ page (also from the navbar), empty or delete
+  #   this file. A file with only the intro is also left out.
+
+
   # --------------------------------------------------
   # Page introduction
   # --------------------------------------------------

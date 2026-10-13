@@ -312,7 +312,7 @@ def _render_text(block):
 
 def _render_callout(block):
 
-    style = block.get("style", "note")
+    style = block.get("style") or "note"
 
     title = block.get("title")
 
@@ -915,7 +915,7 @@ def render_preparation(preparation, course):
 
     html.append("</div>")
 
-    contact = course.get("contact", {})
+    contact = course.get("contact") or {}
 
     contact_email = contact.get("email")
 
@@ -958,6 +958,10 @@ def render_preparation(preparation, course):
     html.append(
         '<div class="course-preparation">'
     )
+
+    # Remember where the page content starts, so a page with only a
+    # header (no sections with content) can be left out completely.
+    content_start = len(html)
 
     for section in sections:
 
@@ -1058,6 +1062,10 @@ def render_preparation(preparation, course):
         html.extend(rendered_blocks)
 
         html.append("</section>")
+
+    # Leave the page out when no section has content.
+    if len(html) == content_start:
+        return ""
 
     html.append("</div>")
 

@@ -103,22 +103,24 @@ def main():
     preparation = load_preparation()
     resources = load_resources()
 
-    available_pages = set()
+    # Render the optional information pages first. A page is only shown
+    # in the navbar and the quick links when it has content: an empty
+    # file, or a file with only an introduction, leaves the page out.
+    information_pages = {
+        "practicalities": render_practicalities(practicalities, course),
+        "faq": render_faq(faq),
+        "preparation": render_preparation(preparation, course),
+        "resources": render_resources(resources),
+    }
+
+    available_pages = {
+        page
+        for page, html in information_pages.items()
+        if html
+    }
 
     if events:
         available_pages.add("schedule")
-
-    if practicalities:
-        available_pages.add("practicalities")
-
-    if faq:
-        available_pages.add("faq")
-
-    if preparation.get("sections"):
-        available_pages.add("preparation")
-
-    if resources:
-        available_pages.add("resources")
 
     if announcements.get("items"):
         available_pages.add("announcements")
@@ -207,17 +209,17 @@ def main():
 
     write_partial(
         "practicalities.qmd",
-        render_practicalities(practicalities, course),
+        information_pages["practicalities"],
     )
 
     write_partial(
         "faq.qmd",
-        render_faq(faq),
+        information_pages["faq"],
     )
 
     write_partial(
         "preparation.qmd",
-        render_preparation(preparation, course),
+        information_pages["preparation"],
     )
 
     write_partial(
@@ -232,7 +234,7 @@ def main():
 
     write_partial(
         "resources.qmd",
-        render_resources(resources),
+        information_pages["resources"],
     )
 
     write_partial(
