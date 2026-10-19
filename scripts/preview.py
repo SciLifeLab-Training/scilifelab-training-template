@@ -74,6 +74,14 @@ def main() -> int:
         print("Quarto was not found. Is it installed?", file=sys.stderr)
         return 1
 
+    # Build the generated sections first. Newer versions of Quarto stop
+    # with "Include directive failed" when they are missing.
+    result = subprocess.run([sys.executable, str(GENERATOR)], cwd=ROOT)
+    if result.returncode != 0:
+        print("\nFix the data file above, then start the preview again.",
+              file=sys.stderr)
+        return 1
+
     preview = subprocess.Popen([quarto, "preview", *sys.argv[1:]], cwd=ROOT)
     last = snapshot()
     try:
