@@ -1,0 +1,3 @@
+<div class="hero__brand-item">
+  <img src="img/logos/SciLifeLab_Logotype_NEG.png" alt="SciLifeLab" class="hero__partner-logo">
+</div>

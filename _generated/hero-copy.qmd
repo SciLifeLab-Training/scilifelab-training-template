@@ -1,0 +1,7 @@
+:::{.hero__title}
+Training title
+:::
+
+:::{.hero__subtitle}
+Training subtitle
+:::

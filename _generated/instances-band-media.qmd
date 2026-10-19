@@ -1,0 +1,3 @@
+<div class="instances-band__media" aria-hidden="true">
+  <img src="img/images/navet-band.png" alt="" class="instances-band__image">
+</div>
