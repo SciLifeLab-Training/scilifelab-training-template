@@ -17,8 +17,8 @@ website:
   #
   # false: this repository is your own training. Set this to false
   # when you start using the template. The banner disappears, and
-  # CITATION.cff, .zenodo.json and the README describe your training,
-  # from data/course.yml and data/team.yml.
+  # CITATION.cff and .zenodo.json describe your training, from
+  # data/course.yml and data/team.yml.
 
   template: true
 

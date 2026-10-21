@@ -20,12 +20,14 @@ The template provides:
   `.zenodo.json` and Bioschemas) generated from the same data files.
 
 > [!IMPORTANT]
-> **On every branch, you only edit three things:**
+> **On every branch, you only edit a few things:**
 >
-> 1. **`data/`**: the information about the training.
-> 2. **`content/`** (training instances only): the training materials.
-> 3. **`README.md`**: a few short sections, after replacing this README
+> 1. **`README.md`**: a few short sections, after replacing this README
 >    with the [README template](docs/_template-README.md).
+> 2. **`data/`**: the information about the training.
+> 3. **`content/`** (training instances only): the training materials.
+> 4. **`instructors/`** (training instances only): notes for
+>    instructors: timing, preparation and teaching notes.
 >
 > Everything else (the website layout, styling and scripts) works as it
 > is. `CITATION.cff` and `.zenodo.json` are generated automatically from
@@ -37,9 +39,9 @@ New to the template? See the **[SciLifeLab Training Webpage Template User Guide]
 
 The User Guide provides step-by-step instructions for:
 
-- creating your own copy of the template and preview it on your computer;
+- creating your own copy of the template and previewing it on your computer;
 - setting up the landing page;
-- creating a training instance and add your materials;
+- creating a training instance and adding your materials;
 - preparing your training materials for publication, citation, and reuse following FAIR principles.
 
 ## Setting up the landing page
@@ -56,10 +58,12 @@ The landing page is built from four data files:
 When you start using the template for your own training:
 
 1. In `data/website.yml`, set `template: false`. This removes the
-   template banner, and makes `CITATION.cff`, `.zenodo.json` and the
-   README describe your training instead of the template.
+   template banner, and makes `CITATION.cff` and `.zenodo.json` describe
+   your training instead of the template.
 2. Replace this README with the [README template](docs/_template-README.md):
-   copy the contents of `docs/_template-README.md` over `README.md`.
+   copy the contents of `docs/_template-README.md` over `README.md`, and
+   fill in the parts marked "Write this yourself". The other parts are
+   filled in automatically from your data files.
 3. Fill in the data files.
 4. Push to `main`. GitHub Actions renders the landing page, updates the
    generated files, and publishes the landing page.
@@ -84,22 +88,17 @@ Install the required dependencies:
 
 ```bash
 python -m pip install --upgrade pip
-python -m pip install -r requirements-dev.txt
+python -m pip install -r requirements.txt
 ```
 
-Render the site with:
+Preview the site with:
 
 ```bash
-quarto render
+python scripts/preview.py
 ```
 
-Or preview it locally with:
-
-```bash
-quarto preview
-```
-
-Rendering locally also updates the generated files.
+This builds the generated files, starts the preview, and updates it
+whenever you save a data file. Stop it with Ctrl+C.
 
 ## Development and maintenance
 

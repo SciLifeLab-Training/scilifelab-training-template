@@ -1,0 +1,318 @@
+<div class="course-preparation-header">
+<div class="course-preparation-header-main">
+<div class="course-page-label">Preparation</div>
+<h1 class="course-page-title">Prepare for the training</h1>
+<p class="course-page-intro course-page-intro-narrow">Use this page to provide participants with the accounts, software, hardware, reading, and other information they need before attending the training.
+</p>
+</div>
+<div class="course-page-contact">
+<div class="course-page-contact-icon"><i class="bi bi-envelope"></i></div>
+<div class="course-page-contact-title">Questions about the training?</div>
+<p>Get in touch with the training team.</p>
+<a class="course-text-link" href="mailto:training@example.org">training@example.org</a>
+</div>
+</div>
+<div class="course-preparation">
+<section class="course-preparation-section">
+<div class="course-preparation-text">
+<p>Use the `checklist` block type to provide participants with a simple overview of the preparation tasks they need to complete before the training. Add one item for each required or recommended activity.</p>
+</div>
+<div class="course-preparation-box course-preparation-checklist">
+<div class="course-preparation-box-header">
+<i class="bi bi-check2-square course-preparation-box-icon"></i>
+<h3 class="course-preparation-box-title">
+Preparation checklist
+</h3>
+</div>
+<div class="course-preparation-box-body">
+<ul>
+<li><label><input type="checkbox" class="course-preparation-checkbox"><span>Complete preparation task 1</span></label></li>
+<li><label><input type="checkbox" class="course-preparation-checkbox"><span>Complete preparation task 2</span></label></li>
+<li><label><input type="checkbox" class="course-preparation-checkbox"><span>Complete preparation task 3</span></label></li>
+<li><label><input type="checkbox" class="course-preparation-checkbox"><span>Complete preparation task 4</span></label></li>
+</ul>
+</div>
+</div>
+</section>
+<section class="course-preparation-section">
+<h2>Accounts</h2>
+<div class="course-preparation-text">
+<p>Describe the accounts participants need to create or access before the training. Use the `account` block type for each account and provide a description, instructions, and relevant links.</p>
+</div>
+<div class="course-preparation-account-grid">
+<div class="course-preparation-box course-preparation-account">
+<div class="course-preparation-box-header">
+<i class="bi bi-person-badge course-preparation-box-icon"></i>
+<h3 class="course-preparation-box-title">
+Account 1
+</h3>
+</div>
+<div class="course-preparation-box-body">
+<div class="course-preparation-resource-description">
+<p>Briefly explain what the account is, why participants need it, and how it will be used during the training.</p>
+</div>
+<div class="course-preparation-instructions">
+<h4>Instructions</h4>
+<p>Provide the steps participants should follow to create or configure the account.</p>
+<ol>
+<li>Create account step 1.</li>
+<li>Create account step 2.</li>
+<li>Create account step 3.</li>
+</ol>
+</div>
+<ul class="course-preparation-links">
+<li>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Account registration link</a>
+</li>
+<li>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Account documentation link</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="course-preparation-box course-preparation-account">
+<div class="course-preparation-box-header">
+<i class="bi bi-person-badge course-preparation-box-icon"></i>
+<h3 class="course-preparation-box-title">
+Account 2
+</h3>
+</div>
+<div class="course-preparation-box-body">
+<div class="course-preparation-resource-description">
+<p>Add additional account requirements as separate `account` blocks. Consecutive account blocks are automatically displayed in a grid.</p>
+</div>
+<div class="course-preparation-instructions">
+<h4>Instructions</h4>
+<p>Provide the steps participants should follow to create or configure this account.</p>
+</div>
+<ul class="course-preparation-links">
+<li>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Create account link</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="course-preparation-callout course-preparation-callout-important">
+<div class="course-preparation-callout-title">
+<i class="bi bi-info-circle course-preparation-callout-icon"></i>
+This is an important callout
+</div>
+<div class="course-preparation-callout-content">
+<p>Use an **important** callout to highlight information that participants should be particularly aware of before completing the preparation activity.</p>
+</div>
+</div>
+</section>
+<section class="course-preparation-section">
+<h2>Software requirements</h2>
+<div class="course-preparation-text">
+<p>List the software participants need before the training. Use the `software` block type for each application and include any relevant installation instructions and links.</p>
+</div>
+<div class="course-preparation-software-grid">
+<div class="course-preparation-box course-preparation-software">
+<div class="course-preparation-box-header">
+<i class="bi bi-download course-preparation-box-icon"></i>
+<h3 class="course-preparation-box-title">
+Software 1
+</h3>
+</div>
+<div class="course-preparation-box-body">
+<div class="course-preparation-resource-description">
+<p>Briefly describe the software and explain why participants need it. Include version or operating-system requirements if applicable.</p>
+</div>
+<div class="course-preparation-instructions">
+<h4>Instructions</h4>
+<p>Provide the installation or configuration steps here.</p>
+<ol>
+<li>Install software step 1.</li>
+<li>Install software step 2.</li>
+<li>Install software step 3.</li>
+</ol>
+</div>
+<ul class="course-preparation-links">
+<li>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Software download link</a>
+</li>
+<li>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Software documentation link</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="course-preparation-box course-preparation-software">
+<div class="course-preparation-box-header">
+<i class="bi bi-download course-preparation-box-icon"></i>
+<h3 class="course-preparation-box-title">
+Software 2
+</h3>
+</div>
+<div class="course-preparation-box-body">
+<div class="course-preparation-resource-description">
+<p>Add additional software requirements as separate `software` blocks. Consecutive software blocks are automatically displayed in a grid.</p>
+</div>
+<div class="course-preparation-instructions">
+<h4>Instructions</h4>
+<p>Provide the installation or configuration steps here.</p>
+</div>
+<ul class="course-preparation-links">
+<li>
+<a class="course-text-link" href="https://example.org" target="_blank" rel="noopener">Software download link</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="course-preparation-box course-preparation-software">
+<div class="course-preparation-box-header">
+<i class="bi bi-download course-preparation-box-icon"></i>
+<h3 class="course-preparation-box-title">
+Software 3
+</h3>
+</div>
+<div class="course-preparation-box-body">
+<div class="course-preparation-resource-description">
+<p>Add another software requirement here.</p>
+</div>
+<div class="course-preparation-instructions">
+<h4>Instructions</h4>
+<p>Provide the installation or configuration steps here.</p>
+</div>
+
+</div>
+</div>
+</div>
+<div class="course-preparation-callout course-preparation-callout-warning">
+<div class="course-preparation-callout-title">
+<i class="bi bi-exclamation-triangle course-preparation-callout-icon"></i>
+This is a warning callout
+</div>
+<div class="course-preparation-callout-content">
+<p>Use a **warning** callout for information about a potential problem, limitation, or action that participants should not overlook.</p>
+</div>
+</div>
+</section>
+<section class="course-preparation-section">
+<h2>Hardware requirements</h2>
+<div class="course-preparation-text">
+<p>Describe the computer or other equipment participants need to bring or have access to. Use the `hardware` block type to specify requirements such as RAM, storage, processor, or internet connection.</p>
+</div>
+<div class="course-preparation-box course-preparation-hardware">
+<div class="course-preparation-box-header">
+<i class="bi bi-laptop course-preparation-box-icon"></i>
+<h3 class="course-preparation-box-title">
+Hardware 1
+</h3>
+</div>
+<div class="course-preparation-box-body">
+<div class="course-preparation-resource-description">
+<p>Describe the equipment participants need and include any minimum technical requirements.</p>
+</div>
+<dl class="course-preparation-requirements">
+<div>
+<dt>RAM</dt>
+<dd>Minimum requirement</dd>
+</div>
+<div>
+<dt>Storage</dt>
+<dd>Minimum requirement</dd>
+</div>
+<div>
+<dt>Processor</dt>
+<dd>Requirement</dd>
+</div>
+<div>
+<dt>Internet</dt>
+<dd>Requirement</dd>
+</div>
+</dl>
+<div class="course-preparation-instructions">
+<h4>Instructions</h4>
+<p>Provide any additional information participants should know, such as whether they need to bring their own computer, charger, headset, or other equipment.</p>
+</div>
+</div>
+</div>
+<div class="course-preparation-callout course-preparation-callout-note">
+<div class="course-preparation-callout-title">
+<i class="bi bi-sticky course-preparation-callout-icon"></i>
+This is a note callout
+</div>
+<div class="course-preparation-callout-content">
+<p>Use a **note** callout for useful background information, tips, reminders, or other information that does not require the stronger emphasis of an **important** or **warning** callout.</p>
+</div>
+</div>
+</section>
+<section class="course-preparation-section">
+<h2>Required reading</h2>
+<div class="course-preparation-text">
+<p>Provide reading materials that participants should review before the training. Use the `reading` block type for each reading resource.</p>
+</div>
+<div class="course-preparation-box course-preparation-reading">
+<div class="course-preparation-box-header">
+<i class="bi bi-book course-preparation-box-icon"></i>
+<h3 class="course-preparation-box-title">
+Reading 1
+</h3>
+</div>
+<div class="course-preparation-box-body">
+<div class="course-preparation-resource-description">
+<p>Briefly describe the reading and explain what participants should get from it. Adding a URL to a citation will make it clickable for easy access.</p>
+</div>
+<div class="course-preparation-citations">
+<div class="course-preparation-citation">
+<p>
+<a href="https://example.org" target="_blank" rel="noopener noreferrer">
+Example Author or Organisation. (year). Example document title.
+
+</a>
+</p>
+</div>
+<div class="course-preparation-citation">
+<p>
+<a href="https://example.org/article" target="_blank" rel="noopener noreferrer">
+Another Author or Organisation. (year). Another document title.
+
+</a>
+</p>
+</div>
+</div>
+<div class="course-preparation-instructions">
+<h4>Instructions</h4>
+<p>Explain how participants should approach the reading. For example, indicate whether they should read the full document or focus on particular sections.</p>
+</div>
+<div class="course-preparation-prompt">
+<div class="course-preparation-prompt-title">
+<i class="bi bi-question-circle"></i>
+Reflection prompt
+</div>
+<p>Add a question or reflection prompt if participants should think about something before the training.</p>
+</div>
+</div>
+</div>
+<div class="course-preparation-box course-preparation-reading">
+<div class="course-preparation-box-header">
+<i class="bi bi-book course-preparation-box-icon"></i>
+<h3 class="course-preparation-box-title">
+Reading 2
+</h3>
+</div>
+<div class="course-preparation-box-body">
+<div class="course-preparation-resource-description">
+<p>Add another required reading resource here.</p>
+</div>
+<div class="course-preparation-citations">
+<div class="course-preparation-citation">
+<p>
+Example Author or Organisation. (year). Example document title.
+
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="course-preparation-section">
+<h2>Additional information</h2>
+<div class="course-preparation-text">
+<p>Use this section for other information participants should know before the training, such as local IT requirements, administrative permissions, accessibility information, or other preparation details.</p>
+</div>
+</section>
+</div>

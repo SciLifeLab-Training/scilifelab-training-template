@@ -1,0 +1,27 @@
+::: {.course-announcements}
+
+<div class="course-announcements-content">
+
+<div class="course-section-label">
+
+ANNOUNCEMENTS
+
+</div>
+
+<div class="course-announcement">
+
+<div class="course-announcement-date">3 January</div>
+<h3 class="course-announcement-title">Announcement title</h3>
+<p>Provide a short update or important information for participants.</p>
+</div><div class="course-announcement">
+
+<div class="course-announcement-date">2 January</div>
+<h3 class="course-announcement-title">Announcement title</h3>
+<p>Provide a short update or important information for participants.
+</p>
+</div>
+
+<a class="course-announcements-link course-text-link" href="announcements.qmd">View all announcements →</a>
+</div>
+
+:::

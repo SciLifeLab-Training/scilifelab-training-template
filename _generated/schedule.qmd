@@ -1,0 +1,710 @@
+<div class="course-page-header">
+
+<h1>Schedule</h1>
+
+<div class="course-page-meta">
+
+
+<span class="course-welcome-item">
+<i class="bi bi-calendar2-event"></i>
+01 Jan 2026 – 02 Jan 2026
+</span>
+
+<span class="course-welcome-item">
+<i class="bi bi-geo-alt"></i>
+Venue name or online
+</span>
+
+
+</div>
+
+</div>
+
+<div class="course-schedule">
+
+<div class="course-schedule-sidebar">
+
+
+<button
+    type="button"
+    class="course-schedule-day-link"
+    data-day="day-1">
+
+<div class="course-schedule-day-name">
+Day 1
+</div>
+
+<div class="course-schedule-day-date">
+Wednesday, Sep 30
+</div>
+
+</button>
+
+<button
+    type="button"
+    class="course-schedule-day-link"
+    data-day="day-2">
+
+<div class="course-schedule-day-name">
+Day 2
+</div>
+
+<div class="course-schedule-day-date">
+Thursday, Oct 1
+</div>
+
+</button>
+
+<button
+    type="button"
+    class="course-schedule-day-link"
+    data-day="day-3">
+
+<div class="course-schedule-day-name">
+Day 3
+</div>
+
+<div class="course-schedule-day-date">
+Friday, Oct 2
+</div>
+
+</button>
+
+<button
+    type="button"
+    class="course-schedule-day-link"
+    data-day="day-4">
+
+<div class="course-schedule-day-name">
+Day 4
+</div>
+
+<div class="course-schedule-day-date">
+Sunday, Nov 1
+</div>
+
+</button>
+
+<button
+    type="button"
+    class="course-schedule-day-link"
+    data-day="follow-up">
+
+<div class="course-schedule-day-name">
+Follow up
+</div>
+
+<div class="course-schedule-day-date">
+Thursday, Dec 3
+</div>
+
+</button>
+
+
+</div>
+
+<div class="course-schedule-timeline">
+
+
+<section
+id="day-1"
+class="course-schedule-day">
+
+<h2 class="course-schedule-day-heading">
+Day 1 – Wednesday, Sep 30
+</h2>
+
+
+<div class="course-schedule-event course-type-lecture">
+
+
+
+<div class="course-schedule-time">
+09:00–09:45
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-lecture">
+Lecture
+</span>
+
+<h3 class="course-schedule-title">
+<a href="content/module-1/introduction.html">How to structure a page</a>
+</h3>
+
+
+<div class="course-schedule-speaker">
+Jane Doe
+</div>
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+SciLifeLab Solna
+</div>
+
+
+</div>
+
+</div>
+
+<div class="course-schedule-event course-type-lecture">
+
+
+<div class="course-schedule-separator"></div>
+
+
+<div class="course-schedule-time">
+10:00–11:00
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-lecture">
+Lecture
+</span>
+
+<h3 class="course-schedule-title">
+<a href="content/module-1/headings-and-text.html">Headings and text</a>
+</h3>
+
+
+<div class="course-schedule-speaker">
+John Smith
+</div>
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+Lecture Hall A
+</div>
+
+
+</div>
+
+</div>
+
+<div class="course-schedule-event course-type-break">
+
+
+<div class="course-schedule-separator"></div>
+
+
+<div class="course-schedule-time">
+11:00–11:30
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-break">
+Break
+</span>
+
+<h3 class="course-schedule-title">
+Coffee Break
+</h3>
+
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+
+</div>
+
+</div>
+
+<div class="course-schedule-event course-type-practical">
+
+
+<div class="course-schedule-separator"></div>
+
+
+<div class="course-schedule-time">
+11:30–13:00
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-practical">
+Practical
+</span>
+
+<h3 class="course-schedule-title">
+<a href="content/module-1/lists-and-tables.html">Lists and tables</a>
+</h3>
+
+
+<div class="course-schedule-speaker">
+Jane Doe, Alex Johnson
+</div>
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+Computer Lab
+</div>
+
+
+</div>
+
+</div>
+
+<div class="course-schedule-event course-type-break">
+
+
+<div class="course-schedule-separator"></div>
+
+
+<div class="course-schedule-time">
+13:00–14:00
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-break">
+Break
+</span>
+
+<h3 class="course-schedule-title">
+Lunch
+</h3>
+
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+SciLifeLab Café
+</div>
+
+
+</div>
+
+</div>
+
+<div class="course-schedule-event course-type-discussion">
+
+
+<div class="course-schedule-separator"></div>
+
+
+<div class="course-schedule-time">
+14:00–15:00
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-discussion">
+Discussion
+</span>
+
+<h3 class="course-schedule-title">
+<a href="content/module-1/other-content-elements.html">Other content elements</a>
+</h3>
+
+
+<div class="course-schedule-speaker">
+John Smith
+</div>
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+Seminar Room 2
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+<section
+id="day-2"
+class="course-schedule-day">
+
+<h2 class="course-schedule-day-heading">
+Day 2 – Thursday, Oct 1
+</h2>
+
+
+<div class="course-schedule-event course-type-lecture">
+
+
+
+<div class="course-schedule-time">
+09:00–10:30
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-lecture">
+Lecture
+</span>
+
+<h3 class="course-schedule-title">
+<a href="content/module-2/introduction.html">How to highlight information</a>
+</h3>
+
+
+<div class="course-schedule-speaker">
+Maria Andersson
+</div>
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+Lecture Hall A
+</div>
+
+
+</div>
+
+</div>
+
+<div class="course-schedule-event course-type-practical">
+
+
+<div class="course-schedule-separator"></div>
+
+
+<div class="course-schedule-time">
+10:45–12:30
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-practical">
+Practical
+</span>
+
+<h3 class="course-schedule-title">
+<a href="content/module-2/callout-boxes.html">Callout boxes</a>
+</h3>
+
+
+<div class="course-schedule-speaker">
+Maria Andersson, Alex Johnson
+</div>
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+Computer Lab
+</div>
+
+
+</div>
+
+</div>
+
+<div class="course-schedule-event course-type-discussion">
+
+
+<div class="course-schedule-separator"></div>
+
+
+<div class="course-schedule-time">
+14:00–15:00
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-discussion">
+Discussion
+</span>
+
+<h3 class="course-schedule-title">
+<a href="content/module-2/collapsible-boxes.html">Collapsible callout boxes</a>
+</h3>
+
+
+<div class="course-schedule-speaker">
+Sarah Wilson
+</div>
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+Auditorium
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+<section
+id="day-3"
+class="course-schedule-day">
+
+<h2 class="course-schedule-day-heading">
+Day 3 – Friday, Oct 2
+</h2>
+
+
+<div class="course-schedule-event course-type-group-work">
+
+
+
+<div class="course-schedule-time">
+09:00–12:00
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-group-work">
+Group-Work
+</span>
+
+<h3 class="course-schedule-title">
+<a href="content/module-3/introduction.html">How to add media and interactive elements</a>
+</h3>
+
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+
+</div>
+
+</div>
+
+<div class="course-schedule-event course-type-presentation">
+
+
+<div class="course-schedule-separator"></div>
+
+
+<div class="course-schedule-time">
+13:00–15:30
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-presentation">
+Presentation
+</span>
+
+<h3 class="course-schedule-title">
+<a href="content/module-3/links.html">Links</a>
+</h3>
+
+
+<div class="course-schedule-speaker">
+Jane Doe
+</div>
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+Auditorium
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+<section
+id="day-4"
+class="course-schedule-day">
+
+<h2 class="course-schedule-day-heading">
+Day 4 – Sunday, Nov 1
+</h2>
+
+
+<div class="course-schedule-event course-type-workshop">
+
+
+
+<div class="course-schedule-time">
+10:00–12:00
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-workshop">
+Workshop
+</span>
+
+<h3 class="course-schedule-title">
+<a href="content/module-3/images-presentations-videos.html">Images, presentations and videos</a>
+</h3>
+
+
+<div class="course-schedule-speaker">
+John Smith
+</div>
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+Online
+</div>
+
+
+</div>
+
+</div>
+
+<div class="course-schedule-event course-type-assessment">
+
+
+<div class="course-schedule-separator"></div>
+
+
+<div class="course-schedule-time">
+13:00–15:00
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-assessment">
+Assessment
+</span>
+
+<h3 class="course-schedule-title">
+Course Assessment
+</h3>
+
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+Online
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+<section
+id="follow-up"
+class="course-schedule-day">
+
+<h2 class="course-schedule-day-heading">
+Follow up – Thursday, Dec 3
+</h2>
+
+
+<div class="course-schedule-event course-type-consultation">
+
+
+
+<div class="course-schedule-time">
+14:00–15:00
+</div>
+
+<div class="course-schedule-details">
+
+<span class="course-upcoming-type course-type-consultation">
+Consultation
+</span>
+
+<h3 class="course-schedule-title">
+Final Course Meeting
+</h3>
+
+
+<div class="course-schedule-speaker">
+Jane Doe, Maria Andersson
+</div>
+
+
+</div>
+
+<div class="course-schedule-location-column">
+
+
+<div class="course-schedule-location">
+<i class="bi bi-geo-alt"></i>
+SciLifeLab Solna
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+</div>
+
+</div>

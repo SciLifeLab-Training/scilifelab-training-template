@@ -3,11 +3,12 @@
   SciLifeLab Training Webpage Template.
 
   How to use this file:
-  1. Set "template: false" in data/website.yml.
-  2. Copy this file over the README.md in the root of the main
-     branch (../README.md, one folder up from this file).
-  3. Delete this comment.
-  4. Fill in the parts marked "Write this yourself".
+    How to use this file:
+    1. Set "template: false" in data/website.yml.
+    2. Copy this file over the README.md in the root of the main
+       branch (../README.md, one folder up from this file).
+    3. Fill in the parts marked "Write this yourself".
+    4. Delete this comment and the "Template" note below it.
 
   The sections between the "generated" markers are filled in
   automatically from the data files in data/ every time the website
@@ -38,9 +39,9 @@ instances of the training. Each `release-YYMM` branch holds one instance
 <!-- End of write this yourself. -->
 
 <!-- generated:course-information -->
-## Course information
+## Training information
 
-- **Course website:** <https://scilifelab-training.github.io/scilifelab-training-template/>
+- **Website:** <https://scilifelab-training.github.io/scilifelab-training-template/>
 - **Target audience:** Describe the intended participant group
 - **Language:** English
 <!-- /generated:course-information -->
@@ -64,13 +65,6 @@ After completing this training, participants will be able to:
 See the landing page for all instances of this training. The materials
 of each instance are on its own `release-YYMM` branch.
 
-## Contributing
-
-Found a mistake, or have an idea for improving this training? You're
-welcome to contribute. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to
-report a problem or suggest a change, on the landing page or in the
-materials of a training instance.
-
 <!-- End of write this yourself. -->
 
 <!-- generated:contributors -->
@@ -83,6 +77,17 @@ materials of a training instance.
 | Firstname3 Lastname3 | Contributor |  | Institution or organisation |
 | Firstname4 Lastname4 | Contributor |  | Institution or organisation |
 <!-- /generated:contributors -->
+
+## Contributing
+
+<!-- Write this yourself. -->
+
+Found a mistake, or have an idea for improving this training? You're
+welcome to contribute. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to
+report a problem or suggest a change, on the landing page or in the
+materials of a training instance.
+
+<!-- End of write this yourself. -->
 
 <!-- generated:citation -->
 ## Citation

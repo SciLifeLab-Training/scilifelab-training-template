@@ -1,0 +1,162 @@
+<div class="course-resources-page">
+<header class="course-resources-header">
+<div class="course-page-label">Resources</div>
+<h1 class="course-page-title">Explore further after the training</h1>
+<p class="course-page-intro">Use this page to provide resources participants can explore after the training, including further reading, useful links, documentation, tools, datasets, and related training.
+</p>
+</header>
+<section class="course-resources-section">
+<div class="course-resources-section-header">
+<div class="course-resources-section-icon"><i class="bi bi-book"></i></div>
+<div class="course-resources-section-heading">
+<h2>Further reading</h2>
+<p>Books, papers, articles, reviews, and other material for deeper learning after the training.</p>
+</div>
+</div>
+<div class="course-resources-list">
+<div class="course-resource">
+<div class="course-resource-content">
+<h3>Resource title</h3>
+<p>Briefly describe the resource, including what it covers or what participants can find in it.
+</p>
+</div>
+<a class="course-resource-link course-text-link" href="https://example.org" target="_blank" rel="noopener">View resource <i class="bi bi-box-arrow-up-right"></i></a>
+</div>
+<div class="course-resource">
+<div class="course-resource-content">
+<h3>Resource title</h3>
+<p>Briefly describe the resource, including what it covers or what participants can find in it.
+</p>
+</div>
+<a class="course-resource-link course-text-link" href="https://example.org" target="_blank" rel="noopener">View resource <i class="bi bi-box-arrow-up-right"></i></a>
+</div>
+</div>
+</section>
+<section class="course-resources-section">
+<div class="course-resources-section-header">
+<div class="course-resources-section-icon"><i class="bi bi-link-45deg"></i></div>
+<div class="course-resources-section-heading">
+<h2>Useful links</h2>
+<p>Relevant websites, portals, communities, organisations, or other online resources.</p>
+</div>
+</div>
+<div class="course-resources-list">
+<div class="course-resource">
+<div class="course-resource-content">
+<h3>Resource title</h3>
+<p>Briefly describe the website, organisation, service, or other resource.
+</p>
+</div>
+<a class="course-resource-link course-text-link" href="https://example.org" target="_blank" rel="noopener">View resource <i class="bi bi-box-arrow-up-right"></i></a>
+</div>
+<div class="course-resource">
+<div class="course-resource-content">
+<h3>Resource title</h3>
+<p>Briefly describe the website, organisation, service, or other resource.
+</p>
+</div>
+<a class="course-resource-link course-text-link" href="https://example.org" target="_blank" rel="noopener">View resource <i class="bi bi-box-arrow-up-right"></i></a>
+</div>
+<div class="course-resource">
+<div class="course-resource-content">
+<h3>Resource title</h3>
+<p>Briefly describe the website, organisation, service, or other resource.
+</p>
+</div>
+<a class="course-resource-link course-text-link" href="https://example.org" target="_blank" rel="noopener">View resource <i class="bi bi-box-arrow-up-right"></i></a>
+</div>
+</div>
+</section>
+<section class="course-resources-section">
+<div class="course-resources-section-header">
+<div class="course-resources-section-icon"><i class="bi bi-file-earmark-text"></i></div>
+<div class="course-resources-section-heading">
+<h2>Documentation and tutorials</h2>
+<p>Documentation, guides, tutorials, walkthroughs, and other practical learning resources.</p>
+</div>
+</div>
+<div class="course-resources-list">
+<div class="course-resource">
+<div class="course-resource-content">
+<h3>Resource title</h3>
+<p>Briefly describe what the documentation or tutorial covers and what participants can find there.
+</p>
+</div>
+<a class="course-resource-link course-text-link" href="https://example.org" target="_blank" rel="noopener">View resource <i class="bi bi-box-arrow-up-right"></i></a>
+</div>
+</div>
+</section>
+<section class="course-resources-section">
+<div class="course-resources-section-header">
+<div class="course-resources-section-icon"><i class="bi bi-laptop"></i></div>
+<div class="course-resources-section-heading">
+<h2>Tools and software</h2>
+<p>Software, packages, platforms, applications, or other tools that participants may want to continue using.</p>
+</div>
+</div>
+<div class="course-resources-list">
+<div class="course-resource">
+<div class="course-resource-content">
+<h3>Tool name</h3>
+<p>Briefly describe the tool or software and what it is used for.
+</p>
+</div>
+<a class="course-resource-link course-text-link" href="https://example.org" target="_blank" rel="noopener">View resource <i class="bi bi-box-arrow-up-right"></i></a>
+</div>
+<div class="course-resource">
+<div class="course-resource-content">
+<h3>Tool name</h3>
+<p>Briefly describe the tool or software and what it is used for.
+</p>
+</div>
+<a class="course-resource-link course-text-link" href="https://example.org" target="_blank" rel="noopener">View resource <i class="bi bi-box-arrow-up-right"></i></a>
+</div>
+</div>
+</section>
+<section class="course-resources-section">
+<div class="course-resources-section-header">
+<div class="course-resources-section-icon"><i class="bi bi-database"></i></div>
+<div class="course-resources-section-heading">
+<h2>Datasets</h2>
+<p>Public datasets, repositories, example datasets, or other data resources for further practice.</p>
+</div>
+</div>
+<div class="course-resources-list">
+<div class="course-resource">
+<div class="course-resource-content">
+<h3>Dataset name</h3>
+<p>Briefly describe the dataset, repository, or data resource and what it contains.
+</p>
+</div>
+<a class="course-resource-link course-text-link" href="https://example.org" target="_blank" rel="noopener">View resource <i class="bi bi-box-arrow-up-right"></i></a>
+</div>
+</div>
+</section>
+<section class="course-resources-section">
+<div class="course-resources-section-header">
+<div class="course-resources-section-icon"><i class="bi bi-mortarboard"></i></div>
+<div class="course-resources-section-heading">
+<h2>Related training</h2>
+<p>Other courses, workshops, training materials, or learning opportunities related to this training.</p>
+</div>
+</div>
+<div class="course-resources-list">
+<div class="course-resource">
+<div class="course-resource-content">
+<h3>Related training</h3>
+<p>Briefly describe the training and the topics it covers.
+</p>
+</div>
+<a class="course-resource-link course-text-link" href="https://example.org" target="_blank" rel="noopener">View resource <i class="bi bi-box-arrow-up-right"></i></a>
+</div>
+<div class="course-resource">
+<div class="course-resource-content">
+<h3>Related training</h3>
+<p>Briefly describe the training and the topics it covers.
+</p>
+</div>
+<a class="course-resource-link course-text-link" href="https://example.org" target="_blank" rel="noopener">View resource <i class="bi bi-box-arrow-up-right"></i></a>
+</div>
+</div>
+</section>
+</div>

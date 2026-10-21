@@ -1,0 +1,24 @@
+<div class="course-faq-page">
+<header class="course-faq-header">
+<div class="course-page-label">FAQ</div>
+<h1 class="course-page-title">Frequently asked questions</h1>
+<p class="course-page-intro">Use this page to provide answers to common questions about the training. Include information that participants may need before or during the training.
+</p>
+</header>
+<div class="course-faq-list">
+<details class="course-faq-item">
+<summary><span class="course-faq-number">1.</span><span class="course-faq-question">Example question 1</span><i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+<div class="course-faq-answer"><p>Provide the answer to the question here.
+</p></div>
+</details>
+<details class="course-faq-item">
+<summary><span class="course-faq-number">2.</span><span class="course-faq-question">Example question 2</span><i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+<div class="course-faq-answer"><p>Provide the answer to the question here.
+</p></div>
+</details>
+<details class="course-faq-item">
+<summary><span class="course-faq-number">3.</span><span class="course-faq-question">Example question 3</span><i class="bi bi-chevron-down" aria-hidden="true"></i></summary>
+<div class="course-faq-answer"><p>Provide the answer to the question here.</p></div>
+</details>
+</div>
+</div>

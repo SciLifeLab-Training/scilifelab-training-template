@@ -29,10 +29,8 @@ like to change, and where:
 1. Fork the repository, or create a branch if you have write access.
 2. Make your change on the branch it concerns: `main` for the landing page,
    or the `release-YYMM` branch of the training instance.
-3. Preview the website locally and check the result:
-   - on `main`: run `python scripts/preview.py`;
-   - on a `release-YYMM` branch: run `python scripts/render_course.py`
-     once, then `quarto preview`.
+3. Preview the website locally with `python scripts/preview.py`, and check
+   the result in your browser.
 4. Open a pull request against that same branch, with a short description
    of the change.
 
