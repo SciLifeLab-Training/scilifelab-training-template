@@ -21,18 +21,88 @@
     "text": "Training title\n\n\n\n\nOverview Content Schedule\n\n\nInformation\n\n\nPreparation Practicalities Announcements Resources Team Syllabus FAQ\n\n\n\n\n\n\n \n\n\n\n\n\n\nSchedule\n\n\n  01 Jan 2026 – 02 Jan 2026 \n  Venue name or online \n\n\n\n\n\n\nDay 1\n\n\nWednesday, Sep 30\n\n\n\n\nDay 2\n\n\nThursday, Oct 1\n\n\n\n\nDay 3\n\n\nFriday, Oct 2\n\n\n\n\nDay 4\n\n\nSunday, Nov 1\n\n\n\n\nFollow up\n\n\nThursday, Dec 3\n\n\n\n\n\n\nDay 1 – Wednesday, Sep 30\n\n\n\n09:00–09:45\n\n\n Lecture \n\nHow to structure a page\n\n\nJane Doe\n\n\n\n\n SciLifeLab Solna\n\n\n\n\n\n\n\n\n10:00–11:00\n\n\n Lecture \n\nHeadings and text\n\n\nJohn Smith\n\n\n\n\n Lecture Hall A\n\n\n\n\n\n\n\n\n11:00–11:30\n\n\n Break \n\nCoffee Break\n\n\n\n\n\n\n\n\n\n\n\n11:30–13:00\n\n\n Practical \n\nLists and tables\n\n\nJane Doe, Alex Johnson\n\n\n\n\n Computer Lab\n\n\n\n\n\n\n\n\n13:00–14:00\n\n\n Break \n\nLunch\n\n\n\n\n SciLifeLab Café\n\n\n\n\n\n\n\n\n14:00–15:00\n\n\n Discussion \n\nOther content elements\n\n\nJohn Smith\n\n\n\n\n Seminar Room 2\n\n\n\n\n\n\nDay 2 – Thursday, Oct 1\n\n\n\n09:00–10:30\n\n\n Lecture \n\nHow to highlight information\n\n\nMaria Andersson\n\n\n\n\n Lecture Hall A\n\n\n\n\n\n\n\n\n10:45–12:30\n\n\n Practical \n\nCallout boxes\n\n\nMaria Andersson, Alex Johnson\n\n\n\n\n Computer Lab\n\n\n\n\n\n\n\n\n14:00–15:00\n\n\n Discussion \n\nCollapsible callout boxes\n\n\nSarah Wilson\n\n\n\n\n Auditorium\n\n\n\n\n\n\nDay 3 – Friday, Oct 2\n\n\n\n09:00–12:00\n\n\n Group-Work \n\nHow to add media and interactive elements\n\n\n\n\n\n\n\n\n\n\n\n13:00–15:30\n\n\n Presentation \n\nLinks\n\n\nJane Doe\n\n\n\n\n Auditorium\n\n\n\n\n\n\nDay 4 – Sunday, Nov 1\n\n\n\n10:00–12:00\n\n\n Workshop \n\nImages, presentations and videos\n\n\nJohn Smith\n\n\n\n\n Online\n\n\n\n\n\n\n\n\n13:00–15:00\n\n\n Assessment \n\nCourse Assessment\n\n\n\n\n Online\n\n\n\n\n\n\nFollow up – Thursday, Dec 3\n\n\n\n14:00–15:00\n\n\n Consultation \n\nFinal Course Meeting\n\n\nJane Doe, Maria Andersson\n\n\n\n\n SciLifeLab Solna\n\n\n\n\n\n\n\n\n\nBy Organisation or Training Programme name. Licensed under CC BY 4.0.\n\n\nThis website was built using the SciLifeLab Training Webpage Template and is hosted on GitHub Pages."
   },
   {
-    "objectID": "content/module-2/introduction.html",
-    "href": "content/module-2/introduction.html",
-    "title": "How to highlight information",
+    "objectID": "content/module-3/links.html",
+    "href": "content/module-3/links.html",
+    "title": "Links",
     "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nThis module demonstrates how to use callout boxes to highlight information in your training content, and how to make callouts collapsible so participants can choose when to view additional details. Each topic presents the Markdown and Quarto syntax alongside the rendered result, so you can see how different callouts appear to participants.\nExplore the examples, copy the snippets you need, and adapt them for your own training pages."
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nUse links to direct participants to websites, documents, other training pages, and additional resources.\nEach example below shows the Markdown syntax and how the link appears when rendered."
   },
   {
-    "objectID": "content/module-2/introduction.html#in-this-module",
-    "href": "content/module-2/introduction.html#in-this-module",
-    "title": "How to highlight information",
+    "objectID": "content/module-3/links.html#linking-to-a-website",
+    "href": "content/module-3/links.html#linking-to-a-website",
+    "title": "Links",
+    "section": "Linking to a website",
+    "text": "Linking to a website\nUse links to direct participants to external websites or online resources. Use descriptive link text that tells participants where the link will take them or what information they will find.\nMarkdown syntax\nFor more information,[visit the SciLifeLab website](https://www.scilifelab.se/)\nRendered result\nFor more information, visit the SciLifeLab website"
+  },
+  {
+    "objectID": "content/module-3/links.html#linking-to-another-page-within-your-training-repository",
+    "href": "content/module-3/links.html#linking-to-another-page-within-your-training-repository",
+    "title": "Links",
+    "section": "Linking to another page within your training repository",
+    "text": "Linking to another page within your training repository\nYou can link directly to another page in your training website. Use the relative path to the page, including its .qmd filename. Quarto will resolve the link to the corresponding rendered page when the website is built.\nMarkdown syntax\n[Go to the introduction of Module 3](/content/module-3/introduction.qmd)\nRendered result\nGo to the introduction of Module 3"
+  },
+  {
+    "objectID": "content/module-3/links.html#linking-to-a-file-or-resource-within-your-training-repository",
+    "href": "content/module-3/links.html#linking-to-a-file-or-resource-within-your-training-repository",
+    "title": "Links",
+    "section": "Linking to a file or resource within your training repository",
+    "text": "Linking to a file or resource within your training repository\nYou can link to files, such as PDF documents or other downloadable resources. Place the file in the docs folder at the root of your training repository. When linking to it from a page inside a content/module folder, use ../../docs/ followed by the filename. Adjust the path if your file is stored elsewhere.\nReplace the example filename and path with those of your own file.\nMarkdown syntax\n([Download the participant guide](../../docs/example-pdf.pdf))\nRendered result\nDownload the participant guide"
+  },
+  {
+    "objectID": "content/module-3/links.html#linking-to-resources-hosted-elsewhere",
+    "href": "content/module-3/links.html#linking-to-resources-hosted-elsewhere",
+    "title": "Links",
+    "section": "Linking to resources hosted elsewhere",
+    "text": "Linking to resources hosted elsewhere\nYou can also link to resources hosted outside your training repository, such as presentations and documents in Google Slides or Google Docs. This allows participants to view or make a copy of a resource without you having to add the file to your repository.\nFor Google Slides and Google Docs, you can use the document ID from its URL to create different links. The document ID is the long string of letters and numbers between /d/ and the next / in the URL.\nFor example, a Google Slides URL may look like this:\nhttps://docs.google.com/presentation/d/DOCUMENT_ID/edit\nReplace DOCUMENT_ID with the ID from your own presentation.\n\nProviding a view link\nUse the /view ending to link directly to the presentation or document.\nHTML syntax\n&lt;a href=\"https://docs.google.com/presentation/d/DOCUMENT_ID/view\" target=\"_blank\"&gt;\n  View in Google Slides\n&lt;/a&gt;\nRendered result\nView in Google Slides\n\n\nProviding a copy link\nFor Google Slides and Google Docs, you can use /copy to let participants create their own copy of a resource.\nHTML syntax\n&lt;a href=\"https://docs.google.com/presentation/d/DOCUMENT_ID/copy\" target=\"_blank\"&gt;\n  Make a copy\n&lt;/a&gt;\nRendered result\nMake a copy\nYou can use the same approach for Google Docs by replacing presentation in the URL with document.\n\n\n\n\n\n\nNote\n\n\n\nParticipants may need to sign in to their Google account and have permission to access the original resource. Check the sharing settings before distributing the link."
+  },
+  {
+    "objectID": "content/module-3/introduction.html",
+    "href": "content/module-3/introduction.html",
+    "title": "How to add media and interactive elements",
+    "section": "",
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nThis module demonstrates how to add links, images, videos, and exercises to your training content. Each topic presents the Markdown and Quarto syntax alongside the rendered result, so you can see how different elements appear to participants.\nExplore the examples, copy the snippets you need, and adapt them for your own training pages."
+  },
+  {
+    "objectID": "content/module-3/introduction.html#in-this-module",
+    "href": "content/module-3/introduction.html#in-this-module",
+    "title": "How to add media and interactive elements",
     "section": "In this module",
-    "text": "In this module\n\nTopic 1 – Callout boxes: Use notes, tips, important messages, cautions, and warnings to draw attention to different types of information.\nTopic 2 – Collapsible callout boxes: Make callouts expandable so supplementary information is available when participants need it."
+    "text": "In this module\n\nTopic 1 – Links: Link to websites, documents, and other resources to guide participants to further information.\nTopic 2 – Images, presentations and videos: Add visual media and embed presentations or videos directly in a page."
+  },
+  {
+    "objectID": "content/module-3/images-presentations-videos.html",
+    "href": "content/module-3/images-presentations-videos.html",
+    "title": "Images, presentations and videos",
+    "section": "",
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nImages, presentations, and videos can support explanations, illustrate concepts, and provide participants with additional ways to engage with your training content.\nEach example below shows the syntax and how the element appears when rendered."
+  },
+  {
+    "objectID": "content/module-3/images-presentations-videos.html#adding-images",
+    "href": "content/module-3/images-presentations-videos.html#adding-images",
+    "title": "Images, presentations and videos",
+    "section": "Adding images",
+    "text": "Adding images\nUse images to illustrate concepts, show examples, or provide visual guidance. Add descriptive text that will be displayed as a caption. You can also resize and align images.\nPlace the image in the docs folder at the root of your training repository. From a page inside a module folder, use ../../docs/ followed by the image filename. Replace the example filename and text with your own.\n\nBasic image\nMarkdown syntax\n![A descriptive text explaining what the image shows](../../docs/example-image.svg)\nRendered result\n\n\n\nA descriptive text explaining what the image shows\n\n\nTo remove the caption, simply remove the text between the brackets, for example:\n![](../../docs/example-image.svg)\n\n\nResizing an image\nYou can set the width of an image using Quarto’s width attribute. For example, use width=\"10%\" to display the image at 10% of the available text width.\nMarkdown syntax\n![A descriptive text explaining what the image shows](../../docs/example-image.svg){width=\"10%\"}\nRendered result\n\n\n\nA descriptive text explaining what the image shows\n\n\n\n\nAligning an image\nYou can align an image to the left, center, or right using Quarto’s fig-align attribute.\nMarkdown syntax\n![A descriptive text explaining what the image shows](../../docs/example-image.svg){fig-align=\"left\"}\nRendered result\n\n\n\nA descriptive text explaining what the image shows"
+  },
+  {
+    "objectID": "content/module-3/images-presentations-videos.html#embedding-a-presentation",
+    "href": "content/module-3/images-presentations-videos.html#embedding-a-presentation",
+    "title": "Images, presentations and videos",
+    "section": "Embedding a presentation",
+    "text": "Embedding a presentation\nYou can embed a presentation so participants can view it directly on the training page, rather than following a link to another website. Presentation platforms such as PowerPoint or Google Slides provide embed code that you can add to your page.\nFor example, see how to find the embed code in Google Slides (from 1:41).\nHTML syntax\n&lt;iframe\n  src=\"PASTE-YOUR-PRESENTATION-EMBED-URL-HERE\"\n  width=\"100%\"\n  height=\"500\"\n  frameborder=\"0\"\n  allowfullscreen&gt;\n&lt;/iframe&gt;\nRendered result"
+  },
+  {
+    "objectID": "content/module-3/images-presentations-videos.html#embedding-videos",
+    "href": "content/module-3/images-presentations-videos.html#embedding-videos",
+    "title": "Images, presentations and videos",
+    "section": "Embedding videos",
+    "text": "Embedding videos\nYou can add a video file to your training repository and display it with a video player. The controls attribute allows participants to play, pause, and adjust the volume.\nHTML syntax\n&lt;video controls width=\"100%\"&gt;\n  &lt;source src=\"../../docs/example-video.mp4\" type=\"video/mp4\"&gt;\n  Your browser does not support the video element.\n&lt;/video&gt;\nRendered result\n\n  \n  Your browser does not support the video element.\n\n\nPlace the video file in the docs folder at the root of your training repository. Replace the example filename with the name of your video file.\nYou can also embed videos hosted on platforms such as YouTube or Vimeo. Use the embed code provided by the platform, in the same way as for presentations. For example, see see how to find the embed code for YouTube videos (from 0:18)."
+  },
+  {
+    "objectID": "content/index.html",
+    "href": "content/index.html",
+    "title": "Training Content Pages",
+    "section": "",
+    "text": "Training title\n\n                \n\n                \n\n                    \n\nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\n\n\n\n\n        \n            \n        \n    \n\n\n\n\n\n\n\nUse the training content pages to provide learning materials and activities for your training participants.\nYou can organise the pages to suit the structure of your training (for example: by day, module, topic, or section) or structure them around what participants need to learn and do.\nIn this template, the pages demonstrate how to use Markdown and Quarto to organise and format content. Use them as examples when creating your own training pages: find an example that suits your needs, copy the code snippet, and replace the demonstration text with your own. This way, you can build your pages without having to write Markdown from scratch.\nThe template pages cover:\n\nModule 1 – How to structure a page: Headings, paragraphs, text formatting, lists, tables, code blocks and other content elements.\nModule 2 – How to highlight information: Callouts for tips, notes, important information, and warnings.\nModule 3 – How to add media and interactive elements: Links, images, documents, and videos.\n\n\nIf you want to learn more about Markdown, check out these free resources:\n\nMarkdown Guide – A practical guide to writing Markdown.\nMarkdown Cheatsheet – A quick reference to common Markdown syntax.\nMarkdown Tutorial – An interactive introduction to Markdown.\nStackEdit – An in-browser Markdown editor."
   },
   {
     "objectID": "content/module-2/collapsible-boxes.html",
@@ -54,6 +124,20 @@
     "title": "Collapsible callout boxes",
     "section": "Nested callouts",
     "text": "Nested callouts\nYou can place one callout inside another to group related information. For example, use a regular callout to introduce a topic, then place a collapsible callout inside it for supplementary details.\nMarkdown syntax\n::: {.callout-note}\n## Working with supplementary information\n\nThe expandable tip below provides an additional suggestion.\n\n::: {.callout-tip collapse=\"true\"}\n## More information\n\nSave your work regularly so you do not lose your changes.\n:::\n\n:::\nRendered result\n\n\n\n\n\n\nWorking with supplementary information\n\n\n\nThe expandable tip below provides an additional suggestion.\n\n\n\n\n\n\nMore information\n\n\n\n\n\nSave your work regularly so you do not lose your changes."
+  },
+  {
+    "objectID": "content/module-2/introduction.html",
+    "href": "content/module-2/introduction.html",
+    "title": "How to highlight information",
+    "section": "",
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nThis module demonstrates how to use callout boxes to highlight information in your training content, and how to make callouts collapsible so participants can choose when to view additional details. Each topic presents the Markdown and Quarto syntax alongside the rendered result, so you can see how different callouts appear to participants.\nExplore the examples, copy the snippets you need, and adapt them for your own training pages."
+  },
+  {
+    "objectID": "content/module-2/introduction.html#in-this-module",
+    "href": "content/module-2/introduction.html#in-this-module",
+    "title": "How to highlight information",
+    "section": "In this module",
+    "text": "In this module\n\nTopic 1 – Callout boxes: Use notes, tips, important messages, cautions, and warnings to draw attention to different types of information.\nTopic 2 – Collapsible callout boxes: Make callouts expandable so supplementary information is available when participants need it."
   },
   {
     "objectID": "content/module-2/callout-boxes.html",
@@ -103,48 +187,6 @@
     "title": "Callout boxes",
     "section": "Using callouts effectively",
     "text": "Using callouts effectively\nCallouts are optional. Use them when highlighting information improves the learning experience. Avoid adding too many to a page, as this can make it harder for readers to identify what is important. You can also include Markdown formatting, such as bold text, lists, or links, inside a callout.\nMarkdown syntax\n::: {.callout-tip}\n**Before submitting your work:**\n\n- Check that all required sections are complete.\n- Review your text for clarity.\n- Save your changes.\n:::\nRendered result\n\n\n\n\n\n\nTip\n\n\n\nBefore submitting your work:\n\nCheck that all required sections are complete.\nReview your text for clarity.\nSave your changes."
-  },
-  {
-    "objectID": "content/module-1/introduction.html",
-    "href": "content/module-1/introduction.html",
-    "title": "How to structure a page",
-    "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nThis module demonstrates how to use Markdown and Quarto to structure and format training content. Each topic presents the Markdown syntax alongside the rendered result, so you can see how the code translates into the content participants will read.\nExplore the examples, copy the snippets you need, and adapt them for your own training pages."
-  },
-  {
-    "objectID": "content/module-1/introduction.html#in-this-module",
-    "href": "content/module-1/introduction.html#in-this-module",
-    "title": "How to structure a page",
-    "section": "In this module",
-    "text": "In this module\n\nTopic 1 – Headings and text: Create headings and paragraphs, and apply basic text formatting.\nTopic 2 – Lists and tables: Organise information using bulleted and numbered lists, and present information in tables.\nTopic 3 – Other content elements: Use code blocks, block quotes, horizontal rules, and collapsible sections to structure content."
-  },
-  {
-    "objectID": "content/module-1/lists-and-tables.html",
-    "href": "content/module-1/lists-and-tables.html",
-    "title": "Lists and tables",
-    "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nUse lists and tables to organise information and make it easier for participants to scan and understand.\nEach example below shows the Markdown syntax and how it appears when rendered."
-  },
-  {
-    "objectID": "content/module-1/lists-and-tables.html#bulleted-lists",
-    "href": "content/module-1/lists-and-tables.html#bulleted-lists",
-    "title": "Lists and tables",
-    "section": "Bulleted lists",
-    "text": "Bulleted lists\nUse a hyphen (-) at the beginning of each line to create a bulleted list. Bulleted lists are useful for presenting related points that do not need to be followed in a particular order.\nMarkdown syntax\n- First item\n- Second item\n- Third item\nRendered result\n\nFirst item\nSecond item\nThird item\n\n\nNested lists\nIndent items to create a list within a list. Use nested lists to show how information is grouped.\nMarkdown syntax\n- Main item\n  - Supporting point\n  - Another supporting point\n- Another main item\nRendered result\n\nMain item\n\nSupporting point\nAnother supporting point\n\nAnother main item"
-  },
-  {
-    "objectID": "content/module-1/lists-and-tables.html#numbered-lists",
-    "href": "content/module-1/lists-and-tables.html#numbered-lists",
-    "title": "Lists and tables",
-    "section": "Numbered lists",
-    "text": "Numbered lists\nUse numbers followed by a period when the order of the items matters, such as for instructions or a process.\nMarkdown syntax\n1. Open the training page.\n2. Find the section you want to update.\n3. Replace the example text with your own content.\n4. Render the website and review the result.\nRendered result\n\nOpen the training page.\nFind the section you want to update.\nReplace the example text with your own content.\nRender the website and review the result."
-  },
-  {
-    "objectID": "content/module-1/lists-and-tables.html#tables",
-    "href": "content/module-1/lists-and-tables.html#tables",
-    "title": "Lists and tables",
-    "section": "Tables",
-    "text": "Tables\nUse tables to present information in rows and columns, especially when you want participants to compare related details. Use clear column headings and keep the content concise.\nMarkdown syntax\n| Element | Purpose | Example |\n|---|---|---|\n| Heading | Introduces a section | Learning objectives |\n| Paragraph | Explains an idea | A short description |\n| List | Groups related items | Steps or key points |\nRendered result\n\n\n\nElement\nPurpose\nExample\n\n\n\n\nHeading\nIntroduces a section\nLearning objectives\n\n\nParagraph\nExplains an idea\nA short description\n\n\nList\nGroups related items\nSteps or key points"
   },
   {
     "objectID": "content/module-1/headings-and-text.html",
@@ -210,88 +252,46 @@
     "text": "Collapsible content\nUse a collapsible section to place supplementary information that readers can expand when they want to see more. This is useful for optional details, explanations, or answers to questions.\nMarkdown syntax\n&lt;details&gt;\n&lt;summary&gt;More information&lt;/summary&gt;\n\nThis content is hidden until the reader expands the section.\n\n&lt;/details&gt;\nRendered result\n\n\nMore information\n\nThis content is hidden until the reader expands the section.\n\n\n\n\n\n\n\nNote\n\n\n\nThe &lt;details&gt; example uses HTML rather than Markdown, which demonstrates a Quarto-supported way to create expandable content without using a callout box."
   },
   {
-    "objectID": "content/module-3/introduction.html",
-    "href": "content/module-3/introduction.html",
-    "title": "How to add media and interactive elements",
+    "objectID": "content/module-1/lists-and-tables.html",
+    "href": "content/module-1/lists-and-tables.html",
+    "title": "Lists and tables",
     "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nThis module demonstrates how to add links, images, videos, and exercises to your training content. Each topic presents the Markdown and Quarto syntax alongside the rendered result, so you can see how different elements appear to participants.\nExplore the examples, copy the snippets you need, and adapt them for your own training pages."
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nUse lists and tables to organise information and make it easier for participants to scan and understand.\nEach example below shows the Markdown syntax and how it appears when rendered."
   },
   {
-    "objectID": "content/module-3/introduction.html#in-this-module",
-    "href": "content/module-3/introduction.html#in-this-module",
-    "title": "How to add media and interactive elements",
+    "objectID": "content/module-1/lists-and-tables.html#bulleted-lists",
+    "href": "content/module-1/lists-and-tables.html#bulleted-lists",
+    "title": "Lists and tables",
+    "section": "Bulleted lists",
+    "text": "Bulleted lists\nUse a hyphen (-) at the beginning of each line to create a bulleted list. Bulleted lists are useful for presenting related points that do not need to be followed in a particular order.\nMarkdown syntax\n- First item\n- Second item\n- Third item\nRendered result\n\nFirst item\nSecond item\nThird item\n\n\nNested lists\nIndent items to create a list within a list. Use nested lists to show how information is grouped.\nMarkdown syntax\n- Main item\n  - Supporting point\n  - Another supporting point\n- Another main item\nRendered result\n\nMain item\n\nSupporting point\nAnother supporting point\n\nAnother main item"
+  },
+  {
+    "objectID": "content/module-1/lists-and-tables.html#numbered-lists",
+    "href": "content/module-1/lists-and-tables.html#numbered-lists",
+    "title": "Lists and tables",
+    "section": "Numbered lists",
+    "text": "Numbered lists\nUse numbers followed by a period when the order of the items matters, such as for instructions or a process.\nMarkdown syntax\n1. Open the training page.\n2. Find the section you want to update.\n3. Replace the example text with your own content.\n4. Render the website and review the result.\nRendered result\n\nOpen the training page.\nFind the section you want to update.\nReplace the example text with your own content.\nRender the website and review the result."
+  },
+  {
+    "objectID": "content/module-1/lists-and-tables.html#tables",
+    "href": "content/module-1/lists-and-tables.html#tables",
+    "title": "Lists and tables",
+    "section": "Tables",
+    "text": "Tables\nUse tables to present information in rows and columns, especially when you want participants to compare related details. Use clear column headings and keep the content concise.\nMarkdown syntax\n| Element | Purpose | Example |\n|---|---|---|\n| Heading | Introduces a section | Learning objectives |\n| Paragraph | Explains an idea | A short description |\n| List | Groups related items | Steps or key points |\nRendered result\n\n\n\nElement\nPurpose\nExample\n\n\n\n\nHeading\nIntroduces a section\nLearning objectives\n\n\nParagraph\nExplains an idea\nA short description\n\n\nList\nGroups related items\nSteps or key points"
+  },
+  {
+    "objectID": "content/module-1/introduction.html",
+    "href": "content/module-1/introduction.html",
+    "title": "How to structure a page",
+    "section": "",
+    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nThis module demonstrates how to use Markdown and Quarto to structure and format training content. Each topic presents the Markdown syntax alongside the rendered result, so you can see how the code translates into the content participants will read.\nExplore the examples, copy the snippets you need, and adapt them for your own training pages."
+  },
+  {
+    "objectID": "content/module-1/introduction.html#in-this-module",
+    "href": "content/module-1/introduction.html#in-this-module",
+    "title": "How to structure a page",
     "section": "In this module",
-    "text": "In this module\n\nTopic 1 – Links: Link to websites, documents, and other resources to guide participants to further information.\nTopic 2 – Images, presentations and videos: Add visual media and embed presentations or videos directly in a page."
-  },
-  {
-    "objectID": "content/module-3/links.html",
-    "href": "content/module-3/links.html",
-    "title": "Links",
-    "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nUse links to direct participants to websites, documents, other training pages, and additional resources.\nEach example below shows the Markdown syntax and how the link appears when rendered."
-  },
-  {
-    "objectID": "content/module-3/links.html#linking-to-a-website",
-    "href": "content/module-3/links.html#linking-to-a-website",
-    "title": "Links",
-    "section": "Linking to a website",
-    "text": "Linking to a website\nUse links to direct participants to external websites or online resources. Use descriptive link text that tells participants where the link will take them or what information they will find.\nMarkdown syntax\nFor more information,[visit the SciLifeLab website](https://www.scilifelab.se/)\nRendered result\nFor more information, visit the SciLifeLab website"
-  },
-  {
-    "objectID": "content/module-3/links.html#linking-to-another-page-within-your-training-repository",
-    "href": "content/module-3/links.html#linking-to-another-page-within-your-training-repository",
-    "title": "Links",
-    "section": "Linking to another page within your training repository",
-    "text": "Linking to another page within your training repository\nYou can link directly to another page in your training website. Use the relative path to the page, including its .qmd filename. Quarto will resolve the link to the corresponding rendered page when the website is built.\nMarkdown syntax\n[Go to the introduction of Module 3](/content/module-3/introduction.qmd)\nRendered result\nGo to the introduction of Module 3"
-  },
-  {
-    "objectID": "content/module-3/links.html#linking-to-a-file-or-resource-within-your-training-repository",
-    "href": "content/module-3/links.html#linking-to-a-file-or-resource-within-your-training-repository",
-    "title": "Links",
-    "section": "Linking to a file or resource within your training repository",
-    "text": "Linking to a file or resource within your training repository\nYou can link to files, such as PDF documents or other downloadable resources. Place the file in the docs folder at the root of your training repository. When linking to it from a page inside a content/module folder, use ../../docs/ followed by the filename. Adjust the path if your file is stored elsewhere.\nReplace the example filename and path with those of your own file.\nMarkdown syntax\n([Download the participant guide](../../docs/example-pdf.pdf))\nRendered result\nDownload the participant guide"
-  },
-  {
-    "objectID": "content/module-3/links.html#linking-to-resources-hosted-elsewhere",
-    "href": "content/module-3/links.html#linking-to-resources-hosted-elsewhere",
-    "title": "Links",
-    "section": "Linking to resources hosted elsewhere",
-    "text": "Linking to resources hosted elsewhere\nYou can also link to resources hosted outside your training repository, such as presentations and documents in Google Slides or Google Docs. This allows participants to view or make a copy of a resource without you having to add the file to your repository.\nFor Google Slides and Google Docs, you can use the document ID from its URL to create different links. The document ID is the long string of letters and numbers between /d/ and the next / in the URL.\nFor example, a Google Slides URL may look like this:\nhttps://docs.google.com/presentation/d/DOCUMENT_ID/edit\nReplace DOCUMENT_ID with the ID from your own presentation.\n\nProviding a view link\nUse the /view ending to link directly to the presentation or document.\nHTML syntax\n&lt;a href=\"https://docs.google.com/presentation/d/DOCUMENT_ID/view\" target=\"_blank\"&gt;\n  View in Google Slides\n&lt;/a&gt;\nRendered result\nView in Google Slides\n\n\nProviding a copy link\nFor Google Slides and Google Docs, you can use /copy to let participants create their own copy of a resource.\nHTML syntax\n&lt;a href=\"https://docs.google.com/presentation/d/DOCUMENT_ID/copy\" target=\"_blank\"&gt;\n  Make a copy\n&lt;/a&gt;\nRendered result\nMake a copy\nYou can use the same approach for Google Docs by replacing presentation in the URL with document.\n\n\n\n\n\n\nNote\n\n\n\nParticipants may need to sign in to their Google account and have permission to access the original resource. Check the sharing settings before distributing the link."
-  },
-  {
-    "objectID": "content/module-3/images-presentations-videos.html",
-    "href": "content/module-3/images-presentations-videos.html",
-    "title": "Images, presentations and videos",
-    "section": "",
-    "text": "Overview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\nImages, presentations, and videos can support explanations, illustrate concepts, and provide participants with additional ways to engage with your training content.\nEach example below shows the syntax and how the element appears when rendered."
-  },
-  {
-    "objectID": "content/module-3/images-presentations-videos.html#adding-images",
-    "href": "content/module-3/images-presentations-videos.html#adding-images",
-    "title": "Images, presentations and videos",
-    "section": "Adding images",
-    "text": "Adding images\nUse images to illustrate concepts, show examples, or provide visual guidance. Add descriptive text that will be displayed as a caption. You can also resize and align images.\nPlace the image in the docs folder at the root of your training repository. From a page inside a module folder, use ../../docs/ followed by the image filename. Replace the example filename and text with your own.\n\nBasic image\nMarkdown syntax\n![A descriptive text explaining what the image shows](../../docs/example-image.svg)\nRendered result\n\n\n\nA descriptive text explaining what the image shows\n\n\nTo remove the caption, simply remove the text between the brackets, for example:\n![](../../docs/example-image.svg)\n\n\nResizing an image\nYou can set the width of an image using Quarto’s width attribute. For example, use width=\"10%\" to display the image at 10% of the available text width.\nMarkdown syntax\n![A descriptive text explaining what the image shows](../../docs/example-image.svg){width=\"10%\"}\nRendered result\n\n\n\nA descriptive text explaining what the image shows\n\n\n\n\nAligning an image\nYou can align an image to the left, center, or right using Quarto’s fig-align attribute.\nMarkdown syntax\n![A descriptive text explaining what the image shows](../../docs/example-image.svg){fig-align=\"left\"}\nRendered result\n\n\n\nA descriptive text explaining what the image shows"
-  },
-  {
-    "objectID": "content/module-3/images-presentations-videos.html#embedding-a-presentation",
-    "href": "content/module-3/images-presentations-videos.html#embedding-a-presentation",
-    "title": "Images, presentations and videos",
-    "section": "Embedding a presentation",
-    "text": "Embedding a presentation\nYou can embed a presentation so participants can view it directly on the training page, rather than following a link to another website. Presentation platforms such as PowerPoint or Google Slides provide embed code that you can add to your page.\nFor example, see how to find the embed code in Google Slides (from 1:41).\nHTML syntax\n&lt;iframe\n  src=\"PASTE-YOUR-PRESENTATION-EMBED-URL-HERE\"\n  width=\"100%\"\n  height=\"500\"\n  frameborder=\"0\"\n  allowfullscreen&gt;\n&lt;/iframe&gt;\nRendered result"
-  },
-  {
-    "objectID": "content/module-3/images-presentations-videos.html#embedding-videos",
-    "href": "content/module-3/images-presentations-videos.html#embedding-videos",
-    "title": "Images, presentations and videos",
-    "section": "Embedding videos",
-    "text": "Embedding videos\nYou can add a video file to your training repository and display it with a video player. The controls attribute allows participants to play, pause, and adjust the volume.\nHTML syntax\n&lt;video controls width=\"100%\"&gt;\n  &lt;source src=\"../../docs/example-video.mp4\" type=\"video/mp4\"&gt;\n  Your browser does not support the video element.\n&lt;/video&gt;\nRendered result\n\n  \n  Your browser does not support the video element.\n\n\nPlace the video file in the docs folder at the root of your training repository. Replace the example filename with the name of your video file.\nYou can also embed videos hosted on platforms such as YouTube or Vimeo. Use the embed code provided by the platform, in the same way as for presentations. For example, see see how to find the embed code for YouTube videos (from 0:18)."
-  },
-  {
-    "objectID": "content/index.html",
-    "href": "content/index.html",
-    "title": "Training Content Pages",
-    "section": "",
-    "text": "Training title\n\n                \n\n                \n\n                    \n\nOverview\nContent\nSchedule\n\nInformation\n\nPreparation\nPracticalities\nAnnouncements\nResources\nTeam\nSyllabus\nFAQ\n\n\n\n                    \n\n                \n\n            \n\n            \n\n\n\n\n            \n\n        \n\n    \n\n\n    \n        \n            \n        \n        \n\n    Introduction\n\n\n    \n        Module 1\n        \n    \n    \n\n    How to structure a page\n\n\n    Headings and text\n\n\n    Lists and tables\n\n\n    Other content elements\n\n\n\n\n    \n        Module 2\n        \n    \n    \n\n    How to highlight information\n\n\n    Callout boxes\n\n\n    Collapsible callout boxes\n\n\n\n\n    \n        Module 3\n        \n    \n    \n\n    How to add media and interactive elements\n\n\n    Links\n\n\n    Images, presentations and videos\n\n\n\n\n        \n            \n        \n    \n\n\n\n\n\n\n\nUse the training content pages to provide learning materials and activities for your training participants.\nYou can organise the pages to suit the structure of your training (for example: by day, module, topic, or section) or structure them around what participants need to learn and do.\nIn this template, the pages demonstrate how to use Markdown and Quarto to organise and format content. Use them as examples when creating your own training pages: find an example that suits your needs, copy the code snippet, and replace the demonstration text with your own. This way, you can build your pages without having to write Markdown from scratch.\nThe template pages cover:\n\nModule 1 – How to structure a page: Headings, paragraphs, text formatting, lists, tables, code blocks and other content elements.\nModule 2 – How to highlight information: Callouts for tips, notes, important information, and warnings.\nModule 3 – How to add media and interactive elements: Links, images, documents, and videos.\n\n\nIf you want to learn more about Markdown, check out these free resources:\n\nMarkdown Guide – A practical guide to writing Markdown.\nMarkdown Cheatsheet – A quick reference to common Markdown syntax.\nMarkdown Tutorial – An interactive introduction to Markdown.\nStackEdit – An in-browser Markdown editor."
+    "text": "In this module\n\nTopic 1 – Headings and text: Create headings and paragraphs, and apply basic text formatting.\nTopic 2 – Lists and tables: Organise information using bulleted and numbered lists, and present information in tables.\nTopic 3 – Other content elements: Use code blocks, block quotes, horizontal rules, and collapsible sections to structure content."
   },
   {
     "objectID": "syllabus.html",
