@@ -59,11 +59,12 @@ def rebuild() -> None:
     # Quarto only re-renders when the content of a page file changes, so
     # briefly add an invisible comment to index.qmd and then remove it
     # again. The file ends up exactly as it was.
+    # If you save index.qmd yourself in the meantime, your version is kept.
+    marker = b"\n<!-- preview refresh -->\n"
     original = PAGE.read_bytes()
-    try:
-        PAGE.write_bytes(original + b"\n<!-- preview refresh -->\n")
-        time.sleep(1.5)
-    finally:
+    PAGE.write_bytes(original + marker)
+    time.sleep(1.5)
+    if PAGE.read_bytes() == original + marker:
         PAGE.write_bytes(original)
     print("Data changed: updating the preview.", flush=True)
 
