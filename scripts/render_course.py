@@ -27,6 +27,7 @@ from validators import (
 
 from writer import write_partial
 
+from renderers.template_banner import render_template_banner
 from renderers.welcome import render_welcome
 from renderers.navbar import (
     render_navbar_meta,
@@ -124,6 +125,11 @@ def main():
 
     if announcements.get("items"):
         available_pages.add("announcements")
+
+    write_partial(
+        "template-banner.qmd",
+        render_template_banner(website),
+    )
 
     write_partial(
         "welcome.qmd",

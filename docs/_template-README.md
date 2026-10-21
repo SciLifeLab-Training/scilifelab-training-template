@@ -2,9 +2,11 @@
   README for a training built with the SciLifeLab Training Webpage Template.
 
   How to use this file:
-  1. Copy this file over the README.md in the root of your
+  1. Set "template: false" in data/website.yml.
+  2. Copy this file over the README.md in the root of your
      release-YYMM branch (../README.md, one folder up from this file).
-  2. Fill in the parts marked "Write this yourself".
+  3. Fill in the parts marked "Write this yourself".
+  4. Delete this comment (if you don't want to include these instructions) and the "Template" note below it.
 
   The sections between the "generated" markers are filled in
   automatically from the data files in data/ every time the website
@@ -37,9 +39,9 @@ website.
 <!-- End of write this yourself. -->
 
 <!-- generated:course-information -->
-## Course information
+## Training information
 
-- **Course website:** <https://your-organisation.github.io/your-repository/2505/>
+- **Website:** <https://your-organisation.github.io/your-repository/2505/>
 - **Dates:** 2026-01-01 – 2026-01-02
 - **Duration:** Number of days
 - **Mode:** Online / In-person / Hybrid
@@ -65,15 +67,27 @@ After completing this training, participants will be able to:
 <!-- Write this yourself: describe the folders that matter for your training. -->
 
 ```
-content/      training content pages, one folder per module
-data/         training information (course, team, schedule, ...)
-img/          images used on the website
+content/        training content pages, one folder per module
+instructors/    notes for instructors, one file per module
+data/           training information (team, schedule, ...)
+img/            images used on the website
 ```
 
 - `content/`: the training materials, written in Markdown.
+- `instructors/`: notes for instructors teaching this training, such as
+  timing, preparation and teaching notes. Start with
+  [instructors/README.md](instructors/README.md).
 - `data/`: the information shown on the website and used for the
   citation files, such as the training description, team and schedule.
 - `img/`: logos, photos and other images.
+
+## Teaching this training instance
+
+Want to teach this training yourself? The
+[instructor guide](instructors/README.md) describes the timing,
+preparation and setup, with notes for each module.
+
+<!-- End of write this yourself. -->
 
 <!-- generated:contributors -->
 ## Contributors

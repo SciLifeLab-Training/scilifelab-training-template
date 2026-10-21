@@ -6,13 +6,14 @@ content and information pages), and is published to its own directory
 on GitHub Pages.
 
 > [!IMPORTANT]
-> **To set up a training instance, you only edit three things:**
+> **To set up a training instance, you only edit four things:**
 >
-> 1. **`data/`**: the training information, such as the description,
->    dates, team and schedule.
-> 2. **`content/`**: the training materials, one folder per module.
-> 3. **`README.md`**: a few short sections, after replacing this README
+> 1. **`README.md`**: a few short sections, after replacing this README
 >    with the [training README template](docs/_template-README.md).
+> 2. **`data/`**: the training information, such as the description,
+>    dates, team and schedule.
+> 3. **`content/`**: the training materials, one folder per module.
+> 4. **`instructors/`**: notes for instructors: timing, preparation and teaching notes for each module.
 >
 > Everything else (the website layout, styling and scripts) works as it is.
 > Files such as `CITATION.cff` and `.zenodo.json` are generated
@@ -27,28 +28,30 @@ New to the template? See the **[SciLifeLab Training Webpage Template User Guide]
 
 The User Guide provides step-by-step instructions for:
 
-- setting up the template for a new training;
-- customising the landing page;
-- creating and managing training instances;
-- customising training instance pages;
-- previewing and publishing changes;
-- preparing training materials for publication, citation, and reuse.
+- creating your own copy of the template and previewing it on your computer;
+- setting up the landing page;
+- creating a training instance and adding your materials;
+- preparing your training materials for publication, citation, and reuse following FAIR principles.
 
 ## Creating a new training instance
 
 1. Create a new branch from this one and name it `release-YYMM`,
    for example `release-2705` for a training in May 2027.
-2. Replace this README with the training README template:
-   copy the contents of [`docs/_template-README.md`](docs/_template-README.md) over `README.md`.
-3. Fill in the data files in `data/` and the content pages in `content/`.
-4. Push the branch. GitHub Actions renders the website, updates the
+2. In `data/website.yml`, set `template: false`. This removes the
+   template banner from the overview page.
+3. Replace this README with the training README template:
+   copy the contents of [`docs/_template-README.md`](docs/_template-README.md)
+   over `README.md`.
+4. Fill in the data files in `data/`, the content pages in `content/`
+   and the instructor notes in `instructors/`.
+5. Push the branch. GitHub Actions renders the website, updates the
    generated files, and publishes the website to `gh-pages/YYMM/`.
-5. On the `main` branch, add the training instance to `data/instances.yml`, so the
-   landing page links to it. Creating the branch does not do this
-   automatically. 
+6. On the `main` branch, add the training instance to
+   `data/instances.yml`, so the landing page links to it. Creating the
+   branch does not do this automatically.
 
-The output directory is derived from the branch name, for example
-`release-2705` is published to `gh-pages/2705/`.
+When you create a training instance from one of your own earlier
+instances instead, steps 2 and 3 are already done.
 
 ## Files generated from the data files
 
@@ -59,7 +62,7 @@ Every render creates or updates these files from `data/course.yml`,
 |---|---|
 | `CITATION.cff` | citation metadata for GitHub and reference managers |
 | `.zenodo.json` | metadata for the Zenodo record of each release |
-| Bioschemas markup on the overview page | lets training registries such as ELIXIR TeSS find the training |
+| Bioschemas markup on the overview page | lets training registries such as ELIXIR TeSS find the training. Not added on `release-0000`, so the example training is never listed |
 | The generated blocks in `README.md` | training information, contributors, citation and licence |
 
 Do not edit these by hand: changes are overwritten on the next render.
@@ -105,12 +108,14 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-Build the generated files once, then render or preview the site:
+Preview the site with:
 
 ```bash
-python scripts/render_course.py
-quarto render     # or: quarto preview
+python scripts/preview.py
 ```
+
+This builds the generated files, starts the preview, and updates it
+whenever you save a data file. Stop it with Ctrl+C.
 
 ## Development and maintenance
 
@@ -139,7 +144,9 @@ scripts or documentation.
   The [developer specification](docs/_developer-SPEC.md) describes how
   the template works.
 
-The CONTRIBUTING.md file in this repository is part of the template: it explains how to contribute to a training made with the template, not to the template itself.
+The [CONTRIBUTING.md](CONTRIBUTING.md) file in this repository is part
+of the template: it explains how to contribute to a **training** made
+with the template, not to the template itself.
 
 ## Licence
 

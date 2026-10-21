@@ -9,13 +9,18 @@ website:
 # when they are displayed, and where their content is configured.
 
   # ==================================================
-  # Template banner
+  # Template mode
   # ==================================================
   #
-  # Not always displayed.
-  # To remove the banner when adopting the template for your own training,
-  # either delete the file _sections/template-banner.qmd,
-  # or remove {{< include _sections/template-banner.qmd >}} from index.qmd 
+  # true: this branch is the template's example training instance
+  # (release-0000). The overview page shows the "Want to use this
+  # template?" banner.
+  #
+  # false: this branch is a training instance of your own training.
+  # Set this to false when you create your first training instance:
+  # the banner disappears.
+
+  template: true
 
   # ==================================================
   # Navbar

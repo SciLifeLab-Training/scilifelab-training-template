@@ -146,6 +146,11 @@ def validate_website(website):
                 f"Required page '{page}' is missing"
             )
 
+    if not isinstance(website.get("template", False), bool):
+        raise ValueError(
+            "website.template must be true or false"
+        )
+
     footer = website.get("footer") or {}
     repository = str((footer.get("repository") or {}).get("url") or "").strip()
 
