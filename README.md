@@ -132,6 +132,10 @@ scripts or documentation.
   and open a pull request. Changes to the landing page go to `main`,
   and changes to the training instance pages go to `release-0000`.
 
+The [CONTRIBUTING.md](CONTRIBUTING.md) file in this repository is part
+of the template: it explains how to contribute to a **training** made
+with the template, not to the template itself.
+
 <!-- generated:citation -->
 ## Citation
 

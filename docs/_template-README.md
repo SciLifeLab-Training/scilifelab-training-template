@@ -64,6 +64,15 @@ After completing this training, participants will be able to:
 See the landing page for all instances of this training. The materials
 of each instance are on its own `release-YYMM` branch.
 
+## Contributing
+
+Found a mistake, or have an idea for improving this training? You're
+welcome to contribute. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to
+report a problem or suggest a change, on the landing page or in the
+materials of a training instance.
+
+<!-- End of write this yourself. -->
+
 <!-- generated:contributors -->
 ## Contributors
 
