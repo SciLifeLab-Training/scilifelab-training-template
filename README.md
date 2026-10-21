@@ -37,12 +37,10 @@ New to the template? See the **[SciLifeLab Training Webpage Template User Guide]
 
 The User Guide provides step-by-step instructions for:
 
-- setting up the template for a new training;
-- customising the landing page;
-- creating and managing training instances;
-- customising training instance pages;
-- previewing and publishing changes;
-- preparing training materials for publication, citation, and reuse.
+- creating your own copy of the template and preview it on your computer;
+- setting up the landing page;
+- creating a training instance and add your materials;
+- preparing your training materials for publication, citation, and reuse following FAIR principles.
 
 ## Setting up the landing page
 
