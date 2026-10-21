@@ -28,14 +28,12 @@ Provide a short description of the training, including its main topic, purpose, 
 <!-- /generated:header -->
 
 <!-- Write this yourself -->
-
 This repository contains the website and teaching materials for this
 training instance. The [`main` branch](../../tree/main) holds the
 [landing page](https://your-organisation.github.io/your-repository/),
 which lists all instances of the training. Each `release-YYMM` branch holds one
 instance (one time the training is given) and is published as its own
 website.
-
 <!-- End of write this yourself. -->
 
 <!-- generated:course-information -->
@@ -63,9 +61,7 @@ After completing this training, participants will be able to:
 <!-- /generated:learning-outcomes -->
 
 ## Repository contents
-
 <!-- Write this yourself: describe the folders that matter for your training. -->
-
 ```
 content/        training content pages, one folder per module
 instructors/    notes for instructors, one file per module
@@ -80,13 +76,14 @@ img/            images used on the website
 - `data/`: the information shown on the website and used for the
   citation files, such as the training description, team and schedule.
 - `img/`: logos, photos and other images.
+<!-- End of write this yourself. -->
+
 
 ## Teaching this training instance
-
+<!-- Write this yourself, or delete this section. -->
 Want to teach this training yourself? The
 [instructor guide](instructors/README.md) describes the timing,
 preparation and setup, with notes for each module.
-
 <!-- End of write this yourself. -->
 
 <!-- generated:contributors -->

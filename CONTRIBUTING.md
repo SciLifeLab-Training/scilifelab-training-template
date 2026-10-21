@@ -19,8 +19,8 @@ example `release-2705`, Module 2.
 1. Fork the repository, or create a branch if you have write access.
 2. Make your change on the `release-YYMM` branch of the training instance it
    concerns.
-3. Preview the website locally and check the result: run
-   `python scripts/render_course.py` once, then `quarto preview`.
+3. Preview the website locally with `python scripts/preview.py`, and check
+   the result in your browser.
 4. Open a pull request against that `release-YYMM` branch, with a short
    description of the change.
 
