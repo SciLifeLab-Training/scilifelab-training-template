@@ -1,11 +1,10 @@
 <!--
-  README for a training built with the SciLifeLab Course Webpage Template.
+  README for a training built with the SciLifeLab Training Webpage Template.
 
   How to use this file:
   1. Copy this file over the README.md in the root of your
      release-YYMM branch (../README.md, one folder up from this file).
-  2. Delete this comment.
-  3. Fill in the parts marked "Write this yourself".
+  2. Fill in the parts marked "Write this yourself".
 
   The sections between the "generated" markers are filled in
   automatically from the data files in data/ every time the website
@@ -29,8 +28,8 @@ Provide a short description of the training, including its main topic, purpose, 
 <!-- Write this yourself -->
 
 This repository contains the website and teaching materials for this
-training. The [`main` branch](../../tree/main) holds the
-[course landing page](https://your-organisation.github.io/your-repository/),
+training instance. The [`main` branch](../../tree/main) holds the
+[landing page](https://your-organisation.github.io/your-repository/),
 which lists all instances of the training. Each `release-YYMM` branch holds one
 instance (one time the training is given) and is published as its own
 website.
@@ -73,7 +72,7 @@ img/          images used on the website
 
 - `content/`: the training materials, written in Markdown.
 - `data/`: the information shown on the website and used for the
-  citation files, such as the course description, team and schedule.
+  citation files, such as the training description, team and schedule.
 - `img/`: logos, photos and other images.
 
 <!-- generated:contributors -->
@@ -88,7 +87,16 @@ img/          images used on the website
 | Firstname5 Lastname5 | Contributor |  | Institution or organisation |
 <!-- /generated:contributors -->
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute to this training.
+
+## Contributing
+
+<!-- Write this yourself. -->
+
+Found a mistake, or have an idea for improving this training? You're
+welcome to contribute. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to
+report a problem or suggest a change.
+
+<!-- End of write this yourself. -->
 
 <!-- generated:citation -->
 ## Citation

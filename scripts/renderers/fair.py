@@ -841,7 +841,7 @@ def _readme_course_information(course, team, website):
     doi = _doi(course)
 
     facts = [
-        ("Course website", f"<{url}>" if url else ""),
+        ("Website", f"<{url}>" if url else ""),
         ("Dates", _dates(course)),
         ("Duration", _text(course.get("duration"))),
         ("Mode", _text(course.get("mode"))),
@@ -853,7 +853,7 @@ def _readme_course_information(course, team, website):
         ("DOI", f"[{doi}](https://doi.org/{doi})" if doi else ""),
     ]
 
-    return ["## Course information", ""] + [
+    return ["## Training information", ""] + [
         f"- **{label}:** {value}"
         for label, value in facts
         if value

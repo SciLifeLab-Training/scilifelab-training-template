@@ -43,6 +43,9 @@ The User Guide provides step-by-step instructions for:
 3. Fill in the data files in `data/` and the content pages in `content/`.
 4. Push the branch. GitHub Actions renders the website, updates the
    generated files, and publishes the website to `gh-pages/YYMM/`.
+5. On the `main` branch, add the training instance to `data/instances.yml`, so the
+   landing page links to it. Creating the branch does not do this
+   automatically. 
 
 The output directory is derived from the branch name, for example
 `release-2705` is published to `gh-pages/2705/`.
@@ -102,16 +105,11 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-Render the site with:
+Build the generated files once, then render or preview the site:
 
 ```bash
-quarto render
-```
-
-Or preview it locally with:
-
-```bash
-quarto preview
+python scripts/render_course.py
+quarto render     # or: quarto preview
 ```
 
 ## Development and maintenance
@@ -120,15 +118,11 @@ Technical documentation for developers and maintainers of the template is availa
 
 This includes documentation of the training instance-page architecture, validation and deployment.
 
-## Contributors
+## Contributors and citation
 
-The SciLifeLab Training Webpage Template is developed and maintained by SciLifeLab Training Hub.
-
-| Name | Role | ORCID |
-|---|---|---|
-| Ineke Luijten | Scientific Training Officer | [0000-0001-5768-275X](https://orcid.org/0000-0001-5768-275X) |
-| Dimitris Panouris | System Developer | [0009-0005-2282-2982](https://orcid.org/0009-0005-2282-2982)| 
-| Nina Norgren | Training Manager |[0000-0002-3823-1555](https://orcid.org/0000-0002-3823-1555)| 
+The SciLifeLab Training Webpage Template is developed and maintained by
+the SciLifeLab Training Hub. See the [README on `main`](../../tree/main)
+for the people behind the template, and how to cite it.
 
 ## Contributing to the template
 
@@ -145,16 +139,7 @@ scripts or documentation.
   The [developer specification](docs/_developer-SPEC.md) describes how
   the template works.
 
-> [!NOTE]
-> `CONTRIBUTING.md` is not about this template! It is part of the
-> template for template users: it tells people how to contribute to
-> template user training materials, and template users can adapt it to their own training.
-
-## Citation
-
-If you use the SciLifeLab Training Webpage Template, please cite as
-
-Ineke Luijten, Nina Norgren & Dimitris Panouris (2026). The SciLifeLab Training Webpage Template (v1.0.0-alpha). Zenodo. https://doi.org/XX.XXXX/zenodo.XXXXX
+The CONTRIBUTING.md file in this repository is part of the template: it explains how to contribute to a training made with the template, not to the template itself.
 
 ## Licence
 
