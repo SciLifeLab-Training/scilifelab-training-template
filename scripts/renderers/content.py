@@ -699,8 +699,8 @@ document.addEventListener("DOMContentLoaded", function () {
 """.strip()
 
 
-def render_content_footer(website):
-    footer = render_footer(website)
+def render_content_footer(website, course):
+    footer = render_footer(website, course)
 
     footer = footer.replace(
         'src="img/github-neg.png"',

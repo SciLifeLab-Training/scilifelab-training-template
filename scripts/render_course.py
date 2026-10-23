@@ -230,12 +230,12 @@ def main():
 
     write_partial(
         "footer.qmd",
-        render_footer(website),
+        render_footer(website, course),
     )
 
     write_partial(
         "content-footer.html",
-        render_content_footer(website),
+        render_content_footer(website, course),
     )
 
     write_partial(

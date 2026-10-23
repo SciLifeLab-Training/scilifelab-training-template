@@ -1,136 +1,110 @@
-def render_footer(website):
+"""
+The footer of the landing page.
 
-    footer = website.get("footer", {})
+Most of the footer comes from the other data files, so nothing needs to
+be filled in twice:
 
-    organisation = footer.get(
-        "organisation",
-        "",
-    )
+- the organisation(s): "organizers" in data/course.yml;
+- the licence: "reuse.licence" and "reuse.licence_url" in
+  data/course.yml;
+- the repository link: the GitHub address of this repository, worked
+  out automatically (see fair.repository_url).
 
-    licence = footer.get(
-        "licence",
-        {},
-    )
+Only the "built with" text and the repository icon are set in the
+footer part of data/website.yml.
+"""
 
-    licence_name = licence.get("name")
-    licence_url = licence.get("url")
+from html import escape
 
-    built_with = footer.get(
-        "built_with",
-        {},
-    )
+from renderers import fair
 
-    repository = footer.get(
-        "repository",
-        {},
-    )
 
-    repository_url = repository.get("url")
+def _join(names):
+    """Join names as "A", "A and B" or "A, B and C"."""
+
+    if len(names) <= 1:
+        return "".join(names)
+
+    return ", ".join(names[:-1]) + " and " + names[-1]
+
+
+def _link(text, url):
+    """Return a link, or plain text when there is no URL."""
+
+    if url:
+        return f'<a href="{escape(url, quote=True)}">{escape(text)}</a>'
+
+    return escape(text)
+
+
+def render_footer(website, course):
+    """
+    Return the footer HTML.
+
+    course is the course data described by the website: data/course.yml,
+    or the template's own _template/course.yml in template mode.
+    """
+
+    footer = website.get("footer") or {}
+
+    organisation = _join([
+        " ".join(str(name).split())
+        for name in course.get("organizers") or []
+        if str(name or "").strip()
+    ])
+
+    reuse = course.get("reuse") or {}
+    licence_name = " ".join(str(reuse.get("licence") or "").split())
+    licence_url = fair.licence_url(course)
+
+    built_with = footer.get("built_with") or {}
+
+    repository = footer.get("repository") or {}
+    repository_url = fair.repository_url(website)
     repository_image = repository.get("image")
-    repository_alt = repository.get(
-        "alt",
-        "",
-    )
+    repository_alt = repository.get("alt", "")
 
-    html = []
-
-    html.append(
-        '<div class="landing-footer">'
-    )
-
-    html.append(
-        '<div class="landing-footer__meta">'
-    )
+    html = ['<div class="landing-footer">', '<div class="landing-footer__meta">']
 
     if organisation or licence_name:
-
-        html.append("<p>")
+        parts = []
 
         if organisation:
-            html.append(
-                f"By {organisation}"
-            )
+            parts.append(f"By {escape(organisation)}.")
 
         if licence_name:
+            parts.append(f"Licensed under {_link(licence_name, licence_url)}.")
 
-            if organisation:
-                html.append(
-                    ". Licensed under "
-                )
-            else:
-                html.append(
-                    "Licensed under "
-                )
-
-            if licence_url:
-                html.append(
-                    f'<a href="{licence_url}">'
-                    f'{licence_name}'
-                    "</a>"
-                )
-            else:
-                html.append(
-                    licence_name
-                )
-
-            html.append(".")
-
-        html.append("</p>")
+        html.append(f"<p>{' '.join(parts)}</p>")
 
     if built_with:
-
-        built_with_text = built_with.get("text", "")
+        text = built_with.get("text", "")
         template_name = built_with.get("template_name", "")
         template_url = built_with.get("template_url", "")
         suffix = built_with.get("suffix", "")
 
-        html.append("<p>")
+        parts = [
+            escape(text) if text else "",
+            _link(template_name, template_url) if template_name else "",
+            escape(suffix) if suffix else "",
+        ]
 
-        if built_with_text:
-            html.append(
-                f"{built_with_text} "
-            )
-
-        if template_name:
-
-            if template_url:
-                html.append(
-                    f'<a href="{template_url}">'
-                    f'{template_name}'
-                    "</a>"
-                )
-            else:
-                html.append(template_name)
-
-        if suffix:
-            html.append(
-                f" {suffix}"
-            )
-
-        html.append("</p>")
+        html.append(f"<p>{' '.join(part for part in parts if part)}</p>")
 
     html.append("</div>")
 
     if repository_url and repository_image:
-
         html.append(
             '<div class="landing-footer__actions">'
-        )
-
-        html.append(
-            f'<a href="{repository_url}" '
+            f'<a href="{escape(repository_url, quote=True)}" '
             'class="landing-footer__image-link">'
-        )
-
-        html.append(
-            f'<img src="{repository_image}" '
-            f'alt="{repository_alt}" '
+            f'<img src="{escape(str(repository_image), quote=True)}" '
+            f'alt="{escape(str(repository_alt), quote=True)}" '
             'class="landing-footer__image">'
+            "</a>"
+            "</div>"
         )
-
-        html.append("</a>")
-        html.append("</div>")
 
     html.append("</div>")
 
-    return "".join(html).strip()
+    return "".join(html)

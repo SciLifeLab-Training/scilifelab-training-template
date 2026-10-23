@@ -7,7 +7,7 @@ what is wrong and how to fix it in the data files.
 
 import re
 from datetime import date
-from renderers.fair import licence_id
+from renderers.fair import licence_id, repository_url
 
 DOI_PATTERN = r"^(https?://(dx\.)?doi\.org/|doi:)?10\.\d{4,9}/\S+$"
 ORCID_PATTERN = r"^(https://orcid\.org/)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$"
@@ -152,15 +152,32 @@ def validate_website(website):
         )
 
     footer = website.get("footer") or {}
-    repository = str((footer.get("repository") or {}).get("url") or "").strip()
+    explicit = str((footer.get("repository") or {}).get("url") or "").strip()
+    github = r"^https://github\.com/[^/\s]+/[^/\s]+?/?$"
 
-    if not re.match(r"^https://github\.com/[^/\s]+/[^/\s]+?/?$", repository):
+    if explicit and not re.match(github, explicit):
         raise ValueError(
             "website.footer.repository.url must be the GitHub address of "
             "this repository, for example "
-            '"https://github.com/organisation/repository"'
+            '"https://github.com/organisation/repository". '
+            "You can also leave it out: it is then worked out automatically."
         )
-    
+
+    if not re.match(github, repository_url(website)):
+        raise ValueError(
+            "Could not work out the GitHub address of this repository. "
+            "Add it to data/website.yml as footer.repository.url, for "
+            'example "https://github.com/organisation/repository".'
+        )
+
+    for old_key in ("organisation", "licence"):
+        if old_key in footer:
+            print(
+                f"Note: footer.{old_key} in data/website.yml is no longer "
+                "used. The footer now takes it from data/course.yml "
+                "(organizers and reuse.licence). You can delete it."
+            )
+
     return website
 
 

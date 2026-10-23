@@ -1,7 +1,7 @@
 {
   "title": "Training title",
   "upload_type": "lesson",
-  "description": "<p>Provide a short description of the training, including its main topic, purpose, or focus.</p>\n<p>Training dates: 2026-01-01 – 2026-01-02.</p>\n<p>Training website: <a href=\"https://your-organisation.github.io/your-repository/0000/\">https://your-organisation.github.io/your-repository/0000/</a></p>\n<p>Funded by: Name of funding organisation.</p>",
+  "description": "<p>Provide a short description of the training, including its main topic, purpose, or focus.</p>\n<p>Training dates: 2026-01-01 – 2026-01-02.</p>\n<p>Training website: <a href=\"https://scilifelab-training.github.io/scilifelab-training-template/0000/\">https://scilifelab-training.github.io/scilifelab-training-template/0000/</a></p>\n<p>Funded by: Name of funding organisation.</p>",
   "creators": [
     {
       "name": "Lastname1, Firstname1",
@@ -40,7 +40,7 @@
   "version": "0000",
   "related_identifiers": [
     {
-      "identifier": "https://your-organisation.github.io/your-repository/0000/",
+      "identifier": "https://scilifelab-training.github.io/scilifelab-training-template/0000/",
       "relation": "isSupplementedBy",
       "resource_type": "other"
     }
