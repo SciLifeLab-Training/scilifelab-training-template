@@ -243,13 +243,14 @@ a.anchorjs-link {
   flex: 0 0 auto;
 }
 
-/* Maximum displayed height of organisation logos.
- * Change max-height if larger or smaller logos are preferred. */
+/* Organisation logos. The height of each logo is set in
+ * data/website.yml (hero.logos[].height, in pixels; 56 by default),
+ * and passed in as --logo-height. */
 .hero__partner-logo {
   display: block;
-  height: auto;
-  max-height: 3.5rem;
+  height: var(--logo-height, 3.5rem);
   width: auto;
+  max-width: 100%;
 }
 
 /* ==========================================================================
@@ -823,8 +824,9 @@ a.anchorjs-link {
     max-width: min(27rem, 58vw);
   }
 
+  /* All logos shrink in proportion, so their relative sizes stay. */
   .hero__partner-logo {
-    max-height: 2.45rem;
+    height: calc(var(--logo-height, 3.5rem) * 0.7);
   }
 
   /* Slightly reduce information-card heading sizes. */
