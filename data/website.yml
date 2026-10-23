@@ -92,34 +92,29 @@ website:
   # Footer
   # ==================================================
   #
-  # Organisation and licence information are displayed when
-  # provided. The repository link and icon are displayed only when
-  # both a repository URL and image are provided.
+  # Most of the footer is filled in automatically, so you don't have
+  # to write anything twice:
+  #   - the organisation: "organizers" in data/course.yml;
+  #   - the licence: "reuse.licence" and "reuse.licence_url" in
+  #     data/course.yml;
+  #   - the link to your GitHub repository: worked out automatically.
+  #
+  # Only the text below is set here. You can usually leave it as it is.
 
   footer:
 
-    # Name of the organisation, programme, or group responsible for
-    # the training.
-    organisation: "SciLifeLab Training Hub"
-
-    # Licence applied to the training website and materials.
-    licence:
-      name: "CC BY 4.0"
-      url: "https://creativecommons.org/licenses/by/4.0/"
-
     # Text describing how the website was built.
-    # Usually this can be left unchanged.
     built_with:
       text: "This website was built using the"
       template_name: "SciLifeLab Training Webpage Template"
       template_url: "https://github.com/SciLifeLab-Training/scilifelab-training-template"
       suffix: "and is hosted on GitHub Pages."
 
-    # Link and image used for the repository icon in the footer.
-    # Replace "url" with the GitHub repository of your training. The
-    # url is required: it is also used to work out the website
-    # address for the citation and Bioschemas files.
+    # The icon that links to your GitHub repository.
     repository:
-      url: "https://github.com/SciLifeLab-Training/scilifelab-training-template"
       image: "img/logos/github-neg.png"
       alt: "GitHub repository"
+
+      # The address of your repository is worked out automatically.
+      # Only add it here if that doesn't work, for example:
+      # url: "https://github.com/organisation/repository"

@@ -30,6 +30,10 @@ course:
 
   language: "English"
 
+  # Shown in the footer of the template's landing page.
+  organizers:
+    - "SciLifeLab Training Hub"
+
   reuse:
     licence: "CC BY 4.0"
     licence_url: "https://creativecommons.org/licenses/by/4.0/"

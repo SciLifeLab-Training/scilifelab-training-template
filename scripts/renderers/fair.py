@@ -373,13 +373,56 @@ def instance_id():
     return match.group(1) if match else ""
 
 
+GITHUB_REMOTE_PATTERN = re.compile(
+    r"^(?:https://github\.com/|git@github\.com:|ssh://git@github\.com/)"
+    r"([^/\s]+)/([^/\s]+?)(?:\.git)?/?$"
+)
+
+
+def detected_repository_url():
+    """
+    Work out the GitHub address of this repository, e.g.
+    https://github.com/organisation/repository
+
+    On GitHub Actions, from the repository the workflow runs in.
+    On your own computer, from the address the repository was cloned
+    from (the "origin" remote). Returns "" when neither is available.
+    """
+
+    repository = os.environ.get("GITHUB_REPOSITORY", "")
+
+    if repository:
+        server = os.environ.get("GITHUB_SERVER_URL", "https://github.com")
+        return f"{server.rstrip('/')}/{repository}"
+
+    try:
+        remote = subprocess.run(
+            ["git", "remote", "get-url", "origin"],
+            capture_output=True,
+            text=True,
+            check=True,
+        ).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        return ""
+
+    match = GITHUB_REMOTE_PATTERN.match(remote)
+
+    if not match:
+        return ""
+
+    return f"https://github.com/{match.group(1)}/{match.group(2)}"
+
+
 def repository_url(website):
-    """Return the repository URL from website.yml."""
+    """
+    Return the GitHub address of the repository: footer.repository.url
+    in website.yml when given, otherwise the detected address.
+    """
 
     footer = website.get("footer") or {}
     repository = footer.get("repository") or {}
 
-    return _text(repository.get("url"))
+    return _text(repository.get("url")) or detected_repository_url()
 
 
 def pages_url(website):

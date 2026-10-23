@@ -197,3 +197,55 @@ def test_only_one_primary_logo(landing_data) -> None:
     with pytest.raises(gl.ValidationError) as exc:
         gl.validate_website(website)
     assert "Only one logo" in str(exc.value)
+
+
+def test_footer_takes_organisation_and_licence_from_course(landing_data) -> None:
+    from renderers.footer import render_footer
+
+    course = copy.deepcopy(landing_data[0])
+    course["organizers"] = ["Org A", "Org B", "Org C"]
+    course["reuse"]["licence"] = "CC BY-SA 4.0"
+    course["reuse"]["licence_url"] = ""
+    footer = render_footer(landing_data[2], course)
+    assert "By Org A, Org B and Org C." in footer
+    assert (
+        'Licensed under <a href="https://spdx.org/licenses/CC-BY-SA-4.0.html">'
+        "CC BY-SA 4.0</a>." in footer
+    )
+
+
+def test_repository_url_is_detected_on_github(landing_data, monkeypatch) -> None:
+    website = copy.deepcopy(landing_data[2])
+    website["footer"]["repository"].pop("url", None)
+    monkeypatch.setenv("GITHUB_REPOSITORY", "my-org/my-training")
+    monkeypatch.setenv("GITHUB_SERVER_URL", "https://github.com")
+    assert fair.repository_url(website) == "https://github.com/my-org/my-training"
+
+
+@pytest.mark.parametrize(
+    "remote",
+    [
+        "https://github.com/my-org/my-training.git",
+        "git@github.com:my-org/my-training.git",
+        "ssh://git@github.com/my-org/my-training",
+    ],
+)
+def test_github_remote_addresses_are_recognised(remote) -> None:
+    match = fair.GITHUB_REMOTE_PATTERN.match(remote)
+    assert match and match.groups() == ("my-org", "my-training")
+
+
+def test_explicit_repository_url_wins(landing_data, monkeypatch) -> None:
+    website = copy.deepcopy(landing_data[2])
+    website["footer"]["repository"]["url"] = "https://github.com/other/repo"
+    monkeypatch.setenv("GITHUB_REPOSITORY", "my-org/my-training")
+    assert fair.repository_url(website) == "https://github.com/other/repo"
+
+
+def test_missing_repository_url_is_reported(landing_data, monkeypatch) -> None:
+    website = copy.deepcopy(landing_data[2])
+    website["footer"]["repository"].pop("url", None)
+    monkeypatch.setattr(fair, "detected_repository_url", lambda: "")
+    with pytest.raises(gl.ValidationError) as exc:
+        gl.validate_website(website)
+    assert "Could not work out" in str(exc.value)

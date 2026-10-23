@@ -40,6 +40,7 @@ from renderers.fair import (  # noqa: E402
     write_fair_files,
 )
 from renderers.footer import render_footer  # noqa: E402
+from renderers import fair  # noqa: E402
 from renderers.landing import (  # noqa: E402
     render_bottom_cards,
     render_hero_brand,
@@ -535,14 +536,30 @@ def validate_website(website: dict[str, Any]) -> dict[str, Any]:
         )
 
     footer = website.get("footer") or {}
-    repository = str((footer.get("repository") or {}).get("url") or "").strip()
+    explicit = str((footer.get("repository") or {}).get("url") or "").strip()
 
-    if not re.match(GITHUB_REPOSITORY_PATTERN, repository):
+    if explicit and not re.match(GITHUB_REPOSITORY_PATTERN, explicit):
         raise ValidationError(
             "website.footer.repository.url must be the GitHub address of "
             "this repository, for example "
-            '"https://github.com/organisation/repository"'
+            '"https://github.com/organisation/repository". '
+            "You can also leave it out: it is then worked out automatically."
         )
+
+    if not re.match(GITHUB_REPOSITORY_PATTERN, fair.repository_url(website)):
+        raise ValidationError(
+            "Could not work out the GitHub address of this repository. "
+            "Add it to data/website.yml as footer.repository.url, for "
+            'example "https://github.com/organisation/repository".'
+        )
+
+    for old_key in ("organisation", "licence"):
+        if old_key in footer:
+            print(
+                f"Note: footer.{old_key} in data/website.yml is no longer "
+                "used. The footer now takes it from data/course.yml "
+                "(organizers and reuse.licence). You can delete it."
+            )
 
     website["labels"] = validate_labels(website.get("labels"))
 
@@ -597,9 +614,20 @@ def validate_course_metadata(course: dict[str, Any]) -> dict[str, Any]:
 # ---------------------------------------------------------
 
 def write_landing_sections(
-    course: dict[str, Any], team: dict[str, Any], website: dict[str, Any]
+    course: dict[str, Any],
+    team: dict[str, Any],
+    website: dict[str, Any],
+    citation_course: dict[str, Any] | None = None,
 ) -> None:
-    """Write the data-driven landing page sections to _generated/."""
+    """
+    Write the data-driven landing page sections to _generated/.
+
+    citation_course is the course the website describes in the footer
+    and the citation files: the training, or the template itself in
+    template mode. Defaults to course.
+    """
+
+    citation_course = citation_course or course
 
     sections = {
         "template-banner.qmd": render_template_banner(website),
@@ -608,7 +636,7 @@ def write_landing_sections(
         "top-cards.qmd": render_top_cards(course),
         "instances-band-media.qmd": render_instances_band_media(website),
         "bottom-cards.qmd": render_bottom_cards(team),
-        "footer.qmd": render_footer(website),
+        "footer.qmd": render_footer(website, citation_course),
         # Page metadata for index.qmd: the browser tab title and the
         # description used by search engines and link previews.
         "page-metadata.yml": yaml.safe_dump(
@@ -645,10 +673,10 @@ def main() -> None:
     if GENERATED_DIR.exists():
         shutil.rmtree(GENERATED_DIR)
 
-    write_generated_partials(instances, website["labels"])
-    write_landing_sections(course, team, website)
-
     citation_course, citation_team = load_citation_data(course, team, website)
+
+    write_generated_partials(instances, website["labels"])
+    write_landing_sections(course, team, website, citation_course)
     write_fair_files(
         ROOT,
         citation_course,
