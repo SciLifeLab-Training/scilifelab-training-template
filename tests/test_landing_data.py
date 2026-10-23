@@ -156,3 +156,44 @@ def test_team_needs_a_citation_author(landing_data) -> None:
     with pytest.raises(gl.ValidationError) as exc:
         gl.validate_team(team)
     assert "citation author" in str(exc.value)
+
+def test_logo_height_is_used_and_defaults_to_56(landing_data) -> None:
+    website = copy.deepcopy(landing_data[2])
+    website["hero"]["logos"] = [
+        {"src": "img/logos/a.svg", "alt": "A", "height": 40},
+        {"src": "img/logos/b.svg", "alt": "B"},
+    ]
+    brand = landing.render_hero_brand(website)
+    assert "--logo-height: 40px;" in brand
+    assert "--logo-height: 56px;" in brand
+
+
+@pytest.mark.parametrize("height", [0, -10, "big", True])
+def test_logo_height_must_be_a_positive_number(landing_data, height) -> None:
+    website = copy.deepcopy(landing_data[2])
+    website["hero"]["logos"][0]["height"] = height
+    with pytest.raises(gl.ValidationError) as exc:
+        gl.validate_website(website)
+    assert "positive number of pixels" in str(exc.value)
+
+
+def test_primary_logo_is_shown_last(landing_data) -> None:
+    website = copy.deepcopy(landing_data[2])
+    website["hero"]["logos"] = [
+        {"src": "img/logos/main.svg", "alt": "Main", "primary": True},
+        {"src": "img/logos/a.svg", "alt": "A"},
+        {"src": "img/logos/b.svg", "alt": "B"},
+    ]
+    brand = landing.render_hero_brand(website)
+    assert brand.index("a.svg") < brand.index("b.svg") < brand.index("main.svg")
+
+
+def test_only_one_primary_logo(landing_data) -> None:
+    website = copy.deepcopy(landing_data[2])
+    website["hero"]["logos"] = [
+        {"src": "img/logos/a.svg", "alt": "A", "primary": True},
+        {"src": "img/logos/b.svg", "alt": "B", "primary": True},
+    ]
+    with pytest.raises(gl.ValidationError) as exc:
+        gl.validate_website(website)
+    assert "Only one logo" in str(exc.value)

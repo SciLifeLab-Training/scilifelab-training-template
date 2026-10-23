@@ -514,6 +514,25 @@ def validate_website(website: dict[str, Any]) -> dict[str, Any]:
     for index, logo in enumerate(logos):
         if not isinstance(logo, dict) or not str(logo.get("src") or "").strip():
             raise ValidationError(f"website.hero.logos[{index}] needs a 'src'.")
+        if not isinstance(logo.get("primary", False), bool):
+            raise ValidationError(
+                f"website.hero.logos[{index}].primary must be true or false."
+            )
+        height = logo.get("height")
+        if height not in (None, "") and (
+            isinstance(height, bool)
+            or not isinstance(height, (int, float))
+            or height <= 0
+        ):
+            raise ValidationError(
+                f"website.hero.logos[{index}].height must be a positive "
+                f"number of pixels, for example 56. Got: {height!r}"
+            )
+
+    if sum(1 for logo in logos if logo.get("primary") is True) > 1:
+        raise ValidationError(
+            "Only one logo in website.hero.logos can have 'primary: true'."
+        )
 
     footer = website.get("footer") or {}
     repository = str((footer.get("repository") or {}).get("url") or "").strip()

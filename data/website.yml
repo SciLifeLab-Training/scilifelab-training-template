@@ -29,16 +29,39 @@ website:
   # The top of the landing page. The title and subtitle come from
   # data/course.yml.
   #
-  # Logos: add one or more logos. Use logos that are white or made
-  # for a dark background. SVG files are preferred.
+  # Logos: add one or more logos. The logo with "primary: true"
+  # (SciLifeLab) is always shown on the right. The other logos are
+  # shown to its left, in the order of this list.
+  #
+  # For each logo:
+  #   src:     where the file is, for example "img/logos/my-logo.svg"
+  #   alt:     the name of the organisation, read out by screen readers
+  #   height:  optional. The height of the logo in pixels (56 if left
+  #            out). Adjust the heights so that the visible artwork of
+  #            all logos looks about the same size. On smaller screens,
+  #            all logos shrink in proportion.
+  #   primary: optional. true for the one logo that is always shown
+  #            on the right.
+  #
+  # For best results, use logos that:
+  #   - are white or designed for use on a dark background;
+  #   - have a transparent background;
+  #   - have little empty space around the visible artwork.
+  #
+  # SVG files are preferred because they stay sharp at any size. For
+  # PNG files, use an image at least twice as high as the height you
+  # set here, so it stays sharp on high-resolution screens.
 
   hero:
     logos:
-      - src: "img/logos/SciLifeLab_Logotype_NEG.png"
+      - src: "img/logos/scilifelab-neg.png"
         alt: "SciLifeLab"
+        height: 56
+        primary: true
 
       # - src: "img/logos/partner-logo.svg"
       #   alt: "Partner organisation"
+      #   height: 40
 
   # ==================================================
   # Labels
@@ -98,5 +121,5 @@ website:
     # address for the citation and Bioschemas files.
     repository:
       url: "https://github.com/SciLifeLab-Training/scilifelab-training-template"
-      image: "img/logos/Github_Neg.png"
+      image: "img/logos/github-neg.png"
       alt: "GitHub repository"

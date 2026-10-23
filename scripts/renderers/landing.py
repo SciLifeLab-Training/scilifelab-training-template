@@ -69,15 +69,36 @@ def render_template_banner(website):
 # Hero
 # ---------------------------------------------------------
 
+# Height of a logo in pixels when website.yml gives none.
+DEFAULT_LOGO_HEIGHT = 56
+
+
+def _logo_height(logo):
+    """The height of a logo in pixels: its height in website.yml, or
+    the default. On smaller screens, all logos shrink in proportion."""
+
+    height = logo.get("height")
+
+    if height in (None, ""):
+        return DEFAULT_LOGO_HEIGHT
+
+    return f"{float(height):g}"
+
+
 def render_hero_brand(website):
     """The logos at the top of the landing page."""
 
     logos = (website.get("hero") or {}).get("logos") or []
 
+    # The primary logo (primary: true) is always shown last, on the
+    # right. The other logos keep the order of the list.
+    logos = sorted(logos, key=lambda logo: logo.get("primary") is True)
+
     items = [
         '<div class="hero__brand-item">\n'
         f'  <img src="{_attr(logo.get("src"))}" '
-        f'alt="{_attr(logo.get("alt"))}" class="hero__partner-logo">\n'
+        f'alt="{_attr(logo.get("alt"))}" class="hero__partner-logo" '
+        f'style="--logo-height: {_logo_height(logo)}px;">\n'
         "</div>"
         for logo in logos
         if logo.get("src")
