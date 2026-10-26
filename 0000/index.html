@@ -166,6 +166,20 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 </div>
+<div class="course-registration-switch" data-opening="2026-01-01" data-closing="2026-12-31">
+<div data-registration-state="before" hidden="">
+<div class="course-registration">
+<div class="course-registration-content">
+<div class="course-registration-title">
+<p>Registration opens soon</p>
+</div>
+<div class="course-registration-message">
+<p>Registration for this training opens on 1 January 2026.</p>
+</div>
+</div>
+</div>
+</div>
+<div data-registration-state="open">
 <div class="course-registration">
 <div class="course-registration-content">
 <div class="course-registration-title">
@@ -183,6 +197,49 @@ Cost: amount SEK
 </div>
 <p><a class="course-registration-button" href="https://registration.example.com"> Register for this training → </a></p>
 </div>
+</div>
+<div data-registration-state="closed" hidden="">
+<div class="course-registration">
+<div class="course-registration-content">
+<div class="course-registration-title">
+<p>Registration is closed</p>
+</div>
+<div class="course-registration-message">
+<p>Registration for this training is now closed.</p>
+</div>
+<div class="course-registration-note">
+<p>For questions or more information, please contact the training team.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+(function () {
+  var banner = document.currentScript.previousElementSibling;
+  if (!banner || !banner.dataset.opening) {
+    return;
+  }
+
+  var now = new Date();
+  var today = [
+    now.getFullYear(),
+    String(now.getMonth() + 1).padStart(2, "0"),
+    String(now.getDate()).padStart(2, "0")
+  ].join("-");
+
+  var opening = banner.dataset.opening;
+  var closing = banner.dataset.closing;
+  var state =
+    today < opening ? "before" :
+    (!closing || today <= closing) ? "open" :
+    "closed";
+
+  banner.querySelectorAll("[data-registration-state]").forEach(function (part) {
+    part.hidden = part.dataset.registrationState !== state;
+  });
+})();
+</script>
 <div class="course-upcoming-section">
 <div class="course-section-label">
 <p>NEXT UP</p>
