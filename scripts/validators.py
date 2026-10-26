@@ -132,19 +132,13 @@ def validate_course(course):
 
 def validate_website(website):
 
-    pages = website.get("pages", {})
+    pages = website.get("pages")
 
-    required_pages = [
-        "content",
-        "syllabus",
-    ]
-
-    for page in required_pages:
-
-        if page not in pages:
-            raise ValueError(
-                f"Required page '{page}' is missing"
-            )
+    if pages is not None and not isinstance(pages, dict):
+        raise ValueError(
+            "website.pages must contain one entry per quick link, "
+            "such as content, syllabus and schedule"
+        )
 
     if not isinstance(website.get("template", False), bool):
         raise ValueError(

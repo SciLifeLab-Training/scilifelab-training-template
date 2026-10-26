@@ -176,16 +176,21 @@ website:
   # ==================================================
   #
   # Always displayed. 
-  # Defines the title, description, icon, and source page
-  # for pages that can be displayed as homepage quick links
-  # and used in the website navigation.
+  # Defines the title, description, icon, and page of the
+  # quick links on the overview page: up to four cards that lead
+  # to the most important pages.
   #
   # Content and Syllabus are always included as quick links. The other
-  # pages are included only when they also appear in the navigation bar,
-  # that is, when their data file contains information.
-
-  # IMPORTANT: you must keep all optional page entries below (i.e. do not delete them),
-  # since the renderer expects the configured page keys!
+  # pages are included only when their data file contains information:
+  # a page whose data file is empty, contains only an introduction, or
+  # is deleted, gets no quick link (and no link in the navigation bar).
+  #
+  # Below, you can change the title, description and icon of each quick
+  # link. Icons are Bootstrap Icons: https://icons.getbootstrap.com/
+  #
+  # To keep a page out of the quick links, delete its entry below. The
+  # page itself stays in the navigation bar. Content and Syllabus are
+  # always shown, with standard texts if their entry is deleted.
   #
   # Quick links are considered in this order:
   # Content, Syllabus, Schedule, Practicalities, Preparation,

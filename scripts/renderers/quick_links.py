@@ -1,54 +1,110 @@
-def render_quick_links(website, available_pages):
+"""
+The quick links on the overview page: up to four cards that lead to
+the most important pages.
 
-    """Render up to four homepage quick links."""
+Content and Syllabus are always shown. The other pages are shown only
+when they also appear in the navigation bar, that is, when their data
+file contains information, and only while there is room.
 
-    pages = website["pages"]
+The title, description and icon of each card come from "pages" in
+data/website.yml. An entry that is missing there:
 
-    priority = [
-        "content",
-        "syllabus",
-        "schedule",
-        "practicalities",
-        "preparation",
-        "resources",
-        "faq",
-    ]
+- for Content and Syllabus: uses the standard texts below;
+- for the other pages: means the page gets no quick link. It stays in
+  the navigation bar.
+"""
 
-    cards = []
+from html import escape
 
-    for key in priority:
+# The order in which pages are considered, and the standard texts for
+# Content and Syllabus.
+PRIORITY = [
+    "content",
+    "syllabus",
+    "schedule",
+    "practicalities",
+    "preparation",
+    "resources",
+    "faq",
+]
 
-        if len(cards) >= 4:
-            break
+ALWAYS_SHOWN = {
+    "content": {
+        "title": "Content",
+        "description": "Modules, slides and exercises",
+        "icon": "folder",
+        "href": "content/index.qmd",
+    },
+    "syllabus": {
+        "title": "Syllabus",
+        "description": "Description, learning outcomes and prerequisites",
+        "icon": "journal-text",
+        "href": "syllabus.qmd",
+    },
+}
 
-        page = pages[key]
+# The page each quick link leads to, when the entry doesn't say.
+DEFAULT_HREFS = {key: f"{key}.qmd" for key in PRIORITY}
+DEFAULT_HREFS["content"] = "content/index.qmd"
 
-        # Content and Syllabus are always shown. The other pages are
-        # shown only when they are also in the navbar.
-        if key not in ("content", "syllabus") and key not in available_pages:
-            continue
+MAXIMUM = 4
 
-        cards.append(
-            f"""
+
+def _card(key, entry):
+    """One quick link card. Missing fields fall back to sensible texts."""
+
+    standard = ALWAYS_SHOWN.get(key, {})
+
+    title = str(entry.get("title") or standard.get("title") or key.capitalize())
+    description = str(entry.get("description") or standard.get("description") or "")
+    icon = str(entry.get("icon") or standard.get("icon") or "link-45deg")
+    href = str(entry.get("href") or DEFAULT_HREFS[key])
+
+    return f"""
 <div class="course-link-card">
 
-<i class="bi bi-{page["icon"]} course-link-icon"></i>
+<i class="bi bi-{escape(icon, quote=True)} course-link-icon"></i>
 
 <div class="course-link-content">
 
-<h3>{page["title"]}</h3>
+<h3>{escape(title)}</h3>
 
-<p>{page["description"]}</p>
+<p>{escape(description)}</p>
 
-<a class="course-text-link" href="{page["href"]}">
-View {page["title"].lower()} →
+<a class="course-text-link" href="{escape(href, quote=True)}">
+View {escape(title.lower())} →
 </a>
 
 </div>
 
 </div>
 """.strip()
-        )
+
+
+def render_quick_links(website, available_pages):
+    """Render up to four homepage quick links."""
+
+    pages = website.get("pages") or {}
+
+    cards = []
+
+    for key in PRIORITY:
+
+        if len(cards) >= MAXIMUM:
+            break
+
+        entry = pages.get(key)
+
+        if key in ALWAYS_SHOWN:
+            cards.append(_card(key, entry or {}))
+            continue
+
+        # The other pages: only when they are in the navigation bar,
+        # and only when they have an entry in website.yml.
+        if key not in available_pages or not isinstance(entry, dict):
+            continue
+
+        cards.append(_card(key, entry))
 
     if not cards:
         return ""
