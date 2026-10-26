@@ -127,6 +127,10 @@ website:
   # If no closing date is provided, registration remains open
   # indefinitely after the opening date.
   #
+  # The banner switches by itself on the opening and closing date,
+  # in the visitor's browser: you don't need to update the website
+  # on those days.
+  #
   # While registration is open, a URL is required for the
   # banner to be displayed.
   #
@@ -176,16 +180,9 @@ website:
   # for pages that can be displayed as homepage quick links
   # and used in the website navigation.
   #
-  # Content and Syllabus are always included as quick links. 
-  # Other optional pages are included only when twhen they also appear in the navbar,
-  # i.e. when their data file contains data after its YAML front matter (i.e. after 
-  # ---
-  # title: Practicalities
-  # title-block: false
-  # ---).
-  #
-  # You can leave an optional page's .qmd file empty,
-  # to prevent it from appearing as a quick link. 
+  # Content and Syllabus are always included as quick links. The other
+  # pages are included only when they also appear in the navigation bar,
+  # that is, when their data file contains information.
 
   # IMPORTANT: you must keep all optional page entries below (i.e. do not delete them),
   # since the renderer expects the configured page keys!
