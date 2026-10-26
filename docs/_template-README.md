@@ -126,11 +126,13 @@ Unless otherwise stated, the training materials are licensed under [CC BY 4.0](h
 <!-- /generated:licence -->
 
 ## Related resources
-
 <!-- Write this yourself, or delete this section. -->
 
 - Your training programme or organisation
 - Companion repositories or datasets
+
+<!-- End of write this yourself. -->
+
 
 <!-- generated:acknowledgements -->
 ## Acknowledgements

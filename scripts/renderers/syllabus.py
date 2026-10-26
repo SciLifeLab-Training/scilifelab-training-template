@@ -202,17 +202,17 @@ def render_syllabus(course, team, website):
     # Prerequisites
     # ---------------------------------------------------------
 
-    prerequisites = course.get("prerequisites", {})
+    prerequisites = course.get("prerequisites") or {}
 
     knowledge = [
         item
-        for item in prerequisites.get("knowledge", [])
+        for item in prerequisites.get("knowledge") or []
         if item
     ]
 
     technical = [
         item
-        for item in prerequisites.get("technical", [])
+        for item in prerequisites.get("technical") or []
         if item
     ]
 
@@ -252,11 +252,11 @@ def render_syllabus(course, team, website):
 
     instruction = [
         item
-        for item in course.get("instruction", [])
+        for item in course.get("instruction") or []
         if item
     ]
 
-    examination = course.get("examination", {})
+    examination = course.get("examination") or {}
     examination_description = examination.get("description")
 
     if instruction or examination_description:
@@ -300,7 +300,7 @@ def render_syllabus(course, team, website):
 
     content_providers = [
         provider
-        for provider in course.get("content_providers", [])
+        for provider in course.get("content_providers") or []
         if provider
     ]
 

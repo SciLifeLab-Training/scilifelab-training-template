@@ -83,8 +83,7 @@ course:
   credits:
     value: numerical value
     unit: "hp/ECTS"
-    note: "Provide the number of credits awarded (in ECTS/hp), if applicable.
-      Specify whether formal approval is determined by the participant's host university."
+    note: "E.g: specify whether formal approval of credits is determined by the participant's host university."
 
   # --------------------------------------------------
   # Delivery
