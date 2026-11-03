@@ -194,9 +194,25 @@ def test_write_generated_partials_writes_expected_files(tmp_path: Path, monkeypa
     monkeypatch.setattr(gl, "HERO_ACTIONS_FILE", hero_file)
     monkeypatch.setattr(gl, "INSTANCES_BAND_FILE", band_file)
 
+    json_file = generated_dir / "instances.json"
+    monkeypatch.setattr(gl, "INSTANCES_JSON_FILE", json_file)
+
     gl.write_generated_partials(validated, ui)
 
     assert hero_file.exists()
     assert band_file.exists()
+    assert json_file.exists()
     assert "./2601/" in hero_file.read_text(encoding="utf-8")
     assert "Previous run" in band_file.read_text(encoding="utf-8")
+
+
+def test_instances_json_lists_current_and_previous() -> None:
+    import json
+
+    validated = gl.validate_instances_data(make_instances())
+    data = json.loads(gl.render_instances_json(validated))
+    statuses = {item["slug"]: item["status"] for item in data["instances"]}
+
+    assert list(statuses.values()).count("current") == 1
+    assert "previous" in statuses.values()
+    assert all(item["url"] for item in data["instances"])

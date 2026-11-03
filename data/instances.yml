@@ -39,7 +39,10 @@ instances:
   #
   # status (required)
   #   current: the instance that is running now or coming up next.
-  #   previous: an earlier instance.
+  #   previous: an earlier instance. Its website shows the banner "This
+  #   is an older instance of this training", with a link to the current
+  #   instance. This happens by itself, as soon as the landing page is
+  #   published: nothing needs to change on the older instance's branch.
   #
   # visible (required)
   #   true: show the instance in the "All training instances" banner.

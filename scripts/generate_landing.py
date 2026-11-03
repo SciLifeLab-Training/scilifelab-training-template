@@ -6,6 +6,9 @@ Runs as the Quarto pre-render step on the main branch. It reads the
 data files in data/, checks them, and writes:
 
 - the landing page sections to _generated/ (included by _sections/);
+- the list of instances to _generated/instances.json, which is published
+  next to the landing page. Older instances read it to show the banner
+  "This is an older instance of this training";
 - the Bioschemas markup of the training to _generated/bioschemas.html;
 - CITATION.cff, .zenodo.json and the generated blocks of README.md.
 
@@ -16,6 +19,7 @@ README describe the template itself, from the files in _template/.
 from __future__ import annotations
 
 import html
+import json
 import re
 import shutil
 import sys
@@ -61,6 +65,7 @@ TEMPLATE_DIR = ROOT / "_template"
 GENERATED_DIR = ROOT / "_generated"
 HERO_ACTIONS_FILE = GENERATED_DIR / "hero-actions.qmd"
 INSTANCES_BAND_FILE = GENERATED_DIR / "instances-band.qmd"
+INSTANCES_JSON_FILE = GENERATED_DIR / "instances.json"
 
 DOI_PATTERN = r"^(https?://(dx\.)?doi\.org/|doi:)?10\.\d{4,9}/\S+$"
 ORCID_PATTERN = r"^(https://orcid\.org/)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$"
@@ -350,6 +355,30 @@ def write_generated_partials(
     )
     HERO_ACTIONS_FILE.write_text(hero_actions, encoding="utf-8")
     INSTANCES_BAND_FILE.write_text(instances_band, encoding="utf-8")
+    INSTANCES_JSON_FILE.write_text(
+        render_instances_json(instances), encoding="utf-8"
+    )
+
+
+def render_instances_json(instances: list[dict[str, Any]]) -> str:
+    """
+    The list of instances, published next to the landing page.
+
+    Each training instance reads it in the visitor's browser: an instance
+    listed as "previous" then shows the banner "This is an older instance
+    of this training", with a link to the current instance.
+    """
+
+    items = [
+        {
+            "slug": item["slug"],
+            "label": item["label"],
+            "status": item["status"],
+            "url": item["instance_url"],
+        }
+        for item in sorted(instances, key=lambda item: -item["sort_key"])
+    ]
+    return json.dumps({"instances": items}, indent=2, ensure_ascii=False) + "\n"
 
 # ---------------------------------------------------------
 # Course, team and website data

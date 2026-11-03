@@ -86,6 +86,10 @@ jobs:
           cp _site/index.html gh-pages/index.html
           cp _site/styles.css gh-pages/styles.css
 
+          # The list of instances: older instances read it to show the
+          # banner "This is an older instance of this training".
+          cp _generated/instances.json gh-pages/instances.json
+
           # Mirror landing-owned asset directories.
           for d in site_libs index_files img; do
             if [ -d "_site/$d" ]; then
@@ -121,7 +125,7 @@ jobs:
           git config user.email "do_not_email@example.com"
           git config user.name "gh_action"
 
-          git add index.html styles.css .nojekyll
+          git add index.html styles.css instances.json .nojekyll
           for path in site_libs index_files img; do
             if [ -e "$path" ]; then
               git add --all "$path"
