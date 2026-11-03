@@ -1,0 +1,22 @@
+{
+  "instances": [
+    {
+      "slug": "0000",
+      "label": "September 2026",
+      "status": "current",
+      "url": "./0000/"
+    },
+    {
+      "slug": "2505",
+      "label": "May 2025",
+      "status": "previous",
+      "url": "./2505/"
+    },
+    {
+      "slug": "2411",
+      "label": "November 2024",
+      "status": "previous",
+      "url": "./2411/"
+    }
+  ]
+}
