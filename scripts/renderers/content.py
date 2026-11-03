@@ -7,6 +7,9 @@ from renderers.navbar import (
 )
 
 from renderers.footer import render_footer
+from renderers.previous_instance_banner import (
+    render_previous_instance_banner_html,
+)
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -183,11 +186,14 @@ def render_content_navbar(
     content_navigation,
 ):
     meta = render_navbar_meta(course)
+    banner = render_previous_instance_banner_html(website)
     brand = render_navbar_brand(website, content_page=True)
     links = render_navbar_links(website, available_pages)
 
     return """
 <div class="course-content-page-shell">
+
+""" + banner + """
 
     <div class="course-navbar">
 

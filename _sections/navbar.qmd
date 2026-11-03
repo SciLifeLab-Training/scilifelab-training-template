@@ -1,3 +1,5 @@
+{{< include _generated/previous-instance-banner.qmd >}}
+
 ::: {.course-navbar}
 ::: {.course-navbar-layout}
 

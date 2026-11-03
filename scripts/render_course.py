@@ -28,6 +28,7 @@ from validators import (
 from writer import write_partial
 
 from renderers.template_banner import render_template_banner
+from renderers.previous_instance_banner import render_previous_instance_banner
 from renderers.welcome import render_welcome
 from renderers.navbar import (
     render_navbar_meta,
@@ -129,6 +130,11 @@ def main():
     write_partial(
         "template-banner.qmd",
         render_template_banner(website),
+    )
+
+    write_partial(
+        "previous-instance-banner.qmd",
+        render_previous_instance_banner(website),
     )
 
     write_partial(

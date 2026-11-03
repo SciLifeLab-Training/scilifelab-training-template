@@ -23,6 +23,25 @@ website:
   template: true
 
   # ==================================================
+  # Banner for older instances
+  # ==================================================
+  #
+  # When a newer training instance is marked as current in
+  # data/instances.yml on the main branch, this instance shows a
+  # banner on every page: "This is an older instance of this
+  # training", with a link to the current instance.
+  #
+  # This happens by itself: you don't need to change anything on this
+  # branch. The banner does not appear in the preview on your own
+  # computer, only on the published website.
+  #
+  # true: show the banner when this instance is no longer current.
+  # false: never show it, for example for a self-paced version that
+  # stays valid.
+
+  previous_instance_banner: true
+
+  # ==================================================
   # Navbar
   # ==================================================
   #

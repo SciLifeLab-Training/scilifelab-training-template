@@ -148,6 +148,12 @@ body {
     color: #292929;
 }
 
+/* The banner for older instances stays hidden until the script in the
+ * page finds that a newer instance is current. */
+.template-banner[hidden] {
+    display: none;
+}
+
 /* Remove the default paragraph margin inside the banner. */
 .template-banner p {
     margin: 0;

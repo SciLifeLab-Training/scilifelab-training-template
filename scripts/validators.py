@@ -145,6 +145,11 @@ def validate_website(website):
             "website.template must be true or false"
         )
 
+    if not isinstance(website.get("previous_instance_banner", True), bool):
+        raise ValueError(
+            "website.previous_instance_banner must be true or false"
+        )
+
     footer = website.get("footer") or {}
     explicit = str((footer.get("repository") or {}).get("url") or "").strip()
     github = r"^https://github\.com/[^/\s]+/[^/\s]+?/?$"
