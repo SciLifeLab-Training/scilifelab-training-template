@@ -210,6 +210,83 @@ def _text(value):
     return " ".join(str(value).split())
 
 
+MARKDOWN_PATTERNS = [
+    # [text](https://...) -> text
+    (re.compile(r"!?\[([^\]]*)\]\([^)]*\)"), r"\1"),
+    # <https://...> -> https://...
+    (re.compile(r"<(https?://[^>\s]+)>"), r"\1"),
+    # **bold**, __bold__, *italic*, _italic_, `code`
+    (re.compile(r"(\*\*|__)(.+?)\1"), r"\2"),
+    (re.compile(r"(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?![\w*])"), r"\1"),
+    (re.compile(r"(?<![\w_])_(?!\s)(.+?)(?<!\s)_(?![\w_])"), r"\1"),
+    (re.compile(r"`([^`]*)`"), r"\1"),
+]
+
+
+def _plain_paragraphs(value):
+    """
+    Return Markdown text as a list of plain-text paragraphs.
+
+    The description in course.yml may use Markdown, which the website
+    shows as formatting. Citation files, Zenodo and training registries
+    show text as it is, so the formatting marks are removed there:
+    "**free**" becomes "free", and "[SciLifeLab](https://...)" becomes
+    "SciLifeLab". Headings and list markers are removed too.
+    """
+
+    if value is None:
+        return []
+
+    paragraphs = []
+
+    def add(text):
+        text = " ".join(text.split())
+
+        for pattern, replacement in MARKDOWN_PATTERNS:
+            text = pattern.sub(replacement, text)
+
+        if text:
+            paragraphs.append(text)
+
+    for block in re.split(r"\n\s*\n", str(value)):
+        text = []
+        items = []
+
+        def finish_items():
+            if items:
+                text.append("; ".join(items) + ".")
+                items.clear()
+
+        for line in block.splitlines():
+            heading = re.match(r"^\s{0,3}#{1,6}\s+(.*)", line)
+            item = re.match(r"^\s*(?:[-*+]|\d+[.)])\s+(.*)", line)
+
+            if heading:
+                # A heading becomes a paragraph of its own.
+                finish_items()
+                add(" ".join(text))
+                text.clear()
+                add(heading.group(1))
+            elif item:
+                items.append(item.group(1).strip().rstrip(".;"))
+            elif items and line.strip():
+                # A list item that continues on the next line.
+                items[-1] += " " + line.strip()
+            else:
+                text.append(line)
+
+        finish_items()
+        add(" ".join(text))
+
+    return paragraphs
+
+
+def _plain_text(value):
+    """Return Markdown text as one line of plain text."""
+
+    return " ".join(_plain_paragraphs(value))
+
+
 def _date(value):
     """Return a date as YYYY-MM-DD, or "" when it is not a valid date."""
 
@@ -703,7 +780,7 @@ def render_citation_cff(course, team, website, source="data/"):
         "title": _text(course.get("title")),
     }
 
-    abstract = _text(course.get("description"))
+    abstract = _plain_text(course.get("description"))
 
     if abstract:
         cff["abstract"] = abstract
@@ -920,7 +997,12 @@ def _readme_learning_outcomes(course, team, website):
 
 
 def _readme_contributors(course, team, website):
-    """Everyone in the training team, with role, ORCID and affiliation."""
+    """
+    Everyone in the training team, with role, ORCID and affiliation.
+
+    The Author column shows who is credited as an author in the citation
+    and on Zenodo: everyone, except members with citation_author: false.
+    """
 
     members = [
         member
@@ -942,8 +1024,8 @@ def _readme_contributors(course, team, website):
     lines = [
         "## Contributors",
         "",
-        "| Name | Role | ORCID | Affiliation |",
-        "|------|------|-------|-------------|",
+        "| Name | Role | Author | ORCID | Affiliation |",
+        "|------|------|--------|-------|-------------|",
     ]
 
     for member in sorted(members, key=role_rank):
@@ -953,12 +1035,27 @@ def _readme_contributors(course, team, website):
             if orcid else ""
         )
 
+        author = (
+            "No" if member.get("citation_author", True) is False else "Yes"
+        )
+
         lines.append(
             f"| {cell(member.get('name'))} "
             f"| {cell(', '.join(member.get('roles') or []))} "
+            f"| {author} "
             f"| {orcid_cell} "
             f"| {cell(member.get('affiliation'))} |"
         )
+
+    note = (
+        "Only authors are credited in the [citation](#citation), and as "
+        "creators on Zenodo."
+    )
+
+    if any(member.get("citation_author", True) is False for member in members):
+        note += " The others are listed on Zenodo as contributors."
+
+    lines += ["", note]
 
     return lines
 
@@ -1088,7 +1185,7 @@ ZENODO_CONTRIBUTOR_TYPES = {
     "Founder": "ProjectLeader",
     "Training lead": "ProjectLeader",
     "Instructor": "ProjectMember",
-    "Contributor": "Other",
+    "Contributor": "ProjectMember",
 }
 
 
@@ -1214,8 +1311,10 @@ def render_zenodo_json(course, team, website):
     )
 
     description = [
-        f"<p>{html.escape(_text(course.get('description')))}</p>"
-        if _text(course.get("description")) else "",
+        *(
+            f"<p>{html.escape(paragraph)}</p>"
+            for paragraph in _plain_paragraphs(course.get("description"))
+        ),
         f"<p>Training dates: {_dates(course)}.</p>"
         if _dates(course) else "",
         f'<p>{website_label}: <a href="{html.escape(url)}">'
@@ -1337,7 +1436,7 @@ def render_bioschemas(course, team, website):
         "@id": course_id,
         DCT_CONFORMS_TO: {"@id": BIOSCHEMAS_COURSE},
         "name": _text(course.get("title")),
-        "description": _text(course.get("description")),
+        "description": _plain_text(course.get("description")),
         "keywords": ", ".join(_list(course.get("keywords"))),
         "url": course_page,
         "identifier": f"https://doi.org/{doi}" if doi else "",
