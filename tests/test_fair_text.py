@@ -58,3 +58,24 @@ def test_non_authors_get_a_zenodo_contributor_type() -> None:
     contributors = fair._zenodo_contributors(team)
 
     assert contributors[0]["type"] == "ProjectMember"
+
+
+def test_names_link_to_orcid_when_there_is_one() -> None:
+    from renderers import landing
+
+    team = {
+        "members": [
+            {
+                "name": "Anna Lindqvist",
+                "roles": ["Founder"],
+                "orcid": "0000-0002-1825-0097",
+            },
+            {"name": "Pieter van der Berg", "roles": ["Founder"]},
+        ]
+    }
+
+    anna, pieter = landing._names(team, "Founder")
+
+    assert 'href="https://orcid.org/0000-0002-1825-0097"' in anna
+    assert ">Anna Lindqvist</a>" in anna
+    assert pieter == "Pieter van der Berg"

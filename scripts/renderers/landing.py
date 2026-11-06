@@ -9,6 +9,8 @@ sections, so styles.css applies unchanged.
 
 import html
 
+from renderers.fair import person_name_html
+
 
 USER_GUIDE_URL = (
     "https://scilifelab-training.github.io/"
@@ -38,10 +40,14 @@ def _list(values):
 
 
 def _names(team, role):
-    """Return the names of the team members with a role."""
+    """
+    Return the names of the team members with a role, as HTML.
+
+    A name links to the person's ORCID page when they have one.
+    """
 
     return [
-        _text(member.get("name"))
+        person_name_html(member)
         for member in team.get("members") or []
         if role in (member.get("roles") or [])
         and _text(member.get("name"))

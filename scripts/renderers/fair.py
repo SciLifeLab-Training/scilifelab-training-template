@@ -386,6 +386,38 @@ def _orcid(value):
     return value if ORCID_PATTERN.match(value) else ""
 
 
+def orcid_url(value):
+    """
+    Return the ORCID page of a person, or "" when there is none.
+
+    Accepts the full address ("https://orcid.org/0000-0002-1825-0097")
+    and the number on its own ("0000-0002-1825-0097").
+    """
+
+    return _orcid(value)
+
+
+def person_name_html(member, css_class="person-orcid-link"):
+    """
+    Return the name of a team member as HTML.
+
+    When the person has an ORCID, the name links to their ORCID page,
+    so visitors can see who they are and what else they have done.
+    """
+
+    name = html.escape(_text(member.get("name")))
+    url = _orcid(member.get("orcid"))
+
+    if not name or not url:
+        return name
+
+    return (
+        f'<a class="{css_class}" href="{html.escape(url, quote=True)}" '
+        f'target="_blank" rel="noopener" '
+        f'title="ORCID profile of {name}">{name}</a>'
+    )
+
+
 def licence_id(course):
     """
     Return the SPDX identifier of the licence.
