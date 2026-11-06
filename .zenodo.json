@@ -22,12 +22,12 @@
       "name": "Lastname4, Firstname4",
       "affiliation": "Institution or organisation",
       "orcid": "0000-0000-0000-0000",
-      "type": "Other"
+      "type": "ProjectMember"
     },
     {
       "name": "Lastname5, Firstname5",
       "affiliation": "Institution or organisation",
-      "type": "Other"
+      "type": "ProjectMember"
     }
   ],
   "keywords": [
