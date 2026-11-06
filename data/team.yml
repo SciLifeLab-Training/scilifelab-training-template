@@ -50,9 +50,18 @@ team:
     # - github
     # - website
     # - image
-    # - citation_author: set to false to leave this person out of the
-    #   citation and the Zenodo record. They are still shown on the
-    #   website. Everyone else is included as an author.
+    # - citation_author: whether this person is an author of the
+    #   training. Set it to true to make them an author;
+    #   set it to false if they are not.
+
+    # Roles and authors are two different things:
+    #   - "roles" says what someone did. It is shown on the website
+    #     and in the README.
+    #   - "citation_author" says whether they are an author. Only authors
+    #     are named in the citation (CITATION.cff), and listed as
+    #     "creators" on Zenodo. Everyone else is still shown on the
+    #     website, and listed on Zenodo as "contributors".
+    #   So a Contributor can be an author too: that is the default.
 
 
   # --------------------------------------------------
