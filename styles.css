@@ -583,6 +583,21 @@ a.anchorjs-link {
   font-weight: 400;
 }
 
+/* A name links to the person's ORCID page when they have one. The name
+ * looks the same as the other names: the underline and colour only
+ * appear when you hover over it, or reach it with the keyboard. */
+.people-list a.person-orcid-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.people-list a.person-orcid-link:hover,
+.people-list a.person-orcid-link:focus-visible {
+  color: var(--lp-hero-bg);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 /* ==========================================================================
    All course instances banner
    ========================================================================== */
