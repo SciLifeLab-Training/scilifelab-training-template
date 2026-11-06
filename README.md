@@ -109,11 +109,13 @@ landing page architecture, validation, generated files and deployment.
 <!-- generated:contributors -->
 ## Contributors
 
-| Name | Role | ORCID | Affiliation |
-|------|------|-------|-------------|
-| Ineke Luijten | Founder | [0000-0001-5768-275X](https://orcid.org/0000-0001-5768-275X) | SciLifeLab Training Hub |
-| Nina Norgren | Founder | [0000-0002-3823-1555](https://orcid.org/0000-0002-3823-1555) | SciLifeLab Training Hub |
-| Dimitris Panouris | Founder | [0009-0005-2282-2982](https://orcid.org/0009-0005-2282-2982) | SciLifeLab Training Hub |
+| Name | Role | Author | ORCID | Affiliation |
+|------|------|--------|-------|-------------|
+| Ineke Luijten | Founder | Yes | [0000-0001-5768-275X](https://orcid.org/0000-0001-5768-275X) | SciLifeLab Training Hub |
+| Nina Norgren | Founder | Yes | [0000-0002-3823-1555](https://orcid.org/0000-0002-3823-1555) | SciLifeLab Training Hub |
+| Dimitris Panouris | Founder | Yes | [0009-0005-2282-2982](https://orcid.org/0009-0005-2282-2982) | SciLifeLab Training Hub |
+
+Only authors are credited in the [citation](#citation), and as creators on Zenodo.
 <!-- /generated:contributors -->
 
 ## Contributing to the template
