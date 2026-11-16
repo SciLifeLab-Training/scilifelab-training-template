@@ -6,7 +6,7 @@ what is wrong and how to fix it in the data files.
 """
 
 import re
-from datetime import date
+from datetime import date, datetime
 from renderers.fair import licence_id, repository_url
 
 DOI_PATTERN = r"^(https?://(dx\.)?doi\.org/|doi:)?10\.\d{4,9}/\S+$"
@@ -184,12 +184,83 @@ def validate_website(website):
 # schedule.yml
 # ---------------------------------------------------------
 
+EVENT_FIELDS = ["title", "type", "group", "start", "end"]
+
+# A date and time, with or without seconds: 2027-05-12T09:00 or
+# 2027-05-12T09:00:00. A space instead of the T is also accepted.
+DATETIME_PATTERN = re.compile(
+    r"^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}(:\d{2})?$"
+)
+
+
+def _check_datetime(value, field, title):
+    """
+    Return a date and time, or raise an error that explains the format.
+
+    Data files read 2027-05-12T09:00:00 as a date and time, but
+    2027-05-12T09:00, without seconds, as text. Both are accepted here,
+    so the shorter form can be used.
+    """
+
+    if isinstance(value, datetime):
+        return value.replace(tzinfo=None)
+
+    text = str(value or "").strip()
+
+    if DATETIME_PATTERN.match(text):
+        try:
+            return datetime.fromisoformat(text)
+        except ValueError:
+            pass
+
+    raise ValueError(
+        f'schedule.yml: the {field} of "{title}" is not a valid date and '
+        f"time: '{text}'. Write it as YYYY-MM-DDTHH:MM, with the 24-hour "
+        "clock, for example 2027-05-12T09:00."
+    )
+
+
 def validate_schedule(events):
 
     if not isinstance(events, list):
         raise ValueError("schedule.yml must contain an 'events' list")
 
-    return events
+    checked = []
+
+    for number, event in enumerate(events, start=1):
+
+        if not isinstance(event, dict):
+            raise ValueError(
+                f"schedule.yml: event {number} must start with '- title:' "
+                "and have its fields indented below it."
+            )
+
+        title = str(event.get("title") or f"event {number}").strip()
+
+        missing = [
+            field for field in EVENT_FIELDS
+            if not str(event.get(field) or "").strip()
+        ]
+
+        if missing:
+            raise ValueError(
+                f'schedule.yml: "{title}" needs '
+                + ", ".join(missing)
+                + ". Every event needs a title, type, group, start and end."
+            )
+
+        start = _check_datetime(event["start"], "start", title)
+        end = _check_datetime(event["end"], "end", title)
+
+        if end < start:
+            raise ValueError(
+                f'schedule.yml: "{title}" ends before it starts. '
+                "Check its start and end."
+            )
+
+        checked.append({**event, "start": start, "end": end})
+
+    return checked
 
 
 # ---------------------------------------------------------

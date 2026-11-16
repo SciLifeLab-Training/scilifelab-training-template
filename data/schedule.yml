@@ -46,7 +46,8 @@ events:
   # ==================================================
   #
   # Use the format YYYY-MM-DDTHH:MM, using the 24-hour clock.
-  # For example: 2026-09-30T09:00.
+  # For example: 2026-09-30T09:00 is 30 September 2026, at 9 in the
+  # morning. Adding seconds (2026-09-30T09:00:00) also works.
   #
   # ==================================================
   # Event types
@@ -87,8 +88,8 @@ events:
   - title: "How to structure a page"
     type: lecture
     group: "Day 1"
-    start: 2026-09-30T09:00:00
-    end: 2026-09-30T09:45:00
+    start: 2026-09-30T09:00
+    end: 2026-09-30T09:45
     location: "SciLifeLab Solna"
     people:
       - Jane Doe
@@ -97,8 +98,8 @@ events:
   - title: "Headings and text"
     type: lecture
     group: "Day 1"
-    start: 2026-09-30T10:00:00
-    end: 2026-09-30T11:00:00
+    start: 2026-09-30T10:00
+    end: 2026-09-30T11:00
     location: "Lecture Hall A"
     people:
       - John Smith
@@ -107,8 +108,8 @@ events:
   - title: "Coffee Break"
     type: break
     group: "Day 1"
-    start: 2026-09-30T11:00:00
-    end: 2026-09-30T11:30:00
+    start: 2026-09-30T11:00
+    end: 2026-09-30T11:30
     location: ""
     people: []
     content: ""
@@ -116,8 +117,8 @@ events:
   - title: "Lists and tables"
     type: practical
     group: "Day 1"
-    start: 2026-09-30T11:30:00
-    end: 2026-09-30T13:00:00
+    start: 2026-09-30T11:30
+    end: 2026-09-30T13:00
     location: "Computer Lab"
     people:
       - Jane Doe
@@ -127,8 +128,8 @@ events:
   - title: "Lunch"
     type: break
     group: "Day 1"
-    start: 2026-09-30T13:00:00
-    end: 2026-09-30T14:00:00
+    start: 2026-09-30T13:00
+    end: 2026-09-30T14:00
     location: "SciLifeLab Café"
     people: []
     content: ""
@@ -136,8 +137,8 @@ events:
   - title: "Other content elements"
     type: discussion
     group: "Day 1"
-    start: 2026-09-30T14:00:00
-    end: 2026-09-30T15:00:00
+    start: 2026-09-30T14:00
+    end: 2026-09-30T15:00
     location: "Seminar Room 2"
     people:
       - John Smith
@@ -151,8 +152,8 @@ events:
   - title: "How to highlight information"
     type: lecture
     group: "Day 2"
-    start: 2026-10-01T09:00:00
-    end: 2026-10-01T10:30:00
+    start: 2026-10-01T09:00
+    end: 2026-10-01T10:30
     location: "Lecture Hall A"
     people:
       - Maria Andersson
@@ -161,8 +162,8 @@ events:
   - title: "Callout boxes"
     type: practical
     group: "Day 2"
-    start: 2026-10-01T10:45:00
-    end: 2026-10-01T12:30:00
+    start: 2026-10-01T10:45
+    end: 2026-10-01T12:30
     location: "Computer Lab"
     people:
       - Maria Andersson
@@ -172,8 +173,8 @@ events:
   - title: "Collapsible callout boxes"
     type: discussion
     group: "Day 2"
-    start: 2026-10-01T14:00:00
-    end: 2026-10-01T15:00:00
+    start: 2026-10-01T14:00
+    end: 2026-10-01T15:00
     location: "Auditorium"
     people:
       - Sarah Wilson
@@ -187,8 +188,8 @@ events:
   - title: "How to add media and interactive elements"
     type: group-work
     group: "Day 3"
-    start: 2026-10-02T09:00:00
-    end: 2026-10-02T12:00:00
+    start: 2026-10-02T09:00
+    end: 2026-10-02T12:00
     location: ""
     people: []
     content: content/module-3/introduction.qmd
@@ -196,8 +197,8 @@ events:
   - title: "Links"
     type: presentation
     group: "Day 3"
-    start: 2026-10-02T13:00:00
-    end: 2026-10-02T15:30:00
+    start: 2026-10-02T13:00
+    end: 2026-10-02T15:30
     location: "Auditorium"
     people:
       - Jane Doe
@@ -211,8 +212,8 @@ events:
   - title: "Images, presentations and videos"
     type: workshop
     group: "Day 4"
-    start: 2026-11-01T10:00:00
-    end: 2026-11-01T12:00:00
+    start: 2026-11-01T10:00
+    end: 2026-11-01T12:00
     location: "Online"
     people:
       - John Smith
@@ -221,8 +222,8 @@ events:
   - title: "Course Assessment"
     type: assessment
     group: "Day 4"
-    start: 2026-11-01T13:00:00
-    end: 2026-11-01T15:00:00
+    start: 2026-11-01T13:00
+    end: 2026-11-01T15:00
     location: "Online"
     people: []
     content: ""
@@ -234,8 +235,8 @@ events:
   - title: "Final Course Meeting"
     type: consultation
     group: "Follow up"
-    start: 2026-12-03T14:00:00
-    end: 2026-12-03T15:00:00
+    start: 2026-12-03T14:00
+    end: 2026-12-03T15:00
     location: "SciLifeLab Solna"
     people:
       - Jane Doe

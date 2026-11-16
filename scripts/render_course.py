@@ -257,4 +257,10 @@ def main():
     write_fair_files(ROOT, course, team, website)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except ValueError as error:
+        # A problem in one of the data files: show only the message,
+        # which names the file and explains what to fix.
+        print(f"\nError in the data files: {error}\n")
+        raise SystemExit(1) from None
