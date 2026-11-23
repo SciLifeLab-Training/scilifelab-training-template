@@ -216,3 +216,32 @@ def test_instances_json_lists_current_and_previous() -> None:
     assert list(statuses.values()).count("current") == 1
     assert "previous" in statuses.values()
     assert all(item["url"] for item in data["instances"])
+
+
+def test_load_yaml_dict_explains_layout_mistakes(tmp_path: Path) -> None:
+    bad = tmp_path / "course.yml"
+    bad.write_text(
+        'course:\n'
+        '  title: "Training title\n'
+        '  subtitle: "Training subtitle"\n',
+        encoding="utf-8",
+    )
+
+    with pytest.raises(gl.ValidationError) as excinfo:
+        gl.load_yaml_dict(bad)
+
+    message = str(excinfo.value)
+    assert "line 3" in message
+    assert 'title: "Training title' in message
+    assert "quotation mark" in message
+    assert "Traceback" not in message
+
+
+def test_load_yaml_dict_points_at_unclosed_quote(tmp_path: Path) -> None:
+    bad = tmp_path / "course.yml"
+    bad.write_text('course:\n  title: "Training title\n', encoding="utf-8")
+
+    with pytest.raises(gl.ValidationError) as excinfo:
+        gl.load_yaml_dict(bad)
+
+    assert "line 2" in str(excinfo.value)

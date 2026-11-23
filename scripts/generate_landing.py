@@ -97,14 +97,65 @@ def format_link(label: str, href: str, classes: list[str]) -> str:
     return f"[{esc_text(label)}](<{esc_url(href)}>){{{class_attrs}}}"
 
 
+def yaml_error_message(label: str, error: yaml.YAMLError, text: str) -> str:
+    """
+    Turn a YAML layout error into a short message for the user.
+
+    Instead of a long Python error, the message names the file and the
+    line, shows that line and the one above it (where the mistake often
+    is, for example a missing closing quotation mark), and says what to
+    check.
+    """
+
+    mark = getattr(error, "problem_mark", None) or getattr(error, "context_mark", None)
+
+    # A quotation mark that is never closed is only noticed much further
+    # down. The start of the quoted text is where the mistake is.
+    if "quoted scalar" in str(getattr(error, "context", "") or ""):
+        mark = getattr(error, "context_mark", None) or mark
+
+    if mark is None:
+        return f"{label}: the layout of this file is not right ({error})."
+
+    lines = text.splitlines()
+    number = mark.line + 1
+    shown = []
+
+    for n in (number - 1, number):
+        if 1 <= n <= len(lines):
+            shown.append(f"    {n:>4} | {lines[n - 1]}")
+
+    return "\n".join([
+        f"{label}, line {number}: the layout of the file is not right here,"
+        " or on the line just above it.",
+        "",
+        *shown,
+        "",
+        "Check that:",
+        "- the line starts with the same number of spaces as the lines"
+        " that belong with it;",
+        "- every quotation mark (\") has a closing quotation mark;",
+        "- there are no tabs: use spaces only.",
+    ])
+
+
 def load_yaml_dict(path: Path) -> dict[str, Any]:
-    content = yaml.safe_load(path.read_text(encoding="utf-8"))
+    path_label = str(path)
+    try:
+        path_label = path.relative_to(ROOT).as_posix()
+    except ValueError:
+        pass
+
+    text = path.read_text(encoding="utf-8")
+
+    try:
+        content = yaml.safe_load(text)
+    except yaml.YAMLError as error:
+        raise ValidationError(
+            yaml_error_message(path_label, error, text)
+        ) from None
+
     if not isinstance(content, dict):
-        path_label = str(path)
-        try:
-            path_label = str(path.relative_to(ROOT))
-        except ValueError:
-            pass
         raise ValidationError(
             f"{path_label} must contain a top-level mapping/object."
         )
@@ -722,5 +773,7 @@ if __name__ == "__main__":
     try:
         main()
     except ValidationError as exc:
-        print(f"ValidationError: {exc}")
-        raise SystemExit(1) from exc
+        # A problem in one of the data files: show only the message,
+        # which names the file and explains what to fix.
+        print(f"\nError in the data files: {exc}\n")
+        raise SystemExit(1) from None
