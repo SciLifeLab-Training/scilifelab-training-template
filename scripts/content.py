@@ -2,6 +2,8 @@ from pathlib import Path
 import re
 import yaml
 
+from loaders import yaml_error_message
+
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT_DIR = ROOT / "content"
@@ -29,8 +31,9 @@ def load_content_sections(content):
 
             text = path.read_text(encoding="utf-8")
 
-            title = extract_front_matter_value(text, "title")
-            order = extract_front_matter_value(text, "order")
+            label = path.relative_to(ROOT).as_posix()
+            title = extract_front_matter_value(text, "title", label)
+            order = extract_front_matter_value(text, "order", label)
 
             if not title:
                 raise ValueError(
@@ -65,7 +68,7 @@ def load_content_sections(content):
     return result
 
 
-def extract_front_matter_value(text, key):
+def extract_front_matter_value(text, key, label="this page"):
 
     if not text.startswith("---"):
         return None
@@ -75,6 +78,13 @@ def extract_front_matter_value(text, key):
     if len(parts) != 3:
         return None
 
-    front_matter = yaml.safe_load(parts[1]) or {}
+    try:
+        front_matter = yaml.safe_load(parts[1]) or {}
+    except yaml.YAMLError as error:
+        # parts[1] starts on the first line of the file, so the line
+        # numbers in the error match the lines of the page.
+        raise ValueError(
+            yaml_error_message(f"{label} (the part between the --- lines)", error, text)
+        ) from None
 
     return front_matter.get(key)
