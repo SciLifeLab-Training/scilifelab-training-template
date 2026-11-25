@@ -1,0 +1,89 @@
+# Check for updates of the SciLifeLab Training Webpage Template.
+#
+# Once a week, this compares the template version your training is based
+# on (in .template-version) with the latest release of the template. When
+# there is a newer version, it opens an issue in your repository with a
+# link to what has changed. It opens only one issue per version: close it
+# when you have updated, or if you don't want to update.
+#
+# You don't need to change anything in this file. To switch the check
+# off, go to Actions on GitHub, choose "Check for template updates", and
+# click "Disable workflow" in the ... menu.
+
+name: Check for template updates
+
+on:
+  schedule:
+    # Every Monday at 07:07 UTC: 08:07 in Stockholm in winter, 09:07 in summer.
+    - cron: "7 7 * * 1"
+  # Lets you run the check by hand, under Actions.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  TEMPLATE_REPO: SciLifeLab-Training/scilifelab-training-template
+
+jobs:
+  check:
+    # Not in the template repository itself.
+    if: github.repository != 'SciLifeLab-Training/scilifelab-training-template'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compare with the latest template release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          if [ ! -f .template-version ]; then
+            echo "No .template-version file: nothing to compare."
+            exit 0
+          fi
+
+          current="$(tr -d '[:space:]' < .template-version)"
+
+          if ! release="$(gh api "repos/$TEMPLATE_REPO/releases/latest" 2>/dev/null)"; then
+            echo "The template has no release yet."
+            exit 0
+          fi
+
+          latest="$(jq -r '.tag_name' <<< "$release")"
+          url="$(jq -r '.html_url' <<< "$release")"
+          echo "This training: $current. Latest template: $latest."
+
+          if [ "$(python3 scripts/check_template_version.py "$current" "$latest")" != "update" ]; then
+            echo "Up to date."
+            exit 0
+          fi
+
+          title="Template update available: version ${latest#v}"
+
+          # One issue per version: also when an earlier one was closed.
+          if gh issue list --state all --limit 100 --search "in:title \"$title\"" \
+               --json title --jq '.[].title' | grep -Fxq "$title"; then
+            echo "There is already an issue for this version."
+            exit 0
+          fi
+
+          cat > issue.md <<EOF
+          A new version of the [SciLifeLab Training Webpage Template](https://github.com/$TEMPLATE_REPO) is available.
+
+          - This training is based on version **${current#v}**.
+          - The latest version is **${latest#v}**.
+
+          **What's new, and how to update:** see the [release notes]($url).
+
+          Updating is optional: your website keeps working without it. Close this issue when you have updated, or if you decide not to.
+
+          _This issue was opened automatically by the workflow "Check for template updates"._
+          EOF
+
+          gh issue create --title "$title" --body-file issue.md
+          echo "Opened an issue: $title"

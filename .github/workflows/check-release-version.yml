@@ -1,0 +1,53 @@
+# For the maintainers of the template only.
+#
+# When a release of the template is published, this checks that the
+# release tag matches the version in .template-version and in
+# _template/course.yml. If they don't match, the run fails with a red
+# cross, so you can fix the files before training websites are told
+# about the new version.
+#
+# In copies of the template, this workflow does nothing.
+
+name: Check template release version
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    if: github.repository == 'SciLifeLab-Training/scilifelab-training-template'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compare the versions
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+
+          tag="${TAG#v}"
+          file="$(tr -d '[:space:]' < .template-version)"
+          course="$(grep -E '^\s*version:' _template/course.yml | head -n 1 \
+                    | sed -E 's/^\s*version:\s*"?([^"#]*)"?.*$/\1/' | tr -d '[:space:]')"
+
+          echo "Release tag:          $tag"
+          echo ".template-version:    $file"
+          echo "_template/course.yml: $course"
+
+          status=0
+          if [ "${file#v}" != "$tag" ]; then
+            echo "::error file=.template-version::Version $file doesn't match the release tag $TAG."
+            status=1
+          fi
+          if [ "${course#v}" != "$tag" ]; then
+            echo "::error file=_template/course.yml::Version $course doesn't match the release tag $TAG."
+            status=1
+          fi
+          exit $status
