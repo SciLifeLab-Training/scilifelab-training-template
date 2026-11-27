@@ -48,3 +48,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+
+{{< include _generated/page-title.html >}}

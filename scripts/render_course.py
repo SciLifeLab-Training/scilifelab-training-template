@@ -29,6 +29,7 @@ from writer import write_partial
 
 from renderers.template_banner import render_template_banner
 from renderers.previous_instance_banner import render_previous_instance_banner
+from renderers.page_title import render_page_title_script
 from renderers.welcome import render_welcome
 from renderers.navbar import (
     render_navbar_meta,
@@ -206,7 +207,13 @@ def main():
             website,
             available_pages,
             content_navigation,
-        ),
+        )
+        + render_page_title_script(course),
+    )
+
+    write_partial(
+        "page-title.html",
+        render_page_title_script(course),
     )
 
     write_partial(

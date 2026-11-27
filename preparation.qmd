@@ -1,5 +1,5 @@
 ---
-title: Before the course
+title: Preparation
 title-block: false
 ---
 
