@@ -7,6 +7,9 @@ metadata-files:
   - _generated/page-metadata.yml
 include-in-header:
   - file: _generated/bioschemas.html
+  - text: |
+      <link rel="icon" type="image/png" href="img/favicon.png">
+      <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 ---
 
 :::{.landing-shell}
