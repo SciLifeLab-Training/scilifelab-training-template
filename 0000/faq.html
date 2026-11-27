@@ -188,6 +188,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+<script>
+(function () {
+  var training = "Training title";
+
+  function apply() {
+    var path = window.location.pathname;
+    if (path.slice(-1) === "/") {
+      path += "index.html";
+    }
+
+    // The navigation link whose page this is. The longest match wins,
+    // so content/index.html is not taken for the overview page.
+    var best = null;
+    document.querySelectorAll("[data-page]").forEach(function (link) {
+      var target = "/" + link.dataset.page.replace(/\.qmd$/, ".html");
+      if (path.slice(-target.length) === target &&
+          (!best || target.length > best.target.length)) {
+        best = { target: target, label: link.textContent.trim() };
+      }
+    });
+
+    var page;
+    if (best && best.target === "/index.html") {
+      page = "";
+    } else if (best) {
+      page = best.label;
+    } else {
+      page = document.title.split(" \u2013 ")[0].trim();
+    }
+
+    document.title = page && page !== training
+      ? page + " \u2013 " + training
+      : training;
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", apply);
+  } else {
+    apply();
+  }
+})();
+</script>
 <div class="course-faq-page">
 <header class="course-faq-header">
 <div class="course-page-label">

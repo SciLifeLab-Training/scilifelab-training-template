@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Before the course</title>
+<title>Preparation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Before the course</h1>
+<h1 class="title">Preparation</h1>
 </div>
 
 
@@ -187,6 +187,48 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+</script>
+<script>
+(function () {
+  var training = "Training title";
+
+  function apply() {
+    var path = window.location.pathname;
+    if (path.slice(-1) === "/") {
+      path += "index.html";
+    }
+
+    // The navigation link whose page this is. The longest match wins,
+    // so content/index.html is not taken for the overview page.
+    var best = null;
+    document.querySelectorAll("[data-page]").forEach(function (link) {
+      var target = "/" + link.dataset.page.replace(/\.qmd$/, ".html");
+      if (path.slice(-target.length) === target &&
+          (!best || target.length > best.target.length)) {
+        best = { target: target, label: link.textContent.trim() };
+      }
+    });
+
+    var page;
+    if (best && best.target === "/index.html") {
+      page = "";
+    } else if (best) {
+      page = best.label;
+    } else {
+      page = document.title.split(" \u2013 ")[0].trim();
+    }
+
+    document.title = page && page !== training
+      ? page + " \u2013 " + training
+      : training;
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", apply);
+  } else {
+    apply();
+  }
+})();
 </script>
 <div class="course-preparation-header">
 <div class="course-preparation-header-main">
