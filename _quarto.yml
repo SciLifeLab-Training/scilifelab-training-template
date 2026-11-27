@@ -2,7 +2,7 @@ project:
 
   type: website
   output-dir: _site
-
+  
   render:
     - index.qmd
     - schedule.qmd
@@ -21,12 +21,14 @@ project:
   resources:
     - img
     - js
+    
+website:
+  favicon: img/favicon.png
 
 format:
   html:
     theme: cosmo
     css: styles.css
-    favicon: img/scilifelab-logo-green.png
     toc: false
     page-layout: full
     anchor-sections: false
